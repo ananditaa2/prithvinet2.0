@@ -39,7 +39,7 @@ const HeroSection = () => {
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground max-w-xl mb-10 leading-relaxed">
-            AI-powered compliance tracking, predictive analytics, and real-time alerts for Air, Water & Noise pollution across regions and industries.
+            A digital platform enabling real-time environmental monitoring, automated compliance tracking, predictive analytics, and intelligent alerts for Air, Water & Noise pollution.
           </p>
 
           <div className="flex flex-wrap gap-4 mb-16">
