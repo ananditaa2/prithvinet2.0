@@ -33,9 +33,9 @@ const HeroSection = () => {
           <h1 className="text-5xl md:text-7xl font-bold leading-[1.05] tracking-tight mb-6">
             <span className="text-gradient-primary">PrithviNet</span>
             <br />
-            <span className="text-foreground">Smart Pollution</span>
+            <span className="text-foreground">Smart Environmental</span>
             <br />
-            <span className="text-foreground/80">Monitoring Platform</span>
+            <span className="text-foreground/80">Monitoring & Compliance</span>
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground max-w-xl mb-10 leading-relaxed">
