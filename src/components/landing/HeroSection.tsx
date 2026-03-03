@@ -44,11 +44,8 @@ const HeroSection = () => {
 
           <div className="flex flex-wrap gap-4 mb-16">
             <button className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 font-heading font-semibold text-primary-foreground transition-all hover:shadow-[var(--glow-primary)] hover:scale-[1.02]">
-              Launch Dashboard
+              Login to Dashboard
               <ArrowRight className="h-4 w-4" />
-            </button>
-            <button className="inline-flex items-center gap-2 rounded-lg border border-border bg-secondary/50 px-6 py-3 font-heading font-medium text-secondary-foreground transition-all hover:bg-secondary">
-              View Demo
             </button>
           </div>
         </motion.div>

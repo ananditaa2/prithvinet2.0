@@ -21,7 +21,7 @@ const CTASection = () => {
             Join pollution control boards modernizing their monitoring infrastructure with PrithviNet.
           </p>
           <button className="inline-flex items-center gap-2 rounded-lg bg-primary px-8 py-3.5 font-heading font-semibold text-primary-foreground transition-all hover:shadow-[var(--glow-primary)] hover:scale-[1.02]">
-            Get Started
+            🚀 Login to Dashboard
             <ArrowRight className="h-4 w-4" />
           </button>
         </motion.div>

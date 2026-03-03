@@ -1,34 +1,28 @@
 import { motion } from "framer-motion";
 import {
-  Activity, Droplets, Volume2, Brain,
-  Bell, MapPin, BarChart3, Shield
+  Activity, Droplets, Volume2, Brain, Bell, MapPin
 } from "lucide-react";
 
 const features = [
   {
     icon: Activity,
-    title: "Air Quality Monitoring",
-    desc: "Real-time AQI tracking with pollutant-level breakdowns across all monitoring stations.",
+    title: "Real-time Air Monitoring",
+    desc: "Continuous AQI tracking with pollutant-level breakdowns across all monitoring stations.",
   },
   {
     icon: Droplets,
-    title: "Water Quality Analysis",
-    desc: "Continuous water parameter monitoring — pH, BOD, DO, heavy metals — with trend analysis.",
+    title: "Water Quality Tracking",
+    desc: "Live water parameter monitoring — pH, BOD, DO, heavy metals — with instant alerts.",
   },
   {
     icon: Volume2,
-    title: "Noise Level Mapping",
+    title: "Noise Level Monitoring",
     desc: "Geo-tagged noise monitoring with dB thresholds and zone-based compliance checks.",
   },
   {
     icon: Brain,
-    title: "AI Compliance Copilot",
-    desc: "Ask what-if questions, simulate interventions, and get predictive risk assessments.",
-  },
-  {
-    icon: Bell,
-    title: "Smart Alerts & Escalation",
-    desc: "Auto-alerts on limit breaches, missing reports, and non-compliance with escalation workflows.",
+    title: "AI-Powered Forecasting",
+    desc: "24–72 hour pollution forecasts with uncertainty estimates using ML models and weather data.",
   },
   {
     icon: MapPin,
@@ -36,14 +30,9 @@ const features = [
     desc: "Interactive pollution heatmaps with regional risk scoring and hotspot detection.",
   },
   {
-    icon: BarChart3,
-    title: "Predictive Forecasting",
-    desc: "24-72 hour forecasts with uncertainty estimates using ML models and weather integration.",
-  },
-  {
-    icon: Shield,
-    title: "Compliance Dashboard",
-    desc: "Industry-wise compliance tracking, inspection scheduling, and regulatory reporting.",
+    icon: Bell,
+    title: "Automated Compliance Alerts",
+    desc: "Auto-alerts on limit breaches, missing reports, and non-compliance with escalation workflows.",
   },
 ];
 
@@ -67,7 +56,7 @@ const FeaturesSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="text-sm font-medium text-primary tracking-widest uppercase">Core Capabilities</span>
+          <span className="text-sm font-medium text-primary tracking-widest uppercase">📊 Core Features</span>
           <h2 className="text-3xl md:text-5xl font-bold mt-3 mb-4">
             Complete Environmental
             <br />
@@ -83,7 +72,7 @@ const FeaturesSection = () => {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
         >
           {features.map((f) => (
             <motion.div
