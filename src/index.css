@@ -6,48 +6,45 @@
 
 @layer base {
   :root {
-    --background: 210 20% 6%;
-    --foreground: 160 20% 92%;
+    --background: 0 0% 98%;
+    /* Clean very light gray/off-white */
+    --foreground: 222.2 84% 4.9%;
+    /* Very dark blue-gray */
 
-    --card: 210 18% 10%;
-    --card-foreground: 160 20% 92%;
+    --card: 0 0% 100%;
+    /* Pure white */
+    --card-foreground: 222.2 84% 4.9%;
 
-    --popover: 210 18% 10%;
-    --popover-foreground: 160 20% 92%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 160 60% 45%;
-    --primary-foreground: 210 20% 6%;
+    --primary: 221.2 83.2% 53.3%;
+    /* Standard Official Blue (like Tailwind blue-600) */
+    --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 15% 16%;
-    --secondary-foreground: 160 20% 85%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
 
-    --muted: 210 12% 14%;
-    --muted-foreground: 210 10% 55%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 38 90% 55%;
-    --accent-foreground: 210 20% 6%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
 
-    --destructive: 0 72% 51%;
+    --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 210 15% 18%;
-    --input: 210 15% 18%;
-    --ring: 160 60% 45%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
+    /* Slightly smaller radius for more formal look */
 
-    --hero-gradient: linear-gradient(135deg, hsl(160 60% 45% / 0.15), hsl(200 70% 50% / 0.1), hsl(38 90% 55% / 0.05));
-    --glow-primary: 0 0 40px hsl(160 60% 45% / 0.3);
-    --glow-accent: 0 0 40px hsl(38 90% 55% / 0.2);
-
-    --sidebar-background: 210 18% 8%;
-    --sidebar-foreground: 160 20% 92%;
-    --sidebar-primary: 160 60% 45%;
-    --sidebar-primary-foreground: 210 20% 6%;
-    --sidebar-accent: 210 15% 16%;
-    --sidebar-accent-foreground: 160 20% 85%;
-    --sidebar-border: 210 15% 18%;
-    --sidebar-ring: 160 60% 45%;
+    /* Replaced cyberpunk glows with standard shadows/gradients */
+    --hero-gradient: linear-gradient(180deg, hsl(0 0% 100% / 0.8) 0%, hsl(210 40% 98% / 0.9) 100%);
+    --glow-primary: 0 4px 14px 0 hsl(221.2 83.2% 53.3% / 0.39);
+    --glow-accent: 0 4px 14px 0 hsl(210 40% 96.1% / 0.39);
   }
 }
 
@@ -55,10 +52,17 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground font-body antialiased;
   }
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-heading;
   }
 }
@@ -66,17 +70,23 @@
 @layer utilities {
   .text-gradient-primary {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(160 60% 50%), hsl(180 70% 55%));
+    background-image: linear-gradient(135deg, hsl(221.2 83.2% 53.3%), hsl(221.2 83.2% 40%));
   }
+
   .text-gradient-accent {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(38 90% 55%), hsl(28 95% 60%));
+    background-image: linear-gradient(135deg, hsl(160 60% 40%), hsl(180 70% 45%));
   }
+
   .glass-card {
-    @apply bg-card/60 backdrop-blur-xl border border-border/50 rounded-xl;
+    @apply bg-card/80 backdrop-blur-md border border-border shadow-sm rounded-lg;
   }
+
   .glow-border {
-    box-shadow: inset 0 1px 0 0 hsl(160 60% 45% / 0.1), 0 0 20px hsl(160 60% 45% / 0.05);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   }
-  /* Custom overrides */
+
+  .gov-header {
+    @apply bg-blue-900 text-white text-xs font-medium py-1.5 px-4 flex items-center justify-between;
+  }
 }
