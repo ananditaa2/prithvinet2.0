@@ -2,12 +2,8 @@ import os
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from typing import List
 from openai import OpenAI
 from dotenv import load_dotenv
-import pandas as pd
-import numpy as np
-from sklearn.ensemble import IsolationForest
 
 # Load environment variables
 load_dotenv()
@@ -111,60 +107,6 @@ async def simulate_risk(request: SimulationRequest):
         },
         "ai_analysis": ai_analysis
     }
-
-class SensorReading(BaseModel):
-    id: str
-    sensor_type: str
-    value: float
-    timestamp: str 
-
-class AnomalyDetectionRequest(BaseModel):
-    readings: List[SensorReading]
-
-@app.post("/api/detect-anomalies")
-async def detect_anomalies(request: AnomalyDetectionRequest):
-    """
-    Analyzes an array of sensor readings and uses an Isolation Forest model
-    to detect statistical outliers/anomalies (e.g., impossible 0 emissions).
-    """
-    if not request.readings:
-        raise HTTPException(status_code=400, detail="No readings provided")
-    
-    # Convert to DataFrame
-    data = [{"id": r.id, "value": r.value} for r in request.readings]
-    df = pd.DataFrame(data)
-    
-    # We need a 2D array for sklearn
-    values = df['value'].values.reshape(-1, 1)
-    
-    # Initialize IsolationForest
-    # contamination is the assumed proportion of outliers in the data set
-    clf = IsolationForest(contamination=0.1, random_state=42)
-    
-    try:
-        if len(values) < 5:
-            # Too little data for meaningful ML anomaly detection, return none to be safe
-            preds = [1] * len(values) 
-        else:
-            preds = clf.fit_predict(values)
-            
-        anomalies = []
-        for i, pred in enumerate(preds):
-            if pred == -1:
-                anomalies.append({
-                    "id": df.iloc[i]['id'],
-                    "value": float(df.iloc[i]['value']),
-                    "reason": "Statistical Outlier (Isolation Forest)"
-                })
-                
-        return {
-            "total_analyzed": len(values),
-            "anomalies_detected": len(anomalies),
-            "anomalies": anomalies
-        }
-    except Exception as e:
-        print(f"Error in anomaly detection: {e}")
-        raise HTTPException(status_code=500, detail="Error processing anomalies")
 
 @app.get("/")
 def read_root():
