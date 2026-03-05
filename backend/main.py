@@ -1,4 +1,5 @@
 import os
+import asyncio
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -13,100 +14,107 @@ app = FastAPI(title="AI-Assisted Compliance Copilot API")
 # Configure CORS so the frontend can communicate with the backend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allows all origins, adjust for production
+    allow_origins=["*"],
     allow_credentials=True,
-    allow_methods=["*"],  # Allows all methods
-    allow_headers=["*"],  # Allows all headers
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
-# Configure xAI (Grok) API via OpenAI SDK
+# ─────────────────────────────────────────────────────────────
+# Initialize the Groq client ONCE at startup (not per-request)
+# This avoids re-establishing connections on every API call.
+# ─────────────────────────────────────────────────────────────
 API_KEY = os.getenv("XAI_API_KEY")
 
 if not API_KEY:
-    print("Warning: XAI_API_KEY not found in environment variables.")
+    print("WARNING: XAI_API_KEY not found. AI analysis will be unavailable.")
 
-# Initialize the OpenAI client pointing to xAI
-client = OpenAI(
+groq_client = OpenAI(
     api_key=API_KEY or "missing_key",
-    base_url="https://api.xai.com/v1",
-)
+    base_url="https://api.groq.com/openai/v1",
+    timeout=15.0,   # 15-second hard timeout — avoids hanging forever
+    max_retries=1,
+) if API_KEY else None
 
-# Define the request model
+
 class SimulationRequest(BaseModel):
     region: str
     industry: str
     pollutant: str
     reduction_percentage: float
-    current_risk_score: float  # Example current metric
+    current_risk_score: float
+
+
+def _call_groq(prompt_content: str) -> str:
+    """Synchronous Groq call — runs in a thread pool via asyncio.to_thread."""
+    response = groq_client.chat.completions.create(
+        model="llama-3.1-8b-instant",
+        messages=[
+            {
+                "role": "system",
+                "content": (
+                    "You are a concise expert environmental compliance analyst. "
+                    "Respond in Markdown. Keep answers under 200 words."
+                ),
+            },
+            {"role": "user", "content": prompt_content},
+        ],
+        max_tokens=350,   # Cap tokens so it returns quickly
+        temperature=0.4,
+    )
+    return response.choices[0].message.content
+
 
 @app.post("/api/simulate-risk")
 async def simulate_risk(request: SimulationRequest):
     """
-    Simulates the environmental risk score based on proposed pollutant reductions.
-    Uses Grok API for advanced "What-if" analysis if available, 
-    otherwise falls back to a simple calculation.
+    Simulates environmental risk score based on proposed pollutant reductions.
+    Uses Groq (llama-3.1-8b-instant) for AI analysis, run non-blocking.
     """
-    
-    # 1. Simple Fallback Calculation
-    reduction_factor = request.reduction_percentage / 100.0
-    pollutant_weight = 0.40 
-    
-    estimated_new_score = request.current_risk_score * (1 - (reduction_factor * pollutant_weight))
-    
-    # 2. Advanced Analysis using Grok API
-    ai_analysis = "AI analysis not available. Please verify XAI_API_KEY is configured."
-    
-    current_api_key = os.getenv("XAI_API_KEY")
-    
-    if current_api_key:
-        try:
-            # The User provided a Groq API key (starts with gsk_), not an xAI key. 
-            # We connect to the Groq OpenAI-compatible endpoint.
-            client = OpenAI(
-                api_key=current_api_key,
-                base_url="https://api.groq.com/openai/v1",
-            )
-            
-            prompt_content = f"""
-            Current Scenario:
-            - Region: {request.region}
-            - Industry Focus: {request.industry}
-            - Current Overall Risk Score: {request.current_risk_score}/100
-            
-            Proposed Action:
-            - The {request.industry} industry proposes to reduce {request.pollutant} emissions by {request.reduction_percentage}%.
-            
-            Task:
-            1. Provide a brief analysis of how this specific reduction might impact the regional environmental health.
-            2. Estimate the new risk score based on this action.
-            3. Highlight any potential secondary benefits or compliance challenges.
-            
-            Keep the response concise, formatted in Markdown, and clearly state the simulated new risk score.
-            """
 
-            response = client.chat.completions.create(
-                model="llama-3.1-8b-instant",
-                messages=[
-                    {"role": "system", "content": "You are an expert environmental compliance analyst."},
-                    {"role": "user", "content": prompt_content},
-                ],
-            )
-            
-            if response.choices and len(response.choices) > 0:
-                ai_analysis = response.choices[0].message.content
-                 
+    # 1. Quick fallback calculation (always fast)
+    reduction_factor = request.reduction_percentage / 100.0
+    pollutant_weight = 0.40
+    estimated_new_score = round(
+        request.current_risk_score * (1 - (reduction_factor * pollutant_weight)), 2
+    )
+
+    # 2. AI analysis via Groq (non-blocking — runs in thread pool)
+    ai_analysis = "AI analysis unavailable: XAI_API_KEY not configured."
+
+    if groq_client:
+        prompt_content = f"""Current Scenario:
+- Region: {request.region}
+- Industry: {request.industry}
+- Current Risk Score: {request.current_risk_score}/100
+
+Proposed Action: Reduce {request.pollutant} emissions by {request.reduction_percentage}%.
+
+Tasks:
+1. Brief environmental impact analysis.
+2. Estimated new risk score.
+3. Key secondary benefits or compliance risks.
+
+Be concise and use Markdown."""
+
+        try:
+            # asyncio.to_thread keeps FastAPI's event loop free while waiting for Groq
+            ai_analysis = await asyncio.to_thread(_call_groq, prompt_content)
+        except asyncio.TimeoutError:
+            ai_analysis = "⏱️ AI analysis timed out. The servers may be busy — please try again."
         except Exception as e:
-            print(f"Error calling Grok API: {e}")
+            print(f"Groq API error: {e}")
             ai_analysis = f"Error generating AI analysis: {str(e)}"
-            
+
     return {
         "scenario": request.dict(),
         "baseline_calculation": {
-            "estimated_new_score": round(estimated_new_score, 2),
-            "note": "Based on a simplified regression weight model."
+            "estimated_new_score": estimated_new_score,
+            "note": "Based on a simplified regression weight model.",
         },
-        "ai_analysis": ai_analysis
+        "ai_analysis": ai_analysis,
     }
+
 
 @app.get("/")
 def read_root():

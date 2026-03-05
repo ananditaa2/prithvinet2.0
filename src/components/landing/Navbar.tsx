@@ -3,8 +3,10 @@ import { Menu, X, Landmark } from "lucide-react";
 
 const links = [
   { label: "Features", href: "#features" },
-  { label: "How It Works", href: "#use-case" },
+  { label: "AI Capabilities", href: "#innovation" },
+  { label: "How It Works", href: "#how-it-works" },
   { label: "Roles", href: "#roles" },
+  { label: "Contact", href: "#contact" },
 ];
 
 const Navbar = () => {
