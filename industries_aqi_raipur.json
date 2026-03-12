@@ -1,0 +1,231 @@
+[
+  {
+    "industry_id": "IND001",
+    "name": "Bhilai Steel Plant",
+    "type": "Steel",
+    "lat": 21.208,
+    "lng": 81.376,
+    "station_id": "ST001",
+    "high_risk": true,
+    "region": "Bhilai-Durg, Chhattisgarh"
+  },
+  {
+    "industry_id": "IND002",
+    "name": "CSID\u0421 Industrial Growth Center",
+    "type": "Mixed Industrial",
+    "lat": 21.2514,
+    "lng": 81.28,
+    "station_id": "ST002",
+    "high_risk": false,
+    "region": "Bhilai-Durg, Chhattisgarh"
+  },
+  {
+    "industry_id": "IND003",
+    "name": "Durg Thermal Plant",
+    "type": "Power",
+    "lat": 21.19,
+    "lng": 81.29,
+    "station_id": "ST002",
+    "high_risk": true,
+    "region": "Bhilai-Durg, Chhattisgarh"
+  },
+  {
+    "industry_id": "IND004",
+    "name": "SECL Gevra Coal Mine",
+    "type": "Mining",
+    "lat": 22.2167,
+    "lng": 82.3833,
+    "station_id": "ST005",
+    "high_risk": true,
+    "region": "Bilaspur, Chhattisgarh"
+  },
+  {
+    "industry_id": "IND005",
+    "name": "Bilaspur Thermal Power Station",
+    "type": "Power",
+    "lat": 22.12,
+    "lng": 82.18,
+    "station_id": "ST005",
+    "high_risk": true,
+    "region": "Bilaspur, Chhattisgarh"
+  },
+  {
+    "industry_id": "IND006",
+    "name": "CECB Industrial Area Bilaspur",
+    "type": "Mixed Industrial",
+    "lat": 22.09,
+    "lng": 82.15,
+    "station_id": "ST005",
+    "high_risk": false,
+    "region": "Bilaspur, Chhattisgarh"
+  },
+  {
+    "industry_id": "IND007",
+    "name": "NTPC Korba Super Thermal Power Station",
+    "type": "Thermal Power",
+    "lat": 22.3456,
+    "lng": 82.7123,
+    "station_id": "ST006",
+    "high_risk": true,
+    "capacity_mw": 2600,
+    "primary_pollutants": [
+      "SO2",
+      "NOx",
+      "PM10"
+    ],
+    "region": "Korba, Chhattisgarh"
+  },
+  {
+    "industry_id": "IND008",
+    "name": "CSEB Korba West Power House",
+    "type": "Thermal Power",
+    "lat": 22.36,
+    "lng": 82.705,
+    "station_id": "ST007",
+    "high_risk": true,
+    "capacity_mw": 840,
+    "primary_pollutants": [
+      "SO2",
+      "NOx",
+      "PM10"
+    ],
+    "region": "Korba, Chhattisgarh"
+  },
+  {
+    "industry_id": "IND009",
+    "name": "BALCO Aluminium Smelter, Korba",
+    "type": "Aluminium",
+    "lat": 22.38,
+    "lng": 82.74,
+    "station_id": "ST008",
+    "high_risk": true,
+    "capacity_mw": null,
+    "primary_pollutants": [
+      "SO2",
+      "PM10",
+      "PM2.5"
+    ],
+    "region": "Korba, Chhattisgarh"
+  },
+  {
+    "industry_id": "IND010",
+    "name": "SECL Gevra Open Cast Coal Mine",
+    "type": "Coal Mining",
+    "lat": 22.42,
+    "lng": 82.65,
+    "station_id": "ST006",
+    "high_risk": true,
+    "capacity_mw": null,
+    "primary_pollutants": [
+      "PM10",
+      "PM2.5",
+      "NOx"
+    ],
+    "region": "Korba, Chhattisgarh"
+  },
+  {
+    "industry_id": "IND011",
+    "name": "Lanco Amarkantak Thermal Power Plant",
+    "type": "Thermal Power",
+    "lat": 22.33,
+    "lng": 82.68,
+    "station_id": "ST009",
+    "high_risk": true,
+    "capacity_mw": 1320,
+    "primary_pollutants": [
+      "SO2",
+      "NOx",
+      "PM10"
+    ],
+    "region": "Korba, Chhattisgarh"
+  },
+  {
+    "industry_id": "IND012",
+    "name": "Jindal Steel & Power Ltd (JSPL), Raigarh",
+    "type": "Steel & Power",
+    "lat": 21.92,
+    "lng": 83.41,
+    "station_id": "ST010",
+    "high_risk": true,
+    "primary_pollutants": [
+      "PM10",
+      "PM2.5",
+      "SO2"
+    ],
+    "region": "Raigarh, Chhattisgarh"
+  },
+  {
+    "industry_id": "IND013",
+    "name": "Jindal Industrial Park, Punjipathra",
+    "type": "Industrial Park",
+    "lat": 21.93,
+    "lng": 83.42,
+    "station_id": "ST011",
+    "high_risk": true,
+    "primary_pollutants": [
+      "PM10",
+      "PM2.5"
+    ],
+    "region": "Raigarh, Chhattisgarh"
+  },
+  {
+    "industry_id": "IND014",
+    "name": "GVK Power Plant, Raigarh",
+    "type": "Thermal Power",
+    "lat": 21.87,
+    "lng": 83.37,
+    "station_id": "ST012",
+    "high_risk": true,
+    "primary_pollutants": [
+      "PM10",
+      "SO2",
+      "NOx"
+    ],
+    "region": "Raigarh, Chhattisgarh"
+  },
+  {
+    "industry_id": "IND015",
+    "name": "Wool Worth Industries, Sarora, Raipur",
+    "type": "Industrial",
+    "lat": 21.32,
+    "lng": 81.75,
+    "station_id": "ST015",
+    "high_risk": true,
+    "primary_pollutants": [
+      "PM10",
+      "PM2.5",
+      "SO2"
+    ],
+    "region": "Raipur, Chhattisgarh"
+  },
+  {
+    "industry_id": "IND016",
+    "name": "Rawanbhata Water Treatment & Industrial Zone",
+    "type": "Mixed Industrial",
+    "lat": 21.28,
+    "lng": 81.68,
+    "station_id": "ST017",
+    "high_risk": false,
+    "primary_pollutants": [
+      "PM10",
+      "NO2"
+    ],
+    "region": "Raipur, Chhattisgarh"
+  },
+  {
+    "industry_id": "IND017",
+    "name": "Urla Industrial Area, Raipur",
+    "type": "Mixed Industrial",
+    "lat": 21.31,
+    "lng": 81.72,
+    "station_id": "ST013",
+    "high_risk": true,
+    "primary_pollutants": [
+      "PM10",
+      "PM2.5",
+      "SO2",
+      "NO2"
+    ],
+    "region": "Raipur, Chhattisgarh"
+  }
+]

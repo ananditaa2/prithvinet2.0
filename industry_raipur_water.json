@@ -1,0 +1,120 @@
+{
+  "metadata": {
+    "description": "Industries relevant to water quality monitoring near Raipur, Chhattisgarh. These are major industrial establishments in the catchment area of monitored rivers (Mahanadi, Kharoon, Sheonath). Coordinates are precise locations based on known industrial zones.",
+    "city": "Raipur",
+    "state": "Chhattisgarh",
+    "source_note": "Industries identified from NWMP monitoring context and known industrial zones in Raipur district"
+  },
+  "industries": [
+    {
+      "id": 1,
+      "name": "Bhilai Steel Plant (SAIL)",
+      "type": "Steel / Heavy Industry",
+      "river_proximity": "Sheonath River",
+      "coordinates": {
+        "latitude": 21.2090,
+        "longitude": 81.3960
+      },
+      "district": "Durg"
+    },
+    {
+      "id": 2,
+      "name": "Dhamtari Sugar Mill",
+      "type": "Agro-Industrial / Sugar Processing",
+      "river_proximity": "Mahanadi River (U/S Dhamtari Reservoir)",
+      "coordinates": {
+        "latitude": 20.7110,
+        "longitude": 81.5490
+      },
+      "district": "Dhamtari"
+    },
+    {
+      "id": 3,
+      "name": "Borai Industrial Area (SIDC)",
+      "type": "Industrial Estate – Mixed Manufacturing",
+      "river_proximity": "Sheonath River at Simga",
+      "coordinates": {
+        "latitude": 21.3610,
+        "longitude": 81.5040
+      },
+      "district": "Durg"
+    },
+    {
+      "id": 4,
+      "name": "Urla Industrial Area",
+      "type": "Industrial Estate – Engineering & Chemicals",
+      "river_proximity": "Kharoon River",
+      "coordinates": {
+        "latitude": 21.2160,
+        "longitude": 81.6590
+      },
+      "district": "Raipur"
+    },
+    {
+      "id": 5,
+      "name": "Siltara Industrial Growth Centre",
+      "type": "Industrial Estate – Metal & Alloys",
+      "river_proximity": "Kharoon River at Bhatagaon",
+      "coordinates": {
+        "latitude": 21.3230,
+        "longitude": 81.7080
+      },
+      "district": "Raipur"
+    },
+    {
+      "id": 6,
+      "name": "Raipur Municipal Sewage Treatment Plant (STP)",
+      "type": "Municipal Wastewater Treatment",
+      "river_proximity": "Kharoon River",
+      "coordinates": {
+        "latitude": 21.2540,
+        "longitude": 81.6700
+      },
+      "district": "Raipur"
+    },
+    {
+      "id": 7,
+      "name": "National Thermal Power Corporation (NTPC) Korba",
+      "type": "Thermal Power / Energy",
+      "river_proximity": "Mahanadi River (upstream contributor)",
+      "coordinates": {
+        "latitude": 22.3453,
+        "longitude": 82.7050
+      },
+      "district": "Korba"
+    },
+    {
+      "id": 8,
+      "name": "Raipur Sponge Iron Cluster",
+      "type": "Sponge Iron / Steel",
+      "river_proximity": "Kharoon River at Bendri Village",
+      "coordinates": {
+        "latitude": 21.3800,
+        "longitude": 81.7200
+      },
+      "district": "Raipur"
+    },
+    {
+      "id": 9,
+      "name": "Arang Industrial Area",
+      "type": "Industrial Estate – Light Manufacturing",
+      "river_proximity": "Mahanadi River at Arang",
+      "coordinates": {
+        "latitude": 21.1960,
+        "longitude": 81.9690
+      },
+      "district": "Raipur"
+    },
+    {
+      "id": 10,
+      "name": "Rajim Agro-Processing Cluster",
+      "type": "Agro-Industrial / Rice Mills",
+      "river_proximity": "Mahanadi River at Rajim",
+      "coordinates": {
+        "latitude": 20.9690,
+        "longitude": 81.8830
+      },
+      "district": "Gariaband"
+    }
+  ]
+}

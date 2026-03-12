@@ -1,0 +1,192 @@
+[
+  {
+    "station_id": "ST001",
+    "name": "Laghu Udyog Nigam",
+    "type": "Industrial",
+    "lat": 21.1938,
+    "lng": 81.3509,
+    "region": "Bhilai-Durg, Chhattisgarh",
+    "active": true,
+    "code": "NAMP-LUN"
+  },
+  {
+    "station_id": "ST002",
+    "name": "C.S.I.D.C.",
+    "type": "Industrial",
+    "lat": 21.2514,
+    "lng": 81.28,
+    "region": "Bhilai-Durg, Chhattisgarh",
+    "active": true,
+    "code": "NAMP-CSI"
+  },
+  {
+    "station_id": "ST003",
+    "name": "Bokaro Hostel",
+    "type": "Residential",
+    "lat": 21.21,
+    "lng": 81.42,
+    "region": "Bhilai-Durg, Chhattisgarh",
+    "active": true,
+    "code": "NAMP-BOK"
+  },
+  {
+    "station_id": "ST004",
+    "name": "Regional Office CECB",
+    "type": "Commercial",
+    "lat": 21.18,
+    "lng": 81.38,
+    "region": "Bhilai-Durg, Chhattisgarh",
+    "active": true,
+    "code": "NAMP-RO"
+  },
+  {
+    "station_id": "ST005",
+    "name": "CECB Vyapar Vihar, Bilaspur",
+    "code": "NAMP-669",
+    "type": "Commercial",
+    "lat": 22.0796,
+    "lng": 82.1391,
+    "region": "Bilaspur, Chhattisgarh",
+    "active": true
+  },
+  {
+    "station_id": "ST006",
+    "name": "Pragati Nagar Jamnipali, Korba",
+    "code": "NAMP-249",
+    "type": "Residential",
+    "lat": 22.3412,
+    "lng": 82.6989,
+    "region": "Korba, Chhattisgarh",
+    "active": true
+  },
+  {
+    "station_id": "ST007",
+    "name": "Near Tehsil Office, Rampur, Korba",
+    "code": "NAMP-364",
+    "type": "Residential",
+    "lat": 22.3701,
+    "lng": 82.6823,
+    "region": "Korba, Chhattisgarh",
+    "active": true
+  },
+  {
+    "station_id": "ST008",
+    "name": "I.T.I. Rampur, Korba",
+    "code": "NAMP-407",
+    "type": "Residential",
+    "lat": 22.365,
+    "lng": 82.69,
+    "region": "Korba, Chhattisgarh",
+    "active": true
+  },
+  {
+    "station_id": "ST009",
+    "name": "Geetanjali Bhavan, Korba",
+    "code": "NAMP-GBK",
+    "type": "Commercial",
+    "lat": 22.355,
+    "lng": 82.715,
+    "region": "Korba, Chhattisgarh",
+    "active": true
+  },
+  {
+    "station_id": "ST010",
+    "name": "O.P. Jindal School Premises, Raigarh",
+    "code": "NAMP-922",
+    "type": "Industrial",
+    "lat": 21.905,
+    "lng": 83.402,
+    "region": "Raigarh, Chhattisgarh",
+    "active": true
+  },
+  {
+    "station_id": "ST011",
+    "name": "Administrative Building, Jindal Industrial Park, Raigarh",
+    "code": "NAMP-894",
+    "type": "Industrial",
+    "lat": 21.92,
+    "lng": 83.41,
+    "region": "Raigarh, Chhattisgarh",
+    "active": true
+  },
+  {
+    "station_id": "ST012",
+    "name": "Regional Office CECB, Raigarh",
+    "code": "NAMP-893",
+    "type": "Residential",
+    "lat": 21.885,
+    "lng": 83.39,
+    "region": "Raigarh, Chhattisgarh",
+    "active": true
+  },
+  {
+    "station_id": "ST013",
+    "name": "Nagar Nigam Office, Khamtarai, Raipur",
+    "code": "NAMP-1027",
+    "type": "Residential",
+    "lat": 21.2514,
+    "lng": 81.6296,
+    "region": "Raipur, Chhattisgarh",
+    "active": true
+  },
+  {
+    "station_id": "ST014",
+    "name": "Primary Health Centre, Reewa, Arang, Raipur",
+    "code": "NAMP-ARANG",
+    "type": "Residential",
+    "lat": 21.196,
+    "lng": 81.92,
+    "region": "Raipur, Chhattisgarh",
+    "active": true
+  },
+  {
+    "station_id": "ST015",
+    "name": "Wool Worth (I) Ltd, Sarora, Raipur",
+    "code": "NAMP-223",
+    "type": "Industrial",
+    "lat": 21.32,
+    "lng": 81.75,
+    "region": "Raipur, Chhattisgarh",
+    "active": true
+  },
+  {
+    "station_id": "ST016",
+    "name": "Jila Hospital, Pandri, Raipur",
+    "code": "NAMP-1028",
+    "type": "Residential",
+    "lat": 21.24,
+    "lng": 81.65,
+    "region": "Raipur, Chhattisgarh",
+    "active": true
+  },
+  {
+    "station_id": "ST017",
+    "name": "Water Treatment Plant, Rawanbhata, Raipur",
+    "code": "NAMP-1029",
+    "type": "Industrial",
+    "lat": 21.28,
+    "lng": 81.68,
+    "region": "Raipur, Chhattisgarh",
+    "active": true
+  },
+  {
+    "station_id": "ST018",
+    "name": "AIIMS, Tatibandh, Raipur",
+    "code": "NAMP-1030",
+    "type": "Residential",
+    "lat": 21.26,
+    "lng": 81.64,
+    "region": "Raipur, Chhattisgarh",
+    "active": true
+  },
+  {
+    "station_id": "ST019",
+    "name": "New H.I.G., Hirapur (Tatibandh), Raipur",
+    "code": "NAMP-368",
+    "type": "Residential",
+    "lat": 21.255,
+    "lng": 81.635,
+    "region": "Raipur, Chhattisgarh",
+    "active": true
+  }
+]

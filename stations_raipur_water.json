@@ -1,0 +1,95 @@
+{
+  "metadata": {
+    "description": "NWMP (National Water Monitoring Programme) monitoring stations for Raipur, Chhattisgarh with precise geographic coordinates.",
+    "city": "Raipur",
+    "state": "Chhattisgarh",
+    "monitoring_agency": "MINARS",
+    "total_stations": 7
+  },
+  "stations": [
+    {
+      "station_code": 1099,
+      "name": "River Mahanadi at Rajim",
+      "location_description": "Near Road Bridge, Rajim",
+      "river": "Mahanadi",
+      "coordinates": {
+        "latitude": 20.9684,
+        "longitude": 81.8820
+      },
+      "district": "Gariaband",
+      "notes": "Downstream station; confluence of Mahanadi, Pairi and Sondur rivers at Rajim"
+    },
+    {
+      "station_code": 1264,
+      "name": "River Mahanadi at Ruddri Dam",
+      "location_description": "Upstream of Dhamtari Reservoir (U/S Dhamtari Reservoir)",
+      "river": "Mahanadi",
+      "coordinates": {
+        "latitude": 20.7680,
+        "longitude": 81.5590
+      },
+      "district": "Dhamtari",
+      "notes": "Located upstream of Gangrel (Dhamtari) Dam / Ruddri Barrage"
+    },
+    {
+      "station_code": 1265,
+      "name": "River Kharoon at Bhatagaon",
+      "location_description": "Near Water Supply Intakewell, Bhatagaon",
+      "river": "Kharoon",
+      "coordinates": {
+        "latitude": 21.2820,
+        "longitude": 81.6500
+      },
+      "district": "Raipur",
+      "notes": "Water supply intake point for Raipur city; key drinking water source"
+    },
+    {
+      "station_code": 1266,
+      "name": "River Sheonath at Simga",
+      "location_description": "Near Road Bridge, Simga",
+      "river": "Sheonath",
+      "coordinates": {
+        "latitude": 21.6130,
+        "longitude": 81.5700
+      },
+      "district": "Baloda Bazar",
+      "notes": "Tributary of Mahanadi; monitors industrial discharge influence from Durg/Raipur corridor"
+    },
+    {
+      "station_code": 1852,
+      "name": "River Mahanadi at Arang",
+      "location_description": "Near Gandhi Bridge, Arang",
+      "river": "Mahanadi",
+      "coordinates": {
+        "latitude": 21.1960,
+        "longitude": 81.9690
+      },
+      "district": "Raipur",
+      "notes": "Located at Gandhi Bridge near Arang town on NH-30"
+    },
+    {
+      "station_code": 1851,
+      "name": "River Mahanadi at Sihava",
+      "location_description": "Origin Point of Mahanadi, Sihava hills",
+      "river": "Mahanadi",
+      "coordinates": {
+        "latitude": 20.4730,
+        "longitude": 82.0180
+      },
+      "district": "Dhamtari / Nagri",
+      "notes": "Origin/source point of River Mahanadi in Sihava (Nagri) hills; upstream reference station"
+    },
+    {
+      "station_code": 1853,
+      "name": "River Kharoon at Bendri Village",
+      "location_description": "Near Water Supply Intakewell, Bendri Village",
+      "river": "Kharoon",
+      "coordinates": {
+        "latitude": 21.3500,
+        "longitude": 81.6900
+      },
+      "district": "Raipur",
+      "notes": "Downstream of Siltara industrial area; secondary water supply intake for Raipur"
+    }
+  ]
+}

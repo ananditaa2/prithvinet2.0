@@ -1,0 +1,1866 @@
+{
+  "observations": [
+    {
+      "station": "Telebandha Chowk",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "07-08",
+      "noise_db": 64.5
+    },
+    {
+      "station": "Telebandha Chowk",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "08-09",
+      "noise_db": 72.89
+    },
+    {
+      "station": "Telebandha Chowk",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "09-10",
+      "noise_db": 74.57
+    },
+    {
+      "station": "Telebandha Chowk",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "10-11",
+      "noise_db": 67.27
+    },
+    {
+      "station": "Telebandha Chowk",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "11-12",
+      "noise_db": 74.09
+    },
+    {
+      "station": "Telebandha Chowk",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "12-13",
+      "noise_db": 74.19
+    },
+    {
+      "station": "Telebandha Chowk",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "13-14",
+      "noise_db": 74.63
+    },
+    {
+      "station": "Telebandha Chowk",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "14-15",
+      "noise_db": 74.5
+    },
+    {
+      "station": "Telebandha Chowk",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "15-16",
+      "noise_db": 74.6
+    },
+    {
+      "station": "Telebandha Chowk",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "16-17",
+      "noise_db": 75.0
+    },
+    {
+      "station": "Telebandha Chowk",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "17-18",
+      "noise_db": 77.88
+    },
+    {
+      "station": "Telebandha Chowk",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "18-19",
+      "noise_db": 75.9
+    },
+    {
+      "station": "Telebandha Chowk",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "19-20",
+      "noise_db": 74.5
+    },
+    {
+      "station": "Telebandha Chowk",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "20-21",
+      "noise_db": 73.89
+    },
+    {
+      "station": "Telebandha Chowk",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "07-08",
+      "noise_db": 61.6
+    },
+    {
+      "station": "Telebandha Chowk",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "08-09",
+      "noise_db": 69.53
+    },
+    {
+      "station": "Telebandha Chowk",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "09-10",
+      "noise_db": 73.67
+    },
+    {
+      "station": "Telebandha Chowk",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "10-11",
+      "noise_db": 64.32
+    },
+    {
+      "station": "Telebandha Chowk",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "11-12",
+      "noise_db": 73.42
+    },
+    {
+      "station": "Telebandha Chowk",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "12-13",
+      "noise_db": 72.16
+    },
+    {
+      "station": "Telebandha Chowk",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "13-14",
+      "noise_db": 72.89
+    },
+    {
+      "station": "Telebandha Chowk",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "14-15",
+      "noise_db": 69.23
+    },
+    {
+      "station": "Telebandha Chowk",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "15-16",
+      "noise_db": 68.12
+    },
+    {
+      "station": "Telebandha Chowk",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "16-17",
+      "noise_db": 73.17
+    },
+    {
+      "station": "Telebandha Chowk",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "17-18",
+      "noise_db": 76.65
+    },
+    {
+      "station": "Telebandha Chowk",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "18-19",
+      "noise_db": 76.0
+    },
+    {
+      "station": "Telebandha Chowk",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "19-20",
+      "noise_db": 74.3
+    },
+    {
+      "station": "Telebandha Chowk",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "20-21",
+      "noise_db": 73.9
+    },
+    {
+      "station": "Jaistambh Chowk",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "07-08",
+      "noise_db": 72.94
+    },
+    {
+      "station": "Jaistambh Chowk",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "08-09",
+      "noise_db": 73.07
+    },
+    {
+      "station": "Jaistambh Chowk",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "09-10",
+      "noise_db": 73.5
+    },
+    {
+      "station": "Jaistambh Chowk",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "10-11",
+      "noise_db": 75.12
+    },
+    {
+      "station": "Jaistambh Chowk",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "11-12",
+      "noise_db": 76.74
+    },
+    {
+      "station": "Jaistambh Chowk",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "12-13",
+      "noise_db": 74.92
+    },
+    {
+      "station": "Jaistambh Chowk",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "13-14",
+      "noise_db": 75.01
+    },
+    {
+      "station": "Jaistambh Chowk",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "14-15",
+      "noise_db": 75.29
+    },
+    {
+      "station": "Jaistambh Chowk",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "15-16",
+      "noise_db": 72.71
+    },
+    {
+      "station": "Jaistambh Chowk",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "16-17",
+      "noise_db": 73.88
+    },
+    {
+      "station": "Jaistambh Chowk",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "17-18",
+      "noise_db": 73.69
+    },
+    {
+      "station": "Jaistambh Chowk",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "18-19",
+      "noise_db": 73.64
+    },
+    {
+      "station": "Jaistambh Chowk",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "19-20",
+      "noise_db": 74.32
+    },
+    {
+      "station": "Jaistambh Chowk",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "20-21",
+      "noise_db": 72.56
+    },
+    {
+      "station": "Jaistambh Chowk",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "07-08",
+      "noise_db": 71.1
+    },
+    {
+      "station": "Jaistambh Chowk",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "08-09",
+      "noise_db": 71.65
+    },
+    {
+      "station": "Jaistambh Chowk",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "09-10",
+      "noise_db": 72.07
+    },
+    {
+      "station": "Jaistambh Chowk",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "10-11",
+      "noise_db": 75.88
+    },
+    {
+      "station": "Jaistambh Chowk",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "11-12",
+      "noise_db": 76.35
+    },
+    {
+      "station": "Jaistambh Chowk",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "12-13",
+      "noise_db": 78.25
+    },
+    {
+      "station": "Jaistambh Chowk",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "13-14",
+      "noise_db": 68.17
+    },
+    {
+      "station": "Jaistambh Chowk",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "14-15",
+      "noise_db": 73.97
+    },
+    {
+      "station": "Jaistambh Chowk",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "15-16",
+      "noise_db": 74.03
+    },
+    {
+      "station": "Jaistambh Chowk",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "16-17",
+      "noise_db": 74.86
+    },
+    {
+      "station": "Jaistambh Chowk",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "17-18",
+      "noise_db": 75.01
+    },
+    {
+      "station": "Jaistambh Chowk",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "18-19",
+      "noise_db": 74.97
+    },
+    {
+      "station": "Jaistambh Chowk",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "19-20",
+      "noise_db": 73.89
+    },
+    {
+      "station": "Jaistambh Chowk",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "20-21",
+      "noise_db": 72.98
+    },
+    {
+      "station": "Gole Bazar",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "07-08",
+      "noise_db": 52.96
+    },
+    {
+      "station": "Gole Bazar",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "08-09",
+      "noise_db": 58.28
+    },
+    {
+      "station": "Gole Bazar",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "09-10",
+      "noise_db": 67.91
+    },
+    {
+      "station": "Gole Bazar",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "10-11",
+      "noise_db": 67.36
+    },
+    {
+      "station": "Gole Bazar",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "11-12",
+      "noise_db": 67.94
+    },
+    {
+      "station": "Gole Bazar",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "12-13",
+      "noise_db": 72.53
+    },
+    {
+      "station": "Gole Bazar",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "13-14",
+      "noise_db": 63.01
+    },
+    {
+      "station": "Gole Bazar",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "14-15",
+      "noise_db": 69.15
+    },
+    {
+      "station": "Gole Bazar",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "15-16",
+      "noise_db": 69.77
+    },
+    {
+      "station": "Gole Bazar",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "16-17",
+      "noise_db": 69.33
+    },
+    {
+      "station": "Gole Bazar",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "17-18",
+      "noise_db": 73.72
+    },
+    {
+      "station": "Gole Bazar",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "18-19",
+      "noise_db": 74.36
+    },
+    {
+      "station": "Gole Bazar",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "19-20",
+      "noise_db": 73.89
+    },
+    {
+      "station": "Gole Bazar",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "20-21",
+      "noise_db": 73.6
+    },
+    {
+      "station": "Gole Bazar",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "07-08",
+      "noise_db": 53.89
+    },
+    {
+      "station": "Gole Bazar",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "08-09",
+      "noise_db": 60.76
+    },
+    {
+      "station": "Gole Bazar",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "09-10",
+      "noise_db": 69.5
+    },
+    {
+      "station": "Gole Bazar",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "10-11",
+      "noise_db": 68.23
+    },
+    {
+      "station": "Gole Bazar",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "11-12",
+      "noise_db": 70.56
+    },
+    {
+      "station": "Gole Bazar",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "12-13",
+      "noise_db": 63.09
+    },
+    {
+      "station": "Gole Bazar",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "13-14",
+      "noise_db": 71.34
+    },
+    {
+      "station": "Gole Bazar",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "14-15",
+      "noise_db": 71.0
+    },
+    {
+      "station": "Gole Bazar",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "15-16",
+      "noise_db": 71.18
+    },
+    {
+      "station": "Gole Bazar",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "16-17",
+      "noise_db": 74.63
+    },
+    {
+      "station": "Gole Bazar",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "17-18",
+      "noise_db": 74.65
+    },
+    {
+      "station": "Gole Bazar",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "18-19",
+      "noise_db": 74.0
+    },
+    {
+      "station": "Gole Bazar",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "19-20",
+      "noise_db": 73.8
+    },
+    {
+      "station": "Gole Bazar",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "20-21",
+      "noise_db": 73.23
+    },
+    {
+      "station": "Pandri Market",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "07-08",
+      "noise_db": 57.88
+    },
+    {
+      "station": "Pandri Market",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "08-09",
+      "noise_db": 63.1
+    },
+    {
+      "station": "Pandri Market",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "09-10",
+      "noise_db": 66.26
+    },
+    {
+      "station": "Pandri Market",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "10-11",
+      "noise_db": 65.0
+    },
+    {
+      "station": "Pandri Market",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "11-12",
+      "noise_db": 68.49
+    },
+    {
+      "station": "Pandri Market",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "12-13",
+      "noise_db": 71.25
+    },
+    {
+      "station": "Pandri Market",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "13-14",
+      "noise_db": 68.16
+    },
+    {
+      "station": "Pandri Market",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "14-15",
+      "noise_db": 68.35
+    },
+    {
+      "station": "Pandri Market",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "15-16",
+      "noise_db": 70.72
+    },
+    {
+      "station": "Pandri Market",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "16-17",
+      "noise_db": 71.32
+    },
+    {
+      "station": "Pandri Market",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "17-18",
+      "noise_db": 73.84
+    },
+    {
+      "station": "Pandri Market",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "18-19",
+      "noise_db": 75.29
+    },
+    {
+      "station": "Pandri Market",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "19-20",
+      "noise_db": 74.33
+    },
+    {
+      "station": "Pandri Market",
+      "zone": "Commercial",
+      "day_type": "Working",
+      "time": "20-21",
+      "noise_db": 74.29
+    },
+    {
+      "station": "Pandri Market",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "07-08",
+      "noise_db": 53.67
+    },
+    {
+      "station": "Pandri Market",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "08-09",
+      "noise_db": 60.43
+    },
+    {
+      "station": "Pandri Market",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "09-10",
+      "noise_db": 63.23
+    },
+    {
+      "station": "Pandri Market",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "10-11",
+      "noise_db": 65.89
+    },
+    {
+      "station": "Pandri Market",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "11-12",
+      "noise_db": 66.34
+    },
+    {
+      "station": "Pandri Market",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "12-13",
+      "noise_db": 68.9
+    },
+    {
+      "station": "Pandri Market",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "13-14",
+      "noise_db": 66.21
+    },
+    {
+      "station": "Pandri Market",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "14-15",
+      "noise_db": 65.39
+    },
+    {
+      "station": "Pandri Market",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "15-16",
+      "noise_db": 68.46
+    },
+    {
+      "station": "Pandri Market",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "16-17",
+      "noise_db": 69.33
+    },
+    {
+      "station": "Pandri Market",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "17-18",
+      "noise_db": 70.69
+    },
+    {
+      "station": "Pandri Market",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "18-19",
+      "noise_db": 69.9
+    },
+    {
+      "station": "Pandri Market",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "19-20",
+      "noise_db": 68.48
+    },
+    {
+      "station": "Pandri Market",
+      "zone": "Commercial",
+      "day_type": "NonWorking",
+      "time": "20-21",
+      "noise_db": 67.25
+    },
+    {
+      "station": "Kalibadi School",
+      "zone": "Silent",
+      "day_type": "Working",
+      "time": "07-08",
+      "noise_db": 52.34
+    },
+    {
+      "station": "Kalibadi School",
+      "zone": "Silent",
+      "day_type": "Working",
+      "time": "08-09",
+      "noise_db": 58.14
+    },
+    {
+      "station": "Kalibadi School",
+      "zone": "Silent",
+      "day_type": "Working",
+      "time": "09-10",
+      "noise_db": 58.7
+    },
+    {
+      "station": "Kalibadi School",
+      "zone": "Silent",
+      "day_type": "Working",
+      "time": "10-11",
+      "noise_db": 60.8
+    },
+    {
+      "station": "Kalibadi School",
+      "zone": "Silent",
+      "day_type": "Working",
+      "time": "11-12",
+      "noise_db": 59.44
+    },
+    {
+      "station": "Kalibadi School",
+      "zone": "Silent",
+      "day_type": "Working",
+      "time": "12-13",
+      "noise_db": 61.9
+    },
+    {
+      "station": "Kalibadi School",
+      "zone": "Silent",
+      "day_type": "Working",
+      "time": "13-14",
+      "noise_db": 61.0
+    },
+    {
+      "station": "Kalibadi School",
+      "zone": "Silent",
+      "day_type": "Working",
+      "time": "14-15",
+      "noise_db": 63.32
+    },
+    {
+      "station": "Kalibadi School",
+      "zone": "Silent",
+      "day_type": "Working",
+      "time": "15-16",
+      "noise_db": 63.25
+    },
+    {
+      "station": "Kalibadi School",
+      "zone": "Silent",
+      "day_type": "Working",
+      "time": "16-17",
+      "noise_db": 62.74
+    },
+    {
+      "station": "Kalibadi School",
+      "zone": "Silent",
+      "day_type": "Working",
+      "time": "17-18",
+      "noise_db": 60.85
+    },
+    {
+      "station": "Kalibadi School",
+      "zone": "Silent",
+      "day_type": "Working",
+      "time": "18-19",
+      "noise_db": 59.09
+    },
+    {
+      "station": "Kalibadi School",
+      "zone": "Silent",
+      "day_type": "Working",
+      "time": "19-20",
+      "noise_db": 59.8
+    },
+    {
+      "station": "Kalibadi School",
+      "zone": "Silent",
+      "day_type": "Working",
+      "time": "20-21",
+      "noise_db": 56.39
+    },
+    {
+      "station": "Kalibadi School",
+      "zone": "Silent",
+      "day_type": "NonWorking",
+      "time": "07-08",
+      "noise_db": 49.37
+    },
+    {
+      "station": "Kalibadi School",
+      "zone": "Silent",
+      "day_type": "NonWorking",
+      "time": "08-09",
+      "noise_db": 53.04
+    },
+    {
+      "station": "Kalibadi School",
+      "zone": "Silent",
+      "day_type": "NonWorking",
+      "time": "09-10",
+      "noise_db": 55.47
+    },
+    {
+      "station": "Kalibadi School",
+      "zone": "Silent",
+      "day_type": "NonWorking",
+      "time": "10-11",
+      "noise_db": 57.29
+    },
+    {
+      "station": "Kalibadi School",
+      "zone": "Silent",
+      "day_type": "NonWorking",
+      "time": "11-12",
+      "noise_db": 57.19
+    },
+    {
+      "station": "Kalibadi School",
+      "zone": "Silent",
+      "day_type": "NonWorking",
+      "time": "12-13",
+      "noise_db": 58.35
+    },
+    {
+      "station": "Kalibadi School",
+      "zone": "Silent",
+      "day_type": "NonWorking",
+      "time": "13-14",
+      "noise_db": 59.16
+    },
+    {
+      "station": "Kalibadi School",
+      "zone": "Silent",
+      "day_type": "NonWorking",
+      "time": "14-15",
+      "noise_db": 60.72
+    },
+    {
+      "station": "Kalibadi School",
+      "zone": "Silent",
+      "day_type": "NonWorking",
+      "time": "15-16",
+      "noise_db": 59.69
+    },
+    {
+      "station": "Kalibadi School",
+      "zone": "Silent",
+      "day_type": "NonWorking",
+      "time": "16-17",
+      "noise_db": 58.95
+    },
+    {
+      "station": "Kalibadi School",
+      "zone": "Silent",
+      "day_type": "NonWorking",
+      "time": "17-18",
+      "noise_db": 56.52
+    },
+    {
+      "station": "Kalibadi School",
+      "zone": "Silent",
+      "day_type": "NonWorking",
+      "time": "18-19",
+      "noise_db": 57.29
+    },
+    {
+      "station": "Kalibadi School",
+      "zone": "Silent",
+      "day_type": "NonWorking",
+      "time": "19-20",
+      "noise_db": 56.89
+    },
+    {
+      "station": "Kalibadi School",
+      "zone": "Silent",
+      "day_type": "NonWorking",
+      "time": "20-21",
+      "noise_db": 52.19
+    },
+    {
+      "station": "District Court",
+      "zone": "Silent",
+      "day_type": "Working",
+      "time": "07-08",
+      "noise_db": 54.53
+    },
+    {
+      "station": "District Court",
+      "zone": "Silent",
+      "day_type": "Working",
+      "time": "08-09",
+      "noise_db": 58.93
+    },
+    {
+      "station": "District Court",
+      "zone": "Silent",
+      "day_type": "Working",
+      "time": "09-10",
+      "noise_db": 57.58
+    },
+    {
+      "station": "District Court",
+      "zone": "Silent",
+      "day_type": "Working",
+      "time": "10-11",
+      "noise_db": 64.14
+    },
+    {
+      "station": "District Court",
+      "zone": "Silent",
+      "day_type": "Working",
+      "time": "11-12",
+      "noise_db": 64.1
+    },
+    {
+      "station": "District Court",
+      "zone": "Silent",
+      "day_type": "Working",
+      "time": "12-13",
+      "noise_db": 65.51
+    },
+    {
+      "station": "District Court",
+      "zone": "Silent",
+      "day_type": "Working",
+      "time": "13-14",
+      "noise_db": 62.73
+    },
+    {
+      "station": "District Court",
+      "zone": "Silent",
+      "day_type": "Working",
+      "time": "14-15",
+      "noise_db": 64.33
+    },
+    {
+      "station": "District Court",
+      "zone": "Silent",
+      "day_type": "Working",
+      "time": "15-16",
+      "noise_db": 64.95
+    },
+    {
+      "station": "District Court",
+      "zone": "Silent",
+      "day_type": "Working",
+      "time": "16-17",
+      "noise_db": 64.35
+    },
+    {
+      "station": "District Court",
+      "zone": "Silent",
+      "day_type": "Working",
+      "time": "17-18",
+      "noise_db": 65.82
+    },
+    {
+      "station": "District Court",
+      "zone": "Silent",
+      "day_type": "Working",
+      "time": "18-19",
+      "noise_db": 61.22
+    },
+    {
+      "station": "District Court",
+      "zone": "Silent",
+      "day_type": "Working",
+      "time": "19-20",
+      "noise_db": 59.4
+    },
+    {
+      "station": "District Court",
+      "zone": "Silent",
+      "day_type": "Working",
+      "time": "20-21",
+      "noise_db": 58.59
+    },
+    {
+      "station": "District Court",
+      "zone": "Silent",
+      "day_type": "NonWorking",
+      "time": "07-08",
+      "noise_db": 52.3
+    },
+    {
+      "station": "District Court",
+      "zone": "Silent",
+      "day_type": "NonWorking",
+      "time": "08-09",
+      "noise_db": 54.23
+    },
+    {
+      "station": "District Court",
+      "zone": "Silent",
+      "day_type": "NonWorking",
+      "time": "09-10",
+      "noise_db": 55.67
+    },
+    {
+      "station": "District Court",
+      "zone": "Silent",
+      "day_type": "NonWorking",
+      "time": "10-11",
+      "noise_db": 59.17
+    },
+    {
+      "station": "District Court",
+      "zone": "Silent",
+      "day_type": "NonWorking",
+      "time": "11-12",
+      "noise_db": 61.79
+    },
+    {
+      "station": "District Court",
+      "zone": "Silent",
+      "day_type": "NonWorking",
+      "time": "12-13",
+      "noise_db": 63.2
+    },
+    {
+      "station": "District Court",
+      "zone": "Silent",
+      "day_type": "NonWorking",
+      "time": "13-14",
+      "noise_db": 59.2
+    },
+    {
+      "station": "District Court",
+      "zone": "Silent",
+      "day_type": "NonWorking",
+      "time": "14-15",
+      "noise_db": 59.6
+    },
+    {
+      "station": "District Court",
+      "zone": "Silent",
+      "day_type": "NonWorking",
+      "time": "15-16",
+      "noise_db": 63.93
+    },
+    {
+      "station": "District Court",
+      "zone": "Silent",
+      "day_type": "NonWorking",
+      "time": "16-17",
+      "noise_db": 63.72
+    },
+    {
+      "station": "District Court",
+      "zone": "Silent",
+      "day_type": "NonWorking",
+      "time": "17-18",
+      "noise_db": 64.21
+    },
+    {
+      "station": "District Court",
+      "zone": "Silent",
+      "day_type": "NonWorking",
+      "time": "18-19",
+      "noise_db": 62.59
+    },
+    {
+      "station": "District Court",
+      "zone": "Silent",
+      "day_type": "NonWorking",
+      "time": "19-20",
+      "noise_db": 58.3
+    },
+    {
+      "station": "District Court",
+      "zone": "Silent",
+      "day_type": "NonWorking",
+      "time": "20-21",
+      "noise_db": 57.85
+    },
+    {
+      "station": "B.R. Ambedkar Hospital",
+      "zone": "Silent",
+      "day_type": "Working",
+      "time": "07-08",
+      "noise_db": 56.2
+    },
+    {
+      "station": "B.R. Ambedkar Hospital",
+      "zone": "Silent",
+      "day_type": "Working",
+      "time": "08-09",
+      "noise_db": 63.31
+    },
+    {
+      "station": "B.R. Ambedkar Hospital",
+      "zone": "Silent",
+      "day_type": "Working",
+      "time": "09-10",
+      "noise_db": 63.76
+    },
+    {
+      "station": "B.R. Ambedkar Hospital",
+      "zone": "Silent",
+      "day_type": "Working",
+      "time": "10-11",
+      "noise_db": 68.33
+    },
+    {
+      "station": "B.R. Ambedkar Hospital",
+      "zone": "Silent",
+      "day_type": "Working",
+      "time": "11-12",
+      "noise_db": 63.47
+    },
+    {
+      "station": "B.R. Ambedkar Hospital",
+      "zone": "Silent",
+      "day_type": "Working",
+      "time": "12-13",
+      "noise_db": 65.97
+    },
+    {
+      "station": "B.R. Ambedkar Hospital",
+      "zone": "Silent",
+      "day_type": "Working",
+      "time": "13-14",
+      "noise_db": 59.43
+    },
+    {
+      "station": "B.R. Ambedkar Hospital",
+      "zone": "Silent",
+      "day_type": "Working",
+      "time": "14-15",
+      "noise_db": 64.66
+    },
+    {
+      "station": "B.R. Ambedkar Hospital",
+      "zone": "Silent",
+      "day_type": "Working",
+      "time": "15-16",
+      "noise_db": 65.32
+    },
+    {
+      "station": "B.R. Ambedkar Hospital",
+      "zone": "Silent",
+      "day_type": "Working",
+      "time": "16-17",
+      "noise_db": 61.9
+    },
+    {
+      "station": "B.R. Ambedkar Hospital",
+      "zone": "Silent",
+      "day_type": "Working",
+      "time": "17-18",
+      "noise_db": 60.33
+    },
+    {
+      "station": "B.R. Ambedkar Hospital",
+      "zone": "Silent",
+      "day_type": "Working",
+      "time": "18-19",
+      "noise_db": 61.63
+    },
+    {
+      "station": "B.R. Ambedkar Hospital",
+      "zone": "Silent",
+      "day_type": "Working",
+      "time": "19-20",
+      "noise_db": 62.53
+    },
+    {
+      "station": "B.R. Ambedkar Hospital",
+      "zone": "Silent",
+      "day_type": "Working",
+      "time": "20-21",
+      "noise_db": 60.32
+    },
+    {
+      "station": "B.R. Ambedkar Hospital",
+      "zone": "Silent",
+      "day_type": "NonWorking",
+      "time": "07-08",
+      "noise_db": 52.57
+    },
+    {
+      "station": "B.R. Ambedkar Hospital",
+      "zone": "Silent",
+      "day_type": "NonWorking",
+      "time": "08-09",
+      "noise_db": 59.48
+    },
+    {
+      "station": "B.R. Ambedkar Hospital",
+      "zone": "Silent",
+      "day_type": "NonWorking",
+      "time": "09-10",
+      "noise_db": 60.32
+    },
+    {
+      "station": "B.R. Ambedkar Hospital",
+      "zone": "Silent",
+      "day_type": "NonWorking",
+      "time": "10-11",
+      "noise_db": 64.39
+    },
+    {
+      "station": "B.R. Ambedkar Hospital",
+      "zone": "Silent",
+      "day_type": "NonWorking",
+      "time": "11-12",
+      "noise_db": 62.76
+    },
+    {
+      "station": "B.R. Ambedkar Hospital",
+      "zone": "Silent",
+      "day_type": "NonWorking",
+      "time": "12-13",
+      "noise_db": 62.9
+    },
+    {
+      "station": "B.R. Ambedkar Hospital",
+      "zone": "Silent",
+      "day_type": "NonWorking",
+      "time": "13-14",
+      "noise_db": 56.17
+    },
+    {
+      "station": "B.R. Ambedkar Hospital",
+      "zone": "Silent",
+      "day_type": "NonWorking",
+      "time": "14-15",
+      "noise_db": 62.79
+    },
+    {
+      "station": "B.R. Ambedkar Hospital",
+      "zone": "Silent",
+      "day_type": "NonWorking",
+      "time": "15-16",
+      "noise_db": 61.27
+    },
+    {
+      "station": "B.R. Ambedkar Hospital",
+      "zone": "Silent",
+      "day_type": "NonWorking",
+      "time": "16-17",
+      "noise_db": 57.89
+    },
+    {
+      "station": "B.R. Ambedkar Hospital",
+      "zone": "Silent",
+      "day_type": "NonWorking",
+      "time": "17-18",
+      "noise_db": 59.23
+    },
+    {
+      "station": "B.R. Ambedkar Hospital",
+      "zone": "Silent",
+      "day_type": "NonWorking",
+      "time": "18-19",
+      "noise_db": 61.96
+    },
+    {
+      "station": "B.R. Ambedkar Hospital",
+      "zone": "Silent",
+      "day_type": "NonWorking",
+      "time": "19-20",
+      "noise_db": 61.27
+    },
+    {
+      "station": "B.R. Ambedkar Hospital",
+      "zone": "Silent",
+      "day_type": "NonWorking",
+      "time": "20-21",
+      "noise_db": 56.36
+    },
+    {
+      "station": "Siltara Industrial Area",
+      "zone": "Industrial",
+      "day_type": "Working",
+      "time": "07-08",
+      "noise_db": 70.53
+    },
+    {
+      "station": "Siltara Industrial Area",
+      "zone": "Industrial",
+      "day_type": "Working",
+      "time": "08-09",
+      "noise_db": 71.3
+    },
+    {
+      "station": "Siltara Industrial Area",
+      "zone": "Industrial",
+      "day_type": "Working",
+      "time": "09-10",
+      "noise_db": 74.78
+    },
+    {
+      "station": "Siltara Industrial Area",
+      "zone": "Industrial",
+      "day_type": "Working",
+      "time": "10-11",
+      "noise_db": 77.97
+    },
+    {
+      "station": "Siltara Industrial Area",
+      "zone": "Industrial",
+      "day_type": "Working",
+      "time": "11-12",
+      "noise_db": 76.34
+    },
+    {
+      "station": "Siltara Industrial Area",
+      "zone": "Industrial",
+      "day_type": "Working",
+      "time": "12-13",
+      "noise_db": 73.34
+    },
+    {
+      "station": "Siltara Industrial Area",
+      "zone": "Industrial",
+      "day_type": "Working",
+      "time": "13-14",
+      "noise_db": 75.0
+    },
+    {
+      "station": "Siltara Industrial Area",
+      "zone": "Industrial",
+      "day_type": "Working",
+      "time": "14-15",
+      "noise_db": 74.25
+    },
+    {
+      "station": "Siltara Industrial Area",
+      "zone": "Industrial",
+      "day_type": "Working",
+      "time": "15-16",
+      "noise_db": 77.29
+    },
+    {
+      "station": "Siltara Industrial Area",
+      "zone": "Industrial",
+      "day_type": "Working",
+      "time": "16-17",
+      "noise_db": 74.67
+    },
+    {
+      "station": "Siltara Industrial Area",
+      "zone": "Industrial",
+      "day_type": "Working",
+      "time": "17-18",
+      "noise_db": 76.97
+    },
+    {
+      "station": "Siltara Industrial Area",
+      "zone": "Industrial",
+      "day_type": "Working",
+      "time": "18-19",
+      "noise_db": 77.18
+    },
+    {
+      "station": "Siltara Industrial Area",
+      "zone": "Industrial",
+      "day_type": "Working",
+      "time": "19-20",
+      "noise_db": 75.89
+    },
+    {
+      "station": "Siltara Industrial Area",
+      "zone": "Industrial",
+      "day_type": "Working",
+      "time": "20-21",
+      "noise_db": 73.91
+    },
+    {
+      "station": "Siltara Industrial Area",
+      "zone": "Industrial",
+      "day_type": "NonWorking",
+      "time": "07-08",
+      "noise_db": 69.93
+    },
+    {
+      "station": "Siltara Industrial Area",
+      "zone": "Industrial",
+      "day_type": "NonWorking",
+      "time": "08-09",
+      "noise_db": 70.89
+    },
+    {
+      "station": "Siltara Industrial Area",
+      "zone": "Industrial",
+      "day_type": "NonWorking",
+      "time": "09-10",
+      "noise_db": 73.54
+    },
+    {
+      "station": "Siltara Industrial Area",
+      "zone": "Industrial",
+      "day_type": "NonWorking",
+      "time": "10-11",
+      "noise_db": 76.93
+    },
+    {
+      "station": "Siltara Industrial Area",
+      "zone": "Industrial",
+      "day_type": "NonWorking",
+      "time": "11-12",
+      "noise_db": 78.19
+    },
+    {
+      "station": "Siltara Industrial Area",
+      "zone": "Industrial",
+      "day_type": "NonWorking",
+      "time": "12-13",
+      "noise_db": 74.95
+    },
+    {
+      "station": "Siltara Industrial Area",
+      "zone": "Industrial",
+      "day_type": "NonWorking",
+      "time": "13-14",
+      "noise_db": 76.67
+    },
+    {
+      "station": "Siltara Industrial Area",
+      "zone": "Industrial",
+      "day_type": "NonWorking",
+      "time": "14-15",
+      "noise_db": 75.66
+    },
+    {
+      "station": "Siltara Industrial Area",
+      "zone": "Industrial",
+      "day_type": "NonWorking",
+      "time": "15-16",
+      "noise_db": 78.56
+    },
+    {
+      "station": "Siltara Industrial Area",
+      "zone": "Industrial",
+      "day_type": "NonWorking",
+      "time": "16-17",
+      "noise_db": 75.0
+    },
+    {
+      "station": "Siltara Industrial Area",
+      "zone": "Industrial",
+      "day_type": "NonWorking",
+      "time": "17-18",
+      "noise_db": 77.88
+    },
+    {
+      "station": "Siltara Industrial Area",
+      "zone": "Industrial",
+      "day_type": "NonWorking",
+      "time": "18-19",
+      "noise_db": 76.89
+    },
+    {
+      "station": "Siltara Industrial Area",
+      "zone": "Industrial",
+      "day_type": "NonWorking",
+      "time": "19-20",
+      "noise_db": 74.3
+    },
+    {
+      "station": "Siltara Industrial Area",
+      "zone": "Industrial",
+      "day_type": "NonWorking",
+      "time": "20-21",
+      "noise_db": 73.89
+    },
+    {
+      "station": "Avanti Vihar",
+      "zone": "Residential",
+      "day_type": "Working",
+      "time": "07-08",
+      "noise_db": 49.88
+    },
+    {
+      "station": "Avanti Vihar",
+      "zone": "Residential",
+      "day_type": "Working",
+      "time": "08-09",
+      "noise_db": 51.45
+    },
+    {
+      "station": "Avanti Vihar",
+      "zone": "Residential",
+      "day_type": "Working",
+      "time": "09-10",
+      "noise_db": 55.67
+    },
+    {
+      "station": "Avanti Vihar",
+      "zone": "Residential",
+      "day_type": "Working",
+      "time": "10-11",
+      "noise_db": 57.56
+    },
+    {
+      "station": "Avanti Vihar",
+      "zone": "Residential",
+      "day_type": "Working",
+      "time": "11-12",
+      "noise_db": 57.23
+    },
+    {
+      "station": "Avanti Vihar",
+      "zone": "Residential",
+      "day_type": "Working",
+      "time": "12-13",
+      "noise_db": 54.64
+    },
+    {
+      "station": "Avanti Vihar",
+      "zone": "Residential",
+      "day_type": "Working",
+      "time": "13-14",
+      "noise_db": 54.97
+    },
+    {
+      "station": "Avanti Vihar",
+      "zone": "Residential",
+      "day_type": "Working",
+      "time": "14-15",
+      "noise_db": 55.47
+    },
+    {
+      "station": "Avanti Vihar",
+      "zone": "Residential",
+      "day_type": "Working",
+      "time": "15-16",
+      "noise_db": 57.21
+    },
+    {
+      "station": "Avanti Vihar",
+      "zone": "Residential",
+      "day_type": "Working",
+      "time": "16-17",
+      "noise_db": 58.32
+    },
+    {
+      "station": "Avanti Vihar",
+      "zone": "Residential",
+      "day_type": "Working",
+      "time": "17-18",
+      "noise_db": 59.25
+    },
+    {
+      "station": "Avanti Vihar",
+      "zone": "Residential",
+      "day_type": "Working",
+      "time": "18-19",
+      "noise_db": 58.38
+    },
+    {
+      "station": "Avanti Vihar",
+      "zone": "Residential",
+      "day_type": "Working",
+      "time": "19-20",
+      "noise_db": 56.48
+    },
+    {
+      "station": "Avanti Vihar",
+      "zone": "Residential",
+      "day_type": "Working",
+      "time": "20-21",
+      "noise_db": 55.69
+    },
+    {
+      "station": "Samta Colony",
+      "zone": "Residential",
+      "day_type": "Working",
+      "time": "07-08",
+      "noise_db": 48.58
+    },
+    {
+      "station": "Samta Colony",
+      "zone": "Residential",
+      "day_type": "Working",
+      "time": "08-09",
+      "noise_db": 52.84
+    },
+    {
+      "station": "Samta Colony",
+      "zone": "Residential",
+      "day_type": "Working",
+      "time": "09-10",
+      "noise_db": 56.67
+    },
+    {
+      "station": "Samta Colony",
+      "zone": "Residential",
+      "day_type": "Working",
+      "time": "10-11",
+      "noise_db": 57.52
+    },
+    {
+      "station": "Samta Colony",
+      "zone": "Residential",
+      "day_type": "Working",
+      "time": "11-12",
+      "noise_db": 56.4
+    },
+    {
+      "station": "Samta Colony",
+      "zone": "Residential",
+      "day_type": "Working",
+      "time": "12-13",
+      "noise_db": 55.93
+    },
+    {
+      "station": "Samta Colony",
+      "zone": "Residential",
+      "day_type": "Working",
+      "time": "13-14",
+      "noise_db": 54.28
+    },
+    {
+      "station": "Samta Colony",
+      "zone": "Residential",
+      "day_type": "Working",
+      "time": "14-15",
+      "noise_db": 52.83
+    },
+    {
+      "station": "Samta Colony",
+      "zone": "Residential",
+      "day_type": "Working",
+      "time": "15-16",
+      "noise_db": 57.72
+    },
+    {
+      "station": "Samta Colony",
+      "zone": "Residential",
+      "day_type": "Working",
+      "time": "16-17",
+      "noise_db": 58.26
+    },
+    {
+      "station": "Samta Colony",
+      "zone": "Residential",
+      "day_type": "Working",
+      "time": "17-18",
+      "noise_db": 60.46
+    },
+    {
+      "station": "Samta Colony",
+      "zone": "Residential",
+      "day_type": "Working",
+      "time": "18-19",
+      "noise_db": 57.42
+    },
+    {
+      "station": "Samta Colony",
+      "zone": "Residential",
+      "day_type": "Working",
+      "time": "19-20",
+      "noise_db": 56.52
+    },
+    {
+      "station": "Samta Colony",
+      "zone": "Residential",
+      "day_type": "Working",
+      "time": "20-21",
+      "noise_db": 53.68
+    },
+    {
+      "station": "Purani Basti",
+      "zone": "Residential",
+      "day_type": "Working",
+      "time": "07-08",
+      "noise_db": 49.58
+    },
+    {
+      "station": "Purani Basti",
+      "zone": "Residential",
+      "day_type": "Working",
+      "time": "08-09",
+      "noise_db": 54.24
+    },
+    {
+      "station": "Purani Basti",
+      "zone": "Residential",
+      "day_type": "Working",
+      "time": "09-10",
+      "noise_db": 57.46
+    },
+    {
+      "station": "Purani Basti",
+      "zone": "Residential",
+      "day_type": "Working",
+      "time": "10-11",
+      "noise_db": 57.5
+    },
+    {
+      "station": "Purani Basti",
+      "zone": "Residential",
+      "day_type": "Working",
+      "time": "11-12",
+      "noise_db": 56.24
+    },
+    {
+      "station": "Purani Basti",
+      "zone": "Residential",
+      "day_type": "Working",
+      "time": "12-13",
+      "noise_db": 54.72
+    },
+    {
+      "station": "Purani Basti",
+      "zone": "Residential",
+      "day_type": "Working",
+      "time": "13-14",
+      "noise_db": 51.69
+    },
+    {
+      "station": "Purani Basti",
+      "zone": "Residential",
+      "day_type": "Working",
+      "time": "14-15",
+      "noise_db": 54.68
+    },
+    {
+      "station": "Purani Basti",
+      "zone": "Residential",
+      "day_type": "Working",
+      "time": "15-16",
+      "noise_db": 58.14
+    },
+    {
+      "station": "Purani Basti",
+      "zone": "Residential",
+      "day_type": "Working",
+      "time": "16-17",
+      "noise_db": 58.9
+    },
+    {
+      "station": "Purani Basti",
+      "zone": "Residential",
+      "day_type": "Working",
+      "time": "17-18",
+      "noise_db": 61.34
+    },
+    {
+      "station": "Purani Basti",
+      "zone": "Residential",
+      "day_type": "Working",
+      "time": "18-19",
+      "noise_db": 60.36
+    },
+    {
+      "station": "Purani Basti",
+      "zone": "Residential",
+      "day_type": "Working",
+      "time": "19-20",
+      "noise_db": 59.63
+    },
+    {
+      "station": "Purani Basti",
+      "zone": "Residential",
+      "day_type": "Working",
+      "time": "20-21",
+      "noise_db": 57.85
+    }
+  ]
+}

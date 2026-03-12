@@ -1,0 +1,798 @@
+{
+  "metadata": {
+    "title": "Water Quality Status of NWMP Stations",
+    "city": "Jagdalpur",
+    "state": "Chhattisgarh",
+    "country": "India",
+    "monitoring_program": "National Water Monitoring Programme (NWMP)",
+    "monitoring_agency": "CECB (Chhattisgarh Environment Conservation Board)",
+    "parameters_monitored": {
+      "DO": {
+        "full_name": "Dissolved Oxygen",
+        "unit": "mg/l",
+        "desirable_criteria": ">4.0 mg/l"
+      },
+      "BOD": {
+        "full_name": "Biochemical Oxygen Demand",
+        "unit": "mg/l",
+        "desirable_criteria": "<3.0 mg/l"
+      },
+      "FC": {
+        "full_name": "Fecal Coliform",
+        "unit": "MPN/100 ml",
+        "desirable_criteria": "<2500 MPN/100 ml"
+      },
+      "TC": {
+        "full_name": "Total Coliform",
+        "unit": "MPN/100 ml",
+        "desirable_criteria": "<5000 MPN/100 ml"
+      }
+    },
+    "data_range": "January 2018 to July 2024",
+    "note": "No industries are mentioned in this document. The document contains only river water quality monitoring stations. Station 1855 was referred to as 'Indravati River at Bhopalpatnam' in earlier records (2018–2021) and later as 'Indrawati River Pandemurga' in records from 2022 onward. Coordinates are sourced from verified geographic databases and are approximate for the general monitoring reach; exact on-river sampling point coordinates are not provided in the source document."
+  },
+  "monitoring_stations": [
+    {
+      "station_code": "1854",
+      "station_name": "Indrawati River, Nelasnar",
+      "location_description": "After Confluence of Dantewada River, Dist-Bijapur",
+      "river": "Indrawati (Indravati) River",
+      "district": "Bijapur",
+      "state": "Chhattisgarh",
+      "latitude": 18.6423,
+      "longitude": 80.5871,
+      "coordinate_source": "Nelasnar village, Bhairamgarh Tehsil, Bijapur district (Census 2011 village code: 451311); coordinates represent the approximate location of Nelasnar village on the Indrawati River",
+      "coordinate_precision": "Approximate — village-level; exact river sampling point not specified in source document",
+      "monitoring_data": [
+        {
+          "month": "January",
+          "year": 2018,
+          "DO_mg_per_l": 7.3,
+          "BOD_mg_per_l": null,
+          "FC_MPN_per_100ml": null,
+          "TC_MPN_per_100ml": null,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "April",
+          "year": 2018,
+          "DO_mg_per_l": 6.9,
+          "BOD_mg_per_l": null,
+          "FC_MPN_per_100ml": null,
+          "TC_MPN_per_100ml": null,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "July",
+          "year": 2018,
+          "DO_mg_per_l": 7.7,
+          "BOD_mg_per_l": null,
+          "FC_MPN_per_100ml": null,
+          "TC_MPN_per_100ml": null,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "October",
+          "year": 2018,
+          "DO_mg_per_l": 7.5,
+          "BOD_mg_per_l": null,
+          "FC_MPN_per_100ml": null,
+          "TC_MPN_per_100ml": null,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "January",
+          "year": 2019,
+          "DO_mg_per_l": 7.5,
+          "BOD_mg_per_l": null,
+          "FC_MPN_per_100ml": null,
+          "TC_MPN_per_100ml": null,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "April",
+          "year": 2019,
+          "DO_mg_per_l": 7.2,
+          "BOD_mg_per_l": null,
+          "FC_MPN_per_100ml": null,
+          "TC_MPN_per_100ml": null,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "July",
+          "year": 2019,
+          "DO_mg_per_l": 7.6,
+          "BOD_mg_per_l": null,
+          "FC_MPN_per_100ml": null,
+          "TC_MPN_per_100ml": null,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "October",
+          "year": 2019,
+          "DO_mg_per_l": 7.5,
+          "BOD_mg_per_l": null,
+          "FC_MPN_per_100ml": null,
+          "TC_MPN_per_100ml": null,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "April",
+          "year": 2020,
+          "DO_mg_per_l": 7.6,
+          "BOD_mg_per_l": 1.5,
+          "FC_MPN_per_100ml": 1.8,
+          "TC_MPN_per_100ml": 6.8,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "July",
+          "year": 2020,
+          "DO_mg_per_l": 7.6,
+          "BOD_mg_per_l": 2.6,
+          "FC_MPN_per_100ml": 9.0,
+          "TC_MPN_per_100ml": 50.0,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "October",
+          "year": 2020,
+          "DO_mg_per_l": 7.6,
+          "BOD_mg_per_l": 2.8,
+          "FC_MPN_per_100ml": 12.0,
+          "TC_MPN_per_100ml": 79.0,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "January",
+          "year": 2021,
+          "DO_mg_per_l": 7.5,
+          "BOD_mg_per_l": 2.4,
+          "FC_MPN_per_100ml": 9.2,
+          "TC_MPN_per_100ml": 70.0,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "May",
+          "year": 2021,
+          "DO_mg_per_l": 7.6,
+          "BOD_mg_per_l": 2.1,
+          "FC_MPN_per_100ml": 6.0,
+          "TC_MPN_per_100ml": 26.0,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "July",
+          "year": 2021,
+          "DO_mg_per_l": 7.5,
+          "BOD_mg_per_l": 1.8,
+          "FC_MPN_per_100ml": 12.0,
+          "TC_MPN_per_100ml": 32.0,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "October",
+          "year": 2021,
+          "DO_mg_per_l": 7.4,
+          "BOD_mg_per_l": 2.0,
+          "FC_MPN_per_100ml": 2.0,
+          "TC_MPN_per_100ml": 11.0,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "January",
+          "year": 2022,
+          "DO_mg_per_l": 7.5,
+          "BOD_mg_per_l": 2.3,
+          "FC_MPN_per_100ml": 13.0,
+          "TC_MPN_per_100ml": 30.0,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "April",
+          "year": 2022,
+          "DO_mg_per_l": 7.4,
+          "BOD_mg_per_l": 2.0,
+          "FC_MPN_per_100ml": 17.0,
+          "TC_MPN_per_100ml": 40.0,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "July",
+          "year": 2022,
+          "DO_mg_per_l": 7.5,
+          "BOD_mg_per_l": 2.4,
+          "FC_MPN_per_100ml": 7.0,
+          "TC_MPN_per_100ml": 21.0,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "October",
+          "year": 2022,
+          "DO_mg_per_l": 7.7,
+          "BOD_mg_per_l": 2.0,
+          "FC_MPN_per_100ml": 7.0,
+          "TC_MPN_per_100ml": 23.0,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "January",
+          "year": 2023,
+          "DO_mg_per_l": 7.7,
+          "BOD_mg_per_l": 1.8,
+          "FC_MPN_per_100ml": 22.0,
+          "TC_MPN_per_100ml": null,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "April",
+          "year": 2023,
+          "DO_mg_per_l": 7.6,
+          "BOD_mg_per_l": 2.0,
+          "FC_MPN_per_100ml": 26.0,
+          "TC_MPN_per_100ml": null,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "July",
+          "year": 2023,
+          "DO_mg_per_l": 7.6,
+          "BOD_mg_per_l": 2.0,
+          "FC_MPN_per_100ml": 24.0,
+          "TC_MPN_per_100ml": null,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "October",
+          "year": 2023,
+          "DO_mg_per_l": 7.7,
+          "BOD_mg_per_l": 1.8,
+          "FC_MPN_per_100ml": 28.0,
+          "TC_MPN_per_100ml": null,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "January",
+          "year": 2024,
+          "DO_mg_per_l": 7.6,
+          "BOD_mg_per_l": 1.9,
+          "FC_MPN_per_100ml": 24.0,
+          "TC_MPN_per_100ml": null,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "April",
+          "year": 2024,
+          "DO_mg_per_l": 7.6,
+          "BOD_mg_per_l": 1.7,
+          "FC_MPN_per_100ml": 28.0,
+          "TC_MPN_per_100ml": null,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "July",
+          "year": 2024,
+          "DO_mg_per_l": 7.5,
+          "BOD_mg_per_l": 2.0,
+          "FC_MPN_per_100ml": 30.0,
+          "TC_MPN_per_100ml": null,
+          "water_quality_status": "SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "station_code": "1855",
+      "station_name": "Indrawati River Pandemurga (formerly: Indravati River at Bhopalpatnam)",
+      "location_description": "Before Confluence of Godavari River, Dist-Bijapur",
+      "river": "Indrawati (Indravati) River",
+      "district": "Bijapur",
+      "state": "Chhattisgarh",
+      "latitude": 18.8612,
+      "longitude": 80.3826,
+      "coordinate_source": "Bhopalpatnam, Bijapur district, Chhattisgarh — coordinates from verified geographic sources (Weather Underground, maptons.com). Station is located on Indrawati River near Bhopalpatnam/Pandemurga, before its confluence with the Godavari River.",
+      "coordinate_precision": "Approximate — town-level (Bhopalpatnam); exact river sampling point not specified in source document",
+      "monitoring_data": [
+        {
+          "month": "January",
+          "year": 2018,
+          "DO_mg_per_l": 7.4,
+          "BOD_mg_per_l": null,
+          "FC_MPN_per_100ml": null,
+          "TC_MPN_per_100ml": null,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "April",
+          "year": 2018,
+          "DO_mg_per_l": 7.2,
+          "BOD_mg_per_l": null,
+          "FC_MPN_per_100ml": null,
+          "TC_MPN_per_100ml": null,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "July",
+          "year": 2018,
+          "DO_mg_per_l": 7.7,
+          "BOD_mg_per_l": null,
+          "FC_MPN_per_100ml": null,
+          "TC_MPN_per_100ml": null,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "October",
+          "year": 2018,
+          "DO_mg_per_l": 7.4,
+          "BOD_mg_per_l": null,
+          "FC_MPN_per_100ml": null,
+          "TC_MPN_per_100ml": null,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "January",
+          "year": 2019,
+          "DO_mg_per_l": 7.7,
+          "BOD_mg_per_l": null,
+          "FC_MPN_per_100ml": null,
+          "TC_MPN_per_100ml": null,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "April",
+          "year": 2019,
+          "DO_mg_per_l": 7.4,
+          "BOD_mg_per_l": null,
+          "FC_MPN_per_100ml": null,
+          "TC_MPN_per_100ml": null,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "July",
+          "year": 2019,
+          "DO_mg_per_l": 7.7,
+          "BOD_mg_per_l": null,
+          "FC_MPN_per_100ml": null,
+          "TC_MPN_per_100ml": null,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "October",
+          "year": 2019,
+          "DO_mg_per_l": 7.6,
+          "BOD_mg_per_l": null,
+          "FC_MPN_per_100ml": null,
+          "TC_MPN_per_100ml": null,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "January",
+          "year": 2020,
+          "DO_mg_per_l": 7.4,
+          "BOD_mg_per_l": 2.2,
+          "FC_MPN_per_100ml": 17.0,
+          "TC_MPN_per_100ml": 94.0,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "April",
+          "year": 2020,
+          "DO_mg_per_l": 7.5,
+          "BOD_mg_per_l": 1.8,
+          "FC_MPN_per_100ml": 6.8,
+          "TC_MPN_per_100ml": 14.0,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "July",
+          "year": 2020,
+          "DO_mg_per_l": 7.5,
+          "BOD_mg_per_l": 2.4,
+          "FC_MPN_per_100ml": 7.0,
+          "TC_MPN_per_100ml": 40.0,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "October",
+          "year": 2020,
+          "DO_mg_per_l": 7.5,
+          "BOD_mg_per_l": 1.8,
+          "FC_MPN_per_100ml": 8.0,
+          "TC_MPN_per_100ml": 50.0,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "January",
+          "year": 2021,
+          "DO_mg_per_l": 7.6,
+          "BOD_mg_per_l": 2.0,
+          "FC_MPN_per_100ml": 6.0,
+          "TC_MPN_per_100ml": 43.0,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "May",
+          "year": 2021,
+          "DO_mg_per_l": 7.4,
+          "BOD_mg_per_l": 2.8,
+          "FC_MPN_per_100ml": 14.0,
+          "TC_MPN_per_100ml": 50.0,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "July",
+          "year": 2021,
+          "DO_mg_per_l": 7.6,
+          "BOD_mg_per_l": 2.0,
+          "FC_MPN_per_100ml": 13.0,
+          "TC_MPN_per_100ml": 43.0,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "October",
+          "year": 2021,
+          "DO_mg_per_l": 7.6,
+          "BOD_mg_per_l": 2.2,
+          "FC_MPN_per_100ml": 4.0,
+          "TC_MPN_per_100ml": 13.0,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "January",
+          "year": 2022,
+          "DO_mg_per_l": 7.6,
+          "BOD_mg_per_l": 2.4,
+          "FC_MPN_per_100ml": 11.0,
+          "TC_MPN_per_100ml": 26.0,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "April",
+          "year": 2022,
+          "DO_mg_per_l": 7.4,
+          "BOD_mg_per_l": 2.2,
+          "FC_MPN_per_100ml": 13.0,
+          "TC_MPN_per_100ml": 34.0,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "July",
+          "year": 2022,
+          "DO_mg_per_l": 7.4,
+          "BOD_mg_per_l": 2.6,
+          "FC_MPN_per_100ml": 9.0,
+          "TC_MPN_per_100ml": 34.0,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "October",
+          "year": 2022,
+          "DO_mg_per_l": 7.5,
+          "BOD_mg_per_l": 2.2,
+          "FC_MPN_per_100ml": 9.0,
+          "TC_MPN_per_100ml": 33.0,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "January",
+          "year": 2023,
+          "DO_mg_per_l": 7.6,
+          "BOD_mg_per_l": 2.0,
+          "FC_MPN_per_100ml": 28.0,
+          "TC_MPN_per_100ml": null,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "April",
+          "year": 2023,
+          "DO_mg_per_l": 7.5,
+          "BOD_mg_per_l": 2.3,
+          "FC_MPN_per_100ml": 34.0,
+          "TC_MPN_per_100ml": null,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "July",
+          "year": 2023,
+          "DO_mg_per_l": 7.6,
+          "BOD_mg_per_l": 2.0,
+          "FC_MPN_per_100ml": 30.0,
+          "TC_MPN_per_100ml": null,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "October",
+          "year": 2023,
+          "DO_mg_per_l": 7.6,
+          "BOD_mg_per_l": 2.0,
+          "FC_MPN_per_100ml": 32.0,
+          "TC_MPN_per_100ml": null,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "January",
+          "year": 2024,
+          "DO_mg_per_l": 7.7,
+          "BOD_mg_per_l": 1.7,
+          "FC_MPN_per_100ml": 22.0,
+          "TC_MPN_per_100ml": null,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "April",
+          "year": 2024,
+          "DO_mg_per_l": 7.7,
+          "BOD_mg_per_l": 1.6,
+          "FC_MPN_per_100ml": 22.0,
+          "TC_MPN_per_100ml": null,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "July",
+          "year": 2024,
+          "DO_mg_per_l": 7.4,
+          "BOD_mg_per_l": 2.1,
+          "FC_MPN_per_100ml": 34.0,
+          "TC_MPN_per_100ml": null,
+          "water_quality_status": "SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "station_code": "1856",
+      "station_name": "Shankani River (Dantewada River), Dantewada",
+      "location_description": "After Confluence of Dankani River, Dist-Dantewada",
+      "river": "Shankani River (also referred to as Dantewada River / Shakini River)",
+      "district": "Dantewada",
+      "state": "Chhattisgarh",
+      "latitude": 18.9000,
+      "longitude": 81.3500,
+      "coordinate_source": "Dantewada town coordinates (Wikipedia: 18°54'00\"N 81°21'00\"E); the Shankani (Shakini) and Dankani (Dakini) rivers meet at Dantewada town.",
+      "coordinate_precision": "Approximate — town-level (Dantewada); exact river sampling point downstream of Dankani confluence not specified in source document",
+      "monitoring_data": [
+        {
+          "month": "January",
+          "year": 2018,
+          "DO_mg_per_l": 7.2,
+          "BOD_mg_per_l": null,
+          "FC_MPN_per_100ml": null,
+          "TC_MPN_per_100ml": null,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "April",
+          "year": 2018,
+          "DO_mg_per_l": 7.1,
+          "BOD_mg_per_l": null,
+          "FC_MPN_per_100ml": null,
+          "TC_MPN_per_100ml": null,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "July",
+          "year": 2018,
+          "DO_mg_per_l": 7.8,
+          "BOD_mg_per_l": null,
+          "FC_MPN_per_100ml": null,
+          "TC_MPN_per_100ml": null,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "October",
+          "year": 2018,
+          "DO_mg_per_l": 7.6,
+          "BOD_mg_per_l": null,
+          "FC_MPN_per_100ml": null,
+          "TC_MPN_per_100ml": null,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "January",
+          "year": 2019,
+          "DO_mg_per_l": 7.4,
+          "BOD_mg_per_l": null,
+          "FC_MPN_per_100ml": null,
+          "TC_MPN_per_100ml": null,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "April",
+          "year": 2019,
+          "DO_mg_per_l": 7.3,
+          "BOD_mg_per_l": null,
+          "FC_MPN_per_100ml": null,
+          "TC_MPN_per_100ml": null,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "July",
+          "year": 2019,
+          "DO_mg_per_l": 7.7,
+          "BOD_mg_per_l": null,
+          "FC_MPN_per_100ml": null,
+          "TC_MPN_per_100ml": null,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "October",
+          "year": 2019,
+          "DO_mg_per_l": 7.4,
+          "BOD_mg_per_l": null,
+          "FC_MPN_per_100ml": null,
+          "TC_MPN_per_100ml": null,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "January",
+          "year": 2020,
+          "DO_mg_per_l": 7.4,
+          "BOD_mg_per_l": 2.8,
+          "FC_MPN_per_100ml": 14.0,
+          "TC_MPN_per_100ml": 70.0,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "April",
+          "year": 2020,
+          "DO_mg_per_l": 7.6,
+          "BOD_mg_per_l": 2.2,
+          "FC_MPN_per_100ml": 1.8,
+          "TC_MPN_per_100ml": 4.5,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "July",
+          "year": 2020,
+          "DO_mg_per_l": 7.6,
+          "BOD_mg_per_l": 2.0,
+          "FC_MPN_per_100ml": 2.0,
+          "TC_MPN_per_100ml": 27.0,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "October",
+          "year": 2020,
+          "DO_mg_per_l": 7.4,
+          "BOD_mg_per_l": 2.4,
+          "FC_MPN_per_100ml": 6.8,
+          "TC_MPN_per_100ml": 27.0,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "January",
+          "year": 2021,
+          "DO_mg_per_l": 7.5,
+          "BOD_mg_per_l": 1.8,
+          "FC_MPN_per_100ml": 4.5,
+          "TC_MPN_per_100ml": 22.0,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "May",
+          "year": 2021,
+          "DO_mg_per_l": 7.5,
+          "BOD_mg_per_l": 2.4,
+          "FC_MPN_per_100ml": 11.0,
+          "TC_MPN_per_100ml": 34.0,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "July",
+          "year": 2021,
+          "DO_mg_per_l": 7.6,
+          "BOD_mg_per_l": 2.2,
+          "FC_MPN_per_100ml": 17.0,
+          "TC_MPN_per_100ml": 58.0,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "October",
+          "year": 2021,
+          "DO_mg_per_l": 7.5,
+          "BOD_mg_per_l": 2.4,
+          "FC_MPN_per_100ml": 4.0,
+          "TC_MPN_per_100ml": 17.0,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "January",
+          "year": 2022,
+          "DO_mg_per_l": 7.4,
+          "BOD_mg_per_l": 2.8,
+          "FC_MPN_per_100ml": 17.0,
+          "TC_MPN_per_100ml": 33.0,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "April",
+          "year": 2022,
+          "DO_mg_per_l": 7.4,
+          "BOD_mg_per_l": 2.2,
+          "FC_MPN_per_100ml": 11.0,
+          "TC_MPN_per_100ml": 30.0,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "July",
+          "year": 2022,
+          "DO_mg_per_l": 7.5,
+          "BOD_mg_per_l": 2.4,
+          "FC_MPN_per_100ml": 12.0,
+          "TC_MPN_per_100ml": 40.0,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "October",
+          "year": 2022,
+          "DO_mg_per_l": 7.4,
+          "BOD_mg_per_l": 2.6,
+          "FC_MPN_per_100ml": 14.0,
+          "TC_MPN_per_100ml": 43.0,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "January",
+          "year": 2023,
+          "DO_mg_per_l": 7.5,
+          "BOD_mg_per_l": 2.2,
+          "FC_MPN_per_100ml": 36.0,
+          "TC_MPN_per_100ml": null,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "April",
+          "year": 2023,
+          "DO_mg_per_l": 7.4,
+          "BOD_mg_per_l": 2.4,
+          "FC_MPN_per_100ml": 40.0,
+          "TC_MPN_per_100ml": null,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "July",
+          "year": 2023,
+          "DO_mg_per_l": 7.4,
+          "BOD_mg_per_l": 2.2,
+          "FC_MPN_per_100ml": 38.0,
+          "TC_MPN_per_100ml": null,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "October",
+          "year": 2023,
+          "DO_mg_per_l": 7.5,
+          "BOD_mg_per_l": 2.0,
+          "FC_MPN_per_100ml": 44.0,
+          "TC_MPN_per_100ml": null,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "January",
+          "year": 2024,
+          "DO_mg_per_l": 7.5,
+          "BOD_mg_per_l": 2.0,
+          "FC_MPN_per_100ml": 34.0,
+          "TC_MPN_per_100ml": null,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "April",
+          "year": 2024,
+          "DO_mg_per_l": 7.6,
+          "BOD_mg_per_l": 1.8,
+          "FC_MPN_per_100ml": 30.0,
+          "TC_MPN_per_100ml": null,
+          "water_quality_status": "SATISFACTORY"
+        },
+        {
+          "month": "July",
+          "year": 2024,
+          "DO_mg_per_l": 7.3,
+          "BOD_mg_per_l": 2.2,
+          "FC_MPN_per_100ml": 40.0,
+          "TC_MPN_per_100ml": null,
+          "water_quality_status": "SATISFACTORY"
+        }
+      ]
+    }
+  ]
+}

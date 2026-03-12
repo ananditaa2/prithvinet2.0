@@ -1,0 +1,3746 @@
+{
+  "metadata": {
+    "document_title": "Water Quality Status of NWMP Station, Name of the City Bilaspur & Janjgir-Champa (C.G.)",
+    "monitoring_agency": "Chhattisgarh Environment Conservation Board (CECB)",
+    "state": "Chhattisgarh",
+    "districts": [
+      "Bilaspur",
+      "Janjgir-Champa",
+      "Mungeli"
+    ],
+    "monitoring_program": "National Water Monitoring Programme (NWMP)",
+    "coverage_period": {
+      "start": "April-2020",
+      "end": "January-2025"
+    },
+    "total_pages": 86,
+    "pages_with_extractable_text": "1-59",
+    "pages_scanned_images": "60-86",
+    "parameters_monitored": [
+      {
+        "code": "DO",
+        "name": "Dissolved Oxygen",
+        "unit": "mg/l",
+        "quality_criterion": ">4.0"
+      },
+      {
+        "code": "BOD",
+        "name": "Biochemical Oxygen Demand",
+        "unit": "mg/l",
+        "quality_criterion": "<3.0"
+      },
+      {
+        "code": "FC",
+        "name": "Faecal Coliform",
+        "unit": "MPN/100ml",
+        "quality_criterion": "<2500"
+      },
+      {
+        "code": "TC",
+        "name": "Total Coliform",
+        "unit": "MPN/100ml",
+        "quality_criterion": "<5000"
+      }
+    ],
+    "water_quality_status_criteria": {
+      "SATISFACTORY": "All parameters within permissible limits",
+      "NOT SATISFACTORY": "One or more parameters exceed permissible limits"
+    }
+  },
+  "monitoring_stations": [
+    {
+      "station_code": "1100",
+      "station_name": "Mahanadi River at Kharod",
+      "water_body": "Mahanadi River",
+      "location_description": "At Kharod",
+      "district": "Janjgir-Champa",
+      "state": "Chhattisgarh",
+      "latitude": 21.7833,
+      "longitude": 82.5667,
+      "station_type": "River"
+    },
+    {
+      "station_code": "1106",
+      "station_name": "Hasdeo River U/S of Champa",
+      "water_body": "Hasdeo River",
+      "location_description": "Upstream of Champa",
+      "district": "Janjgir-Champa",
+      "state": "Chhattisgarh",
+      "latitude": 22.0333,
+      "longitude": 82.6667,
+      "station_type": "River"
+    },
+    {
+      "station_code": "1282",
+      "station_name": "Mahanadi River at Sheorinarayan D/S Near Road Bridge",
+      "water_body": "Mahanadi River",
+      "location_description": "Downstream of Sheorinarayan, near road bridge",
+      "district": "Janjgir-Champa",
+      "state": "Chhattisgarh",
+      "latitude": 21.7167,
+      "longitude": 82.5833,
+      "station_type": "River"
+    },
+    {
+      "station_code": "1467",
+      "station_name": "Mahanadi River A/c of Mand River Near Balpur Village",
+      "water_body": "Mahanadi River",
+      "location_description": "At confluence of Mand River, near Balpur Village",
+      "district": "Janjgir-Champa",
+      "state": "Chhattisgarh",
+      "latitude": 21.95,
+      "longitude": 82.6167,
+      "station_type": "River"
+    },
+    {
+      "station_code": "1622",
+      "station_name": "Bore Well Water Sample Near Tifra Industrial Area",
+      "water_body": "Bore Well",
+      "location_description": "Near Tifra Industrial Area, Bilaspur",
+      "district": "Bilaspur",
+      "state": "Chhattisgarh",
+      "latitude": 22.08,
+      "longitude": 82.17,
+      "station_type": "Groundwater (Bore Well)"
+    },
+    {
+      "station_code": "1623",
+      "station_name": "Bore Well Water Sample from BEC Fertilizer (Near Banak Chowk)",
+      "water_body": "Bore Well",
+      "location_description": "Outside BEC Fertilizer factory premises, near Banak Chowk, Bilaspur",
+      "district": "Bilaspur",
+      "state": "Chhattisgarh",
+      "latitude": 22.095,
+      "longitude": 82.155,
+      "station_type": "Groundwater (Bore Well)"
+    },
+    {
+      "station_code": "1848",
+      "station_name": "Arpa River D/S of Bilaspur City at Check Dam Outlet Near Deori Khurd",
+      "water_body": "Arpa River",
+      "location_description": "Downstream of Bilaspur city, at check dam outlet, near Deori Khurd",
+      "district": "Bilaspur",
+      "state": "Chhattisgarh",
+      "latitude": 22.02,
+      "longitude": 82.1333,
+      "station_type": "River"
+    },
+    {
+      "station_code": "New 1",
+      "station_name": "Sheonath River Near Dagori Village",
+      "water_body": "Sheonath River",
+      "location_description": "Near Dagori Village, Bilaspur",
+      "district": "Bilaspur",
+      "state": "Chhattisgarh",
+      "latitude": 22.15,
+      "longitude": 82.0167,
+      "station_type": "River"
+    },
+    {
+      "station_code": "New 2",
+      "station_name": "Khutaghat Dam, Village Melnadih, Ratanpur",
+      "water_body": "Khutaghat Dam",
+      "location_description": "Village Melnadih, Ratanpur, District Bilaspur",
+      "district": "Bilaspur",
+      "state": "Chhattisgarh",
+      "latitude": 22.3667,
+      "longitude": 82.0333,
+      "station_type": "Dam / Reservoir"
+    },
+    {
+      "station_code": "New 3",
+      "station_name": "Khudiya Dam, Village Khudiya, Lormi",
+      "water_body": "Khudiya Dam",
+      "location_description": "Village Khudiya, Lormi, District Mungeli",
+      "district": "Mungeli",
+      "state": "Chhattisgarh",
+      "latitude": 22.0667,
+      "longitude": 81.6833,
+      "station_type": "Dam / Reservoir"
+    }
+  ],
+  "monitoring_data": [
+    {
+      "month": "January",
+      "year": 2025,
+      "period": "January-2025",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 6.8,
+          "BOD": 2.1,
+          "FC": null,
+          "TC": null,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 6.8,
+          "BOD": 2.3,
+          "FC": null,
+          "TC": null,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 6.7,
+          "BOD": 2.1,
+          "FC": null,
+          "TC": null,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 6.8,
+          "BOD": 2.1,
+          "FC": null,
+          "TC": null,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 6.7,
+          "BOD": 2.0,
+          "FC": null,
+          "TC": null,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 6.4,
+          "BOD": 1.9,
+          "FC": null,
+          "TC": null,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 2",
+          "DO": 6.6,
+          "BOD": 2.1,
+          "FC": null,
+          "TC": null,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 3",
+          "DO": 6.5,
+          "BOD": 2.1,
+          "FC": null,
+          "TC": null,
+          "status": "SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "December",
+      "year": 2024,
+      "period": "December-2024",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 7.0,
+          "BOD": 2.0,
+          "FC": null,
+          "TC": null,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 7.0,
+          "BOD": 2.5,
+          "FC": null,
+          "TC": null,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 7.0,
+          "BOD": 1.9,
+          "FC": null,
+          "TC": null,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 6.9,
+          "BOD": 2.2,
+          "FC": null,
+          "TC": null,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 7.0,
+          "BOD": 1.8,
+          "FC": null,
+          "TC": null,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 6.5,
+          "BOD": 1.6,
+          "FC": null,
+          "TC": null,
+          "status": "SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "November",
+      "year": 2024,
+      "period": "November-2024",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 7.0,
+          "BOD": 1.9,
+          "FC": null,
+          "TC": null,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 7.0,
+          "BOD": 1.9,
+          "FC": null,
+          "TC": null,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 7.0,
+          "BOD": 2.0,
+          "FC": null,
+          "TC": null,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 6.8,
+          "BOD": 1.9,
+          "FC": null,
+          "TC": null,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 7.0,
+          "BOD": 1.6,
+          "FC": null,
+          "TC": null,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 6.3,
+          "BOD": 1.8,
+          "FC": null,
+          "TC": null,
+          "status": "SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "October",
+      "year": 2024,
+      "period": "October-2024",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 6.9,
+          "BOD": 2.1,
+          "FC": null,
+          "TC": null,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 7.2,
+          "BOD": 2.3,
+          "FC": null,
+          "TC": null,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 6.8,
+          "BOD": 2.2,
+          "FC": null,
+          "TC": null,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 6.5,
+          "BOD": 2.1,
+          "FC": null,
+          "TC": null,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1622",
+          "DO": "BDL",
+          "BOD": "BDL",
+          "FC": null,
+          "TC": null,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1623",
+          "DO": "BDL",
+          "BOD": "BDL",
+          "FC": null,
+          "TC": null,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 6.8,
+          "BOD": 1.8,
+          "FC": null,
+          "TC": null,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 6.2,
+          "BOD": 2.0,
+          "FC": null,
+          "TC": null,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 2",
+          "DO": 6.9,
+          "BOD": 2.2,
+          "FC": null,
+          "TC": null,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 3",
+          "DO": 6.7,
+          "BOD": 2.0,
+          "FC": null,
+          "TC": null,
+          "status": "SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "September",
+      "year": 2024,
+      "period": "September-2024",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 7.0,
+          "BOD": 2.5,
+          "FC": 93,
+          "TC": 390,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 6.9,
+          "BOD": 2.4,
+          "FC": 170,
+          "TC": 410,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 6.5,
+          "BOD": 2.7,
+          "FC": 350,
+          "TC": 790,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 6.7,
+          "BOD": 2.4,
+          "FC": 280,
+          "TC": 540,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 6.9,
+          "BOD": 2.4,
+          "FC": 200,
+          "TC": 540,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 6.6,
+          "BOD": 2.6,
+          "FC": 170,
+          "TC": 350,
+          "status": "SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "August",
+      "year": 2024,
+      "period": "August-2024",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 7.0,
+          "BOD": 2.5,
+          "FC": 93,
+          "TC": 390,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 6.9,
+          "BOD": 2.4,
+          "FC": 170,
+          "TC": 410,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 6.5,
+          "BOD": 2.7,
+          "FC": 350,
+          "TC": 790,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 6.7,
+          "BOD": 2.4,
+          "FC": 280,
+          "TC": 540,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 6.9,
+          "BOD": 2.4,
+          "FC": 200,
+          "TC": 540,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 6.6,
+          "BOD": 2.6,
+          "FC": 170,
+          "TC": 350,
+          "status": "SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "July",
+      "year": 2024,
+      "period": "July-2024",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 7.0,
+          "BOD": 2.4,
+          "FC": 79,
+          "TC": 330,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 6.8,
+          "BOD": 2.3,
+          "FC": 90,
+          "TC": 260,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 6.4,
+          "BOD": 2.7,
+          "FC": 170,
+          "TC": 480,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 6.8,
+          "BOD": 2.5,
+          "FC": 130,
+          "TC": 410,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 6.8,
+          "BOD": 2.4,
+          "FC": 270,
+          "TC": 460,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 6.8,
+          "BOD": 2.7,
+          "FC": 94,
+          "TC": 270,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 2",
+          "DO": 6.9,
+          "BOD": 2.4,
+          "FC": 26,
+          "TC": 79,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 3",
+          "DO": 7.0,
+          "BOD": 2.3,
+          "FC": 11,
+          "TC": 49,
+          "status": "SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "June",
+      "year": 2024,
+      "period": "June-2024",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 6.5,
+          "BOD": 2.2,
+          "FC": 18,
+          "TC": 64,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 7.0,
+          "BOD": 2.8,
+          "FC": 136,
+          "TC": 52,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 6.5,
+          "BOD": 4.2,
+          "FC": 80,
+          "TC": 220,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 6.5,
+          "BOD": 3.6,
+          "FC": 62,
+          "TC": 164,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 6.0,
+          "BOD": 4.2,
+          "FC": 48,
+          "TC": 168,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 6.5,
+          "BOD": 3.6,
+          "FC": 32,
+          "TC": 128,
+          "status": "NOT SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "May",
+      "year": 2024,
+      "period": "May-2024",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 7.0,
+          "BOD": 2.3,
+          "FC": 18,
+          "TC": 80,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 7.0,
+          "BOD": 2.8,
+          "FC": 70,
+          "TC": 150,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 6.0,
+          "BOD": 4.2,
+          "FC": 78,
+          "TC": 320,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 6.4,
+          "BOD": 3.4,
+          "FC": 66,
+          "TC": 190,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 6.0,
+          "BOD": 6.0,
+          "FC": 110,
+          "TC": 236,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 6.5,
+          "BOD": 2.6,
+          "FC": 12,
+          "TC": 118,
+          "status": "SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "April",
+      "year": 2024,
+      "period": "April-2024",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 6.9,
+          "BOD": 2.3,
+          "FC": 81,
+          "TC": 380,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 6.3,
+          "BOD": 2.8,
+          "FC": 120,
+          "TC": 350,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 6.2,
+          "BOD": 4.1,
+          "FC": 100,
+          "TC": 620,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 6.4,
+          "BOD": 3.2,
+          "FC": 200,
+          "TC": 490,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1622",
+          "DO": "BDL",
+          "BOD": "BLD",
+          "FC": "BDL",
+          "TC": 9.96,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1623",
+          "DO": "BDL",
+          "BOD": "BLD",
+          "FC": "BDL",
+          "TC": 10.44,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 5.9,
+          "BOD": 4.8,
+          "FC": 310,
+          "TC": 900,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 6.5,
+          "BOD": 2.8,
+          "FC": 18,
+          "TC": 220,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 2",
+          "DO": 7.0,
+          "BOD": 2.2,
+          "FC": 11,
+          "TC": 60,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 3",
+          "DO": 6.9,
+          "BOD": 2.1,
+          "FC": 10,
+          "TC": 62,
+          "status": "SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "March",
+      "year": 2024,
+      "period": "March-2024",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 7.0,
+          "BOD": 2.4,
+          "FC": 6,
+          "TC": 34,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 6.5,
+          "BOD": 2.4,
+          "FC": 8,
+          "TC": 60,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 6.0,
+          "BOD": 3.8,
+          "FC": 18,
+          "TC": 180,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 6.5,
+          "BOD": 3.2,
+          "FC": 6,
+          "TC": 60,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 5.0,
+          "BOD": 18.0,
+          "FC": 68,
+          "TC": 160,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 7.0,
+          "BOD": 3.0,
+          "FC": 6,
+          "TC": 40,
+          "status": "NOT SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "February",
+      "year": 2024,
+      "period": "February-2024",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 7.2,
+          "BOD": 2.1,
+          "FC": 10,
+          "TC": 42,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 7.0,
+          "BOD": 2.2,
+          "FC": 8,
+          "TC": 52,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 6.5,
+          "BOD": 3.0,
+          "FC": 8,
+          "TC": 172,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 6.5,
+          "BOD": 3.0,
+          "FC": 10,
+          "TC": 88,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 5.5,
+          "BOD": 8.4,
+          "FC": 82,
+          "TC": 190,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 6.5,
+          "BOD": 2.9,
+          "FC": 8,
+          "TC": 52,
+          "status": "SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "January",
+      "year": 2024,
+      "period": "January-2024",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 7.5,
+          "BOD": 2.1,
+          "FC": 10,
+          "TC": 62,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 6.5,
+          "BOD": 2.1,
+          "FC": 18,
+          "TC": 72,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 6.0,
+          "BOD": 3.0,
+          "FC": 18,
+          "TC": 110,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 7.0,
+          "BOD": 2.8,
+          "FC": 18,
+          "TC": 108,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 6.5,
+          "BOD": 4.8,
+          "FC": 80,
+          "TC": 170,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 6.0,
+          "BOD": 2.8,
+          "FC": 12,
+          "TC": 90,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 2",
+          "DO": 8.0,
+          "BOD": 2.8,
+          "FC": 6,
+          "TC": 40,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 3",
+          "DO": 7.0,
+          "BOD": 2.8,
+          "FC": 4,
+          "TC": 46,
+          "status": "SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "December",
+      "year": 2023,
+      "period": "December-2023",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 7.0,
+          "BOD": 2.1,
+          "FC": 93,
+          "TC": 490,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 6.7,
+          "BOD": 1.8,
+          "FC": 170,
+          "TC": 630,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 6.5,
+          "BOD": 2.8,
+          "FC": 220,
+          "TC": 1100,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 6.7,
+          "BOD": 2.2,
+          "FC": 210,
+          "TC": 680,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 6.0,
+          "BOD": 3.9,
+          "FC": 30,
+          "TC": 90,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 6.5,
+          "BOD": 2.6,
+          "FC": 10,
+          "TC": 130,
+          "status": "SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "November",
+      "year": 2023,
+      "period": "November-2023",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 7.1,
+          "BOD": 2.0,
+          "FC": 84,
+          "TC": 470,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 6.9,
+          "BOD": 2.1,
+          "FC": 150,
+          "TC": 580,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 6.6,
+          "BOD": 2.8,
+          "FC": 200,
+          "TC": 945,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 6.8,
+          "BOD": 2.2,
+          "FC": 170,
+          "TC": 630,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 6.4,
+          "BOD": 2.9,
+          "FC": 20,
+          "TC": 70,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 6.4,
+          "BOD": 2.6,
+          "FC": 14,
+          "TC": 200,
+          "status": "SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "October",
+      "year": 2023,
+      "period": "October-2023",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 7.2,
+          "BOD": 2.1,
+          "FC": 12,
+          "TC": 180,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 6.8,
+          "BOD": 2.1,
+          "FC": 23,
+          "TC": 240,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 6.8,
+          "BOD": 2.9,
+          "FC": 110,
+          "TC": 610,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 7.0,
+          "BOD": 2.3,
+          "FC": 39,
+          "TC": 310,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1622",
+          "DO": "N.A.",
+          "BOD": 1.0,
+          "FC": 0,
+          "TC": 0,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1623",
+          "DO": "N.A.",
+          "BOD": 1.0,
+          "FC": 0,
+          "TC": 2,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 6.6,
+          "BOD": 2.8,
+          "FC": 20,
+          "TC": 70,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 6.8,
+          "BOD": 2.4,
+          "FC": 14,
+          "TC": 200,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 2",
+          "DO": 7.2,
+          "BOD": 2.0,
+          "FC": 2,
+          "TC": 42,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 3",
+          "DO": 7.4,
+          "BOD": 1.8,
+          "FC": 2,
+          "TC": 36,
+          "status": "SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "September",
+      "year": 2023,
+      "period": "September-2023",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 7.4,
+          "BOD": 2.0,
+          "FC": 20,
+          "TC": 170,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 6.8,
+          "BOD": 2.4,
+          "FC": 63,
+          "TC": 330,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 6.2,
+          "BOD": 3.2,
+          "FC": 78,
+          "TC": 490,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 6.6,
+          "BOD": 2.7,
+          "FC": 45,
+          "TC": 230,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 6.5,
+          "BOD": 3.0,
+          "FC": 20,
+          "TC": 70,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 6.0,
+          "BOD": 2.8,
+          "FC": 8,
+          "TC": 42,
+          "status": "SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "August",
+      "year": 2023,
+      "period": "August-2023",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 7.5,
+          "BOD": 2.2,
+          "FC": 4,
+          "TC": 20,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 7.2,
+          "BOD": 2.8,
+          "FC": 12,
+          "TC": 38,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 6.0,
+          "BOD": 3.4,
+          "FC": 8,
+          "TC": 22,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 7.5,
+          "BOD": 2.4,
+          "FC": 3,
+          "TC": 18,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 6.5,
+          "BOD": 3.1,
+          "FC": 80,
+          "TC": 170,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 6.0,
+          "BOD": 2.8,
+          "FC": 6,
+          "TC": 32,
+          "status": "SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "July",
+      "year": 2023,
+      "period": "July-2023",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 7.2,
+          "BOD": 2.2,
+          "FC": 2,
+          "TC": 20,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 7.0,
+          "BOD": 2.8,
+          "FC": 14,
+          "TC": 40,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 6.5,
+          "BOD": 3.0,
+          "FC": 4,
+          "TC": 12,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 7.0,
+          "BOD": 2.2,
+          "FC": 2,
+          "TC": 12,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 6.8,
+          "BOD": 3.0,
+          "FC": 84,
+          "TC": 170,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 6.5,
+          "BOD": 2.2,
+          "FC": 4,
+          "TC": 28,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 2",
+          "DO": 7.0,
+          "BOD": 2.0,
+          "FC": 0,
+          "TC": 20,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 3",
+          "DO": 8.0,
+          "BOD": 2.0,
+          "FC": 0,
+          "TC": 8,
+          "status": "SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "June",
+      "year": 2023,
+      "period": "June-2023",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 7.2,
+          "BOD": 2.2,
+          "FC": 20,
+          "TC": 85,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 7.0,
+          "BOD": 2.4,
+          "FC": 12,
+          "TC": 94,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 6.4,
+          "BOD": 3.6,
+          "FC": 110,
+          "TC": 330,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 6.8,
+          "BOD": 2.8,
+          "FC": 84,
+          "TC": 260,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 6.4,
+          "BOD": 3.0,
+          "FC": 130,
+          "TC": 490,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 6.0,
+          "BOD": 4.0,
+          "FC": 30,
+          "TC": 96,
+          "status": "NOT SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "May",
+      "year": 2023,
+      "period": "May-2023",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 7.5,
+          "BOD": 2.3,
+          "FC": 12,
+          "TC": 26,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 7.2,
+          "BOD": 2.7,
+          "FC": 15,
+          "TC": 30,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 7.0,
+          "BOD": 3.8,
+          "FC": 24,
+          "TC": 88,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 7.5,
+          "BOD": 3.8,
+          "FC": 10,
+          "TC": 30,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 6.5,
+          "BOD": 4.1,
+          "FC": 68,
+          "TC": 260,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 7.0,
+          "BOD": 4.0,
+          "FC": 30,
+          "TC": 92,
+          "status": "NOT SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "April",
+      "year": 2023,
+      "period": "April-2023",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 7.5,
+          "BOD": 2.1,
+          "FC": 12,
+          "TC": 20,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 7.0,
+          "BOD": 2.8,
+          "FC": 14,
+          "TC": 28,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 8.0,
+          "BOD": 3.1,
+          "FC": 22,
+          "TC": 60,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 8.5,
+          "BOD": 3.1,
+          "FC": 14,
+          "TC": 34,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1622",
+          "DO": 0.4,
+          "BOD": null,
+          "FC": null,
+          "TC": null,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1623",
+          "DO": 0.4,
+          "BOD": 1.0,
+          "FC": null,
+          "TC": null,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 5.8,
+          "BOD": 3.0,
+          "FC": 58,
+          "TC": 460,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 6.5,
+          "BOD": 3.5,
+          "FC": 28,
+          "TC": 104,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "New 2",
+          "DO": 7.2,
+          "BOD": 2.0,
+          "FC": 2,
+          "TC": 27,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 3",
+          "DO": 7.0,
+          "BOD": 2.2,
+          "FC": 2,
+          "TC": 18,
+          "status": "SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "March",
+      "year": 2023,
+      "period": "March-2023",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 7.5,
+          "BOD": 2.2,
+          "FC": 16,
+          "TC": 38,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 6.0,
+          "BOD": 3.1,
+          "FC": 24,
+          "TC": 64,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 7.5,
+          "BOD": 3.0,
+          "FC": 20,
+          "TC": 70,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 7.0,
+          "BOD": 3.0,
+          "FC": 17,
+          "TC": 44,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 7.0,
+          "BOD": 4.7,
+          "FC": 84,
+          "TC": 246,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 7.0,
+          "BOD": 4.0,
+          "FC": 30,
+          "TC": 100,
+          "status": "NOT SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "February",
+      "year": 2023,
+      "period": "February-2023",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 7.0,
+          "BOD": 2.4,
+          "FC": 18,
+          "TC": 84,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 7.0,
+          "BOD": 2.6,
+          "FC": 12,
+          "TC": 58,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 6.0,
+          "BOD": 4.0,
+          "FC": 60,
+          "TC": 170,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 7.5,
+          "BOD": 3.0,
+          "FC": 32,
+          "TC": 74,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 7.0,
+          "BOD": 4.4,
+          "FC": 30,
+          "TC": 104,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 6.0,
+          "BOD": 12.0,
+          "FC": 20,
+          "TC": 90,
+          "status": "NOT SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "January",
+      "year": 2023,
+      "period": "January-2023",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 7.0,
+          "BOD": 2.2,
+          "FC": 22,
+          "TC": 90,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 6.5,
+          "BOD": 2.4,
+          "FC": 12,
+          "TC": 56,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 6.0,
+          "BOD": 4.0,
+          "FC": 62,
+          "TC": 172,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 7.0,
+          "BOD": 3.1,
+          "FC": 30,
+          "TC": 80,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 6.0,
+          "BOD": 4.2,
+          "FC": 32,
+          "TC": 114,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 5.0,
+          "BOD": 14.0,
+          "FC": 21,
+          "TC": 93,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "New 2",
+          "DO": 7.0,
+          "BOD": 2.0,
+          "FC": 12,
+          "TC": 64,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 3",
+          "DO": 6.5,
+          "BOD": 2.3,
+          "FC": 4,
+          "TC": 28,
+          "status": "SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "December",
+      "year": 2022,
+      "period": "December-2022",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 6.5,
+          "BOD": 2.2,
+          "FC": 24,
+          "TC": 98,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 6.5,
+          "BOD": 2.5,
+          "FC": 12,
+          "TC": 60,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 5.5,
+          "BOD": 4.2,
+          "FC": 62,
+          "TC": 170,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 7.0,
+          "BOD": 3.2,
+          "FC": 30,
+          "TC": 82,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 6.2,
+          "BOD": 4.0,
+          "FC": 28,
+          "TC": 102,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 6.0,
+          "BOD": 4.0,
+          "FC": 12,
+          "TC": 74,
+          "status": "NOT SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "November",
+      "year": 2022,
+      "period": "November-2022",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 6.5,
+          "BOD": 2.2,
+          "FC": 28,
+          "TC": 108,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 7.0,
+          "BOD": 2.5,
+          "FC": 12,
+          "TC": 65,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 6.0,
+          "BOD": 4.1,
+          "FC": 82,
+          "TC": 172,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 7.0,
+          "BOD": 3.0,
+          "FC": 34,
+          "TC": 99,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 6.5,
+          "BOD": 3.2,
+          "FC": 18,
+          "TC": 72,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 6.4,
+          "BOD": 2.3,
+          "FC": 17,
+          "TC": 78,
+          "status": "SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "October",
+      "year": 2022,
+      "period": "October-2022",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 6.5,
+          "BOD": 3.0,
+          "FC": 48,
+          "TC": 108,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 7.0,
+          "BOD": 2.5,
+          "FC": 12,
+          "TC": 65,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 6.0,
+          "BOD": 8.0,
+          "FC": 92,
+          "TC": 190,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 7.0,
+          "BOD": 4.0,
+          "FC": 34,
+          "TC": 102,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1622",
+          "DO": 1.8,
+          "BOD": 0.0,
+          "FC": 0,
+          "TC": 0,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1623",
+          "DO": 1.2,
+          "BOD": 0.0,
+          "FC": 0,
+          "TC": 0,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 7.4,
+          "BOD": 2.0,
+          "FC": 18,
+          "TC": 70,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 7.0,
+          "BOD": 2.1,
+          "FC": 17,
+          "TC": 64,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 2",
+          "DO": 7.1,
+          "BOD": 1.8,
+          "FC": 0,
+          "TC": 20,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 3",
+          "DO": 6.5,
+          "BOD": 2.3,
+          "FC": 4,
+          "TC": 18,
+          "status": "SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "September",
+      "year": 2022,
+      "period": "September-2022",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 7.0,
+          "BOD": 16.0,
+          "FC": 48,
+          "TC": 138,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 6.5,
+          "BOD": 12.0,
+          "FC": 92,
+          "TC": 168,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 6.0,
+          "BOD": 18.0,
+          "FC": 92,
+          "TC": 190,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 6.5,
+          "BOD": 13.0,
+          "FC": 44,
+          "TC": 124,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 7.6,
+          "BOD": 2.4,
+          "FC": 22,
+          "TC": 70,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 6.0,
+          "BOD": 18.0,
+          "FC": 64,
+          "TC": 180,
+          "status": "NOT SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "August",
+      "year": 2022,
+      "period": "August-2022",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 7.5,
+          "BOD": 4.0,
+          "FC": 38,
+          "TC": 112,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 7.0,
+          "BOD": 2.5,
+          "FC": 80,
+          "TC": 112,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 6.5,
+          "BOD": 4.6,
+          "FC": 40,
+          "TC": 180,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 7.0,
+          "BOD": 3.1,
+          "FC": 24,
+          "TC": 84,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 6.0,
+          "BOD": 1.8,
+          "FC": 28,
+          "TC": 116,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 6.5,
+          "BOD": 2.0,
+          "FC": 34,
+          "TC": 158,
+          "status": "SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "July",
+      "year": 2022,
+      "period": "July-2022",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 7.5,
+          "BOD": 4.0,
+          "FC": 38,
+          "TC": 117,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 7.5,
+          "BOD": 2.0,
+          "FC": 80,
+          "TC": 110,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 6.5,
+          "BOD": 4.8,
+          "FC": 38,
+          "TC": 178,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 7.5,
+          "BOD": 3.0,
+          "FC": 24,
+          "TC": 80,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 6.5,
+          "BOD": 1.4,
+          "FC": 20,
+          "TC": 110,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 6.0,
+          "BOD": 1.8,
+          "FC": 28,
+          "TC": 138,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 2",
+          "DO": 7.5,
+          "BOD": 2.6,
+          "FC": 8,
+          "TC": 18,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 3",
+          "DO": 7.4,
+          "BOD": 2.4,
+          "FC": 8,
+          "TC": 40,
+          "status": "SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "June",
+      "year": 2022,
+      "period": "June-2022",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 8.0,
+          "BOD": 3.8,
+          "FC": 12,
+          "TC": 20,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 7.5,
+          "BOD": 2.8,
+          "FC": 15,
+          "TC": 27,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 7.5,
+          "BOD": 4.0,
+          "FC": 30,
+          "TC": 78,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 4.8,
+          "BOD": 3.2,
+          "FC": 12,
+          "TC": 30,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 5.5,
+          "BOD": 5.0,
+          "FC": 50,
+          "TC": 160,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 7.8,
+          "BOD": 4.8,
+          "FC": 28,
+          "TC": 124,
+          "status": "NOT SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "May",
+      "year": 2022,
+      "period": "May-2022",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 8.2,
+          "BOD": 2.8,
+          "FC": 14,
+          "TC": 22,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 7.5,
+          "BOD": 2.0,
+          "FC": 14,
+          "TC": 26,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 7.8,
+          "BOD": 2.0,
+          "FC": 28,
+          "TC": 74,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 8.0,
+          "BOD": 2.8,
+          "FC": 12,
+          "TC": 28,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 4.5,
+          "BOD": 5.0,
+          "FC": 52,
+          "TC": 164,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 8.0,
+          "BOD": 2.1,
+          "FC": 20,
+          "TC": 104,
+          "status": "SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "April",
+      "year": 2022,
+      "period": "April-2022",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 7.5,
+          "BOD": 2.1,
+          "FC": 14,
+          "TC": 20,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 7.5,
+          "BOD": 2.5,
+          "FC": 14,
+          "TC": 24,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 8.0,
+          "BOD": 2.1,
+          "FC": 26,
+          "TC": 70,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 9.2,
+          "BOD": 3.0,
+          "FC": 14,
+          "TC": 30,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 8.2,
+          "BOD": 4.3,
+          "FC": 46,
+          "TC": 148,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 10.0,
+          "BOD": 2.5,
+          "FC": 18,
+          "TC": 104,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 2",
+          "DO": 10.0,
+          "BOD": 2.0,
+          "FC": 0,
+          "TC": 20,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 3",
+          "DO": 8.2,
+          "BOD": 2.2,
+          "FC": 0,
+          "TC": 20,
+          "status": "SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "March",
+      "year": 2022,
+      "period": "March-2022",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 8.0,
+          "BOD": 2.8,
+          "FC": 16,
+          "TC": 30,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 8.0,
+          "BOD": 3.0,
+          "FC": 14,
+          "TC": 54,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 7.5,
+          "BOD": 3.9,
+          "FC": 30,
+          "TC": 80,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 7.5,
+          "BOD": 3.0,
+          "FC": 17,
+          "TC": 40,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 7.3,
+          "BOD": 2.7,
+          "FC": 44,
+          "TC": 146,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 7.2,
+          "BOD": 5.1,
+          "FC": 30,
+          "TC": 138,
+          "status": "NOT SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "February",
+      "year": 2022,
+      "period": "February-2022",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 8.0,
+          "BOD": 1.8,
+          "FC": 16,
+          "TC": 34,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 8.0,
+          "BOD": 3.5,
+          "FC": 12,
+          "TC": 56,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 7.0,
+          "BOD": 4.0,
+          "FC": 34,
+          "TC": 88,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 7.5,
+          "BOD": 3.0,
+          "FC": 18,
+          "TC": 42,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 7.5,
+          "BOD": 2.8,
+          "FC": 44,
+          "TC": 146,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 7.0,
+          "BOD": 5.0,
+          "FC": 30,
+          "TC": 138,
+          "status": "NOT SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "January",
+      "year": 2022,
+      "period": "January-2022",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 7.4,
+          "BOD": 1.8,
+          "FC": 17,
+          "TC": 40,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 8.0,
+          "BOD": 2.1,
+          "FC": 12,
+          "TC": 70,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 7.2,
+          "BOD": 2.0,
+          "FC": 24,
+          "TC": 70,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 7.4,
+          "BOD": 2.0,
+          "FC": 20,
+          "TC": 50,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 7.2,
+          "BOD": 2.4,
+          "FC": 24,
+          "TC": 130,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 7.2,
+          "BOD": 2.0,
+          "FC": 22,
+          "TC": 110,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 2",
+          "DO": 7.5,
+          "BOD": 2.0,
+          "FC": 0,
+          "TC": 22,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 3",
+          "DO": 7.1,
+          "BOD": 1.5,
+          "FC": 0,
+          "TC": 16,
+          "status": "SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "December",
+      "year": 2021,
+      "period": "December-2021",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 7.6,
+          "BOD": 2.0,
+          "FC": 17,
+          "TC": 40,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 7.5,
+          "BOD": 2.0,
+          "FC": 12,
+          "TC": 70,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 7.2,
+          "BOD": 2.3,
+          "FC": 22,
+          "TC": 70,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 7.3,
+          "BOD": 2.2,
+          "FC": 20,
+          "TC": 50,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 7.6,
+          "BOD": 2.5,
+          "FC": 16,
+          "TC": 70,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 7.4,
+          "BOD": 1.8,
+          "FC": 18,
+          "TC": 90,
+          "status": "SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "November",
+      "year": 2021,
+      "period": "November-2021",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 7.4,
+          "BOD": 1.9,
+          "FC": 20,
+          "TC": 50,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 7.3,
+          "BOD": 2.2,
+          "FC": 7,
+          "TC": 70,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 7.3,
+          "BOD": 2.1,
+          "FC": 24,
+          "TC": 70,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 7.2,
+          "BOD": 2.2,
+          "FC": 24,
+          "TC": 70,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 7.4,
+          "BOD": 2.4,
+          "FC": 21,
+          "TC": 90,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 7.5,
+          "BOD": 1.8,
+          "FC": 16,
+          "TC": 70,
+          "status": "SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "October",
+      "year": 2021,
+      "period": "October-2021",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 7.3,
+          "BOD": 2.0,
+          "FC": 23,
+          "TC": 90,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 7.2,
+          "BOD": 2.3,
+          "FC": 34,
+          "TC": 110,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 7.2,
+          "BOD": 2.2,
+          "FC": 60,
+          "TC": 170,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 7.1,
+          "BOD": 2.3,
+          "FC": 38,
+          "TC": 110,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 7.5,
+          "BOD": 2.5,
+          "FC": 21,
+          "TC": 90,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 7.4,
+          "BOD": 1.9,
+          "FC": 16,
+          "TC": 70,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 2",
+          "DO": 7.6,
+          "BOD": 1.2,
+          "FC": 0,
+          "TC": 16,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 3",
+          "DO": 7.1,
+          "BOD": 1.6,
+          "FC": 0,
+          "TC": 90,
+          "status": "SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "September",
+      "year": 2021,
+      "period": "September-2021",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 7.2,
+          "BOD": 2.2,
+          "FC": 42,
+          "TC": 140,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 7.1,
+          "BOD": 2.5,
+          "FC": 9,
+          "TC": 140,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 7.0,
+          "BOD": 2.4,
+          "FC": 60,
+          "TC": 170,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 7.0,
+          "BOD": 2.5,
+          "FC": 70,
+          "TC": 220,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 7.3,
+          "BOD": 2.6,
+          "FC": 16,
+          "TC": 70,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 7.2,
+          "BOD": 2.0,
+          "FC": 14,
+          "TC": 90,
+          "status": "SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "August",
+      "year": 2021,
+      "period": "August-2021",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 7.3,
+          "BOD": 2.3,
+          "FC": 40,
+          "TC": 140,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 7.0,
+          "BOD": 2.5,
+          "FC": 30,
+          "TC": 140,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 7.1,
+          "BOD": 2.6,
+          "FC": 70,
+          "TC": 220,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 7.1,
+          "BOD": 2.8,
+          "FC": 60,
+          "TC": 140,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 7.1,
+          "BOD": 2.8,
+          "FC": 21,
+          "TC": 110,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 7.0,
+          "BOD": 2.1,
+          "FC": 17,
+          "TC": 110,
+          "status": "SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "July",
+      "year": 2021,
+      "period": "July-2021",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 7.4,
+          "BOD": 2.8,
+          "FC": 21,
+          "TC": 140,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 6.8,
+          "BOD": 3.0,
+          "FC": 70,
+          "TC": 220,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 7.2,
+          "BOD": 3.2,
+          "FC": 108,
+          "TC": 240,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 6.9,
+          "BOD": 3.7,
+          "FC": 125,
+          "TC": 280,
+          "status": "NOT SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 7.0,
+          "BOD": 2.9,
+          "FC": 30,
+          "TC": 140,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 7.1,
+          "BOD": 2.3,
+          "FC": 30,
+          "TC": 140,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 2",
+          "DO": 7.8,
+          "BOD": 1.4,
+          "FC": 0,
+          "TC": 32,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 3",
+          "DO": 7.4,
+          "BOD": 1.4,
+          "FC": 90,
+          "TC": 9.73,
+          "status": "SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "June",
+      "year": 2021,
+      "period": "June-2021",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 7.2,
+          "BOD": 1.4,
+          "FC": 18,
+          "TC": 60,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 7.2,
+          "BOD": 1.6,
+          "FC": 40,
+          "TC": 90,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 7.0,
+          "BOD": 2.0,
+          "FC": 24,
+          "TC": 70,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 7.2,
+          "BOD": 1.9,
+          "FC": 60,
+          "TC": 140,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 6.6,
+          "BOD": 2.5,
+          "FC": 20,
+          "TC": 140,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 6.8,
+          "BOD": 2.4,
+          "FC": 20,
+          "TC": 110,
+          "status": "SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "May",
+      "year": 2021,
+      "period": "May-2021",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 7.3,
+          "BOD": 1.3,
+          "FC": 16,
+          "TC": 40,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 7.4,
+          "BOD": 1.4,
+          "FC": 40,
+          "TC": 90,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 7.1,
+          "BOD": 1.6,
+          "FC": 20,
+          "TC": 50,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 7.0,
+          "BOD": 1.8,
+          "FC": 42,
+          "TC": 110,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 6.7,
+          "BOD": 2.4,
+          "FC": 20,
+          "TC": 110,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 6.9,
+          "BOD": 2.3,
+          "FC": 17,
+          "TC": 110,
+          "status": "SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "April",
+      "year": 2021,
+      "period": "April-2021",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 7.2,
+          "BOD": 1.5,
+          "FC": 12,
+          "TC": 34,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 7.3,
+          "BOD": 1.8,
+          "FC": 38,
+          "TC": 110,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 6.5,
+          "BOD": 1.3,
+          "FC": 21,
+          "TC": 50,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 7.1,
+          "BOD": 1.2,
+          "FC": 38,
+          "TC": 90,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 6.9,
+          "BOD": 2.3,
+          "FC": 17,
+          "TC": 110,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 7.1,
+          "BOD": 2.2,
+          "FC": 12,
+          "TC": 110,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 2",
+          "DO": 7.4,
+          "BOD": 1.1,
+          "FC": 0,
+          "TC": 17,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 3",
+          "DO": 7.2,
+          "BOD": 1.2,
+          "FC": 21,
+          "TC": 60,
+          "status": "SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "March",
+      "year": 2021,
+      "period": "March-2021",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 7.5,
+          "BOD": 1.3,
+          "FC": 20,
+          "TC": 50,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 7.1,
+          "BOD": 2.3,
+          "FC": 40,
+          "TC": 110,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 6.9,
+          "BOD": 1.3,
+          "FC": 30,
+          "TC": 90,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 7.1,
+          "BOD": 2.4,
+          "FC": 40,
+          "TC": 90,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 6.8,
+          "BOD": 2.5,
+          "FC": 20,
+          "TC": 140,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 6.9,
+          "BOD": 2.4,
+          "FC": 10,
+          "TC": 110,
+          "status": "SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "February",
+      "year": 2021,
+      "period": "February-2021",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 7.8,
+          "BOD": 1.7,
+          "FC": 20,
+          "TC": 140,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 7.2,
+          "BOD": 2.5,
+          "FC": 40,
+          "TC": 110,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 7.1,
+          "BOD": 2.3,
+          "FC": 21,
+          "TC": 70,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 7.2,
+          "BOD": 2.4,
+          "FC": 40,
+          "TC": 110,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 6.9,
+          "BOD": 2.4,
+          "FC": 20,
+          "TC": 140,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 7.0,
+          "BOD": 2.2,
+          "FC": 8,
+          "TC": 110,
+          "status": "SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "January",
+      "year": 2021,
+      "period": "January-2021",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 7.9,
+          "BOD": 1.6,
+          "FC": 7,
+          "TC": 140,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 7.4,
+          "BOD": 2.4,
+          "FC": 11,
+          "TC": 70,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 7.0,
+          "BOD": 2.2,
+          "FC": 10,
+          "TC": 110,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 7.4,
+          "BOD": 2.2,
+          "FC": 11,
+          "TC": 90,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 7.0,
+          "BOD": 2.4,
+          "FC": 8,
+          "TC": 140,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 7.2,
+          "BOD": 2.1,
+          "FC": 8,
+          "TC": 140,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 2",
+          "DO": 7.4,
+          "BOD": 1.1,
+          "FC": 10,
+          "TC": 110,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 3",
+          "DO": 7.4,
+          "BOD": 1.1,
+          "FC": 21,
+          "TC": 110,
+          "status": "SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "December",
+      "year": 2020,
+      "period": "December-2020",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 7.8,
+          "BOD": 1.7,
+          "FC": 7,
+          "TC": 140,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 7.5,
+          "BOD": 2.6,
+          "FC": 9,
+          "TC": 110,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 6.8,
+          "BOD": 2.4,
+          "FC": 21,
+          "TC": 140,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 7.5,
+          "BOD": 1.8,
+          "FC": 8,
+          "TC": 110,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 7.2,
+          "BOD": 2.4,
+          "FC": 9,
+          "TC": 140,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 7.1,
+          "BOD": 2.2,
+          "FC": 9,
+          "TC": 170,
+          "status": "SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "November",
+      "year": 2020,
+      "period": "November-2020",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 7.6,
+          "BOD": 1.8,
+          "FC": 7,
+          "TC": 140,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 7.4,
+          "BOD": 2.2,
+          "FC": 11,
+          "TC": 90,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 7.5,
+          "BOD": 2.3,
+          "FC": 10,
+          "TC": 110,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 7.4,
+          "BOD": 1.9,
+          "FC": 7,
+          "TC": 140,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 7.0,
+          "BOD": 2.6,
+          "FC": 11,
+          "TC": 170,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 7.2,
+          "BOD": 2.1,
+          "FC": 7,
+          "TC": 140,
+          "status": "SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "October",
+      "year": 2020,
+      "period": "October-2020",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 7.7,
+          "BOD": 1.9,
+          "FC": 4,
+          "TC": 90,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 7.5,
+          "BOD": 1.9,
+          "FC": 7,
+          "TC": 70,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 7.3,
+          "BOD": 2.5,
+          "FC": 9,
+          "TC": 170,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 7.4,
+          "BOD": 2.0,
+          "FC": 8,
+          "TC": 110,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 7.2,
+          "BOD": 2.2,
+          "FC": 9,
+          "TC": 220,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 7.1,
+          "BOD": 2.2,
+          "FC": 9,
+          "TC": 170,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 2",
+          "DO": 7.2,
+          "BOD": 1.2,
+          "FC": 0,
+          "TC": 21,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 3",
+          "DO": 7.3,
+          "BOD": 1.1,
+          "FC": 0,
+          "TC": 17,
+          "status": "SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "September",
+      "year": 2020,
+      "period": "September-2020",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 7.6,
+          "BOD": 2.2,
+          "FC": 11,
+          "TC": 170,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 7.3,
+          "BOD": 2.3,
+          "FC": 9,
+          "TC": 140,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 7.4,
+          "BOD": 2.4,
+          "FC": 14,
+          "TC": 220,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 7.2,
+          "BOD": 2.0,
+          "FC": 4,
+          "TC": 170,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 7.1,
+          "BOD": 2.4,
+          "FC": 11,
+          "TC": 280,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 7.2,
+          "BOD": 2.1,
+          "FC": 4,
+          "TC": 170,
+          "status": "SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "August",
+      "year": 2020,
+      "period": "August-2020",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 7.3,
+          "BOD": 2.2,
+          "FC": 14,
+          "TC": 220,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 6.9,
+          "BOD": 2.6,
+          "FC": 11,
+          "TC": 170,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 7.2,
+          "BOD": 2.3,
+          "FC": 17,
+          "TC": 220,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 7.0,
+          "BOD": 2.6,
+          "FC": 7,
+          "TC": 280,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 6.7,
+          "BOD": 2.8,
+          "FC": 12,
+          "TC": 220,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 6.8,
+          "BOD": 2.2,
+          "FC": 7,
+          "TC": 140,
+          "status": "SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "July",
+      "year": 2020,
+      "period": "July-2020",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 4.4,
+          "BOD": 1.3,
+          "FC": 7,
+          "TC": 60,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 7.1,
+          "BOD": 1.4,
+          "FC": 7,
+          "TC": 40,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 7.0,
+          "BOD": 1.4,
+          "FC": 9,
+          "TC": 90,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 7.2,
+          "BOD": 1.3,
+          "FC": 2,
+          "TC": 60,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 7.3,
+          "BOD": 1.9,
+          "FC": 7,
+          "TC": 140,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 7.1,
+          "BOD": 1.9,
+          "FC": 4,
+          "TC": 30,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 2",
+          "DO": 7.1,
+          "BOD": 1.3,
+          "FC": 0,
+          "TC": 23,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 3",
+          "DO": 7.2,
+          "BOD": 1.2,
+          "FC": 0,
+          "TC": 26,
+          "status": "SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "June",
+      "year": 2020,
+      "period": "June-2020",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 7.6,
+          "BOD": 1.2,
+          "FC": 4,
+          "TC": 40,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 7.4,
+          "BOD": 1.3,
+          "FC": 4,
+          "TC": 30,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 7.1,
+          "BOD": 1.3,
+          "FC": 7,
+          "TC": 60,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 7.4,
+          "BOD": 1.3,
+          "FC": 8,
+          "TC": 50,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 7.1,
+          "BOD": 1.7,
+          "FC": 8,
+          "TC": 110,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 7.2,
+          "BOD": 1.8,
+          "FC": 6,
+          "TC": 40,
+          "status": "SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "May",
+      "year": 2020,
+      "period": "May-2020",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 7.5,
+          "BOD": 1.3,
+          "FC": 9,
+          "TC": 30,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 7.5,
+          "BOD": 1.2,
+          "FC": 7,
+          "TC": 22,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 6.8,
+          "BOD": 1.3,
+          "FC": 12,
+          "TC": 34,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 7.3,
+          "BOD": 1.3,
+          "FC": 10,
+          "TC": 33,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 6.7,
+          "BOD": 1.8,
+          "FC": 9,
+          "TC": 30,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 6.9,
+          "BOD": 1.9,
+          "FC": 9,
+          "TC": 27,
+          "status": "SATISFACTORY"
+        }
+      ]
+    },
+    {
+      "month": "April",
+      "year": 2020,
+      "period": "April-2020",
+      "readings": [
+        {
+          "station_code": "1100",
+          "DO": 7.3,
+          "BOD": 1.4,
+          "FC": 0,
+          "TC": 0,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1106",
+          "DO": 7.3,
+          "BOD": 1.6,
+          "FC": 27,
+          "TC": 8.3,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1282",
+          "DO": 6.3,
+          "BOD": 1.3,
+          "FC": 10,
+          "TC": 0,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1467",
+          "DO": 7.0,
+          "BOD": 1.2,
+          "FC": 0,
+          "TC": 0,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "1848",
+          "DO": 6.5,
+          "BOD": 1.9,
+          "FC": 17,
+          "TC": 4,
+          "status": "SATISFACTORY"
+        },
+        {
+          "station_code": "New 1",
+          "DO": 6.8,
+          "BOD": 2.0,
+          "FC": 24,
+          "TC": 8.2,
+          "status": "SATISFACTORY"
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "BDL": "Below Detection Limit",
+    "BLD": "Below Detection Limit (alternate notation)",
+    "N.A.": "Not Available / Not Analyzed",
+    "None": "Parameter not recorded for this period",
+    "scanned_pages": "Pages 60-86 contain scanned images; data could not be extracted via text parsing. These pages likely cover monitoring data from 2018 to early 2020.",
+    "data_note": "FC and TC values reported as MPN/100ml. Some early months (Nov-Dec 2024, Jan 2025) did not record FC/TC values in the source document."
+  }
+}

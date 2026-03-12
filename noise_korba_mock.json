@@ -1,0 +1,657 @@
+{
+    "stations": [
+        {
+            "id": 1,
+            "name": "BALCO Gate",
+            "zone": "Industrial",
+            "lat": 22.3595,
+            "lon": 82.6870
+        },
+        {
+            "id": 2,
+            "name": "CSEB Power Station",
+            "zone": "Industrial",
+            "lat": 22.3411,
+            "lon": 82.7013
+        },
+        {
+            "id": 3,
+            "name": "Korba Bus Stand",
+            "zone": "Commercial",
+            "lat": 22.3480,
+            "lon": 82.6838
+        },
+        {
+            "id": 4,
+            "name": "Manikpur Chowk",
+            "zone": "Commercial",
+            "lat": 22.3530,
+            "lon": 82.6910
+        },
+        {
+            "id": 5,
+            "name": "DAV School Korba",
+            "zone": "Silent",
+            "lat": 22.3456,
+            "lon": 82.6792
+        },
+        {
+            "id": 6,
+            "name": "District Hospital",
+            "zone": "Silent",
+            "lat": 22.3502,
+            "lon": 82.6855
+        },
+        {
+            "id": 7,
+            "name": "NTPC Township",
+            "zone": "Residential",
+            "lat": 22.3618,
+            "lon": 82.7145
+        },
+        {
+            "id": 8,
+            "name": "Kusmunda Colony",
+            "zone": "Residential",
+            "lat": 22.3289,
+            "lon": 82.6723
+        },
+        {
+            "id": 9,
+            "name": "Gevra Mining Area",
+            "zone": "Industrial",
+            "lat": 22.3150,
+            "lon": 82.5912
+        }
+    ],
+    "observations": [
+        {
+            "station": "BALCO Gate",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "07-08",
+            "noise_db": 72.1
+        },
+        {
+            "station": "BALCO Gate",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "08-09",
+            "noise_db": 78.5
+        },
+        {
+            "station": "BALCO Gate",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "09-10",
+            "noise_db": 81.3
+        },
+        {
+            "station": "BALCO Gate",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "10-11",
+            "noise_db": 82.7
+        },
+        {
+            "station": "BALCO Gate",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "11-12",
+            "noise_db": 83.1
+        },
+        {
+            "station": "BALCO Gate",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "12-13",
+            "noise_db": 80.4
+        },
+        {
+            "station": "BALCO Gate",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "13-14",
+            "noise_db": 81.8
+        },
+        {
+            "station": "BALCO Gate",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "14-15",
+            "noise_db": 82.5
+        },
+        {
+            "station": "BALCO Gate",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "15-16",
+            "noise_db": 83.9
+        },
+        {
+            "station": "BALCO Gate",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "16-17",
+            "noise_db": 84.2
+        },
+        {
+            "station": "BALCO Gate",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "17-18",
+            "noise_db": 82.6
+        },
+        {
+            "station": "BALCO Gate",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "18-19",
+            "noise_db": 79.3
+        },
+        {
+            "station": "BALCO Gate",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "19-20",
+            "noise_db": 76.8
+        },
+        {
+            "station": "BALCO Gate",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "20-21",
+            "noise_db": 74.2
+        },
+        {
+            "station": "CSEB Power Station",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "07-08",
+            "noise_db": 70.8
+        },
+        {
+            "station": "CSEB Power Station",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "08-09",
+            "noise_db": 76.2
+        },
+        {
+            "station": "CSEB Power Station",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "09-10",
+            "noise_db": 79.5
+        },
+        {
+            "station": "CSEB Power Station",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "10-11",
+            "noise_db": 80.8
+        },
+        {
+            "station": "CSEB Power Station",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "11-12",
+            "noise_db": 81.4
+        },
+        {
+            "station": "CSEB Power Station",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "12-13",
+            "noise_db": 78.9
+        },
+        {
+            "station": "CSEB Power Station",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "13-14",
+            "noise_db": 80.1
+        },
+        {
+            "station": "CSEB Power Station",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "14-15",
+            "noise_db": 81.6
+        },
+        {
+            "station": "CSEB Power Station",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "15-16",
+            "noise_db": 82.3
+        },
+        {
+            "station": "CSEB Power Station",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "16-17",
+            "noise_db": 83.0
+        },
+        {
+            "station": "CSEB Power Station",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "17-18",
+            "noise_db": 81.2
+        },
+        {
+            "station": "CSEB Power Station",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "18-19",
+            "noise_db": 78.5
+        },
+        {
+            "station": "CSEB Power Station",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "19-20",
+            "noise_db": 75.9
+        },
+        {
+            "station": "CSEB Power Station",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "20-21",
+            "noise_db": 73.1
+        },
+        {
+            "station": "Korba Bus Stand",
+            "zone": "Commercial",
+            "day_type": "Working",
+            "time": "07-08",
+            "noise_db": 61.2
+        },
+        {
+            "station": "Korba Bus Stand",
+            "zone": "Commercial",
+            "day_type": "Working",
+            "time": "08-09",
+            "noise_db": 67.8
+        },
+        {
+            "station": "Korba Bus Stand",
+            "zone": "Commercial",
+            "day_type": "Working",
+            "time": "09-10",
+            "noise_db": 71.5
+        },
+        {
+            "station": "Korba Bus Stand",
+            "zone": "Commercial",
+            "day_type": "Working",
+            "time": "10-11",
+            "noise_db": 73.2
+        },
+        {
+            "station": "Korba Bus Stand",
+            "zone": "Commercial",
+            "day_type": "Working",
+            "time": "11-12",
+            "noise_db": 74.6
+        },
+        {
+            "station": "Korba Bus Stand",
+            "zone": "Commercial",
+            "day_type": "Working",
+            "time": "12-13",
+            "noise_db": 72.1
+        },
+        {
+            "station": "Korba Bus Stand",
+            "zone": "Commercial",
+            "day_type": "Working",
+            "time": "13-14",
+            "noise_db": 70.8
+        },
+        {
+            "station": "Korba Bus Stand",
+            "zone": "Commercial",
+            "day_type": "Working",
+            "time": "14-15",
+            "noise_db": 72.4
+        },
+        {
+            "station": "Korba Bus Stand",
+            "zone": "Commercial",
+            "day_type": "Working",
+            "time": "15-16",
+            "noise_db": 73.9
+        },
+        {
+            "station": "Korba Bus Stand",
+            "zone": "Commercial",
+            "day_type": "Working",
+            "time": "16-17",
+            "noise_db": 75.1
+        },
+        {
+            "station": "Korba Bus Stand",
+            "zone": "Commercial",
+            "day_type": "Working",
+            "time": "17-18",
+            "noise_db": 76.8
+        },
+        {
+            "station": "Korba Bus Stand",
+            "zone": "Commercial",
+            "day_type": "Working",
+            "time": "18-19",
+            "noise_db": 74.3
+        },
+        {
+            "station": "Korba Bus Stand",
+            "zone": "Commercial",
+            "day_type": "Working",
+            "time": "19-20",
+            "noise_db": 72.1
+        },
+        {
+            "station": "Korba Bus Stand",
+            "zone": "Commercial",
+            "day_type": "Working",
+            "time": "20-21",
+            "noise_db": 69.5
+        },
+        {
+            "station": "DAV School Korba",
+            "zone": "Silent",
+            "day_type": "Working",
+            "time": "07-08",
+            "noise_db": 44.2
+        },
+        {
+            "station": "DAV School Korba",
+            "zone": "Silent",
+            "day_type": "Working",
+            "time": "08-09",
+            "noise_db": 52.6
+        },
+        {
+            "station": "DAV School Korba",
+            "zone": "Silent",
+            "day_type": "Working",
+            "time": "09-10",
+            "noise_db": 56.8
+        },
+        {
+            "station": "DAV School Korba",
+            "zone": "Silent",
+            "day_type": "Working",
+            "time": "10-11",
+            "noise_db": 55.3
+        },
+        {
+            "station": "DAV School Korba",
+            "zone": "Silent",
+            "day_type": "Working",
+            "time": "11-12",
+            "noise_db": 54.1
+        },
+        {
+            "station": "DAV School Korba",
+            "zone": "Silent",
+            "day_type": "Working",
+            "time": "12-13",
+            "noise_db": 51.7
+        },
+        {
+            "station": "DAV School Korba",
+            "zone": "Silent",
+            "day_type": "Working",
+            "time": "13-14",
+            "noise_db": 53.2
+        },
+        {
+            "station": "DAV School Korba",
+            "zone": "Silent",
+            "day_type": "Working",
+            "time": "14-15",
+            "noise_db": 56.4
+        },
+        {
+            "station": "DAV School Korba",
+            "zone": "Silent",
+            "day_type": "Working",
+            "time": "15-16",
+            "noise_db": 57.9
+        },
+        {
+            "station": "DAV School Korba",
+            "zone": "Silent",
+            "day_type": "Working",
+            "time": "16-17",
+            "noise_db": 55.6
+        },
+        {
+            "station": "DAV School Korba",
+            "zone": "Silent",
+            "day_type": "Working",
+            "time": "17-18",
+            "noise_db": 53.8
+        },
+        {
+            "station": "DAV School Korba",
+            "zone": "Silent",
+            "day_type": "Working",
+            "time": "18-19",
+            "noise_db": 50.4
+        },
+        {
+            "station": "DAV School Korba",
+            "zone": "Silent",
+            "day_type": "Working",
+            "time": "19-20",
+            "noise_db": 48.1
+        },
+        {
+            "station": "DAV School Korba",
+            "zone": "Silent",
+            "day_type": "Working",
+            "time": "20-21",
+            "noise_db": 45.7
+        },
+        {
+            "station": "NTPC Township",
+            "zone": "Residential",
+            "day_type": "Working",
+            "time": "07-08",
+            "noise_db": 48.9
+        },
+        {
+            "station": "NTPC Township",
+            "zone": "Residential",
+            "day_type": "Working",
+            "time": "08-09",
+            "noise_db": 54.3
+        },
+        {
+            "station": "NTPC Township",
+            "zone": "Residential",
+            "day_type": "Working",
+            "time": "09-10",
+            "noise_db": 57.8
+        },
+        {
+            "station": "NTPC Township",
+            "zone": "Residential",
+            "day_type": "Working",
+            "time": "10-11",
+            "noise_db": 59.2
+        },
+        {
+            "station": "NTPC Township",
+            "zone": "Residential",
+            "day_type": "Working",
+            "time": "11-12",
+            "noise_db": 60.5
+        },
+        {
+            "station": "NTPC Township",
+            "zone": "Residential",
+            "day_type": "Working",
+            "time": "12-13",
+            "noise_db": 58.1
+        },
+        {
+            "station": "NTPC Township",
+            "zone": "Residential",
+            "day_type": "Working",
+            "time": "13-14",
+            "noise_db": 56.7
+        },
+        {
+            "station": "NTPC Township",
+            "zone": "Residential",
+            "day_type": "Working",
+            "time": "14-15",
+            "noise_db": 59.3
+        },
+        {
+            "station": "NTPC Township",
+            "zone": "Residential",
+            "day_type": "Working",
+            "time": "15-16",
+            "noise_db": 60.8
+        },
+        {
+            "station": "NTPC Township",
+            "zone": "Residential",
+            "day_type": "Working",
+            "time": "16-17",
+            "noise_db": 62.4
+        },
+        {
+            "station": "NTPC Township",
+            "zone": "Residential",
+            "day_type": "Working",
+            "time": "17-18",
+            "noise_db": 61.1
+        },
+        {
+            "station": "NTPC Township",
+            "zone": "Residential",
+            "day_type": "Working",
+            "time": "18-19",
+            "noise_db": 58.6
+        },
+        {
+            "station": "NTPC Township",
+            "zone": "Residential",
+            "day_type": "Working",
+            "time": "19-20",
+            "noise_db": 55.9
+        },
+        {
+            "station": "NTPC Township",
+            "zone": "Residential",
+            "day_type": "Working",
+            "time": "20-21",
+            "noise_db": 52.3
+        },
+        {
+            "station": "Gevra Mining Area",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "07-08",
+            "noise_db": 74.5
+        },
+        {
+            "station": "Gevra Mining Area",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "08-09",
+            "noise_db": 80.1
+        },
+        {
+            "station": "Gevra Mining Area",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "09-10",
+            "noise_db": 83.6
+        },
+        {
+            "station": "Gevra Mining Area",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "10-11",
+            "noise_db": 85.2
+        },
+        {
+            "station": "Gevra Mining Area",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "11-12",
+            "noise_db": 84.8
+        },
+        {
+            "station": "Gevra Mining Area",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "12-13",
+            "noise_db": 82.3
+        },
+        {
+            "station": "Gevra Mining Area",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "13-14",
+            "noise_db": 83.9
+        },
+        {
+            "station": "Gevra Mining Area",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "14-15",
+            "noise_db": 85.1
+        },
+        {
+            "station": "Gevra Mining Area",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "15-16",
+            "noise_db": 86.3
+        },
+        {
+            "station": "Gevra Mining Area",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "16-17",
+            "noise_db": 85.7
+        },
+        {
+            "station": "Gevra Mining Area",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "17-18",
+            "noise_db": 83.4
+        },
+        {
+            "station": "Gevra Mining Area",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "18-19",
+            "noise_db": 80.8
+        },
+        {
+            "station": "Gevra Mining Area",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "19-20",
+            "noise_db": 78.2
+        },
+        {
+            "station": "Gevra Mining Area",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "20-21",
+            "noise_db": 75.6
+        }
+    ]
+}
