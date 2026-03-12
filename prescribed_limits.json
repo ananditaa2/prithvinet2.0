@@ -1,0 +1,10 @@
+{
+  "source": "NAAQS - National Ambient Air Quality Standards (CPCB)",
+  "unit": "\u00b5g/m3 (24hr avg)",
+  "limits": {
+    "SO2": 80,
+    "NOx": 80,
+    "PM10": 100,
+    "PM2.5": 60
+  }
+}

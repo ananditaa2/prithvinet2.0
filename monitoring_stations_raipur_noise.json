@@ -1,0 +1,81 @@
+{
+  "stations": [
+    {
+      "id": 1,
+      "name": "Telebandha Chowk",
+      "zone": "Commercial",
+      "lat": 21.242,
+      "lon": 81.6568
+    },
+    {
+      "id": 2,
+      "name": "Jaistambh Chowk",
+      "zone": "Commercial",
+      "lat": 21.2377,
+      "lon": 81.6335
+    },
+    {
+      "id": 3,
+      "name": "Gole Bazar",
+      "zone": "Commercial",
+      "lat": 21.2406,
+      "lon": 81.6315
+    },
+    {
+      "id": 4,
+      "name": "Pandri Market",
+      "zone": "Commercial",
+      "lat": 21.2545,
+      "lon": 81.6402
+    },
+    {
+      "id": 5,
+      "name": "Kalibadi School",
+      "zone": "Silent",
+      "lat": 21.2448,
+      "lon": 81.6337
+    },
+    {
+      "id": 6,
+      "name": "District Court",
+      "zone": "Silent",
+      "lat": 21.2503,
+      "lon": 81.6291
+    },
+    {
+      "id": 7,
+      "name": "B.R. Ambedkar Hospital",
+      "zone": "Silent",
+      "lat": 21.2534,
+      "lon": 81.6272
+    },
+    {
+      "id": 8,
+      "name": "Avanti Vihar",
+      "zone": "Residential",
+      "lat": 21.2558,
+      "lon": 81.6671
+    },
+    {
+      "id": 9,
+      "name": "Samta Colony",
+      "zone": "Residential",
+      "lat": 21.2483,
+      "lon": 81.6504
+    },
+    {
+      "id": 10,
+      "name": "Purani Basti",
+      "zone": "Residential",
+      "lat": 21.2371,
+      "lon": 81.6343
+    },
+    {
+      "id": 11,
+      "name": "Siltara Industrial Area",
+      "zone": "Industrial",
+      "lat": 21.3458,
+      "lon": 81.6932
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+[
+  {
+    "station_id": "ST001",
+    "name": "Laghu Udyog Nigam",
+    "type": "Industrial",
+    "lat": 21.1938,
+    "lng": 81.3509,
+    "region": "Bhilai-Durg, Chhattisgarh",
+    "active": true,
+    "code": "NAMP-LUN"
+  },
+  {
+    "station_id": "ST002",
+    "name": "C.S.I.D.C.",
+    "type": "Industrial",
+    "lat": 21.2514,
+    "lng": 81.28,
+    "region": "Bhilai-Durg, Chhattisgarh",
+    "active": true,
+    "code": "NAMP-CSI"
+  },
+  {
+    "station_id": "ST003",
+    "name": "Bokaro Hostel",
+    "type": "Residential",
+    "lat": 21.21,
+    "lng": 81.42,
+    "region": "Bhilai-Durg, Chhattisgarh",
+    "active": true,
+    "code": "NAMP-BOK"
+  },
+  {
+    "station_id": "ST004",
+    "name": "Regional Office CECB",
+    "type": "Commercial",
+    "lat": 21.18,
+    "lng": 81.38,
+    "region": "Bhilai-Durg, Chhattisgarh",
+    "active": true,
+    "code": "NAMP-RO"
+  },
+  {
+    "station_id": "ST005",
+    "name": "CECB Vyapar Vihar, Bilaspur",
+    "code": "NAMP-669",
+    "type": "Commercial",
+    "lat": 22.0796,
+    "lng": 82.1391,
+    "region": "Bilaspur, Chhattisgarh",
+    "active": true
+  },
+  {
+    "station_id": "ST006",
+    "name": "Pragati Nagar Jamnipali, Korba",
+    "code": "NAMP-249",
+    "type": "Residential",
+    "lat": 22.3412,
+    "lng": 82.6989,
+    "region": "Korba, Chhattisgarh",
+    "active": true
+  },
+  {
+    "station_id": "ST007",
+    "name": "Near Tehsil Office, Rampur, Korba",
+    "code": "NAMP-364",
+    "type": "Residential",
+    "lat": 22.3701,
+    "lng": 82.6823,
+    "region": "Korba, Chhattisgarh",
+    "active": true
+  },
+  {
+    "station_id": "ST008",
+    "name": "I.T.I. Rampur, Korba",
+    "code": "NAMP-407",
+    "type": "Residential",
+    "lat": 22.365,
+    "lng": 82.69,
+    "region": "Korba, Chhattisgarh",
+    "active": true
+  },
+  {
+    "station_id": "ST009",
+    "name": "Geetanjali Bhavan, Korba",
+    "code": "NAMP-GBK",
+    "type": "Commercial",
+    "lat": 22.355,
+    "lng": 82.715,
+    "region": "Korba, Chhattisgarh",
+    "active": true
+  }
+]

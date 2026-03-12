@@ -1,0 +1,1231 @@
+{
+  "metadata": {
+    "title": "Water Quality Status of NWMP Stations - Korba, Chhattisgarh",
+    "program": "National Water Monitoring Programme (NWMP)",
+    "city": "Korba",
+    "state": "Chhattisgarh",
+    "country": "India",
+    "monitoring_agency": "Chhattisgarh Environment Conservation Board (CECB)",
+    "data_period": {
+      "start": "2018-01",
+      "end": "2025-02"
+    },
+    "parameters_measured": [
+      {
+        "code": "DO",
+        "name": "Dissolved Oxygen",
+        "unit": "mg/l",
+        "criterion": ">4.0 mg/l"
+      },
+      {
+        "code": "BOD",
+        "name": "Biochemical Oxygen Demand",
+        "unit": "mg/l",
+        "criterion": "<3.0 mg/l"
+      },
+      {
+        "code": "FC",
+        "name": "Fecal Coliform",
+        "unit": "MPN/100ml",
+        "criterion": "<2500 MPN/100ml"
+      },
+      {
+        "code": "TC",
+        "name": "Total Coliform",
+        "unit": "MPN/100ml",
+        "criterion": "<5000 MPN/100ml"
+      }
+    ],
+    "water_quality_status_values": ["SATISFACTORY", "NOT SATISFACTORY"],
+    "source_document": "Water Quality Index - Korba (compressed PDF)",
+    "notes": "Coordinates are based on verified geographic locations of the monitoring stations in Korba district, Chhattisgarh. Some early records (2018-2019) have missing FC/TC values due to scan quality."
+  },
+  "monitoring_stations": [
+    {
+      "station_code": "1105",
+      "station_name": "Hasdeo River Upstream of Hasdeo Bango Hydel Power Station, Machadoli, Korba",
+      "water_body": "Hasdeo River",
+      "location_description": "Upstream of Hasdeo Bango Hydel Power Station, Machadoli",
+      "village": "Machadoli",
+      "district": "Korba",
+      "state": "Chhattisgarh",
+      "latitude": 22.1892,
+      "longitude": 82.0731,
+      "station_type": "River"
+    },
+    {
+      "station_code": "3165",
+      "station_name": "Hasdeo River 100 m Downstream after Confluence of Dengurnallah near CSEB(East) Guest House, Korba",
+      "water_body": "Hasdeo River",
+      "location_description": "100 m downstream after confluence of Dengurnallah, near CSEB(East) Guest House",
+      "village": "Korba",
+      "district": "Korba",
+      "state": "Chhattisgarh",
+      "latitude": 22.3518,
+      "longitude": 82.7141,
+      "station_type": "River"
+    },
+    {
+      "station_code": "3168",
+      "station_name": "Hasdeo River Downstream near Urga Village, Korba",
+      "water_body": "Hasdeo River",
+      "location_description": "Downstream of Hasdeo River near Urga Village",
+      "village": "Urga",
+      "district": "Korba",
+      "state": "Chhattisgarh",
+      "latitude": 22.3271,
+      "longitude": 82.6934,
+      "station_type": "River"
+    },
+    {
+      "station_code": "3169",
+      "station_name": "Hasdeo River at Drinking Water Intake Well of Municipal Corporation Korba before Treatment Plant, Kohadia Village",
+      "water_body": "Hasdeo River",
+      "location_description": "Drinking Water Intake Well of Municipal Corporation Korba - before treatment plant at Kohadia Village",
+      "village": "Kohadia",
+      "district": "Korba",
+      "state": "Chhattisgarh",
+      "latitude": 22.3456,
+      "longitude": 82.7023,
+      "station_type": "River / Intake Well"
+    },
+    {
+      "station_code": "3170",
+      "station_name": "Hasdeo River at Drinking Water Intake Well of Municipal Corporation Korba after Treatment Plant, Kohadia Village",
+      "water_body": "Hasdeo River",
+      "location_description": "Drinking Water Intake Well of Municipal Corporation Korba - after treatment plant at Kohadia Village",
+      "village": "Kohadia",
+      "district": "Korba",
+      "state": "Chhattisgarh",
+      "latitude": 22.3461,
+      "longitude": 82.7028,
+      "station_type": "River / Treated Water"
+    },
+    {
+      "station_code": "3172",
+      "station_name": "Borewell / Handpump in Rogbahari Village, Korba",
+      "water_body": "Groundwater",
+      "location_description": "Borewell / Handpump in Rogbahari Village",
+      "village": "Rogbahari",
+      "district": "Korba",
+      "state": "Chhattisgarh",
+      "latitude": 22.3634,
+      "longitude": 82.7312,
+      "station_type": "Groundwater - Borewell / Handpump"
+    },
+    {
+      "station_code": "3173",
+      "station_name": "Borewell / Handpump in Parsabhatta Village, Korba",
+      "water_body": "Groundwater",
+      "location_description": "Borewell / Handpump in Parsabhatta Village",
+      "village": "Parsabhatta",
+      "district": "Korba",
+      "state": "Chhattisgarh",
+      "latitude": 22.3712,
+      "longitude": 82.7198,
+      "station_type": "Groundwater - Borewell / Handpump"
+    },
+    {
+      "station_code": "3174",
+      "station_name": "Borewell / Handpump in Dhanras NTPC, Korba",
+      "water_body": "Groundwater",
+      "location_description": "Borewell / Handpump in Dhanras NTPC Colony",
+      "village": "Dhanras",
+      "district": "Korba",
+      "state": "Chhattisgarh",
+      "latitude": 22.3389,
+      "longitude": 82.7456,
+      "station_type": "Groundwater - Borewell / Handpump"
+    },
+    {
+      "station_code": "AHR-US",
+      "station_name": "Ahiran River Upstream near Village Barbaspur, Korba",
+      "water_body": "Ahiran River",
+      "location_description": "Upstream of Ahiran River near Village Barbaspur",
+      "village": "Barbaspur",
+      "district": "Korba",
+      "state": "Chhattisgarh",
+      "latitude": 22.3156,
+      "longitude": 82.6823,
+      "station_type": "River"
+    },
+    {
+      "station_code": "AHR-DS",
+      "station_name": "Ahiran River before Confluence with Hasdeo River, Village Charpara, Korba",
+      "water_body": "Ahiran River",
+      "location_description": "Before confluence of Ahiran River with Hasdeo River, Village Charpara",
+      "village": "Charpara",
+      "district": "Korba",
+      "state": "Chhattisgarh",
+      "latitude": 22.3234,
+      "longitude": 82.6967,
+      "station_type": "River"
+    }
+  ],
+  "monitoring_data": [
+    {
+      "year": 2018,
+      "month": 1,
+      "month_name": "January",
+      "records": [
+        {"station_code": "1105", "DO": 7.2, "BOD": 0.6, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.0, "BOD": 1.0, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 6.6, "BOD": 1.4, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.0, "BOD": 0.6, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.4, "BOD": 0.2, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2018,
+      "month": 2,
+      "month_name": "February",
+      "records": [
+        {"station_code": "1105", "DO": 7.4, "BOD": 0.4, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.2, "BOD": 0.8, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 6.8, "BOD": 1.2, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.2, "BOD": 0.8, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.4, "BOD": 0.2, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2018,
+      "month": 3,
+      "month_name": "March",
+      "records": [
+        {"station_code": "1105", "DO": 7.4, "BOD": 0.6, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.0, "BOD": 1.0, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 6.6, "BOD": 1.4, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.4, "BOD": 0.6, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.6, "BOD": 0.4, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2018,
+      "month": 4,
+      "month_name": "April",
+      "records": [
+        {"station_code": "1105", "DO": 7.6, "BOD": 0.8, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.2, "BOD": 1.2, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 6.8, "BOD": 1.6, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.6, "BOD": 0.8, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.8, "BOD": 0.2, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3172", "DO": 1.4, "BOD": 0.4, "FC": null, "TC": null, "water_quality_status": "NOT SATISFACTORY"},
+        {"station_code": "3173", "DO": 1.2, "BOD": 0.4, "FC": null, "TC": null, "water_quality_status": "NOT SATISFACTORY"},
+        {"station_code": "3174", "DO": 1.8, "BOD": 0.2, "FC": null, "TC": null, "water_quality_status": "NOT SATISFACTORY"},
+        {"station_code": "AHR-US", "DO": 7.2, "BOD": 0.8, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "AHR-DS", "DO": 6.4, "BOD": 1.2, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2018,
+      "month": 5,
+      "month_name": "May",
+      "records": [
+        {"station_code": "1105", "DO": 7.4, "BOD": 0.6, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.0, "BOD": 1.4, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 7.2, "BOD": 1.6, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.4, "BOD": 0.6, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.6, "BOD": 0.4, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2018,
+      "month": 6,
+      "month_name": "June",
+      "records": [
+        {"station_code": "1105", "DO": 7.6, "BOD": 0.4, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.0, "BOD": 1.0, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 6.6, "BOD": 1.4, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.2, "BOD": 0.8, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.4, "BOD": 0.2, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2018,
+      "month": 7,
+      "month_name": "July",
+      "records": [
+        {"station_code": "1105", "DO": 7.2, "BOD": 1.0, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 6.8, "BOD": 1.4, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 6.4, "BOD": 2.0, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 6.8, "BOD": 1.0, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.0, "BOD": 0.4, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2018,
+      "month": 8,
+      "month_name": "August",
+      "records": [
+        {"station_code": "1105", "DO": 6.8, "BOD": 1.4, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 6.6, "BOD": 1.8, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 6.2, "BOD": 2.4, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 6.6, "BOD": 1.2, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.2, "BOD": 0.6, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2018,
+      "month": 9,
+      "month_name": "September",
+      "records": [
+        {"station_code": "1105", "DO": 6.8, "BOD": 1.6, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 6.6, "BOD": 1.6, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 6.4, "BOD": 2.2, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 6.8, "BOD": 1.4, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.4, "BOD": 0.4, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2018,
+      "month": 10,
+      "month_name": "October",
+      "records": [
+        {"station_code": "1105", "DO": 7.2, "BOD": 0.6, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 6.8, "BOD": 1.0, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 6.4, "BOD": 1.6, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.0, "BOD": 1.0, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.4, "BOD": 0.2, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3172", "DO": null, "BOD": 0.6, "FC": null, "TC": null, "water_quality_status": "NOT SATISFACTORY"},
+        {"station_code": "3173", "DO": null, "BOD": 0.4, "FC": null, "TC": null, "water_quality_status": "NOT SATISFACTORY"},
+        {"station_code": "3174", "DO": null, "BOD": 0.4, "FC": null, "TC": null, "water_quality_status": "NOT SATISFACTORY"},
+        {"station_code": "AHR-US", "DO": 7.2, "BOD": 0.8, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "AHR-DS", "DO": 6.8, "BOD": 1.0, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2018,
+      "month": 11,
+      "month_name": "November",
+      "records": [
+        {"station_code": "1105", "DO": 7.4, "BOD": 0.4, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.2, "BOD": 1.4, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 6.6, "BOD": 2.0, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.2, "BOD": 0.8, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.4, "BOD": 0.2, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2018,
+      "month": 11,
+      "month_name": "November",
+      "_note": "Duplicate November 2018 record from second scan page",
+      "records": [
+        {"station_code": "1105", "DO": 7.6, "BOD": 0.4, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.0, "BOD": 1.8, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 6.4, "BOD": 2.4, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.0, "BOD": 0.6, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.2, "BOD": 0.4, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2019,
+      "month": 1,
+      "month_name": "January",
+      "records": [
+        {"station_code": "1105", "DO": 7.4, "BOD": 0.6, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.2, "BOD": 0.8, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 6.4, "BOD": 1.4, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.2, "BOD": 0.8, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.6, "BOD": 0.2, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2019,
+      "month": 2,
+      "month_name": "February",
+      "records": [
+        {"station_code": "1105", "DO": 7.6, "BOD": 0.2, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.0, "BOD": 0.6, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 6.6, "BOD": 1.0, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.4, "BOD": 0.4, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.8, "BOD": 0.2, "FC": null, "TC": null, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2019,
+      "month": 3,
+      "month_name": "March",
+      "records": [
+        {"station_code": "1105", "DO": 7.8, "BOD": 0.2, "FC": 12.0, "TC": 24.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.2, "BOD": 0.8, "FC": 13.0, "TC": 33.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 6.4, "BOD": 1.2, "FC": 4.0, "TC": 9.2, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.2, "BOD": 0.6, "FC": 6.1, "TC": 10.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.6, "BOD": 0.2, "FC": null, "TC": null, "water_quality_status": "NOT SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2019,
+      "month": 4,
+      "month_name": "April",
+      "records": [
+        {"station_code": "1105", "DO": 8.0, "BOD": 0.2, "FC": 7.0, "TC": 26.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.0, "BOD": 0.6, "FC": 11.0, "TC": 25.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 6.6, "BOD": 1.0, "FC": 2.0, "TC": 6.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.4, "BOD": 0.8, "FC": null, "TC": null, "water_quality_status": "NOT SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.8, "BOD": 0.4, "FC": null, "TC": null, "water_quality_status": "NOT SATISFACTORY"},
+        {"station_code": "3172", "DO": null, "BOD": null, "FC": null, "TC": null, "water_quality_status": "NOT SATISFACTORY"},
+        {"station_code": "3173", "DO": null, "BOD": null, "FC": null, "TC": null, "water_quality_status": "NOT SATISFACTORY"},
+        {"station_code": "3174", "DO": null, "BOD": null, "FC": null, "TC": null, "water_quality_status": "NOT SATISFACTORY"},
+        {"station_code": "AHR-US", "DO": 7.2, "BOD": 0.6, "FC": 17.0, "TC": 34.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "AHR-DS", "DO": 7.0, "BOD": 0.8, "FC": 21.0, "TC": 46.0, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2019,
+      "month": 5,
+      "month_name": "May",
+      "records": [
+        {"station_code": "1105", "DO": 7.8, "BOD": 0.2, "FC": 6.0, "TC": 22.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.2, "BOD": 0.8, "FC": 9.0, "TC": 26.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 7.0, "BOD": 1.0, "FC": 2.0, "TC": 8.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.2, "BOD": 0.6, "FC": null, "TC": null, "water_quality_status": "NOT SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.6, "BOD": 0.4, "FC": null, "TC": null, "water_quality_status": "NOT SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2019,
+      "month": 6,
+      "month_name": "June",
+      "records": [
+        {"station_code": "1105", "DO": 7.6, "BOD": 0.4, "FC": 4.0, "TC": 26.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.0, "BOD": 0.8, "FC": 7.0, "TC": 17.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 6.6, "BOD": 1.2, "FC": null, "TC": 10.0, "water_quality_status": "NOT SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.0, "BOD": 0.6, "FC": null, "TC": null, "water_quality_status": "NOT SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.4, "BOD": 0.4, "FC": null, "TC": null, "water_quality_status": "NOT SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2019,
+      "month": 7,
+      "month_name": "July",
+      "records": [
+        {"station_code": "1105", "DO": 7.0, "BOD": 0.8, "FC": 37.0, "TC": 150.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 6.8, "BOD": 1.4, "FC": 700.0, "TC": 1500.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 6.4, "BOD": 2.0, "FC": 1.8, "TC": 25.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 6.4, "BOD": 0.8, "FC": 40.0, "TC": 170.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 6.8, "BOD": 0.2, "FC": 1.8, "TC": 7.8, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2019,
+      "month": 9,
+      "month_name": "September",
+      "records": [
+        {"station_code": "1105", "DO": 7.2, "BOD": 0.6, "FC": 110.0, "TC": 540.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 6.8, "BOD": 1.0, "FC": 170.0, "TC": 920.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 6.0, "BOD": 1.6, "FC": 280.0, "TC": 1600.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 6.4, "BOD": 0.8, "FC": 79.0, "TC": 240.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.0, "BOD": 0.2, "FC": null, "TC": 4.5, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2019,
+      "month": 10,
+      "month_name": "October",
+      "records": [
+        {"station_code": "1105", "DO": 7.4, "BOD": 0.6, "FC": 17.0, "TC": 31.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 6.8, "BOD": 0.8, "FC": 21.0, "TC": 46.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 6.2, "BOD": 1.2, "FC": 22.0, "TC": 49.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 6.8, "BOD": 0.6, "FC": 4.0, "TC": 33.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.4, "BOD": 0.2, "FC": 1.8, "TC": 1.8, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3172", "DO": null, "BOD": null, "FC": 2.0, "TC": 2.0, "water_quality_status": "NOT SATISFACTORY"},
+        {"station_code": "3173", "DO": null, "BOD": null, "FC": 2.0, "TC": 2.0, "water_quality_status": "NOT SATISFACTORY"},
+        {"station_code": "3174", "DO": null, "BOD": null, "FC": 2.0, "TC": 2.0, "water_quality_status": "NOT SATISFACTORY"},
+        {"station_code": "AHR-US", "DO": 6.8, "BOD": 1.0, "FC": 25.0, "TC": 58.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "AHR-DS", "DO": 6.4, "BOD": 1.4, "FC": 26.0, "TC": 84.0, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2019,
+      "month": 11,
+      "month_name": "November",
+      "records": [
+        {"station_code": "1105", "DO": 7.4, "BOD": 0.4, "FC": 9.2, "TC": 26.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.0, "BOD": 0.6, "FC": 10.0, "TC": 34.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 6.6, "BOD": 1.0, "FC": 13.0, "TC": 58.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.2, "BOD": 0.4, "FC": 6.8, "TC": 14.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.4, "BOD": 0.2, "FC": 1.8, "TC": 1.8, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2019,
+      "month": 12,
+      "month_name": "December",
+      "records": [
+        {"station_code": "1105", "DO": 7.2, "BOD": 0.2, "FC": 11.0, "TC": 32.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 6.8, "BOD": 0.8, "FC": 14.0, "TC": 46.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 6.4, "BOD": 1.2, "FC": 17.0, "TC": 70.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.0, "BOD": 0.6, "FC": 9.1, "TC": 25.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.4, "BOD": 0.2, "FC": 1.8, "TC": 1.8, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2020,
+      "month": 1,
+      "month_name": "January",
+      "records": [
+        {"station_code": "1105", "DO": 7.4, "BOD": 0.2, "FC": 4.0, "TC": 26.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.0, "BOD": 0.8, "FC": 11.0, "TC": 33.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 6.6, "BOD": 1.4, "FC": 13.0, "TC": 49.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.2, "BOD": 0.4, "FC": 3.7, "TC": 24.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.6, "BOD": 0.2, "FC": 2.0, "TC": 2.0, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2020,
+      "month": 2,
+      "month_name": "February",
+      "records": [
+        {"station_code": "1105", "DO": 7.4, "BOD": 0.2, "FC": 3.6, "TC": 21.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.0, "BOD": 0.6, "FC": 9.0, "TC": 27.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 6.8, "BOD": 1.0, "FC": 12.0, "TC": 39.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.0, "BOD": 0.6, "FC": 3.6, "TC": 17.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.4, "BOD": 0.4, "FC": 1.8, "TC": 1.8, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2020,
+      "month": 3,
+      "month_name": "March",
+      "records": [
+        {"station_code": "1105", "DO": 7.6, "BOD": 0.2, "FC": 0.0, "TC": 0.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 8.0, "BOD": 0.6, "FC": 0.0, "TC": 0.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 6.6, "BOD": 1.2, "FC": 0.0, "TC": 0.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.4, "BOD": 0.6, "FC": 0.0, "TC": 0.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.8, "BOD": 0.4, "FC": 0.0, "TC": 0.0, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2020,
+      "month": 4,
+      "month_name": "April",
+      "records": [
+        {"station_code": "1105", "DO": 8.0, "BOD": 0.1, "FC": 0.0, "TC": 0.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.4, "BOD": 0.4, "FC": 0.0, "TC": 0.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 6.9, "BOD": 0.9, "FC": 0.0, "TC": 0.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 8.0, "BOD": 0.6, "FC": 0.0, "TC": 0.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 8.0, "BOD": 0.2, "FC": 0.0, "TC": 0.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3172", "DO": null, "BOD": null, "FC": null, "TC": null, "water_quality_status": "NOT SATISFACTORY"},
+        {"station_code": "3173", "DO": null, "BOD": null, "FC": null, "TC": null, "water_quality_status": "NOT SATISFACTORY"},
+        {"station_code": "3174", "DO": null, "BOD": null, "FC": null, "TC": null, "water_quality_status": "NOT SATISFACTORY"},
+        {"station_code": "AHR-US", "DO": 7.8, "BOD": 0.4, "FC": 0.0, "TC": 0.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "AHR-DS", "DO": 8.0, "BOD": 0.4, "FC": 0.0, "TC": 0.0, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2020,
+      "month": 5,
+      "month_name": "May",
+      "records": [
+        {"station_code": "1105", "DO": 8.0, "BOD": 0.0, "FC": 2.0, "TC": 10.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.0, "BOD": 0.4, "FC": 4.0, "TC": 11.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 6.8, "BOD": 0.6, "FC": 6.1, "TC": 12.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.4, "BOD": 0.4, "FC": 1.8, "TC": 6.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.8, "BOD": 0.0, "FC": 1.8, "TC": 1.8, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2020,
+      "month": 6,
+      "month_name": "June",
+      "records": [
+        {"station_code": "1105", "DO": 7.6, "BOD": 0.2, "FC": 4.0, "TC": 12.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 6.8, "BOD": 0.6, "FC": 6.1, "TC": 15.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 6.4, "BOD": 0.8, "FC": 6.8, "TC": 17.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.2, "BOD": 0.6, "FC": 1.8, "TC": 8.1, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.6, "BOD": 0.2, "FC": 1.8, "TC": 1.8, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2020,
+      "month": 7,
+      "month_name": "July",
+      "records": [
+        {"station_code": "1105", "DO": 7.4, "BOD": 0.4, "FC": 7.8, "TC": 23.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 6.8, "BOD": 0.8, "FC": 11.0, "TC": 34.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 6.6, "BOD": 0.6, "FC": 17.0, "TC": 49.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.0, "BOD": 0.4, "FC": 1.8, "TC": 9.2, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.4, "BOD": 0.2, "FC": 1.8, "TC": 1.8, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2020,
+      "month": 8,
+      "month_name": "August",
+      "records": [
+        {"station_code": "1105", "DO": 7.2, "BOD": 0.6, "FC": 4.0, "TC": 17.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.0, "BOD": 0.6, "FC": 6.8, "TC": 26.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 6.8, "BOD": 0.8, "FC": 11.0, "TC": 36.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.2, "BOD": 0.6, "FC": 1.8, "TC": 8.3, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.6, "BOD": 0.4, "FC": 1.8, "TC": 1.8, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2020,
+      "month": 9,
+      "month_name": "September",
+      "records": [
+        {"station_code": "1105", "DO": 7.0, "BOD": 0.6, "FC": 11.0, "TC": 33.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.2, "BOD": 0.6, "FC": 14.0, "TC": 46.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 6.8, "BOD": 0.8, "FC": 21.0, "TC": 58.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.0, "BOD": 0.6, "FC": 1.8, "TC": 15.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.4, "BOD": 0.2, "FC": 1.8, "TC": 1.8, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2020,
+      "month": 10,
+      "month_name": "October",
+      "records": [
+        {"station_code": "1105", "DO": 7.2, "BOD": 0.4, "FC": 11.0, "TC": 34.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.0, "BOD": 0.4, "FC": 14.0, "TC": 49.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 6.6, "BOD": 0.8, "FC": 26.0, "TC": 63.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.2, "BOD": 0.4, "FC": 1.8, "TC": 17.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.4, "BOD": 0.2, "FC": 1.8, "TC": 1.8, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3172", "DO": 0.0, "BOD": 0.0, "FC": 1.8, "TC": 1.8, "water_quality_status": "NOT SATISFACTORY"},
+        {"station_code": "3173", "DO": 0.0, "BOD": 0.0, "FC": 1.8, "TC": 1.8, "water_quality_status": "NOT SATISFACTORY"},
+        {"station_code": "3174", "DO": 0.0, "BOD": 0.0, "FC": 1.8, "TC": 1.8, "water_quality_status": "NOT SATISFACTORY"},
+        {"station_code": "AHR-US", "DO": 6.8, "BOD": 0.6, "FC": 13.0, "TC": 38.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "AHR-DS", "DO": 6.6, "BOD": 0.8, "FC": 21.0, "TC": 58.0, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2020,
+      "month": 11,
+      "month_name": "November",
+      "records": [
+        {"station_code": "1105", "DO": 7.4, "BOD": 0.2, "FC": 6.1, "TC": 26.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 6.8, "BOD": 0.6, "FC": 12.0, "TC": 41.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 6.4, "BOD": 0.8, "FC": 21.0, "TC": 63.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.0, "BOD": 0.2, "FC": 1.8, "TC": 17.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.2, "BOD": 0.2, "FC": 1.8, "TC": 1.8, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2020,
+      "month": 12,
+      "month_name": "December",
+      "records": [
+        {"station_code": "1105", "DO": 7.2, "BOD": 0.4, "FC": 6.1, "TC": 27.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.0, "BOD": 0.6, "FC": 13.0, "TC": 43.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 6.6, "BOD": 0.8, "FC": 22.0, "TC": 70.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 6.8, "BOD": 0.4, "FC": 1.8, "TC": 15.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.4, "BOD": 0.2, "FC": 1.8, "TC": 1.8, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2021,
+      "month": 1,
+      "month_name": "January",
+      "records": [
+        {"station_code": "1105", "DO": 7.4, "BOD": 0.2, "FC": 6.0, "TC": 25.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.2, "BOD": 0.4, "FC": 14.0, "TC": 46.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 6.8, "BOD": 0.8, "FC": 22.0, "TC": 79.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.0, "BOD": 0.2, "FC": 1.8, "TC": 17.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.6, "BOD": 0.2, "FC": 1.8, "TC": 1.8, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2021,
+      "month": 2,
+      "month_name": "February",
+      "records": [
+        {"station_code": "1105", "DO": 7.6, "BOD": null, "FC": 6.0, "TC": 25.0, "water_quality_status": "NOT SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.0, "BOD": 0.6, "FC": 8.1, "TC": 31.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 6.6, "BOD": 0.8, "FC": 13.0, "TC": 46.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.2, "BOD": 0.2, "FC": 1.8, "TC": 14.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.4, "BOD": null, "FC": 1.8, "TC": 1.8, "water_quality_status": "NOT SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2021,
+      "month": 3,
+      "month_name": "March",
+      "records": [
+        {"station_code": "1105", "DO": 7.8, "BOD": 0.2, "FC": 4.0, "TC": 56.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.2, "BOD": 0.4, "FC": 6.2, "TC": 30.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 7.0, "BOD": 0.6, "FC": 12.0, "TC": 41.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.0, "BOD": 0.6, "FC": 1.8, "TC": 16.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.6, "BOD": 0.2, "FC": 1.8, "TC": 1.8, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2021,
+      "month": 4,
+      "month_name": "April",
+      "records": [
+        {"station_code": "1105", "DO": 7.8, "BOD": 0.2, "FC": 6.0, "TC": 25.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.0, "BOD": 0.4, "FC": 8.1, "TC": 31.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 6.8, "BOD": 0.8, "FC": 13.0, "TC": 47.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.2, "BOD": 0.6, "FC": 1.8, "TC": 14.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.4, "BOD": 0.2, "FC": 1.8, "TC": 15.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3172", "DO": null, "BOD": null, "FC": 1.8, "TC": 1.4, "water_quality_status": "NOT SATISFACTORY"},
+        {"station_code": "3173", "DO": null, "BOD": null, "FC": 1.5, "TC": 2.4, "water_quality_status": "NOT SATISFACTORY"},
+        {"station_code": "3174", "DO": null, "BOD": null, "FC": 1.2, "TC": 1.2, "water_quality_status": "NOT SATISFACTORY"},
+        {"station_code": "AHR-US", "DO": 7.6, "BOD": 0.2, "FC": 12.0, "TC": 21.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "AHR-DS", "DO": 7.2, "BOD": 0.6, "FC": 22.0, "TC": 51.0, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2021,
+      "month": 5,
+      "month_name": "May",
+      "records": [
+        {"station_code": "1105", "DO": 7.8, "BOD": 0.2, "FC": 2.0, "TC": 30.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.6, "BOD": 0.4, "FC": 4.2, "TC": 20.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 7.2, "BOD": 0.6, "FC": 12.0, "TC": 41.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.0, "BOD": 0.6, "FC": 10.0, "TC": 31.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.4, "BOD": 0.4, "FC": 1.8, "TC": 11.0, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2021,
+      "month": 6,
+      "month_name": "June",
+      "records": [
+        {"station_code": "1105", "DO": 7.4, "BOD": 0.4, "FC": 5.6, "TC": 23.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.4, "BOD": 0.6, "FC": 8.0, "TC": 28.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 7.2, "BOD": 0.6, "FC": 11.0, "TC": 43.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.6, "BOD": 0.2, "FC": 1.8, "TC": 12.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.8, "BOD": 0.2, "FC": 1.8, "TC": 1.8, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2021,
+      "month": 7,
+      "month_name": "July",
+      "records": [
+        {"station_code": "1105", "DO": 7.8, "BOD": 0.2, "FC": 9.2, "TC": 23.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.4, "BOD": 0.4, "FC": 14.0, "TC": 48.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 7.0, "BOD": 0.6, "FC": 25.0, "TC": 63.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.6, "BOD": 0.4, "FC": 1.8, "TC": 22.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.8, "BOD": 0.2, "FC": 1.8, "TC": 1.8, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2021,
+      "month": 8,
+      "month_name": "August",
+      "records": [
+        {"station_code": "1105", "DO": 7.6, "BOD": 0.4, "FC": 4.0, "TC": 23.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.2, "BOD": 0.6, "FC": 6.1, "TC": 33.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 7.0, "BOD": 0.8, "FC": 8.1, "TC": 39.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.4, "BOD": 0.6, "FC": 2.0, "TC": 2.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.6, "BOD": 0.2, "FC": 2.0, "TC": 2.0, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2021,
+      "month": 9,
+      "month_name": "September",
+      "records": [
+        {"station_code": "1105", "DO": 7.8, "BOD": 0.2, "FC": 4.5, "TC": 23.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.6, "BOD": 0.4, "FC": 6.8, "TC": 22.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 7.2, "BOD": 0.6, "FC": 6.1, "TC": 34.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.4, "BOD": 0.2, "FC": 2.0, "TC": 2.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.8, "BOD": 0.2, "FC": 4.0, "TC": 17.0, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2021,
+      "month": 10,
+      "month_name": "October",
+      "records": [
+        {"station_code": "1105", "DO": 7.8, "BOD": 0.2, "FC": 8.0, "TC": 30.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.4, "BOD": 0.6, "FC": 2.0, "TC": 21.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 7.2, "BOD": 0.6, "FC": 4.0, "TC": 22.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.6, "BOD": 0.2, "FC": 1.8, "TC": 4.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.8, "BOD": 0.2, "FC": 1.8, "TC": 1.8, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3172", "DO": 4.6, "BOD": 0.4, "FC": 1.8, "TC": 1.8, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3173", "DO": 4.8, "BOD": 0.2, "FC": 1.8, "TC": 1.8, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3174", "DO": 5.4, "BOD": 0.2, "FC": 1.8, "TC": 1.8, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "AHR-US", "DO": 7.2, "BOD": 0.4, "FC": 7.0, "TC": 22.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "AHR-DS", "DO": 7.0, "BOD": 0.4, "FC": 6.0, "TC": 26.0, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2021,
+      "month": 11,
+      "month_name": "November",
+      "records": [
+        {"station_code": "1105", "DO": 7.6, "BOD": 0.2, "FC": 11.0, "TC": 30.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.2, "BOD": 0.4, "FC": 13.0, "TC": 34.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 7.0, "BOD": 0.6, "FC": 9.0, "TC": 26.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.4, "BOD": 0.4, "FC": 7.0, "TC": 22.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.8, "BOD": 0.2, "FC": 2.0, "TC": 2.0, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2021,
+      "month": 12,
+      "month_name": "December",
+      "records": [
+        {"station_code": "1105", "DO": 7.8, "BOD": 0.2, "FC": 11.0, "TC": 30.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.4, "BOD": 0.2, "FC": 14.0, "TC": 34.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 7.0, "BOD": 0.4, "FC": 9.0, "TC": 27.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.2, "BOD": 0.2, "FC": 2.0, "TC": 2.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.6, "BOD": 0.2, "FC": 2.0, "TC": 2.0, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2022,
+      "month": 1,
+      "month_name": "January",
+      "records": [
+        {"station_code": "1105", "DO": 7.6, "BOD": 0.2, "FC": 13.0, "TC": 27.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.2, "BOD": 0.4, "FC": 17.0, "TC": 30.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 6.8, "BOD": 0.6, "FC": 14.0, "TC": 34.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.4, "BOD": 0.4, "FC": 2.0, "TC": 2.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.8, "BOD": 0.2, "FC": 2.0, "TC": 2.0, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2022,
+      "month": 2,
+      "month_name": "February",
+      "records": [
+        {"station_code": "1105", "DO": 7.8, "BOD": 0.2, "FC": 14.0, "TC": 27.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.4, "BOD": 0.6, "FC": 11.0, "TC": 21.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 7.0, "BOD": 1.0, "FC": 13.0, "TC": 26.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.6, "BOD": 0.6, "FC": 2.0, "TC": 2.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.8, "BOD": 0.4, "FC": 2.0, "TC": 2.0, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2022,
+      "month": 3,
+      "month_name": "March",
+      "records": [
+        {"station_code": "1105", "DO": 7.6, "BOD": 0.4, "FC": 7.0, "TC": 14.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.2, "BOD": 0.8, "FC": 13.0, "TC": 21.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 7.0, "BOD": 1.0, "FC": 17.0, "TC": 27.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.4, "BOD": 0.6, "FC": 2.0, "TC": 4.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.6, "BOD": 0.2, "FC": 2.0, "TC": 2.0, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2022,
+      "month": 4,
+      "month_name": "April",
+      "records": [
+        {"station_code": "1105", "DO": 7.8, "BOD": 0.4, "FC": 14.0, "TC": 40.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.6, "BOD": 0.6, "FC": 17.0, "TC": 30.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 7.4, "BOD": 0.8, "FC": 13.0, "TC": 34.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.6, "BOD": 0.8, "FC": 2.0, "TC": 2.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.8, "BOD": 0.4, "FC": 2.0, "TC": 2.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3172", "DO": 5.4, "BOD": 0.2, "FC": 2.0, "TC": 12.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3173", "DO": 5.2, "BOD": 0.4, "FC": 2.0, "TC": 8.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3174", "DO": 5.6, "BOD": 0.2, "FC": 2.0, "TC": 2.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "AHR-US", "DO": 7.4, "BOD": 0.8, "FC": 14.0, "TC": 27.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "AHR-DS", "DO": 7.2, "BOD": 1.0, "FC": 17.0, "TC": 27.0, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2022,
+      "month": 5,
+      "month_name": "May",
+      "records": [
+        {"station_code": "1105", "DO": 7.6, "BOD": 0.8, "FC": 13.0, "TC": 27.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.4, "BOD": 1.0, "FC": 17.0, "TC": 30.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 7.2, "BOD": 1.2, "FC": 14.0, "TC": 34.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.4, "BOD": 1.1, "FC": 2.0, "TC": 2.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.6, "BOD": 0.6, "FC": 2.0, "TC": 2.0, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2022,
+      "month": 6,
+      "month_name": "June",
+      "records": [
+        {"station_code": "1105", "DO": 7.9, "BOD": 0.6, "FC": 13.0, "TC": 27.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.5, "BOD": 1.2, "FC": 14.0, "TC": 26.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 7.2, "BOD": 1.6, "FC": 17.0, "TC": 34.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.5, "BOD": 1.2, "FC": 2.0, "TC": 2.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.9, "BOD": 0.4, "FC": 2.0, "TC": 2.0, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2022,
+      "month": 7,
+      "month_name": "July",
+      "records": [
+        {"station_code": "1105", "DO": 7.4, "BOD": 0.8, "FC": 11.0, "TC": 28.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.2, "BOD": 2.2, "FC": 5.1, "TC": 32.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 6.8, "BOD": 2.6, "FC": 7.1, "TC": 38.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.2, "BOD": 2.0, "FC": 2.0, "TC": 9.2, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.4, "BOD": 0.6, "FC": 2.0, "TC": 2.0, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2022,
+      "month": 8,
+      "month_name": "August",
+      "records": [
+        {"station_code": "1105", "DO": 7.6, "BOD": 0.6, "FC": 14.0, "TC": 30.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.4, "BOD": 2.0, "FC": 6.1, "TC": 33.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 7.0, "BOD": 2.4, "FC": 8.1, "TC": 48.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.0, "BOD": 2.0, "FC": 4.0, "TC": 22.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.6, "BOD": 0.4, "FC": 2.0, "TC": 2.0, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2022,
+      "month": 9,
+      "month_name": "September",
+      "records": [
+        {"station_code": "1105", "DO": 7.4, "BOD": 0.8, "FC": 11.0, "TC": 34.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.2, "BOD": 1.8, "FC": 4.5, "TC": 34.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 6.8, "BOD": 2.2, "FC": 6.8, "TC": 39.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.0, "BOD": 1.6, "FC": 4.5, "TC": 23.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.4, "BOD": 0.2, "FC": 2.0, "TC": 2.0, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2022,
+      "month": 10,
+      "month_name": "October",
+      "records": [
+        {"station_code": "1105", "DO": 7.8, "BOD": 1.0, "FC": 8.0, "TC": 34.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.6, "BOD": 1.4, "FC": 13.0, "TC": 30.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 7.2, "BOD": 2.0, "FC": 9.0, "TC": 26.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.4, "BOD": 1.2, "FC": 6.0, "TC": 30.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.8, "BOD": 0.6, "FC": 2.0, "TC": 4.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3172", "DO": 4.8, "BOD": 0.2, "FC": 2.0, "TC": 2.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3173", "DO": 4.2, "BOD": 0.2, "FC": 2.0, "TC": 2.2, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3174", "DO": 4.4, "BOD": 0.4, "FC": 2.0, "TC": 2.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "AHR-US", "DO": 7.6, "BOD": 1.2, "FC": 6.0, "TC": 24.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "AHR-DS", "DO": 7.2, "BOD": 1.0, "FC": 7.0, "TC": 26.0, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2022,
+      "month": 11,
+      "month_name": "November",
+      "records": [
+        {"station_code": "1105", "DO": 8.4, "BOD": 0.4, "FC": 11.0, "TC": 30.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.4, "BOD": 1.6, "FC": 14.0, "TC": 34.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 7.2, "BOD": 2.2, "FC": 11.0, "TC": 30.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.2, "BOD": 1.0, "FC": 6.0, "TC": 22.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.6, "BOD": 0.4, "FC": 2.0, "TC": 4.0, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2022,
+      "month": 12,
+      "month_name": "December",
+      "records": [
+        {"station_code": "1105", "DO": 8.2, "BOD": 0.6, "FC": 13.0, "TC": 34.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.6, "BOD": 1.4, "FC": 14.0, "TC": 49.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 7.4, "BOD": 2.0, "FC": 25.0, "TC": 58.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.6, "BOD": 1.0, "FC": 2.0, "TC": 12.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 8.0, "BOD": 0.4, "FC": 2.0, "TC": 4.0, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2023,
+      "month": 1,
+      "month_name": "January",
+      "records": [
+        {"station_code": "1105", "DO": 8.4, "BOD": 0.6, "FC": 17.0, "TC": 31.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.8, "BOD": 1.2, "FC": 21.0, "TC": 70.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 7.6, "BOD": 1.6, "FC": 25.0, "TC": 84.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.4, "BOD": 0.8, "FC": 11.0, "TC": 21.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 8.2, "BOD": 0.2, "FC": 4.0, "TC": 12.0, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2023,
+      "month": 2,
+      "month_name": "February",
+      "records": [
+        {"station_code": "1105", "DO": 8.2, "BOD": 0.4, "FC": 11.0, "TC": 32.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 8.0, "BOD": 1.0, "FC": 13.0, "TC": 46.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 7.8, "BOD": 1.4, "FC": 14.0, "TC": 49.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.6, "BOD": 1.0, "FC": 14.0, "TC": 26.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 8.0, "BOD": 0.4, "FC": 2.0, "TC": 2.0, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2023,
+      "month": 3,
+      "month_name": "March",
+      "records": [
+        {"station_code": "1105", "DO": 8.4, "BOD": 0.6, "FC": 14.0, "TC": 26.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.8, "BOD": 1.2, "FC": 22.0, "TC": 34.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 8.0, "BOD": 1.4, "FC": 26.0, "TC": 58.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.8, "BOD": 0.8, "FC": 13.0, "TC": 24.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 8.2, "BOD": 0.2, "FC": 2.0, "TC": 12.0, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2023,
+      "month": 4,
+      "month_name": "April",
+      "records": [
+        {"station_code": "1105", "DO": 8.6, "BOD": 0.4, "FC": 22.0, "TC": 49.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.6, "BOD": 1.4, "FC": 25.0, "TC": 58.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 7.8, "BOD": 1.8, "FC": 26.0, "TC": 84.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.6, "BOD": 0.8, "FC": 11.0, "TC": 25.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 8.2, "BOD": 0.4, "FC": 2.0, "TC": 4.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3172", "DO": 4.6, "BOD": 0.4, "FC": 2.0, "TC": 24.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3173", "DO": 4.4, "BOD": 0.6, "FC": 4.0, "TC": 22.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3174", "DO": 4.6, "BOD": 0.2, "FC": 2.0, "TC": 12.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "AHR-US", "DO": 7.8, "BOD": 1.0, "FC": 14.0, "TC": 46.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "AHR-DS", "DO": 7.4, "BOD": 1.4, "FC": 26.0, "TC": 84.0, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2023,
+      "month": 5,
+      "month_name": "May",
+      "records": [
+        {"station_code": "1105", "DO": 8.4, "BOD": 0.6, "FC": 3.7, "TC": 24.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.4, "BOD": 1.6, "FC": 21.0, "TC": 46.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 7.0, "BOD": 2.0, "FC": 22.0, "TC": 49.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.8, "BOD": 1.0, "FC": 9.0, "TC": 30.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 8.0, "BOD": 0.6, "FC": 2.0, "TC": 12.0, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2023,
+      "month": 6,
+      "month_name": "June",
+      "records": [
+        {"station_code": "1105", "DO": 8.2, "BOD": 0.8, "FC": 11.0, "TC": 32.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.6, "BOD": 1.8, "FC": 21.0, "TC": 58.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 7.2, "BOD": 2.2, "FC": 25.0, "TC": 70.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.4, "BOD": 1.2, "FC": 14.0, "TC": 32.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.8, "BOD": 0.4, "FC": 2.0, "TC": 4.0, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2023,
+      "month": 7,
+      "month_name": "July",
+      "records": [
+        {"station_code": "1105", "DO": 7.8, "BOD": 1.0, "FC": 6.0, "TC": 30.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.4, "BOD": 1.6, "FC": 26.0, "TC": 110.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 7.2, "BOD": 2.0, "FC": 34.0, "TC": 150.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.6, "BOD": 1.0, "FC": 11.0, "TC": 46.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.8, "BOD": 0.6, "FC": 2.0, "TC": 4.0, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2023,
+      "month": 8,
+      "month_name": "August",
+      "records": [
+        {"station_code": "1105", "DO": 7.6, "BOD": 0.8, "FC": 13.0, "TC": 49.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.6, "BOD": 1.8, "FC": 21.0, "TC": 90.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 7.2, "BOD": 2.2, "FC": 37.0, "TC": 170.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.4, "BOD": 1.2, "FC": 25.0, "TC": 58.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.8, "BOD": 0.4, "FC": 4.0, "TC": 22.0, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2023,
+      "month": 9,
+      "month_name": "September",
+      "records": [
+        {"station_code": "1105", "DO": 7.8, "BOD": 1.0, "FC": 8.0, "TC": 34.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.4, "BOD": 1.6, "FC": 33.0, "TC": 110.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 7.0, "BOD": 2.4, "FC": 40.0, "TC": 150.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.2, "BOD": 1.4, "FC": 22.0, "TC": 49.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.6, "BOD": 0.6, "FC": 2.0, "TC": 12.0, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2023,
+      "month": 11,
+      "month_name": "November",
+      "records": [
+        {"station_code": "1105", "DO": 7.8, "BOD": 1.0, "FC": 21.0, "TC": 56.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.4, "BOD": 1.2, "FC": 33.0, "TC": 90.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 7.0, "BOD": 1.6, "FC": 40.0, "TC": 150.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.2, "BOD": 1.4, "FC": 17.0, "TC": 32.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.8, "BOD": 0.6, "FC": 2.0, "TC": 12.0, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2023,
+      "month": 12,
+      "month_name": "December",
+      "records": [
+        {"station_code": "1105", "DO": 7.6, "BOD": 1.2, "FC": 9.0, "TC": 46.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.2, "BOD": 1.6, "FC": 37.0, "TC": 110.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 7.0, "BOD": 2.0, "FC": 40.0, "TC": 170.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.4, "BOD": 1.6, "FC": 14.0, "TC": 26.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.6, "BOD": 0.4, "FC": 2.0, "TC": 2.0, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2024,
+      "month": 1,
+      "month_name": "January",
+      "records": [
+        {"station_code": "1105", "DO": 7.8, "BOD": 0.8, "FC": 17.0, "TC": 31.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.0, "BOD": 2.0, "FC": 37.0, "TC": 150.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 6.8, "BOD": 2.2, "FC": 33.0, "TC": 280.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.6, "BOD": 1.4, "FC": 17.0, "TC": 46.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.8, "BOD": 0.6, "FC": 2.0, "TC": 2.0, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2024,
+      "month": 2,
+      "month_name": "February",
+      "records": [
+        {"station_code": "1105", "DO": 8.2, "BOD": 0.6, "FC": 7.0, "TC": 22.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.4, "BOD": 2.2, "FC": 33.0, "TC": 90.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 7.0, "BOD": 2.6, "FC": 40.0, "TC": 170.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.4, "BOD": 0.8, "FC": 7.0, "TC": 21.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 8.2, "BOD": 0.4, "FC": 2.0, "TC": 4.0, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2024,
+      "month": 3,
+      "month_name": "March",
+      "records": [
+        {"station_code": "1105", "DO": 8.2, "BOD": 0.4, "FC": 14.0, "TC": 46.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.2, "BOD": 2.4, "FC": 40.0, "TC": 170.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 6.8, "BOD": 2.8, "FC": 700.0, "TC": 1100.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.2, "BOD": 1.0, "FC": 22.0, "TC": 58.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 8.0, "BOD": 0.2, "FC": 2.0, "TC": 4.0, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2024,
+      "month": 4,
+      "month_name": "April",
+      "records": [
+        {"station_code": "1105", "DO": 8.0, "BOD": 0.6, "FC": 16.0, "TC": 42.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.4, "BOD": 2.2, "FC": 44.0, "TC": 160.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 7.0, "BOD": 2.6, "FC": 50.0, "TC": 190.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.4, "BOD": 0.8, "FC": 28.0, "TC": 146.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.8, "BOD": 0.2, "FC": 2.0, "TC": 8.0, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2024,
+      "month": 5,
+      "month_name": "May",
+      "records": [
+        {"station_code": "1105", "DO": 7.8, "BOD": 0.8, "FC": 18.0, "TC": 46.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.2, "BOD": 2.4, "FC": 48.0, "TC": 180.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 6.8, "BOD": 2.8, "FC": 56.0, "TC": 210.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.6, "BOD": 1.2, "FC": 32.0, "TC": 142.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 8.2, "BOD": 0.4, "FC": 4.0, "TC": 20.0, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2024,
+      "month": 6,
+      "month_name": "June",
+      "records": [
+        {"station_code": "1105", "DO": 8.0, "BOD": 0.6, "FC": 16.0, "TC": 60.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.0, "BOD": 2.2, "FC": 50.0, "TC": 210.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 6.8, "BOD": 2.6, "FC": 60.0, "TC": 250.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.8, "BOD": 1.4, "FC": 38.0, "TC": 154.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 8.4, "BOD": 0.2, "FC": 4.0, "TC": 28.0, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2024,
+      "month": 7,
+      "month_name": "July",
+      "records": [
+        {"station_code": "1105", "DO": 7.6, "BOD": 1.2, "FC": 20.0, "TC": 60.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.0, "BOD": 2.0, "FC": 70.0, "TC": 160.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 6.2, "BOD": 2.8, "FC": 84.0, "TC": 190.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.2, "BOD": 2.0, "FC": 70.0, "TC": 120.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.6, "BOD": 0.4, "FC": 6.0, "TC": 30.0, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2024,
+      "month": 8,
+      "month_name": "August",
+      "records": [
+        {"station_code": "1105", "DO": 7.2, "BOD": 1.8, "FC": 40.0, "TC": 120.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 6.8, "BOD": 2.6, "FC": 80.0, "TC": 240.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 6.0, "BOD": 2.8, "FC": 90.0, "TC": 280.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.0, "BOD": 2.2, "FC": 80.0, "TC": 140.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 8.0, "BOD": 0.2, "FC": 4.0, "TC": 50.0, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2024,
+      "month": 9,
+      "month_name": "September",
+      "records": [
+        {"station_code": "1105", "DO": 7.2, "BOD": 1.8, "FC": 40.0, "TC": 120.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.0, "BOD": 2.6, "FC": 80.0, "TC": 240.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 6.2, "BOD": 2.8, "FC": 80.0, "TC": 240.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.0, "BOD": 2.2, "FC": 80.0, "TC": 140.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 8.0, "BOD": 0.2, "FC": 4.0, "TC": 50.0, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2024,
+      "month": 10,
+      "month_name": "October",
+      "records": [
+        {"station_code": "1105", "DO": 8.0, "BOD": 0.9, "FC": 22.0, "TC": 110.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.2, "BOD": 2.8, "FC": 26.0, "TC": 240.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 6.2, "BOD": 2.8, "FC": 30.0, "TC": 240.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.2, "BOD": 2.4, "FC": 80.0, "TC": 140.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 8.0, "BOD": 0.3, "FC": 2.0, "TC": 22.0, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2024,
+      "month": 11,
+      "month_name": "November",
+      "records": [
+        {"station_code": "1105", "DO": 8.0, "BOD": 1.0, "FC": 22.0, "TC": 60.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.0, "BOD": 2.8, "FC": 30.0, "TC": 280.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 7.0, "BOD": 2.8, "FC": 60.0, "TC": 260.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.3, "BOD": 1.8, "FC": 60.0, "TC": 160.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.8, "BOD": 0.8, "FC": 2.0, "TC": 22.0, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2024,
+      "month": 12,
+      "month_name": "December",
+      "records": [
+        {"station_code": "1105", "DO": 7.3, "BOD": 0.9, "FC": 9.0, "TC": 60.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 6.8, "BOD": 2.8, "FC": 34.0, "TC": 300.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 6.8, "BOD": 2.8, "FC": 60.0, "TC": 110.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.2, "BOD": 2.2, "FC": 60.0, "TC": 210.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.8, "BOD": 0.8, "FC": 9.0, "TC": 22.0, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "month_name": "January",
+      "records": [
+        {"station_code": "1105", "DO": 7.8, "BOD": 0.8, "FC": 2.0, "TC": 40.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.0, "BOD": 2.4, "FC": 60.0, "TC": 260.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 7.4, "BOD": 2.4, "FC": 22.0, "TC": 110.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.4, "BOD": 1.4, "FC": 9.0, "TC": 80.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 8.0, "BOD": 0.3, "FC": 2.0, "TC": 10.0, "water_quality_status": "SATISFACTORY"}
+      ]
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "month_name": "February",
+      "records": [
+        {"station_code": "1105", "DO": 7.6, "BOD": 0.4, "FC": 9.0, "TC": 40.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3165", "DO": 7.0, "BOD": 2.8, "FC": 60.0, "TC": 110.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3168", "DO": 7.2, "BOD": 2.4, "FC": 22.0, "TC": 110.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3169", "DO": 7.2, "BOD": 2.2, "FC": 12.0, "TC": 70.0, "water_quality_status": "SATISFACTORY"},
+        {"station_code": "3170", "DO": 7.8, "BOD": 0.4, "FC": 2.0, "TC": 9.0, "water_quality_status": "SATISFACTORY"}
+      ]
+    }
+  ]
+}

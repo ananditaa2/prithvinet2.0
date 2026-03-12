@@ -1,0 +1,454 @@
+{
+    "stations": [
+        {
+            "id": 1,
+            "name": "Vyapar Vihar Chowk",
+            "zone": "Commercial",
+            "lat": 22.0797,
+            "lon": 82.1409
+        },
+        {
+            "id": 2,
+            "name": "Torwa Bus Stand",
+            "zone": "Commercial",
+            "lat": 22.0856,
+            "lon": 82.1528
+        },
+        {
+            "id": 3,
+            "name": "CIMS Hospital",
+            "zone": "Silent",
+            "lat": 22.0723,
+            "lon": 82.1345
+        },
+        {
+            "id": 4,
+            "name": "BIT Durg School",
+            "zone": "Silent",
+            "lat": 22.0812,
+            "lon": 82.1476
+        },
+        {
+            "id": 5,
+            "name": "Sarkanda Colony",
+            "zone": "Residential",
+            "lat": 22.0768,
+            "lon": 82.1390
+        },
+        {
+            "id": 6,
+            "name": "Mangla Colony",
+            "zone": "Residential",
+            "lat": 22.0891,
+            "lon": 82.1562
+        },
+        {
+            "id": 7,
+            "name": "ACC Cement Factory Gate",
+            "zone": "Industrial",
+            "lat": 22.1023,
+            "lon": 82.1701
+        },
+        {
+            "id": 8,
+            "name": "Cement Nagar",
+            "zone": "Industrial",
+            "lat": 22.1089,
+            "lon": 82.1756
+        }
+    ],
+    "observations": [
+        {
+            "station": "Vyapar Vihar Chowk",
+            "zone": "Commercial",
+            "day_type": "Working",
+            "time": "07-08",
+            "noise_db": 60.8
+        },
+        {
+            "station": "Vyapar Vihar Chowk",
+            "zone": "Commercial",
+            "day_type": "Working",
+            "time": "08-09",
+            "noise_db": 66.5
+        },
+        {
+            "station": "Vyapar Vihar Chowk",
+            "zone": "Commercial",
+            "day_type": "Working",
+            "time": "09-10",
+            "noise_db": 70.2
+        },
+        {
+            "station": "Vyapar Vihar Chowk",
+            "zone": "Commercial",
+            "day_type": "Working",
+            "time": "10-11",
+            "noise_db": 71.8
+        },
+        {
+            "station": "Vyapar Vihar Chowk",
+            "zone": "Commercial",
+            "day_type": "Working",
+            "time": "11-12",
+            "noise_db": 73.1
+        },
+        {
+            "station": "Vyapar Vihar Chowk",
+            "zone": "Commercial",
+            "day_type": "Working",
+            "time": "12-13",
+            "noise_db": 70.6
+        },
+        {
+            "station": "Vyapar Vihar Chowk",
+            "zone": "Commercial",
+            "day_type": "Working",
+            "time": "13-14",
+            "noise_db": 69.3
+        },
+        {
+            "station": "Vyapar Vihar Chowk",
+            "zone": "Commercial",
+            "day_type": "Working",
+            "time": "14-15",
+            "noise_db": 71.4
+        },
+        {
+            "station": "Vyapar Vihar Chowk",
+            "zone": "Commercial",
+            "day_type": "Working",
+            "time": "15-16",
+            "noise_db": 72.8
+        },
+        {
+            "station": "Vyapar Vihar Chowk",
+            "zone": "Commercial",
+            "day_type": "Working",
+            "time": "16-17",
+            "noise_db": 74.2
+        },
+        {
+            "station": "Vyapar Vihar Chowk",
+            "zone": "Commercial",
+            "day_type": "Working",
+            "time": "17-18",
+            "noise_db": 75.6
+        },
+        {
+            "station": "Vyapar Vihar Chowk",
+            "zone": "Commercial",
+            "day_type": "Working",
+            "time": "18-19",
+            "noise_db": 73.9
+        },
+        {
+            "station": "Vyapar Vihar Chowk",
+            "zone": "Commercial",
+            "day_type": "Working",
+            "time": "19-20",
+            "noise_db": 71.5
+        },
+        {
+            "station": "Vyapar Vihar Chowk",
+            "zone": "Commercial",
+            "day_type": "Working",
+            "time": "20-21",
+            "noise_db": 68.7
+        },
+        {
+            "station": "CIMS Hospital",
+            "zone": "Silent",
+            "day_type": "Working",
+            "time": "07-08",
+            "noise_db": 44.5
+        },
+        {
+            "station": "CIMS Hospital",
+            "zone": "Silent",
+            "day_type": "Working",
+            "time": "08-09",
+            "noise_db": 50.8
+        },
+        {
+            "station": "CIMS Hospital",
+            "zone": "Silent",
+            "day_type": "Working",
+            "time": "09-10",
+            "noise_db": 54.2
+        },
+        {
+            "station": "CIMS Hospital",
+            "zone": "Silent",
+            "day_type": "Working",
+            "time": "10-11",
+            "noise_db": 55.7
+        },
+        {
+            "station": "CIMS Hospital",
+            "zone": "Silent",
+            "day_type": "Working",
+            "time": "11-12",
+            "noise_db": 54.9
+        },
+        {
+            "station": "CIMS Hospital",
+            "zone": "Silent",
+            "day_type": "Working",
+            "time": "12-13",
+            "noise_db": 52.3
+        },
+        {
+            "station": "CIMS Hospital",
+            "zone": "Silent",
+            "day_type": "Working",
+            "time": "13-14",
+            "noise_db": 53.8
+        },
+        {
+            "station": "CIMS Hospital",
+            "zone": "Silent",
+            "day_type": "Working",
+            "time": "14-15",
+            "noise_db": 55.5
+        },
+        {
+            "station": "CIMS Hospital",
+            "zone": "Silent",
+            "day_type": "Working",
+            "time": "15-16",
+            "noise_db": 56.8
+        },
+        {
+            "station": "CIMS Hospital",
+            "zone": "Silent",
+            "day_type": "Working",
+            "time": "16-17",
+            "noise_db": 54.3
+        },
+        {
+            "station": "CIMS Hospital",
+            "zone": "Silent",
+            "day_type": "Working",
+            "time": "17-18",
+            "noise_db": 52.1
+        },
+        {
+            "station": "CIMS Hospital",
+            "zone": "Silent",
+            "day_type": "Working",
+            "time": "18-19",
+            "noise_db": 49.6
+        },
+        {
+            "station": "CIMS Hospital",
+            "zone": "Silent",
+            "day_type": "Working",
+            "time": "19-20",
+            "noise_db": 47.2
+        },
+        {
+            "station": "CIMS Hospital",
+            "zone": "Silent",
+            "day_type": "Working",
+            "time": "20-21",
+            "noise_db": 45.1
+        },
+        {
+            "station": "Sarkanda Colony",
+            "zone": "Residential",
+            "day_type": "Working",
+            "time": "07-08",
+            "noise_db": 48.7
+        },
+        {
+            "station": "Sarkanda Colony",
+            "zone": "Residential",
+            "day_type": "Working",
+            "time": "08-09",
+            "noise_db": 54.2
+        },
+        {
+            "station": "Sarkanda Colony",
+            "zone": "Residential",
+            "day_type": "Working",
+            "time": "09-10",
+            "noise_db": 57.8
+        },
+        {
+            "station": "Sarkanda Colony",
+            "zone": "Residential",
+            "day_type": "Working",
+            "time": "10-11",
+            "noise_db": 59.3
+        },
+        {
+            "station": "Sarkanda Colony",
+            "zone": "Residential",
+            "day_type": "Working",
+            "time": "11-12",
+            "noise_db": 60.6
+        },
+        {
+            "station": "Sarkanda Colony",
+            "zone": "Residential",
+            "day_type": "Working",
+            "time": "12-13",
+            "noise_db": 57.9
+        },
+        {
+            "station": "Sarkanda Colony",
+            "zone": "Residential",
+            "day_type": "Working",
+            "time": "13-14",
+            "noise_db": 56.4
+        },
+        {
+            "station": "Sarkanda Colony",
+            "zone": "Residential",
+            "day_type": "Working",
+            "time": "14-15",
+            "noise_db": 58.7
+        },
+        {
+            "station": "Sarkanda Colony",
+            "zone": "Residential",
+            "day_type": "Working",
+            "time": "15-16",
+            "noise_db": 60.2
+        },
+        {
+            "station": "Sarkanda Colony",
+            "zone": "Residential",
+            "day_type": "Working",
+            "time": "16-17",
+            "noise_db": 61.8
+        },
+        {
+            "station": "Sarkanda Colony",
+            "zone": "Residential",
+            "day_type": "Working",
+            "time": "17-18",
+            "noise_db": 63.4
+        },
+        {
+            "station": "Sarkanda Colony",
+            "zone": "Residential",
+            "day_type": "Working",
+            "time": "18-19",
+            "noise_db": 61.1
+        },
+        {
+            "station": "Sarkanda Colony",
+            "zone": "Residential",
+            "day_type": "Working",
+            "time": "19-20",
+            "noise_db": 58.5
+        },
+        {
+            "station": "Sarkanda Colony",
+            "zone": "Residential",
+            "day_type": "Working",
+            "time": "20-21",
+            "noise_db": 55.3
+        },
+        {
+            "station": "ACC Cement Factory Gate",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "07-08",
+            "noise_db": 69.2
+        },
+        {
+            "station": "ACC Cement Factory Gate",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "08-09",
+            "noise_db": 75.6
+        },
+        {
+            "station": "ACC Cement Factory Gate",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "09-10",
+            "noise_db": 78.3
+        },
+        {
+            "station": "ACC Cement Factory Gate",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "10-11",
+            "noise_db": 79.8
+        },
+        {
+            "station": "ACC Cement Factory Gate",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "11-12",
+            "noise_db": 80.5
+        },
+        {
+            "station": "ACC Cement Factory Gate",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "12-13",
+            "noise_db": 78.1
+        },
+        {
+            "station": "ACC Cement Factory Gate",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "13-14",
+            "noise_db": 79.4
+        },
+        {
+            "station": "ACC Cement Factory Gate",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "14-15",
+            "noise_db": 80.8
+        },
+        {
+            "station": "ACC Cement Factory Gate",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "15-16",
+            "noise_db": 81.5
+        },
+        {
+            "station": "ACC Cement Factory Gate",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "16-17",
+            "noise_db": 80.9
+        },
+        {
+            "station": "ACC Cement Factory Gate",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "17-18",
+            "noise_db": 78.7
+        },
+        {
+            "station": "ACC Cement Factory Gate",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "18-19",
+            "noise_db": 76.2
+        },
+        {
+            "station": "ACC Cement Factory Gate",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "19-20",
+            "noise_db": 73.8
+        },
+        {
+            "station": "ACC Cement Factory Gate",
+            "zone": "Industrial",
+            "day_type": "Working",
+            "time": "20-21",
+            "noise_db": 71.1
+        }
+    ]
+}

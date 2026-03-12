@@ -1,0 +1,20 @@
+{
+  "noise_limits_cpcb": [
+    {
+      "zone": "Commercial",
+      "limit_db": 65
+    },
+    {
+      "zone": "Silent",
+      "limit_db": 50
+    },
+    {
+      "zone": "Residential",
+      "limit_db": 55
+    },
+    {
+      "zone": "Industrial",
+      "limit_db": 75
+    }
+  ]
+}
