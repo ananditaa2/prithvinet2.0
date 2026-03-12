@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { api } from "@/lib/api";
-import { AlertTriangle, Factory, MapPin, Wind, TrendingDown, TrendingUp, CheckCircle } from "lucide-react";
+import { useAuth } from "@/context/AuthContext";
+import { AlertTriangle, Factory, MapPin, Wind, CheckCircle } from "lucide-react";
 
 function StatCard({ icon: Icon, label, value, color, sub }: any) {
   return (
@@ -25,31 +26,94 @@ const severityColor: Record<string, string> = {
 };
 
 export default function Overview() {
+  const { user } = useAuth();
   const [alerts, setAlerts] = useState<any[]>([]);
   const [industries, setIndustries] = useState<any[]>([]);
   const [locations, setLocations] = useState<any[]>([]);
   const [data, setData] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
+  const canViewViolationLogs = !!user && ["monitoring_team", "regional_officer", "admin"].includes(user.role);
+  const canViewIndustryNames = !!user && ["monitoring_team", "regional_officer", "admin"].includes(user.role);
+  const canViewAllStationData = !!user && ["monitoring_team", "admin"].includes(user.role);
+  const canViewRegionScopedData = user?.role === "regional_officer";
+  const isIndustryUser = user?.role === "industry_user";
+
   useEffect(() => {
+    setLoading(true);
+
     Promise.all([
       api.alerts.list({ limit: "10" }),
       api.industries.list(),
       api.locations.list(),
       api.data.list({ limit: "20" }),
-    ]).then(([a, i, l, d]) => {
-      setAlerts(a);
-      setIndustries(i);
-      setLocations(l);
-      setData(d);
-    }).catch(console.error)
+    ])
+      .then(([a, i, l, d]) => {
+        let scopedAlerts = a;
+        let scopedIndustries = i;
+        let scopedLocations = l;
+        let scopedData = d;
+
+        if (isIndustryUser && user?.email) {
+          scopedIndustries = i.filter((industry: any) => industry.contact_email === user.email);
+          const allowedIndustryIds = new Set(scopedIndustries.map((industry: any) => industry.id));
+          scopedLocations = l.filter((location: any) => location.industry_id && allowedIndustryIds.has(location.industry_id));
+          const allowedLocationIds = new Set(scopedLocations.map((location: any) => location.id));
+          scopedAlerts = a.filter((alert: any) =>
+            (alert.industry_id && allowedIndustryIds.has(alert.industry_id)) ||
+            (alert.location_id && allowedLocationIds.has(alert.location_id))
+          );
+          scopedData = d.filter((row: any) =>
+            (row.industry_id && allowedIndustryIds.has(row.industry_id)) ||
+            (row.location_id && allowedLocationIds.has(row.location_id))
+          );
+        } else if (canViewRegionScopedData && user?.name) {
+          const officerRegion = user.name;
+          scopedIndustries = i.filter((industry: any) =>
+            industry.region?.toLowerCase().includes(officerRegion.toLowerCase())
+          );
+          const allowedIndustryIds = new Set(scopedIndustries.map((industry: any) => industry.id));
+          scopedLocations = l.filter((location: any) =>
+            location.region?.toLowerCase().includes(officerRegion.toLowerCase())
+          );
+          const allowedLocationIds = new Set(scopedLocations.map((location: any) => location.id));
+          scopedAlerts = a.filter((alert: any) =>
+            (alert.industry_id && allowedIndustryIds.has(alert.industry_id)) ||
+            (alert.location_id && allowedLocationIds.has(alert.location_id))
+          );
+          scopedData = d.filter((row: any) =>
+            (row.industry_id && allowedIndustryIds.has(row.industry_id)) ||
+            (row.location_id && allowedLocationIds.has(row.location_id))
+          );
+        }
+
+        setAlerts(scopedAlerts);
+        setIndustries(scopedIndustries);
+        setLocations(scopedLocations);
+        setData(scopedData);
+      })
+      .catch(console.error)
       .finally(() => setLoading(false));
-  }, []);
+  }, [canViewRegionScopedData, isIndustryUser, user?.email, user?.name]);
 
   const activeAlerts = alerts.filter(a => a.status === "active").length;
   const violating = industries.filter(i => i.status === "violating").length;
   const today = new Date().toISOString().slice(0, 10);
   const todayReadings = data.filter(d => d.recorded_at?.slice(0, 10) === today).length;
+
+  const overviewTitle = useMemo(() => {
+    if (user?.role === "monitoring_team") return "Monitoring Team Overview";
+    if (user?.role === "industry_user") return "Industry Overview";
+    if (user?.role === "regional_officer") return "Regional Overview";
+    return "Dashboard Overview";
+  }, [user?.role]);
+
+  const overviewSubtitle = useMemo(() => {
+    if (user?.role === "monitoring_team") return "Field-access summary for assigned operational features";
+    if (user?.role === "industry_user") return "Your organization’s compliance and monitoring summary";
+    if (user?.role === "regional_officer") return "Region-scoped environmental monitoring summary";
+    return "Real-time environmental monitoring summary";
+  }, [user?.role]);
 
   if (loading) return (
     <div className="flex items-center justify-center h-64">
@@ -60,8 +124,8 @@ export default function Overview() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-gray-900 font-heading">Dashboard Overview</h1>
-        <p className="text-sm text-gray-500 mt-1">Real-time environmental monitoring summary</p>
+        <h1 className="text-2xl font-bold text-gray-900 font-heading">{overviewTitle}</h1>
+        <p className="text-sm text-gray-500 mt-1">{overviewSubtitle}</p>
       </div>
 
       {/* Stat Cards */}
@@ -90,8 +154,12 @@ export default function Overview() {
                   {a.severity}
                 </span>
                 <div className="min-w-0">
-                  <p className="text-sm text-gray-800 truncate">{a.message}</p>
-                  <p className="text-xs text-gray-400 mt-0.5">{a.alert_type?.toUpperCase()} · {new Date(a.created_at).toLocaleString()}</p>
+                  <p className="text-sm text-gray-800 truncate">
+                    {canViewViolationLogs ? a.message : "Violation details are restricted for your role."}
+                  </p>
+                  <p className="text-xs text-gray-400 mt-0.5">
+                    {a.alert_type?.toUpperCase()} · {new Date(a.created_at).toLocaleString()}
+                  </p>
                 </div>
               </div>
             ))}
@@ -114,8 +182,12 @@ export default function Overview() {
             {industries.slice(0, 6).map(i => (
               <div key={i.id} className="px-5 py-3 flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-medium text-gray-800">{i.name}</p>
-                  <p className="text-xs text-gray-400">{i.region} · {i.industry_type}</p>
+                  <p className="text-sm font-medium text-gray-800">
+                    {canViewIndustryNames ? i.name : "Restricted industry"}
+                  </p>
+                  <p className="text-xs text-gray-400">
+                    {i.region} · {isIndustryUser ? "Own Only" : canViewAllStationData ? i.industry_type : "Restricted"}
+                  </p>
                 </div>
                 <span className={`px-2 py-0.5 rounded-full text-xs font-semibold ${
                   i.status === "violating" ? "bg-red-100 text-red-700" :

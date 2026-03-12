@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { api } from "@/lib/api";
-import { FileBarChart2, BarChart3, Building2 } from "lucide-react";
+import { useAuth } from "@/context/AuthContext";
+import { FileBarChart2, BarChart3, Lock } from "lucide-react";
 
 function Stat({ label, value, sub }: any) {
   return (
@@ -13,12 +14,15 @@ function Stat({ label, value, sub }: any) {
 }
 
 export default function Reports() {
+  const { user } = useAuth();
   const [reportTab, setReportTab] = useState<"monthly" | "yearly">("monthly");
   const [month, setMonth] = useState(new Date().getMonth() + 1);
   const [year, setYear] = useState(new Date().getFullYear());
   const [data, setData] = useState<any>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+
+  const canAccessReports = user?.role === "regional_officer" || user?.role === "admin";
 
   const load = async () => {
     setLoading(true); setError(""); setData(null);
@@ -30,6 +34,25 @@ export default function Reports() {
     } catch (e: any) { setError(e.message); }
     finally { setLoading(false); }
   };
+
+  if (!canAccessReports) {
+    return (
+      <div className="space-y-5">
+        <div>
+          <h1 className="text-2xl font-bold text-gray-900 font-heading">Environmental Reports</h1>
+          <p className="text-sm text-gray-500 mt-1">Monthly and yearly pollution summaries</p>
+        </div>
+
+        <div className="bg-white rounded-xl border border-gray-200 p-16 text-center text-gray-400">
+          <Lock className="w-10 h-10 mx-auto mb-3 opacity-40" />
+          <p className="font-medium text-gray-600">Reports are restricted for your role</p>
+          <p className="text-sm text-gray-400 mt-1">
+            Only Regional Officer and Super Admin accounts can access environmental reports.
+          </p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-5">

@@ -9,6 +9,8 @@ from sqlalchemy.orm import Session
 
 from core.config import SECRET_KEY, ALGORITHM, ACCESS_TOKEN_EXPIRE_HOURS
 from core.database import get_db
+from models.industry import Industry
+from models.monitoring_location import MonitoringLocation
 
 # ─── Password Hashing ──────────────────────────────────────────────────────────
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
@@ -69,3 +71,67 @@ def require_roles(*roles: str):
             )
         return current_user
     return checker
+
+
+def get_user_industry(db: Session, user):
+    """Return the industry linked to the logged-in industry user, if any."""
+    if not user or user.role != "industry_user":
+        return None
+    return db.query(Industry).filter(Industry.contact_email == user.email).first()
+
+
+def ensure_industry_scope(db: Session, user, industry_id: Optional[int] = None):
+    """
+    Restrict industry users to their own industry records.
+    Returns the resolved industry for industry_user roles, otherwise None.
+    """
+    if not user or user.role != "industry_user":
+        return None
+
+    industry = get_user_industry(db, user)
+    if not industry:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="No industry is linked to this user account.",
+        )
+
+    if industry_id is not None and industry.id != industry_id:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Access denied for this industry record.",
+        )
+
+    return industry
+
+
+def ensure_location_scope(db: Session, user, location_id: Optional[int] = None):
+    """
+    Restrict industry users to locations belonging to their own industry.
+    Monitoring team users can access all current locations.
+    """
+    if not user:
+        return None
+
+    if user.role == "industry_user":
+        industry = ensure_industry_scope(db, user)
+        if location_id is None:
+            return industry
+
+        location = (
+            db.query(MonitoringLocation)
+            .filter(MonitoringLocation.id == location_id)
+            .first()
+        )
+        if not location:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail="Location not found.",
+            )
+        if location.industry_id != industry.id:
+            raise HTTPException(
+                status_code=status.HTTP_403_FORBIDDEN,
+                detail="Access denied for this location.",
+            )
+        return industry
+
+    return None

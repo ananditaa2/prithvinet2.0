@@ -1,20 +1,60 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import { useAuth } from "@/context/AuthContext";
 import {
   LayoutDashboard, Factory, MapPin, Wind, Bell, FileBarChart2, Cpu,
-  Globe, LogOut, Landmark, Menu, X, ChevronDown, User, Map
+  Globe, LogOut, Landmark, Menu, X, User, Map
 } from "lucide-react";
 
 const navItems = [
-  { icon: LayoutDashboard, label: "Overview", to: "/dashboard" },
-  { icon: Factory, label: "Industries", to: "/dashboard/industries" },
-  { icon: MapPin, label: "Locations", to: "/dashboard/locations" },
-  { icon: Bell, label: "Alerts", to: "/dashboard/alerts" },
-  { icon: FileBarChart2, label: "Reports", to: "/dashboard/reports" },
-  { icon: Cpu, label: "AI Tools", to: "/dashboard/ai" },
-  { icon: Map, label: "Heatmap", to: "/dashboard/heatmap" },
-  { icon: Globe, label: "Citizen Portal", to: "/public" },
+  {
+    icon: LayoutDashboard,
+    label: "Overview",
+    to: "/dashboard",
+    roles: ["admin", "regional_officer", "monitoring_team", "industry_user", "citizen"],
+  },
+  {
+    icon: Factory,
+    label: "Industries",
+    to: "/dashboard/industries",
+    roles: ["admin", "regional_officer", "monitoring_team", "industry_user"],
+  },
+  {
+    icon: MapPin,
+    label: "Locations",
+    to: "/dashboard/locations",
+    roles: ["admin", "regional_officer", "monitoring_team"],
+  },
+  {
+    icon: Bell,
+    label: "Alerts",
+    to: "/dashboard/alerts",
+    roles: ["admin", "regional_officer", "monitoring_team", "industry_user"],
+  },
+  {
+    icon: FileBarChart2,
+    label: "Reports",
+    to: "/dashboard/reports",
+    roles: ["admin", "regional_officer", "monitoring_team", "industry_user"],
+  },
+  {
+    icon: Cpu,
+    label: "AI Tools",
+    to: "/dashboard/ai",
+    roles: ["admin", "regional_officer"],
+  },
+  {
+    icon: Map,
+    label: "Heatmap",
+    to: "/dashboard/heatmap",
+    roles: ["admin", "regional_officer", "monitoring_team", "industry_user", "citizen"],
+  },
+  {
+    icon: Globe,
+    label: "Citizen Portal",
+    to: "/public",
+    roles: ["admin", "regional_officer", "monitoring_team", "industry_user", "citizen"],
+  },
 ];
 
 const roleBadgeColor: Record<string, string> = {
@@ -29,6 +69,11 @@ export default function DashboardLayout() {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
   const [sidebarOpen, setSidebarOpen] = useState(true);
+
+  const visibleNavItems = useMemo(() => {
+    if (!user) return [];
+    return navItems.filter((item) => item.roles.includes(user.role));
+  }, [user]);
 
   const handleLogout = () => {
     logout();
@@ -47,7 +92,7 @@ export default function DashboardLayout() {
 
         {/* Nav */}
         <nav className="flex-1 py-4 space-y-0.5 overflow-y-auto px-2">
-          {navItems.map(({ icon: Icon, label, to }) => (
+          {visibleNavItems.map(({ icon: Icon, label, to }) => (
             <NavLink
               key={to}
               to={to}

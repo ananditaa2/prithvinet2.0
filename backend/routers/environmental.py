@@ -6,12 +6,83 @@ from datetime import datetime
 from core.database import get_db
 from core.security import get_current_user, require_roles
 from models.environmental_data import EnvironmentalData
+from models.industry import Industry
+from models.monitoring_location import MonitoringLocation
 from schemas.environmental import AirDataSubmit, WaterDataSubmit, NoiseDataSubmit, EnvironmentalDataOut
 from services.alert_service import check_and_trigger_alerts
 
 router = APIRouter(prefix="/data", tags=["Environmental Data"])
 
-SUBMIT_ROLES = ("admin", "regional_officer", "monitoring_team")
+SUBMIT_ROLES = ("admin", "regional_officer", "monitoring_team", "industry_user")
+
+
+def _get_user_industry(current_user, db: Session) -> Optional[Industry]:
+    if current_user.role != "industry_user":
+        return None
+    return db.query(Industry).filter(Industry.contact_email == current_user.email).first()
+
+
+def _apply_environmental_scope(q, current_user, db: Session):
+    if current_user.role in ("admin", "regional_officer"):
+        return q
+
+    if current_user.role == "industry_user":
+        industry = _get_user_industry(current_user, db)
+        if not industry:
+            raise HTTPException(
+                status_code=403,
+                detail="Industry user is not linked to any registered industry.",
+            )
+        return q.filter(EnvironmentalData.industry_id == industry.id)
+
+    if current_user.role == "monitoring_team":
+        return q.filter(EnvironmentalData.submitted_by == current_user.id)
+
+    return q.filter(False)
+
+
+def _validate_submission_scope(payload, current_user, db: Session):
+    if current_user.role in ("admin", "regional_officer"):
+        return
+
+    if current_user.role == "industry_user":
+        industry = _get_user_industry(current_user, db)
+        if not industry:
+            raise HTTPException(
+                status_code=403,
+                detail="Industry user is not linked to any registered industry.",
+            )
+        if payload.industry_id != industry.id:
+            raise HTTPException(
+                status_code=403,
+                detail="Industry users can only submit data for their own industry.",
+            )
+        return
+
+    if current_user.role == "monitoring_team":
+        location = (
+            db.query(MonitoringLocation)
+            .filter(MonitoringLocation.id == payload.location_id)
+            .first()
+        )
+        if not location:
+            raise HTTPException(404, "Location not found.")
+        if not location.assigned_team:
+            raise HTTPException(
+                status_code=403,
+                detail="This location is not assigned to any monitoring team.",
+            )
+        assigned = location.assigned_team.strip().lower()
+        user_name = current_user.name.strip().lower()
+        user_email = current_user.email.strip().lower()
+        if assigned not in {user_name, user_email}:
+            raise HTTPException(
+                status_code=403,
+                detail="Monitoring team can only submit data for assigned locations.",
+            )
+        return
+
+    raise HTTPException(status_code=403, detail="Access denied.")
 
 
 def _compute_aqi(pm25: float | None, pm10: float | None) -> float | None:
@@ -34,6 +105,7 @@ def submit_air(
     db: Session = Depends(get_db),
     current_user=Depends(require_roles(*SUBMIT_ROLES)),
 ):
+    _validate_submission_scope(payload, current_user, db)
     aqi = _compute_aqi(payload.pm25, payload.pm10)
     entry = EnvironmentalData(
         data_type="air",
@@ -56,6 +128,7 @@ def submit_water(
     db: Session = Depends(get_db),
     current_user=Depends(require_roles(*SUBMIT_ROLES)),
 ):
+    _validate_submission_scope(payload, current_user, db)
     entry = EnvironmentalData(
         data_type="water",
         submitted_by=current_user.id,
@@ -76,6 +149,7 @@ def submit_noise(
     db: Session = Depends(get_db),
     current_user=Depends(require_roles(*SUBMIT_ROLES)),
 ):
+    _validate_submission_scope(payload, current_user, db)
     entry = EnvironmentalData(
         data_type="noise",
         submitted_by=current_user.id,
@@ -100,9 +174,10 @@ def get_data(
     skip: int = 0,
     limit: int = 100,
     db: Session = Depends(get_db),
-    _=Depends(get_current_user),
+    current_user=Depends(get_current_user),
 ):
     q = db.query(EnvironmentalData)
+    q = _apply_environmental_scope(q, current_user, db)
     if data_type:
         q = q.filter(EnvironmentalData.data_type == data_type)
     if location_id:
@@ -120,20 +195,20 @@ def get_data(
 def latest_for_location(
     location_id: int,
     db: Session = Depends(get_db),
-    _=Depends(get_current_user),
+    current_user=Depends(get_current_user),
 ):
     """Returns the most recent reading of each type for a location."""
     results = []
     for dtype in ("air", "water", "noise"):
-        row = (
+        q = (
             db.query(EnvironmentalData)
             .filter(
                 EnvironmentalData.location_id == location_id,
                 EnvironmentalData.data_type == dtype,
             )
-            .order_by(EnvironmentalData.recorded_at.desc())
-            .first()
         )
+        q = _apply_environmental_scope(q, current_user, db)
+        row = q.order_by(EnvironmentalData.recorded_at.desc()).first()
         if row:
             results.append(row)
     return results

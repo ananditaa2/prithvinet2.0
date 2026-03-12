@@ -1,15 +1,23 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { api } from "@/lib/api";
-import { Cpu, TrendingUp, MessageCircle, Zap } from "lucide-react";
+import { useAuth } from "@/context/AuthContext";
+import { Cpu, TrendingUp, MessageCircle, Zap, ShieldAlert } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 
-const aiTabs = [
-  { id: "copilot", label: "AI Copilot", icon: MessageCircle },
-  { id: "simulate", label: "Risk Simulation", icon: Zap },
-  { id: "predict", label: "Pollution Prediction", icon: TrendingUp },
-];
+const TAB_ACCESS = {
+  admin: ["copilot", "simulate", "predict"],
+  regional_officer: ["copilot", "simulate", "predict"],
+  monitoring_team: [],
+  industry_user: [],
+  citizen: [],
+} as const;
 
 export default function AITools() {
+  const { user } = useAuth();
+  const allowedTabs = useMemo(
+    () => TAB_ACCESS[user?.role as keyof typeof TAB_ACCESS] ?? [],
+    [user?.role]
+  );
   const [tab, setTab] = useState("copilot");
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<any>(null);
@@ -28,9 +36,23 @@ export default function AITools() {
   const [locations, setLocations] = useState<any[]>([]);
   const [predForm, setPredForm] = useState({ location_id: "", hours: 24 });
 
-  useEffect(() => { api.locations.list().then(setLocations).catch(() => {}); }, []);
+  useEffect(() => {
+    if (!allowedTabs.includes("predict")) return;
+    api.locations.list().then(setLocations).catch(() => {});
+  }, [allowedTabs]);
+
+  useEffect(() => {
+    if (!allowedTabs.includes(tab)) {
+      setTab(allowedTabs[0] ?? "copilot");
+    }
+  }, [allowedTabs, tab]);
 
   const run = async () => {
+    if (!allowedTabs.includes(tab)) {
+      setError("Your role does not have access to AI tools.");
+      return;
+    }
+
     setLoading(true); setError(""); setResult(null);
     try {
       if (tab === "copilot") {
@@ -50,6 +72,28 @@ export default function AITools() {
 
   const inputCls = "w-full px-3 py-2 rounded-lg border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500";
 
+  if (!allowedTabs.length) {
+    return (
+      <div className="space-y-5">
+        <div>
+          <h1 className="text-2xl font-bold text-gray-900 font-heading">AI Tools</h1>
+          <p className="text-sm text-gray-500 mt-1">Groq-powered environmental intelligence</p>
+        </div>
+
+        <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-10 text-center">
+          <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-red-50">
+            <ShieldAlert className="w-7 h-7 text-red-600" />
+          </div>
+          <h2 className="text-lg font-semibold text-gray-900">Access restricted</h2>
+          <p className="mt-2 text-sm text-gray-500 max-w-lg mx-auto">
+            According to your role, AI Compliance Copilot and other AI tools are blocked.
+            Only Regional Officer and Super Admin roles have full access.
+          </p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="space-y-5">
       <div>
@@ -58,7 +102,11 @@ export default function AITools() {
       </div>
 
       <div className="flex gap-1 bg-gray-100 rounded-xl p-1 w-fit">
-        {aiTabs.map(t => (
+        {[
+          { id: "copilot", label: "AI Copilot", icon: MessageCircle },
+          { id: "simulate", label: "Risk Simulation", icon: Zap },
+          { id: "predict", label: "Pollution Prediction", icon: TrendingUp },
+        ].filter(t => allowedTabs.includes(t.id)).map(t => (
           <button key={t.id} onClick={() => { setTab(t.id); setResult(null); setError(""); }}
             className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${tab === t.id ? "bg-white shadow-sm text-gray-900" : "text-gray-500 hover:text-gray-700"}`}>
             <t.icon className="w-4 h-4" /> {t.label}

@@ -5,7 +5,9 @@ import { Plus, Pencil, Trash2, X, MapPin } from "lucide-react";
 
 const emptyForm = { name: "", region: "", latitude: "", longitude: "", location_type: "general", assigned_team: "" };
 
-const WRITE_ROLES = ["admin", "regional_officer", "monitoring_team"];
+const CREATE_ROLES = ["admin", "regional_officer", "monitoring_team"];
+const EDIT_ROLES = ["admin", "regional_officer"];
+const DELETE_ROLES = ["admin"];
 
 export default function Locations() {
   const { user } = useAuth();
@@ -17,7 +19,9 @@ export default function Locations() {
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
 
-  const canWrite = user && WRITE_ROLES.includes(user.role);
+  const canCreate = !!user && CREATE_ROLES.includes(user.role);
+  const canEdit = !!user && EDIT_ROLES.includes(user.role);
+  const canDelete = !!user && DELETE_ROLES.includes(user.role);
 
   const load = () => {
     setLoading(true);
@@ -55,7 +59,7 @@ export default function Locations() {
           <h1 className="text-2xl font-bold text-gray-900 font-heading">Monitoring Locations</h1>
           <p className="text-sm text-gray-500 mt-1">{locations.length} active stations</p>
         </div>
-        {canWrite && (
+        {canCreate && (
           <button onClick={openCreate}
             className="flex items-center gap-2 px-4 py-2 bg-blue-700 hover:bg-blue-800 text-white text-sm font-semibold rounded-lg transition-colors">
             <Plus className="w-4 h-4" /> Add Location
@@ -79,8 +83,8 @@ export default function Locations() {
                   </div>
                 </div>
                 <div className="flex gap-1.5">
-                  {canWrite && <button onClick={() => openEdit(loc)} className="text-blue-600 hover:text-blue-800"><Pencil className="w-3.5 h-3.5" /></button>}
-                  {user?.role === "admin" && <button onClick={() => handleDelete(loc.id)} className="text-red-500 hover:text-red-700"><Trash2 className="w-3.5 h-3.5" /></button>}
+                  {canEdit && <button onClick={() => openEdit(loc)} className="text-blue-600 hover:text-blue-800"><Pencil className="w-3.5 h-3.5" /></button>}
+                  {canDelete && <button onClick={() => handleDelete(loc.id)} className="text-red-500 hover:text-red-700"><Trash2 className="w-3.5 h-3.5" /></button>}
                 </div>
               </div>
               <div className="space-y-1 text-xs text-gray-500">

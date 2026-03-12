@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { api } from "@/lib/api";
 import { useAuth } from "@/context/AuthContext";
 import { AlertTriangle, CheckCircle, Clock, Shield } from "lucide-react";
@@ -17,20 +17,28 @@ const severityBorder: Record<string, string> = {
 };
 
 const RESOLVE_ROLES = ["admin", "regional_officer", "monitoring_team"];
-const tabs = [
-  { id: "alerts", label: "Active Alerts" },
-  { id: "compliance", label: "Compliance" },
-];
+const ALERT_ACCESS_ROLES = ["admin", "regional_officer", "monitoring_team", "industry_user"];
+const COMPLIANCE_ACCESS_ROLES = ["admin", "regional_officer", "super_admin"];
 
 export default function Alerts() {
   const { user } = useAuth();
-  const [tab, setTab] = useState("alerts");
+  const canViewAlerts = !!user && ALERT_ACCESS_ROLES.includes(user.role);
+  const canViewCompliance = !!user && COMPLIANCE_ACCESS_ROLES.includes(user.role);
+  const availableTabs = useMemo(
+    () => [
+      ...(canViewAlerts ? [{ id: "alerts", label: "Active Alerts" }] : []),
+      ...(canViewCompliance ? [{ id: "compliance", label: "Compliance" }] : []),
+    ],
+    [canViewAlerts, canViewCompliance]
+  );
+
+  const [tab, setTab] = useState<string>(canViewAlerts ? "alerts" : canViewCompliance ? "compliance" : "");
   const [alerts, setAlerts] = useState<any[]>([]);
   const [compliance, setCompliance] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState("all");
 
-  const canResolve = user && RESOLVE_ROLES.includes(user.role);
+  const canResolve = !!user && RESOLVE_ROLES.includes(user.role);
 
   const loadAlerts = () => {
     setLoading(true);
@@ -44,9 +52,16 @@ export default function Alerts() {
   };
 
   useEffect(() => {
-    if (tab === "alerts") loadAlerts();
-    else loadCompliance();
-  }, [tab]);
+    if (!availableTabs.length) return;
+    if (!availableTabs.some((t) => t.id === tab)) {
+      setTab(availableTabs[0].id);
+    }
+  }, [availableTabs, tab]);
+
+  useEffect(() => {
+    if (tab === "alerts" && canViewAlerts) loadAlerts();
+    else if (tab === "compliance" && canViewCompliance) loadCompliance();
+  }, [tab, canViewAlerts, canViewCompliance]);
 
   const handleResolve = async (id: number) => {
     try { await api.alerts.resolve(id); loadAlerts(); } catch (e: any) { alert(e.message); }
@@ -57,6 +72,23 @@ export default function Alerts() {
 
   const filtered = filter === "all" ? alerts : alerts.filter(a => a.severity === filter);
 
+  if (!canViewAlerts && !canViewCompliance) {
+    return (
+      <div className="space-y-5">
+        <div>
+          <h1 className="text-2xl font-bold text-gray-900 font-heading">Alerts & Compliance</h1>
+          <p className="text-sm text-gray-500 mt-1">Monitor environmental violations and industry compliance</p>
+        </div>
+
+        <div className="bg-white rounded-xl border border-gray-200 p-12 text-center">
+          <Shield className="w-10 h-10 text-gray-400 mx-auto mb-3" />
+          <p className="text-gray-600 font-medium">Access restricted for your role</p>
+          <p className="text-sm text-gray-400 mt-1">You do not have permission to view alerts or compliance data.</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="space-y-5">
       <div>
@@ -65,7 +97,7 @@ export default function Alerts() {
       </div>
 
       <div className="flex gap-1 bg-gray-100 rounded-xl p-1 w-fit">
-        {tabs.map(t => (
+        {availableTabs.map(t => (
           <button key={t.id} onClick={() => setTab(t.id)}
             className={`px-5 py-2 rounded-lg text-sm font-medium transition-colors ${tab === t.id ? "bg-white shadow-sm text-gray-900" : "text-gray-500 hover:text-gray-700"}`}>
             {t.label}{t.id === "alerts" && alerts.length > 0 && <span className="ml-1.5 px-1.5 py-0.5 text-xs bg-red-500 text-white rounded-full">{alerts.length}</span>}

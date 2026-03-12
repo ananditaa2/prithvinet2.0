@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { api } from "@/lib/api";
 import { useAuth } from "@/context/AuthContext";
-import { Plus, Pencil, Trash2, X, Search } from "lucide-react";
+import { Plus, Pencil, Trash2, X, Search, ShieldAlert } from "lucide-react";
 
 const statusColor: Record<string, string> = {
   active: "bg-blue-100 text-blue-700",
@@ -11,6 +11,7 @@ const statusColor: Record<string, string> = {
 };
 
 const WRITE_ROLES = ["admin", "regional_officer"];
+const OWN_VIEW_ROLES = ["industry_user"];
 
 const emptyForm = {
   name: "", industry_type: "manufacturing", address: "", region: "",
@@ -28,7 +29,9 @@ export default function Industries() {
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
 
-  const canWrite = user && WRITE_ROLES.includes(user.role);
+  const canWrite = !!user && WRITE_ROLES.includes(user.role);
+  const canViewOwnOnly = !!user && OWN_VIEW_ROLES.includes(user.role);
+  const canDelete = user?.role === "admin";
 
   const load = () => {
     setLoading(true);
@@ -36,6 +39,14 @@ export default function Industries() {
   };
 
   useEffect(() => { load(); }, []);
+
+  const visibleIndustries = useMemo(() => {
+    if (!user) return [];
+    if (canViewOwnOnly) {
+      return industries.filter(i => i.contact_email?.toLowerCase() === user.email.toLowerCase());
+    }
+    return industries;
+  }, [industries, user, canViewOwnOnly]);
 
   const set = (k: string, v: string) => setForm((f: any) => ({ ...f, [k]: v }));
 
@@ -61,7 +72,7 @@ export default function Industries() {
     try { await api.industries.delete(id); load(); } catch (e: any) { alert(e.message); }
   };
 
-  const filtered = industries.filter(i =>
+  const filtered = visibleIndustries.filter(i =>
     i.name.toLowerCase().includes(search.toLowerCase()) ||
     i.region.toLowerCase().includes(search.toLowerCase())
   );
@@ -71,7 +82,11 @@ export default function Industries() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-bold text-gray-900 font-heading">Industry Registry</h1>
-          <p className="text-sm text-gray-500 mt-1">{industries.length} registered industries</p>
+          <p className="text-sm text-gray-500 mt-1">
+            {canViewOwnOnly
+              ? `${visibleIndustries.length} industry record${visibleIndustries.length === 1 ? "" : "s"} linked to your role`
+              : `${industries.length} registered industries`}
+          </p>
         </div>
         {canWrite && (
           <button onClick={openCreate}
@@ -88,6 +103,16 @@ export default function Industries() {
           className="w-full pl-9 pr-4 py-2.5 rounded-lg border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
           placeholder="Search by name or region…" />
       </div>
+
+      {canViewOwnOnly && (
+        <div className="flex items-start gap-3 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800">
+          <ShieldAlert className="w-4 h-4 mt-0.5 flex-shrink-0" />
+          <div>
+            <p className="font-medium">Limited role access enabled</p>
+            <p className="text-amber-700">As an industry user, you can only view your own industry record.</p>
+          </div>
+        </div>
+      )}
 
       {/* Table */}
       <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
@@ -117,7 +142,7 @@ export default function Industries() {
                   <td className="px-4 py-3">
                     <div className="flex gap-2">
                       {canWrite && <button onClick={() => openEdit(i)} className="text-blue-600 hover:text-blue-800 transition-colors"><Pencil className="w-4 h-4" /></button>}
-                      {user?.role === "admin" && <button onClick={() => handleDelete(i.id)} className="text-red-500 hover:text-red-700 transition-colors"><Trash2 className="w-4 h-4" /></button>}
+                      {canDelete && <button onClick={() => handleDelete(i.id)} className="text-red-500 hover:text-red-700 transition-colors"><Trash2 className="w-4 h-4" /></button>}
                     </div>
                   </td>
                 </tr>
