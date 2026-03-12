@@ -1,0 +1,12 @@
+{
+  "dataset": "Raipur Noise Pollution Monitoring",
+  "city": "Raipur",
+  "state": "Chhattisgarh",
+  "country": "India",
+  "study_duration_days": 15,
+  "measurement_time": "07:00-21:00",
+  "readings_per_hour": 10,
+  "instrument": "VA8080 Sound Level Meter",
+  "unit": "dB(A)",
+  "source": "Assessment of Noise Pollution in Raipur City (IJARIIT, 2019)"
+}

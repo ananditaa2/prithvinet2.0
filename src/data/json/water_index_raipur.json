@@ -1,0 +1,867 @@
+{
+  "city": "Raipur",
+  "state": "Chhattisgarh",
+  "monitoring_program": "NWMP (National Water Monitoring Programme)",
+  "monitoring_agency": "MINARS",
+  "water_quality_criteria": {
+    "DO": ">4.0 mg/l",
+    "BOD": "<3.0 mg/l",
+    "FC": "<2500 MPN/100ml",
+    "TC": "<5000 MPN/100ml"
+  },
+  "stations": [
+    {
+      "station_code": 1099,
+      "name": "River Mahanadi at Rajim (Near Road Bridge)"
+    },
+    {
+      "station_code": 1264,
+      "name": "River Mahanadi at Ruddri Dam (U/S Dhamtari Reservoir)"
+    },
+    {
+      "station_code": 1265,
+      "name": "River Kharoon at Bhatagaon (Near W/S Intakewell)"
+    },
+    {
+      "station_code": 1266,
+      "name": "River Sheonath at Simga (Near Road Bridge)"
+    },
+    {
+      "station_code": 1852,
+      "name": "River Mahanadi at Arang (Near Gandhi Bridge)"
+    },
+    {
+      "station_code": 1851,
+      "name": "River Mahanadi at Sihava (Origin Point of Mahanadi)"
+    },
+    {
+      "station_code": 1853,
+      "name": "River Kharoon at Bendri Village (Near W/S Intakewell)"
+    }
+  ],
+  "monthly_records": [
+    {
+      "year": 2025,
+      "month": "July",
+      "readings": [
+        { "station_code": 1099, "DO": 6.8, "BOD": 2.2, "FC": 0, "TC": 40, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 7.3, "BOD": 1.8, "FC": 0, "TC": 38, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 6.9, "BOD": 2.2, "FC": 0, "TC": 40, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 6.8, "BOD": 2.4, "FC": 0, "TC": 38, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 6.8, "BOD": 2.0, "FC": 0, "TC": 38, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 7.2, "BOD": 1.9, "FC": 0, "TC": 36, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 6.8, "BOD": 2.3, "FC": 0, "TC": 38, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2025,
+      "month": "June",
+      "readings": [
+        { "station_code": 1099, "DO": 6.9, "BOD": 2.3, "FC": 0, "TC": 38, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 7.0, "BOD": 2.0, "FC": 0, "TC": 42, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 7.0, "BOD": 2.0, "FC": 0, "TC": 36, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 7.0, "BOD": 2.1, "FC": 0, "TC": 40, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 7.0, "BOD": 1.9, "FC": 0, "TC": 44, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 6.8, "BOD": 2.2, "FC": 0, "TC": 40, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 7.0, "BOD": 2.0, "FC": 0, "TC": 44, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2025,
+      "month": "May",
+      "readings": [
+        { "station_code": 1099, "DO": 7.0, "BOD": 2.0, "FC": 0, "TC": 42, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 7.2, "BOD": 2.1, "FC": 0, "TC": 40, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 7.3, "BOD": 2.1, "FC": 0, "TC": 44, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 7.1, "BOD": 2.2, "FC": 0, "TC": 44, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 7.4, "BOD": 2.0, "FC": 0, "TC": 40, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 7.2, "BOD": 2.0, "FC": 0, "TC": 38, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 7.2, "BOD": 2.2, "FC": 0, "TC": 40, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2025,
+      "month": "April",
+      "readings": [
+        { "station_code": 1099, "DO": 7.1, "BOD": 2.2, "FC": 0, "TC": 44, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 7.1, "BOD": 2.2, "FC": 0, "TC": 42, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 7.0, "BOD": 1.9, "FC": 0, "TC": 42, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 7.0, "BOD": 2.0, "FC": 0, "TC": 48, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 7.2, "BOD": 1.9, "FC": 0, "TC": 46, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 6.8, "BOD": 2.1, "FC": 0, "TC": 40, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 7.0, "BOD": 2.0, "FC": 0, "TC": 44, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2025,
+      "month": "March",
+      "readings": [
+        { "station_code": 1099, "DO": 7.0, "BOD": 2.2, "FC": 0, "TC": 54, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 7.3, "BOD": 2.1, "FC": 0, "TC": 48, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 7.2, "BOD": 2.0, "FC": 0, "TC": 40, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 6.7, "BOD": 2.1, "FC": 0, "TC": 50, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 7.0, "BOD": 2.5, "FC": 0, "TC": 54, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 6.0, "BOD": 2.0, "FC": 0, "TC": 38, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 7.0, "BOD": 2.3, "FC": 0, "TC": 46, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2025,
+      "month": "February",
+      "readings": [
+        { "station_code": 1099, "DO": 7.1, "BOD": 2.3, "FC": 0, "TC": 48, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 7.2, "BOD": 2.0, "FC": 0, "TC": 50, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 7.0, "BOD": 2.3, "FC": 0, "TC": 46, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 7.6, "BOD": 2.2, "FC": 0, "TC": 54, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 7.3, "BOD": 2.4, "FC": 0, "TC": 54, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 7.0, "BOD": 2.1, "FC": 0, "TC": 46, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 7.2, "BOD": 2.4, "FC": 0, "TC": 50, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2025,
+      "month": "January",
+      "readings": [
+        { "station_code": 1099, "DO": 7.5, "BOD": 2.0, "FC": 0, "TC": 48, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 7.5, "BOD": 1.9, "FC": 0, "TC": 54, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 7.1, "BOD": 2.2, "FC": 0, "TC": 44, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 7.6, "BOD": 2.2, "FC": 0, "TC": 54, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 7.2, "BOD": 2.1, "FC": 0, "TC": 50, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 7.2, "BOD": 2.2, "FC": 0, "TC": 40, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 7.0, "BOD": 2.2, "FC": 0, "TC": 56, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2024,
+      "month": "December",
+      "readings": [
+        { "station_code": 1099, "DO": 6.5, "BOD": 2.6, "FC": 0, "TC": 50, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 7.2, "BOD": 2.5, "FC": 0, "TC": 50, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 7.2, "BOD": 2.7, "FC": 0, "TC": 48, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 7.4, "BOD": 2.2, "FC": 0, "TC": 50, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 7.1, "BOD": 2.2, "FC": 0, "TC": 46, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 7.2, "BOD": 2.0, "FC": 0, "TC": 44, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 6.4, "BOD": 2.5, "FC": 0, "TC": 54, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2024,
+      "month": "November",
+      "readings": [
+        { "station_code": 1099, "DO": 7.1, "BOD": 2.2, "FC": 0, "TC": 54, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 7.2, "BOD": 2.2, "FC": 0, "TC": 54, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 7.2, "BOD": 2.0, "FC": 0, "TC": 50, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 7.0, "BOD": 2.0, "FC": 0, "TC": 48, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 7.2, "BOD": 2.4, "FC": 0, "TC": 50, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 7.0, "BOD": 1.8, "FC": 0, "TC": 46, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 6.2, "BOD": 2.8, "FC": 0, "TC": 46, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2024,
+      "month": "October",
+      "readings": [
+        { "station_code": 1099, "DO": 6.4, "BOD": 2.3, "FC": 0, "TC": 46, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 7.2, "BOD": 2.0, "FC": 0, "TC": 50, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 7.0, "BOD": 2.2, "FC": 0, "TC": 40, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 6.6, "BOD": 2.4, "FC": 0, "TC": 54, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 7.0, "BOD": 2.2, "FC": 0, "TC": 44, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 6.4, "BOD": 2.6, "FC": 0, "TC": 44, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 6.6, "BOD": 2.4, "FC": 0, "TC": 40, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2024,
+      "month": "September",
+      "readings": [
+        { "station_code": 1099, "DO": 6.4, "BOD": 2.8, "FC": 0, "TC": 56, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 7.7, "BOD": 2.2, "FC": 0, "TC": 48, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 6.4, "BOD": 2.5, "FC": 0, "TC": 46, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 6.8, "BOD": 2.2, "FC": 0, "TC": 50, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 6.4, "BOD": 1.6, "FC": 0, "TC": 46, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 6.5, "BOD": 2.0, "FC": 0, "TC": 40, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 6.2, "BOD": 2.6, "FC": 0, "TC": 44, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2024,
+      "month": "August",
+      "readings": [
+        { "station_code": 1099, "DO": 6.7, "BOD": 2.6, "FC": 0, "TC": 50, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 6.9, "BOD": 1.8, "FC": 0, "TC": 27, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 7.1, "BOD": 2.0, "FC": 0, "TC": 40, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 6.2, "BOD": 2.3, "FC": 0, "TC": 56, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 6.8, "BOD": 2.0, "FC": 0, "TC": 40, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 6.8, "BOD": 1.8, "FC": 0, "TC": 35, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 6.8, "BOD": 1.6, "FC": 0, "TC": 50, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2024,
+      "month": "July",
+      "readings": [
+        { "station_code": 1099, "DO": 6.4, "BOD": 2.3, "FC": 0, "TC": 70, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 6.8, "BOD": 2.3, "FC": 0, "TC": 46, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 6.9, "BOD": 2.4, "FC": 0, "TC": 46, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 6.7, "BOD": 2.3, "FC": 0, "TC": 55, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 6.6, "BOD": 2.6, "FC": 0, "TC": 60, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 6.8, "BOD": 1.8, "FC": 0, "TC": 35, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 6.8, "BOD": 2.2, "FC": 0, "TC": 60, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2024,
+      "month": "June",
+      "readings": [
+        { "station_code": 1099, "DO": 6.5, "BOD": 2.3, "FC": 0, "TC": 60, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 6.6, "BOD": 2.1, "FC": 0, "TC": 40, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 6.5, "BOD": 2.7, "FC": 0, "TC": 60, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 6.4, "BOD": 2.1, "FC": 0, "TC": 70, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 6.2, "BOD": 2.0, "FC": 0, "TC": 66, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 6.3, "BOD": 2.1, "FC": 0, "TC": 50, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 6.4, "BOD": 2.9, "FC": 0, "TC": 72, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2024,
+      "month": "May",
+      "readings": [
+        { "station_code": 1099, "DO": 6.3, "BOD": 2.9, "FC": 0, "TC": 100, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 6.4, "BOD": 2.4, "FC": 0, "TC": 70, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 6.6, "BOD": 2.0, "FC": 0, "TC": 56, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 6.5, "BOD": 2.3, "FC": 0, "TC": 100, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 6.8, "BOD": 2.4, "FC": 0, "TC": 60, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 6.1, "BOD": 2.0, "FC": 0, "TC": 50, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 7.8, "BOD": 2.9, "FC": 0, "TC": 100, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2024,
+      "month": "April",
+      "readings": [
+        { "station_code": 1099, "DO": 6.6, "BOD": 2.3, "FC": 0, "TC": 68, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 7.0, "BOD": 2.5, "FC": 0, "TC": 40, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 6.4, "BOD": 2.1, "FC": 0, "TC": 64, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 6.4, "BOD": 2.1, "FC": 0, "TC": 90, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 6.8, "BOD": 2.8, "FC": 0, "TC": 70, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 5.9, "BOD": 2.8, "FC": 0, "TC": 64, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 6.0, "BOD": 2.3, "FC": 0, "TC": 64, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2024,
+      "month": "January",
+      "readings": [
+        { "station_code": 1099, "DO": 7.1, "BOD": 2.4, "FC": 0, "TC": 63, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 7.1, "BOD": 2.2, "FC": 0, "TC": 35, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 7.2, "BOD": 2.3, "FC": 0, "TC": 40, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 7.1, "BOD": 2.1, "FC": 0, "TC": 55, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 7.1, "BOD": 2.4, "FC": 46, "TC": 46, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 6.8, "BOD": 2.0, "FC": 0, "TC": 55, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 6.5, "BOD": 2.4, "FC": 0, "TC": 60, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2023,
+      "month": "March",
+      "readings": [
+        { "station_code": 1099, "DO": 6.9, "BOD": 2.4, "FC": 0, "TC": 60, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 7.0, "BOD": 2.4, "FC": 0, "TC": 46, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 6.8, "BOD": 2.0, "FC": 0, "TC": 50, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 6.4, "BOD": 2.1, "FC": 0, "TC": 46, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 7.1, "BOD": 2.3, "FC": 0, "TC": 56, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 6.4, "BOD": 2.3, "FC": 0, "TC": 50, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 6.5, "BOD": 2.4, "FC": 0, "TC": 56, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2023,
+      "month": "February",
+      "readings": [
+        { "station_code": 1099, "DO": 6.6, "BOD": 2.3, "FC": 0, "TC": 46, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 6.8, "BOD": 2.2, "FC": 0, "TC": 40, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 7.2, "BOD": 2.3, "FC": 0, "TC": 46, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 6.6, "BOD": 2.3, "FC": 0, "TC": 50, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 7.1, "BOD": 2.4, "FC": 46, "TC": 46, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 6.8, "BOD": 2.4, "FC": 0, "TC": 46, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 6.5, "BOD": 2.4, "FC": 0, "TC": 60, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2023,
+      "month": "December",
+      "readings": [
+        { "station_code": 1099, "DO": 7.0, "BOD": 2.8, "FC": 0, "TC": 60, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 7.1, "BOD": 2.4, "FC": 0, "TC": 30, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 6.6, "BOD": 2.4, "FC": 0, "TC": 34, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 6.8, "BOD": 2.2, "FC": 0, "TC": 50, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 7.3, "BOD": 2.4, "FC": 0, "TC": 40, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 6.5, "BOD": 2.3, "FC": 0, "TC": 55, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 6.4, "BOD": 2.2, "FC": 0, "TC": 70, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2023,
+      "month": "November",
+      "readings": [
+        { "station_code": 1099, "DO": 7.1, "BOD": 2.2, "FC": 0, "TC": 56, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 7.0, "BOD": 2.2, "FC": 0, "TC": 48, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 6.8, "BOD": 2.1, "FC": 0, "TC": 60, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 6.8, "BOD": 2.1, "FC": 0, "TC": 68, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 7.1, "BOD": 2.7, "FC": 0, "TC": 54, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 5.8, "BOD": 2.2, "FC": 0, "TC": 56, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 6.6, "BOD": 2.1, "FC": 0, "TC": 60, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2023,
+      "month": "October",
+      "readings": [
+        { "station_code": 1099, "DO": 7.1, "BOD": 2.1, "FC": 0, "TC": 60, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 7.2, "BOD": 2.2, "FC": 0, "TC": 50, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 7.1, "BOD": 2.2, "FC": 0, "TC": 56, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 6.9, "BOD": 2.1, "FC": 0, "TC": 66, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 7.0, "BOD": 2.4, "FC": 0, "TC": 60, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 5.3, "BOD": 2.1, "FC": 0, "TC": 56, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 6.2, "BOD": 2.3, "FC": 0, "TC": 56, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2023,
+      "month": "September",
+      "readings": [
+        { "station_code": 1099, "DO": 6.7, "BOD": 2.4, "FC": 0, "TC": 54, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 7.2, "BOD": 2.4, "FC": 0, "TC": 44, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 6.8, "BOD": 2.1, "FC": 0, "TC": 52, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 6.8, "BOD": 2.2, "FC": 0, "TC": 56, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 7.2, "BOD": 2.2, "FC": 0, "TC": 56, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 6.4, "BOD": 2.3, "FC": 0, "TC": 50, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 7.6, "BOD": 2.1, "FC": 0, "TC": 54, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2023,
+      "month": "August",
+      "readings": [
+        { "station_code": 1099, "DO": 6.7, "BOD": 2.4, "FC": 0, "TC": 60, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 7.5, "BOD": 2.4, "FC": 0, "TC": 50, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 6.8, "BOD": 2.2, "FC": 0, "TC": 60, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 6.6, "BOD": 2.3, "FC": 0, "TC": 66, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 6.8, "BOD": 2.6, "FC": 0, "TC": 54, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 7.7, "BOD": 2.3, "FC": 0, "TC": 46, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 6.9, "BOD": 2.3, "FC": 0, "TC": 76, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2023,
+      "month": "July",
+      "readings": [
+        { "station_code": 1099, "DO": 6.7, "BOD": 2.4, "FC": 0, "TC": 56, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 6.8, "BOD": 2.6, "FC": 0, "TC": 48, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 6.4, "BOD": 2.4, "FC": 0, "TC": 56, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 6.8, "BOD": 2.5, "FC": 0, "TC": 70, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 6.3, "BOD": 2.4, "FC": 0, "TC": 56, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 6.7, "BOD": 2.4, "FC": 0, "TC": 54, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 6.7, "BOD": 2.4, "FC": 0, "TC": 80, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2023,
+      "month": "June",
+      "readings": [
+        { "station_code": 1099, "DO": 6.8, "BOD": 2.3, "FC": 0, "TC": 84, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 6.9, "BOD": 2.2, "FC": 0, "TC": 50, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 6.8, "BOD": 2.3, "FC": 0, "TC": 50, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 6.9, "BOD": 2.4, "FC": 0, "TC": 64, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 6.7, "BOD": 2.4, "FC": 0, "TC": 78, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 6.7, "BOD": 2.4, "FC": 0, "TC": 56, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 6.0, "BOD": 2.4, "FC": 0, "TC": 84, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2023,
+      "month": "May",
+      "readings": [
+        { "station_code": 1099, "DO": 6.5, "BOD": 2.4, "FC": 0, "TC": 78, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 6.5, "BOD": 2.4, "FC": 0, "TC": 48, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 7.2, "BOD": 2.5, "FC": 0, "TC": 48, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 6.5, "BOD": 2.5, "FC": 0, "TC": 64, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 6.4, "BOD": 2.3, "FC": 0, "TC": 58, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 0, "BOD": 0, "FC": 0, "TC": 0, "status": "NOT SATISFACTORY" },
+        { "station_code": 1853, "DO": 6.4, "BOD": 2.6, "FC": 0, "TC": 68, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2023,
+      "month": "April",
+      "readings": [
+        { "station_code": 1099, "DO": 6.8, "BOD": 2.2, "FC": 0, "TC": 64, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 6.9, "BOD": 2.2, "FC": 0, "TC": 58, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 7.0, "BOD": 2.3, "FC": 0, "TC": 46, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 6.9, "BOD": 2.3, "FC": 0, "TC": 66, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 6.7, "BOD": 2.6, "FC": 0, "TC": 50, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 0, "BOD": 0, "FC": 0, "TC": 0, "status": "NOT SATISFACTORY" },
+        { "station_code": 1853, "DO": 6.7, "BOD": 2.8, "FC": 0, "TC": 66, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2023,
+      "month": "March",
+      "readings": [
+        { "station_code": 1099, "DO": 7.1, "BOD": 2.7, "FC": 0, "TC": 60, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 7.3, "BOD": 2.4, "FC": 0, "TC": 44, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 7.0, "BOD": 2.3, "FC": 0, "TC": 44, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 7.2, "BOD": 2.4, "FC": 0, "TC": 70, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 7.3, "BOD": 2.2, "FC": 0, "TC": 50, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 7.1, "BOD": 2.3, "FC": 0, "TC": 40, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 6.9, "BOD": 2.6, "FC": 0, "TC": 64, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2023,
+      "month": "February",
+      "readings": [
+        { "station_code": 1099, "DO": 6.8, "BOD": 2.8, "FC": 0, "TC": 64, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 6.8, "BOD": 2.2, "FC": 0, "TC": 52, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 7.2, "BOD": 2.2, "FC": 0, "TC": 42, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 6.8, "BOD": 2.6, "FC": 0, "TC": 68, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 6.8, "BOD": 2.4, "FC": 0, "TC": 52, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 7.0, "BOD": 2.1, "FC": 0, "TC": 44, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 6.6, "BOD": 2.9, "FC": 0, "TC": 66, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2023,
+      "month": "January",
+      "readings": [
+        { "station_code": 1099, "DO": 7.0, "BOD": 2.9, "FC": 0, "TC": 60, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 7.2, "BOD": 2.4, "FC": 0, "TC": 40, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 7.3, "BOD": 2.1, "FC": 0, "TC": 46, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 7.0, "BOD": 2.3, "FC": 0, "TC": 70, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 7.3, "BOD": 2.6, "FC": 0, "TC": 46, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 7.1, "BOD": 2.2, "FC": 0, "TC": 40, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 7.2, "BOD": 2.0, "FC": 0, "TC": 70, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2022,
+      "month": "December",
+      "readings": [
+        { "station_code": 1099, "DO": 7.1, "BOD": 2.1, "FC": 0, "TC": 50, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 7.3, "BOD": 3.0, "FC": 0, "TC": 40, "status": "NOT SATISFACTORY" },
+        { "station_code": 1265, "DO": 7.2, "BOD": 2.1, "FC": 0, "TC": 50, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 7.1, "BOD": 2.8, "FC": 0, "TC": 66, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 7.2, "BOD": 2.4, "FC": 0, "TC": 40, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 7.0, "BOD": 2.4, "FC": 0, "TC": 36, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 7.0, "BOD": 2.5, "FC": 0, "TC": 68, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2022,
+      "month": "November",
+      "readings": [
+        { "station_code": 1099, "DO": 6.8, "BOD": 2.3, "FC": 0, "TC": 50, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 7.0, "BOD": 2.6, "FC": 0, "TC": 34, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 7.4, "BOD": 2.1, "FC": 0, "TC": 26, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 7.1, "BOD": 2.9, "FC": 0, "TC": 34, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 7.1, "BOD": 2.4, "FC": 0, "TC": 40, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 6.9, "BOD": 2.4, "FC": 0, "TC": 40, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 6.4, "BOD": 2.1, "FC": 0, "TC": 50, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2022,
+      "month": "October",
+      "readings": [
+        { "station_code": 1099, "DO": 7.4, "BOD": 2.2, "FC": 0, "TC": 60, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 7.2, "BOD": 1.2, "FC": 0, "TC": 36, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 7.1, "BOD": 2.4, "FC": 0, "TC": 40, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 7.4, "BOD": 2.2, "FC": 0, "TC": 60, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 7.3, "BOD": 2.1, "FC": 0, "TC": 0, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 7.3, "BOD": 1.6, "FC": 0, "TC": 28, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 7.1, "BOD": 2.8, "FC": 0, "TC": 64, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2022,
+      "month": "September",
+      "readings": [
+        { "station_code": 1099, "DO": 7.2, "BOD": 2.8, "FC": 0, "TC": 52, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 7.3, "BOD": 2.1, "FC": 0, "TC": 36, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 7.41, "BOD": 2.2, "FC": 0, "TC": 36, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 7.2, "BOD": 2.3, "FC": 0, "TC": 48, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 7.1, "BOD": 2.1, "FC": 0, "TC": 36, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 7.3, "BOD": 1.8, "FC": 0, "TC": 28, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 7.2, "BOD": 2.6, "FC": 0, "TC": 58, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2022,
+      "month": "August",
+      "readings": [
+        { "station_code": 1099, "DO": 7.0, "BOD": 2.1, "FC": 0, "TC": 50, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 7.1, "BOD": 2.6, "FC": 0, "TC": 34, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 7.3, "BOD": 2.5, "FC": 0, "TC": 34, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 7.2, "BOD": 2.9, "FC": 0, "TC": 50, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 7.2, "BOD": 2.3, "FC": 0, "TC": 34, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 7.3, "BOD": 1.8, "FC": 0, "TC": 26, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 6.9, "BOD": 2.9, "FC": 0, "TC": 60, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2022,
+      "month": "July",
+      "readings": [
+        { "station_code": 1099, "DO": 7.1, "BOD": 2.4, "FC": 0, "TC": 90, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 7.4, "BOD": 2.1, "FC": 0, "TC": 60, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 7.4, "BOD": 2.9, "FC": 0, "TC": 80, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 7.1, "BOD": 2.4, "FC": 0, "TC": 80, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 7.1, "BOD": 2.6, "FC": 0, "TC": 70, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 7.4, "BOD": 1.9, "FC": 0, "TC": 42, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 7.1, "BOD": 2.4, "FC": 0, "TC": 90, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2022,
+      "month": "June",
+      "readings": [
+        { "station_code": 1099, "DO": 6.9, "BOD": 2.6, "FC": 0, "TC": 60, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 7.5, "BOD": 2.2, "FC": 0, "TC": 34, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 7.1, "BOD": 2.4, "FC": 0, "TC": 54, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 7.4, "BOD": 2.4, "FC": 0, "TC": 70, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 7.3, "BOD": 2.9, "FC": 0, "TC": 40, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 7.2, "BOD": 2.8, "FC": 0, "TC": 48, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 7.0, "BOD": 2.9, "FC": 0, "TC": 60, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2022,
+      "month": "May",
+      "readings": [
+        { "station_code": 1099, "DO": 6.7, "BOD": 2.4, "FC": 13, "TC": 21, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 7.4, "BOD": 2.7, "FC": 11, "TC": 17, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 7.4, "BOD": 2.8, "FC": 9, "TC": 21, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 7.2, "BOD": 2.2, "FC": 17, "TC": 26, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 7.3, "BOD": 2.3, "FC": 11, "TC": 21, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 6.9, "BOD": 2.8, "FC": 2, "TC": 2, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 6.6, "BOD": 2.8, "FC": 9, "TC": 17, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2022,
+      "month": "April",
+      "readings": [
+        { "station_code": 1099, "DO": 6.7, "BOD": 2.4, "FC": 17, "TC": 11, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 7.4, "BOD": 1.7, "FC": 21, "TC": 33, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 7.2, "BOD": 2.6, "FC": 7, "TC": 20, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 7.8, "BOD": 1.9, "FC": 17, "TC": 26, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 7.1, "BOD": 2.2, "FC": 14, "TC": 26, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 6.9, "BOD": 2.2, "FC": 21, "TC": 33, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 6.8, "BOD": 2.9, "FC": 17, "TC": 27, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2022,
+      "month": "March",
+      "readings": [
+        { "station_code": 1099, "DO": 5.8, "BOD": 2.8, "FC": 14, "TC": 27, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 7.2, "BOD": 2.1, "FC": 17, "TC": 33, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 6.8, "BOD": 2.8, "FC": 13, "TC": 27, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 6.8, "BOD": 2.2, "FC": 14, "TC": 27, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 6.8, "BOD": 2.4, "FC": 13, "TC": 30, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 7.5, "BOD": 2.8, "FC": 17, "TC": 33, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 6.9, "BOD": 2.9, "FC": 13, "TC": 27, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2022,
+      "month": "February",
+      "readings": [
+        { "station_code": 1099, "DO": 7.1, "BOD": 2.7, "FC": 11, "TC": 30, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 7.3, "BOD": 2.6, "FC": 13, "TC": 34, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 7.2, "BOD": 2.5, "FC": 17, "TC": 26, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 7.4, "BOD": 2.5, "FC": 11, "TC": 22, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 7.1, "BOD": 2.7, "FC": 14, "TC": 33, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 7.6, "BOD": 2.3, "FC": 14, "TC": 33, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 6.8, "BOD": 2.9, "FC": 11, "TC": 17, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2022,
+      "month": "January",
+      "readings": [
+        { "station_code": 1099, "DO": 7.2, "BOD": 2.6, "FC": 14, "TC": 33, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 7.6, "BOD": 2.5, "FC": 11, "TC": 30, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 7.4, "BOD": 2.4, "FC": 8, "TC": 21, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 6.9, "BOD": 2.6, "FC": 12, "TC": 27, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 7.6, "BOD": 2.4, "FC": 11, "TC": 26, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 7.4, "BOD": 2.2, "FC": 17, "TC": 34, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 7.1, "BOD": 2.3, "FC": 14, "TC": 34, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2021,
+      "month": "December",
+      "readings": [
+        { "station_code": 1099, "DO": 7.3, "BOD": 2.9, "FC": 6, "TC": 17, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 7.8, "BOD": 2.4, "FC": 11, "TC": 30, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 7.5, "BOD": 2.6, "FC": 4, "TC": 13, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 7.4, "BOD": 2.5, "FC": 9, "TC": 26, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 7.2, "BOD": 2.8, "FC": 9, "TC": 27, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 7.6, "BOD": 2.1, "FC": 2, "TC": 2, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 6.2, "BOD": 2.8, "FC": 11, "TC": 34, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2021,
+      "month": "November",
+      "readings": [
+        { "station_code": 1099, "DO": 7.0, "BOD": 2.7, "FC": 14, "TC": 34, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 7.3, "BOD": 2.9, "FC": 6, "TC": 21, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 7.1, "BOD": 2.4, "FC": 7, "TC": 26, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 7.7, "BOD": 2.7, "FC": 4, "TC": 22, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 7.2, "BOD": 2.5, "FC": 11, "TC": 33, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 7.1, "BOD": 2.5, "FC": 4, "TC": 17, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 6.8, "BOD": 2.9, "FC": 6, "TC": 21, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2021,
+      "month": "October",
+      "readings": [
+        { "station_code": 1099, "DO": 7.3, "BOD": 2.3, "FC": 9.2, "TC": 22, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 7.4, "BOD": 3.26, "FC": 6.8, "TC": 25, "status": "NOT SATISFACTORY" },
+        { "station_code": 1265, "DO": 7.6, "BOD": 2.3, "FC": 3.6, "TC": 17, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 7.2, "BOD": 2.8, "FC": 1.8, "TC": 12, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 7.3, "BOD": 2.4, "FC": 4, "TC": 26, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 7.2, "BOD": 2.3, "FC": 6, "TC": 21, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 7.2, "BOD": 2.6, "FC": 1.8, "TC": 14, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2021,
+      "month": "September",
+      "readings": [
+        { "station_code": 1099, "DO": 7.4, "BOD": 2.0, "FC": 4, "TC": 26, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 7.6, "BOD": 2.0, "FC": 7, "TC": 33, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 7.4, "BOD": 2.2, "FC": 14, "TC": 46, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 7.5, "BOD": 2.4, "FC": 4, "TC": 21, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 7.2, "BOD": 2.6, "FC": 4, "TC": 22, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 7.5, "BOD": 2.2, "FC": 2, "TC": 17, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 7.1, "BOD": 2.8, "FC": 4, "TC": 17, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2021,
+      "month": "August",
+      "readings": [
+        { "station_code": 1099, "DO": 7.1, "BOD": 2.8, "FC": 2, "TC": 28, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 7.2, "BOD": 2.6, "FC": 2, "TC": 17, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 7.2, "BOD": 2.4, "FC": 11, "TC": 30, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 7.0, "BOD": 2.5, "FC": 8, "TC": 22, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 7.1, "BOD": 2.4, "FC": 2, "TC": 14, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 7.1, "BOD": 2.9, "FC": 1, "TC": 11, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 6.9, "BOD": 2.8, "FC": 13, "TC": 34, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2021,
+      "month": "July",
+      "readings": [
+        { "station_code": 1099, "DO": 6.9, "BOD": 2.1, "FC": 13, "TC": 13, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 7.1, "BOD": 2.5, "FC": 14, "TC": 50, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 7.1, "BOD": 2.8, "FC": 13, "TC": 40, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 6.8, "BOD": 1.3, "FC": 7, "TC": 22, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 7.1, "BOD": 2.2, "FC": 12, "TC": null, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 6.9, "BOD": 2.7, "FC": 17, "TC": 80, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 6.8, "BOD": 1.8, "FC": 11, "TC": 30, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2021,
+      "month": "June",
+      "readings": [
+        { "station_code": 1099, "DO": 6.6, "BOD": 2.92, "FC": 26, "TC": 63, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 6.7, "BOD": 1.5, "FC": 11, "TC": 38, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 6.5, "BOD": 2.2, "FC": 13, "TC": 46, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 6.6, "BOD": 0.6, "FC": 1.8, "TC": 15, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 6.5, "BOD": 1.4, "FC": 10, "TC": 34, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 6.6, "BOD": 2.86, "FC": 21, "TC": 58, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 6.3, "BOD": 1.5, "FC": 6.8, "TC": 26, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2021,
+      "month": "May",
+      "readings": [
+        { "station_code": 1099, "DO": 6.4, "BOD": 1.3, "FC": 4, "TC": 17, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 6.6, "BOD": 1.9, "FC": 6.8, "TC": 25, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 6.4, "BOD": 1.1, "FC": 2, "TC": 12, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 6.4, "BOD": 2.1, "FC": 13, "TC": 40, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 6.2, "BOD": 2.1, "FC": 9.2, "TC": 31, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 6.4, "BOD": 2.9, "FC": 12, "TC": 38, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 6.3, "BOD": 1.8, "FC": 6, "TC": 26, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2021,
+      "month": "March",
+      "readings": [
+        { "station_code": 1099, "DO": 6.6, "BOD": 2.9, "FC": 94, "TC": 26, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2021,
+      "month": "February",
+      "readings": [
+        { "station_code": 1099, "DO": 6.8, "BOD": 2.7, "FC": 13, "TC": 58, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2021,
+      "month": "January",
+      "readings": [
+        { "station_code": 1099, "DO": 6.7, "BOD": 2.8, "FC": 31, "TC": 58, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 6.8, "BOD": 1.4, "FC": 14, "TC": 40, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 6.6, "BOD": 2.9, "FC": 17, "TC": 38, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 6.6, "BOD": 2.2, "FC": 20, "TC": 47, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 6.5, "BOD": 1.8, "FC": 17, "TC": 41, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 6.6, "BOD": 2.4, "FC": 21, "TC": 47, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 6.4, "BOD": 2.9, "FC": 17, "TC": 38, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2020,
+      "month": "December",
+      "readings": [
+        { "station_code": 1099, "DO": 6.8, "BOD": 2.9, "FC": 13, "TC": 58, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2020,
+      "month": "November",
+      "readings": [
+        { "station_code": 1099, "DO": 6.6, "BOD": 2.2, "FC": 4, "TC": 17, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2020,
+      "month": "October",
+      "readings": [
+        { "station_code": 1099, "DO": 6.4, "BOD": 2.0, "FC": 4.5, "TC": 34, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 6.6, "BOD": 2.8, "FC": 13, "TC": 58, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 6.7, "BOD": 2.7, "FC": 14, "TC": 84, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 6.4, "BOD": 2.8, "FC": 21, "TC": 94, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 6.5, "BOD": 2.5, "FC": 11, "TC": 48, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 6.6, "BOD": 2.4, "FC": 9.3, "TC": 41, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 6.4, "BOD": 2.6, "FC": 11, "TC": 79, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2020,
+      "month": "September",
+      "readings": [
+        { "station_code": 1099, "DO": 6.8, "BOD": 2.8, "FC": 21, "TC": 94, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2020,
+      "month": "August",
+      "readings": [
+        { "station_code": 1099, "DO": 6.6, "BOD": 4.0, "FC": 6.1, "TC": 39, "status": "NOT SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2020,
+      "month": "July",
+      "readings": [
+        { "station_code": 1099, "DO": 6.4, "BOD": 4.6, "FC": 7, "TC": 34, "status": "NOT SATISFACTORY" },
+        { "station_code": 1264, "DO": 6.6, "BOD": 7.0, "FC": 0, "TC": 40, "status": "NOT SATISFACTORY" },
+        { "station_code": 1265, "DO": 6.6, "BOD": 2.0, "FC": 0, "TC": 9, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 6.4, "BOD": 3.8, "FC": 4, "TC": 30, "status": "NOT SATISFACTORY" },
+        { "station_code": 1852, "DO": 6.5, "BOD": 2.0, "FC": 0, "TC": 6, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 6.5, "BOD": 3.0, "FC": 0, "TC": 9, "status": "NOT SATISFACTORY" },
+        { "station_code": 1853, "DO": 6.5, "BOD": 1.9, "FC": 0, "TC": 7, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2020,
+      "month": "June",
+      "readings": [
+        { "station_code": 1099, "DO": 6.4, "BOD": 2.8, "FC": 8, "TC": 34, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2020,
+      "month": "May",
+      "readings": [
+        { "station_code": 1099, "DO": 6.5, "BOD": 2.8, "FC": 4.5, "TC": 21, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2020,
+      "month": "April",
+      "readings": [
+        { "station_code": 1099, "DO": 6.4, "BOD": 2.8, "FC": 1.8, "TC": 12, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 6.6, "BOD": 3.4, "FC": 0, "TC": 4, "status": "NOT SATISFACTORY" },
+        { "station_code": 1265, "DO": 6.6, "BOD": 2.6, "FC": 0, "TC": 0, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 6.6, "BOD": 2.9, "FC": 0, "TC": 1.8, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 6.4, "BOD": 1.0, "FC": 0, "TC": 0, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 6.5, "BOD": 0, "FC": 0, "TC": 1.8, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 6.4, "BOD": 2.6, "FC": 0, "TC": 0, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2020,
+      "month": "January",
+      "readings": [
+        { "station_code": 1099, "DO": 6.8, "BOD": 2.6, "FC": 21, "TC": null, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 7.4, "BOD": 2.6, "FC": 25, "TC": null, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 7.1, "BOD": 2.8, "FC": 32, "TC": null, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 7.2, "BOD": 2.0, "FC": 0, "TC": null, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 6.8, "BOD": 2.2, "FC": 11, "TC": null, "status": "SATISFACTORY" },
+        { "station_code": 1851, "DO": 7.1, "BOD": 3.2, "FC": 46, "TC": null, "status": "NOT SATISFACTORY" },
+        { "station_code": 1853, "DO": 6.5, "BOD": 1.2, "FC": 0, "TC": null, "status": "SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2019,
+      "month": "October",
+      "readings": [
+        { "station_code": 1099, "DO": 6.6, "BOD": 2.6, "FC": 11, "TC": 63, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 7.1, "BOD": 3.8, "FC": 70, "TC": 430, "status": "NOT SATISFACTORY" },
+        { "station_code": 1265, "DO": 7.6, "BOD": 3.6, "FC": 84, "TC": 350, "status": "NOT SATISFACTORY" },
+        { "station_code": 1266, "DO": 6.9, "BOD": 2.6, "FC": 17, "TC": 120, "status": "SATISFACTORY" },
+        { "station_code": 1852, "DO": 6.8, "BOD": 3.0, "FC": 26, "TC": 120, "status": "NOT SATISFACTORY" },
+        { "station_code": 1851, "DO": 6.8, "BOD": 2.2, "FC": null, "TC": 38, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 7.4, "BOD": 4.2, "FC": 94, "TC": 540, "status": "NOT SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2019,
+      "month": "July",
+      "readings": [
+        { "station_code": 1099, "DO": 6.5, "BOD": 2.2, "FC": 20, "TC": 130, "status": "SATISFACTORY" },
+        { "station_code": 1264, "DO": 6.5, "BOD": 2.6, "FC": null, "TC": 13, "status": "SATISFACTORY" },
+        { "station_code": 1265, "DO": 6.6, "BOD": 2.4, "FC": 40, "TC": 170, "status": "SATISFACTORY" },
+        { "station_code": 1266, "DO": 6.6, "BOD": 3.2, "FC": null, "TC": 23, "status": "NOT SATISFACTORY" },
+        { "station_code": 1852, "DO": 6.5, "BOD": 4.0, "FC": 120, "TC": 320, "status": "NOT SATISFACTORY" },
+        { "station_code": 1851, "DO": 6.5, "BOD": 4.0, "FC": 170, "TC": 790, "status": "NOT SATISFACTORY" },
+        { "station_code": 1853, "DO": 6.4, "BOD": 3.4, "FC": null, "TC": 33, "status": "NOT SATISFACTORY" }
+      ]
+    },
+    {
+      "year": 2019,
+      "month": "April",
+      "readings": [
+        { "station_code": 1099, "DO": 6.1, "BOD": 3.8, "FC": 17, "TC": 58, "status": "NOT SATISFACTORY" },
+        { "station_code": 1264, "DO": 6.4, "BOD": 5.2, "FC": 22, "TC": 109, "status": "NOT SATISFACTORY" },
+        { "station_code": 1265, "DO": 6.2, "BOD": 8.6, "FC": 26, "TC": 141, "status": "NOT SATISFACTORY" },
+        { "station_code": 1266, "DO": 6.2, "BOD": 3.8, "FC": 2, "TC": 11, "status": "NOT SATISFACTORY" },
+        { "station_code": 1852, "DO": 6.1, "BOD": 4.2, "FC": 33, "TC": 175, "status": "NOT SATISFACTORY" },
+        { "station_code": 1851, "DO": 6.2, "BOD": 2.9, "FC": 14, "TC": 49, "status": "SATISFACTORY" },
+        { "station_code": 1853, "DO": 6.2, "BOD": 4.0, "FC": 41, "TC": 278, "status": "NOT SATISFACTORY" }
+      ]
+    }
+  ]
+}

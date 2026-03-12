@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Menu, X, Landmark, ChevronDown, Crown, Building2, Users, Factory, Eye } from "lucide-react";
 
 const roles = [
@@ -99,9 +100,12 @@ const Navbar = () => {
               )}
             </div>
 
-            <button className="rounded-md bg-blue-700 px-5 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-800 transition-all">
+            <Link to="/login" className="rounded-md bg-blue-700 px-5 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-800 transition-all">
               Login to Dashboard
-            </button>
+            </Link>
+            <Link to="/public" className="text-sm font-medium text-gray-600 hover:text-blue-700 transition-colors">
+              Citizen Portal
+            </Link>
           </div>
 
           {/* Mobile Hamburger */}
@@ -137,9 +141,9 @@ const Navbar = () => {
                 </a>
               ))}
             </div>
-            <button className="w-full rounded-md bg-blue-700 px-4 py-2 text-sm font-semibold text-white">
+            <Link to="/login" className="block w-full rounded-md bg-blue-700 px-4 py-2 text-sm font-semibold text-white text-center">
               Login to Dashboard
-            </button>
+            </Link>
           </div>
         )}
       </nav>

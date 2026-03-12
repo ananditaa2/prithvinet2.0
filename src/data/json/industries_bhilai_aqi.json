@@ -1,0 +1,29 @@
+[
+  {
+    "industry_id": "IND001",
+    "name": "Bhilai Steel Plant",
+    "type": "Steel",
+    "lat": 21.208,
+    "lng": 81.376,
+    "station_id": "ST001",
+    "high_risk": true
+  },
+  {
+    "industry_id": "IND002",
+    "name": "CSID\u0421 Industrial Growth Center",
+    "type": "Mixed Industrial",
+    "lat": 21.2514,
+    "lng": 81.28,
+    "station_id": "ST002",
+    "high_risk": false
+  },
+  {
+    "industry_id": "IND003",
+    "name": "Durg Thermal Plant",
+    "type": "Power",
+    "lat": 21.19,
+    "lng": 81.29,
+    "station_id": "ST002",
+    "high_risk": true
+  }
+]

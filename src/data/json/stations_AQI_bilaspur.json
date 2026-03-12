@@ -1,0 +1,48 @@
+[
+  {
+    "station_id": "ST001",
+    "name": "Laghu Udyog Nigam",
+    "type": "Industrial",
+    "lat": 21.1938,
+    "lng": 81.3509,
+    "region": "Bhilai-Durg, Chhattisgarh",
+    "active": true
+  },
+  {
+    "station_id": "ST002",
+    "name": "C.S.I.D.C.",
+    "type": "Industrial",
+    "lat": 21.2514,
+    "lng": 81.28,
+    "region": "Bhilai-Durg, Chhattisgarh",
+    "active": true
+  },
+  {
+    "station_id": "ST003",
+    "name": "Bokaro Hostel",
+    "type": "Residential",
+    "lat": 21.21,
+    "lng": 81.42,
+    "region": "Bhilai-Durg, Chhattisgarh",
+    "active": true
+  },
+  {
+    "station_id": "ST004",
+    "name": "Regional Office CECB",
+    "type": "Commercial",
+    "lat": 21.18,
+    "lng": 81.38,
+    "region": "Bhilai-Durg, Chhattisgarh",
+    "active": true
+  },
+  {
+    "station_id": "ST005",
+    "name": "CECB Vyapar Vihar, Bilaspur",
+    "code": "NAMP-669",
+    "type": "Commercial",
+    "lat": 22.0796,
+    "lng": 82.1391,
+    "region": "Bilaspur, Chhattisgarh",
+    "active": true
+  }
+]
