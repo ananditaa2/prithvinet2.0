@@ -3,8 +3,10 @@ import { api } from "@/lib/api";
 import { useAuth } from "@/context/AuthContext";
 import {
   AlertTriangle, Factory, MapPin, Wind, CheckCircle,
-  TrendingUp, Droplets, Volume2, ShieldAlert, Activity
+  TrendingUp, Droplets, Volume2, ShieldAlert, Activity,
+  Sparkles, Download, PhoneCall, Check, BellRing, Wand2
 } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
   PieChart, Pie, Cell, LineChart, Line, Legend, RadialBarChart, RadialBar
@@ -173,7 +175,7 @@ function DataTypeChart({ data }: { data: any[] }) {
 }
 
 // ─── Recent Alerts Feed ────────────────────────────────────────────────────────
-function AlertFeed({ alerts, canViewViolationLogs }: { alerts: any[]; canViewViolationLogs: boolean }) {
+function AlertFeed({ alerts, canViewViolationLogs, locations }: { alerts: any[]; canViewViolationLogs: boolean; locations: any[] }) {
   return (
     <div className="bg-white rounded-2xl border border-gray-100 shadow-sm">
       <div className="p-5 border-b border-gray-100 flex items-center justify-between">
@@ -200,9 +202,27 @@ function AlertFeed({ alerts, canViewViolationLogs }: { alerts: any[]; canViewVio
                   )}
                 </div>
                 <p className="text-sm text-gray-700 mt-1 truncate">
-                  {canViewViolationLogs ? a.message : "Violation details restricted for your role."}
+                  {(() => {
+                    let msg = canViewViolationLogs ? a.message : "Violation details restricted for your role.";
+                    // Replace "location #ID" with "location name" logically
+                    const locMatch = msg.match(/location\s*#(\d+)/i);
+                    if (locMatch) {
+                      const loc = locations.find(l => l.id === parseInt(locMatch[1]));
+                      if (loc) {
+                        msg = msg.replace(locMatch[0], `${locMatch[0]} (${loc.name.trim()})`);
+                      }
+                    }
+                    return msg;
+                  })()}
                 </p>
-                <p className="text-xs text-gray-400 mt-0.5">{new Date(a.created_at).toLocaleString("en-IN")}</p>
+                <div className="flex items-center justify-between mt-1.5">
+                  <p className="text-xs text-gray-400">{new Date(a.created_at).toLocaleString("en-IN")}</p>
+                  {(a.alert_type === "missing_report" || (!a.message?.includes("threshold") && !a.message?.includes("index"))) && (
+                    <Button variant="outline" size="sm" className="h-[22px] text-[10px] px-2 gap-1 py-0! rounded bg-amber-50 border-amber-200 text-amber-700 hover:bg-amber-100">
+                      <BellRing className="w-3 h-3 text-amber-500" /> Send Reminder
+                    </Button>
+                  )}
+                </div>
               </div>
             </div>
           );
@@ -245,7 +265,7 @@ function TopViolationsBar({ industries }: { industries: any[] }) {
       </div>
       <div className="space-y-3">
         {violating.slice(0, 5).map((industry, i) => (
-          <div key={industry.id} className="flex items-center gap-3">
+          <div key={industry.id} className="group flex items-center gap-3">
             <span className="text-xs font-bold text-gray-400 w-4">{i + 1}</span>
             <div className="flex-1 min-w-0">
               <div className="flex items-center justify-between mb-1">
@@ -256,7 +276,20 @@ function TopViolationsBar({ industries }: { industries: any[] }) {
                 <div className="h-1.5 bg-red-500 rounded-full" style={{ width: `${Math.min(100, 40 + i * 15)}%` }} />
               </div>
             </div>
-            <span className="px-2 py-0.5 text-[10px] font-bold rounded-full bg-red-100 text-red-700 flex-shrink-0">VIOLATION</span>
+            
+            <div className="flex flex-col gap-1.5 items-end ml-2">
+              <div className="flex items-center gap-1 opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity">
+                <button title="Escalate to Authorities" className="p-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-600 transition-colors">
+                  <PhoneCall className="w-3.5 h-3.5" />
+                </button>
+                <button title="Resolve Violation" className="p-1 rounded bg-green-50 hover:bg-green-100 text-green-600 transition-colors">
+                  <Check className="w-3.5 h-3.5" />
+                </button>
+                <a href="/dashboard/ai-tools" title="Run What-If Simulation" className="p-1 rounded bg-indigo-50 hover:bg-indigo-100 text-indigo-600 transition-colors">
+                  <Wand2 className="w-3.5 h-3.5" />
+                </a>
+              </div>
+            </div>
           </div>
         ))}
       </div>
@@ -312,6 +345,7 @@ export default function Overview() {
   const violating     = industries.filter(i => i.status === "violating").length;
   const compliant     = industries.filter(i => i.status === "compliant").length;
   const inactive      = industries.length - violating - compliant;
+  const totalIndustries = industries.length;
   const today         = new Date().toISOString().slice(0, 10);
   const todayReadings = data.filter(d => d.recorded_at?.slice(0, 10) === today).length;
   const airReadings   = data.filter(d => (d.data_type || "").toLowerCase() === "air").length;
@@ -338,10 +372,31 @@ export default function Overview() {
           <h1 className="text-2xl font-extrabold text-gray-900">{title}</h1>
           <p className="text-sm text-gray-400 mt-1">Real-time environmental intelligence · As of {new Date().toLocaleString("en-IN")}</p>
         </div>
-        <div className="flex items-center gap-2">
-          <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-          <span className="text-xs text-emerald-600 font-semibold">Live</span>
+        <div className="flex items-center gap-3">
+          <Button variant="outline" size="sm" className="h-8 gap-1.5 bg-white bg-opacity-80 backdrop-blur-sm border-gray-200 text-gray-600 hover:bg-gray-50" onClick={() => window.print()}>
+            <Download className="w-3.5 h-3.5" /> Daily Report
+          </Button>
+          <div className="flex items-center gap-2 bg-emerald-50 px-2.5 py-1.5 rounded-full border border-emerald-100">
+            <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+            <span className="text-xs text-emerald-700 font-bold uppercase tracking-wide">Live</span>
+          </div>
         </div>
+      </div>
+
+      {/* AI Summary Banner */}
+      <div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl p-4 border border-indigo-100/50 shadow-sm flex items-start gap-4">
+        <div className="w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center flex-shrink-0 text-indigo-500">
+          <Sparkles className="w-4 h-4" />
+        </div>
+        <div className="flex-1">
+          <h3 className="text-sm font-bold text-indigo-900 mb-1">AI Executive Summary</h3>
+          <p className="text-sm text-indigo-800/80 leading-relaxed">
+            System is tracking <span className="font-semibold text-indigo-900">{activeAlerts} active alerts</span>. Immediate action is required for <span className="font-semibold text-indigo-900">{violating} violating industries</span>. Overall regional compliance rate sits at <span className="font-semibold text-indigo-900">{totalIndustries > 0 ? Math.round((compliant/totalIndustries)*100) : 0}%</span>.
+          </p>
+        </div>
+        <a href="/dashboard/ai-tools" className="text-xs font-semibold text-indigo-600 hover:text-indigo-700 hover:bg-white/50 px-3 py-1.5 border border-indigo-100 rounded-full transition-colors flex-shrink-0">
+          Ask Copilot →
+        </a>
       </div>
 
       {/* Stat Cards */}
@@ -384,7 +439,7 @@ export default function Overview() {
       </div>
 
       {/* Alert Feed */}
-      <AlertFeed alerts={alerts} canViewViolationLogs={canViewViolationLogs} />
+      <AlertFeed alerts={alerts} canViewViolationLogs={canViewViolationLogs} locations={locations} />
     </div>
   );
 }
