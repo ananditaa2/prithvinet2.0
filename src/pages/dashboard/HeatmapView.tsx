@@ -3,11 +3,7 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { createRoot } from "react-dom/client";
 
-import { getFilteredData, getLatestReadings } from "@/data/aqiData";
-import { getWaterFilteredData, getLatestWaterReadings } from "@/data/waterData";
-import { getNoiseFilteredData, getLatestNoiseReadings } from "@/data/noiseData";
-import { NOISE_LIMITS, type NoiseZone } from "@/data/noiseTypes";
-import { WATER_CRITERIA } from "@/data/waterTypes";
+import { api } from "@/lib/api";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
@@ -59,7 +55,7 @@ type NoiseMarkerPoint = {
   id: string;
   name: string;
   city: string;
-  zone: NoiseZone;
+  zone: string;
   lat: number;
   lng: number;
   avgDb: number;
@@ -203,28 +199,78 @@ export default function HeatmapView() {
   const layers = useRef<Record<string, L.LayerGroup>>({});
   const [visibleLayers, setVisibleLayers] = useState<Record<LayerKey, boolean>>({ air: true, water: true, noise: true });
 
-  // Data Memoization
-  const airStations = useMemo(() => {
-    const air = getFilteredData("all");
-    const latest = getLatestReadings(air.emissions, air.stations);
-    const logs = new Map(air.emissions.slice().sort((a,b) => b.timestamp.localeCompare(a.timestamp)).map(i => [i.station_id, i]));
-    return latest.filter(s => Number.isFinite(s.lat) && Number.isFinite(s.lng)).map(s => ({
-      id: s.station_id, name: s.name, type: s.type, region: s.region, lat: s.lat, lng: s.lng, aqi: s.latestAQI, category: s.latestCategory, compliance: s.compliance, date: s.latestDate, pollutants: (logs.get(s.station_id)?.pollutants as any) || {}
-    }));
-  }, []);
+  // API Data State
+  const [airStations, setAirStations] = useState<AirMarkerPoint[]>([]);
+  const [waterStations, setWaterStations] = useState<WaterMarkerPoint[]>([]);
+  const [noiseStations, setNoiseStations] = useState<NoiseMarkerPoint[]>([]);
 
-  const waterStations = useMemo(() => {
-    const water = getWaterFilteredData("all");
-    return getLatestWaterReadings(water.readings, water.stations).filter(s => Number.isFinite(s.lat) && Number.isFinite(s.lon)).map(s => ({
-      id: s.station_code, name: s.name, type: s.type || "River Monitoring", city: s.city, waterBody: s.water_body, lat: s.lat as number, lng: s.lon as number, latestDO: s.latestDO, latestBOD: s.latestBOD, latestFC: s.latestFC, latestTC: s.latestTC, latestStatus: s.latestStatus, latestPeriod: s.latestPeriod
-    }));
-  }, []);
+  useEffect(() => {
+    Promise.all([
+      api.public.airQuality(),
+      api.public.waterQuality(),
+      // public noise isn't exposed separately in citizen.py, so we use the generic data endpoint
+      api.data.list({ limit: "500" })
+    ]).then(([airRes, waterRes, allDataRes]) => {
+      
+      // Parse Air
+      // citizen.py /public/air-quality returns {"count": X, "data": [...]}
+      const airData = airRes?.data || [];
+      const airMapped = airData.filter((s: any) => s.location?.lat != null && s.location?.lng != null).map((s: any) => ({
+        id: String(s.location?.id || Math.random()),
+        name: s.location?.name || "Unknown Air Station",
+        type: "Air Monitoring",
+        region: s.location?.region || "Unknown",
+        lat: s.location?.lat, lng: s.location?.lng,
+        aqi: s.aqi || null,
+        category: (s.aqi || 0) > 200 ? "Poor" : "Good",
+        compliance: (s.aqi || 0) > 200 ? "VIOLATION" : "COMPLIANT",
+        date: s.recorded_at || "Recent",
+        pollutants: { pm25: s.pm25, pm10: s.pm10 },
+      }));
+      setAirStations(airMapped);
 
-  const noiseStations = useMemo(() => {
-    const noise = getNoiseFilteredData("all");
-    return getLatestNoiseReadings(noise.observations, noise.stations).filter(s => Number.isFinite(s.lat) && Number.isFinite(s.lon)).map(s => ({
-      id: `${s.city}-${s.name}`, name: s.name, city: s.city, zone: s.zone, lat: s.lat, lng: s.lon, avgDb: s.avgDb, limit: s.limit, violations: s.violations, status: s.status
-    }));
+      // Parse Water
+      const waterData = waterRes?.data || [];
+      const waterMapped = waterData.filter((s: any) => s.location?.lat != null && s.location?.lng != null).map((s: any) => ({
+        id: String(s.location?.id || Math.random()),
+        name: s.location?.name || "Unknown Water Station",
+        type: "Water Monitoring",
+        city: s.location?.region || "Unknown",
+        waterBody: "Local Water Body",
+        lat: s.location?.lat, lng: s.location?.lng,
+        latestDO: s.do || null,
+        latestBOD: s.bod || null,
+        latestFC: null, latestTC: null,
+        latestStatus: (s.bod || 0) > 5 ? "VIOLATION" : "SATISFACTORY",
+        latestPeriod: s.recorded_at || "Recent"
+      }));
+      setWaterStations(waterMapped);
+
+      // Parse Noise (Fallback to raw data)
+      const noiseData = (allDataRes || []).filter((d: any) => d.data_type === "noise" && d.location?.lat != null);
+      
+      // Group by location
+      const noiseByLoc = new Map<number, any>();
+      noiseData.forEach((d: any) => {
+        if (!noiseByLoc.has(d.location_id) || new Date(d.recorded_at) > new Date(noiseByLoc.get(d.location_id).recorded_at)) {
+          noiseByLoc.set(d.location_id, d);
+        }
+      });
+
+      const noiseMapped = Array.from(noiseByLoc.values()).map((s: any) => ({
+        id: String(s.location_id),
+        name: s.location?.name || "Unknown Noise Station",
+        city: s.location?.region || "Unknown",
+        zone: "Industrial",
+        lat: s.location?.lat, lng: s.location?.lng,
+        avgDb: s.decibel_level || 0,
+        limit: 75,
+        violations: (s.decibel_level || 0) > 75 ? 1 : 0,
+        status: ((s.decibel_level || 0) > 75 ? "EXCEEDS" : "WITHIN LIMIT") as "EXCEEDS" | "WITHIN LIMIT"
+      }));
+      setNoiseStations(noiseMapped);
+
+    }).catch(console.error);
   }, []);
 
   const crisisZones = useMemo(() => {

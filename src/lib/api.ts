@@ -1,5 +1,5 @@
 // Central API client — all calls go through here
-const BASE_URL = "http://localhost:8000";
+const BASE_URL = (import.meta.env.VITE_API_URL ?? "http://127.0.0.1:8000").replace(/\/$/, "");
 
 function getToken(): string | null {
   return localStorage.getItem("prithvinet_token");
@@ -16,7 +16,17 @@ async function request<T>(
   };
   if (token) headers["Authorization"] = `Bearer ${token}`;
 
-  const res = await fetch(`${BASE_URL}${path}`, { ...options, headers });
+  let res: Response;
+  try {
+    res = await fetch(`${BASE_URL}${path}`, { ...options, headers });
+  } catch (err: any) {
+    // Network errors (e.g. backend not running, CORS, DNS failures) come through here.
+    throw new Error(
+      `Network error connecting to API (${BASE_URL}${path}): ${err?.message || "Unknown error"}. ` +
+        "Make sure the backend is running and VITE_API_URL is set correctly."
+    );
+  }
+
   if (!res.ok) {
     const err = await res.json().catch(() => ({ detail: res.statusText }));
     throw new Error(err.detail || "Request failed");
@@ -125,9 +135,13 @@ export const api = {
 
   // ── Public ─────────────────────────────────────────────────────────────────
   public: {
-    airQuality: () => request<any>("/public/air-quality"),
-    waterQuality: () => request<any>("/public/water-quality"),
-    alerts: () => request<any>("/public/alerts"),
-    industries: () => request<any>("/public/industries"),
+    airQuality: (region?: string) =>
+        request<any>(`/public/air-quality${region ? `?region=${region}` : ""}`),
+    waterQuality: (region?: string) =>
+        request<any>(`/public/water-quality${region ? `?region=${region}` : ""}`),
+    alerts: (severity?: string) =>
+        request<any>(`/public/alerts${severity ? `?severity=${severity}` : ""}`),
+    industries: (region?: string) =>
+        request<any>(`/public/industries${region ? `?region=${region}` : ""}`),
   },
 };

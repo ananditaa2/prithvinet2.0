@@ -1,11 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Activity, Droplets, Volume2, ShieldCheck, CheckCircle } from "lucide-react";
-
-const stats = [
-  { label: "Monitoring Stations", value: "2,400+", icon: Activity, color: "text-blue-600", bg: "bg-blue-50" },
-  { label: "Water Sources Tracked", value: "850+", icon: Droplets, color: "text-cyan-600", bg: "bg-cyan-50" },
-  { label: "Noise Zones Mapped", value: "1,200+", icon: Volume2, color: "text-violet-600", bg: "bg-violet-50" },
-];
+import { ShieldCheck, CheckCircle } from "lucide-react";
 
 const highlights = [
   "Real-time AI compliance monitoring",
@@ -54,52 +48,78 @@ const HeroSection = () => {
               ))}
             </ul>
 
-            <div className="flex flex-wrap gap-4">
-              <button className="inline-flex items-center gap-2 rounded-md bg-blue-700 px-6 py-3 font-semibold text-white shadow-md hover:bg-blue-800 transition-all">
-                Access Dashboard
-                <ArrowRight className="h-4 w-4" />
-              </button>
-              <a href="#innovation" className="inline-flex items-center gap-2 rounded-md bg-white border border-slate-300 px-6 py-3 font-semibold text-slate-700 shadow-sm hover:bg-slate-50 transition-all">
-                Try AI Copilot ↓
-              </a>
-            </div>
+
           </motion.div>
 
-          {/* Right: Live Stats Panel */}
+          {/* Right: Official Government Card */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            <div className="bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden">
-              <div className="bg-blue-700 px-6 py-5">
-                <p className="text-xs font-bold text-blue-200 uppercase tracking-widest mb-1">Live Network Status</p>
-                <h3 className="text-white font-extrabold text-xl">Active Monitoring Coverage</h3>
+            <div className="rounded-2xl shadow-2xl border border-slate-200 overflow-hidden">
+
+              {/* Tricolour stripe */}
+              <div className="flex h-2">
+                <div className="flex-1 bg-orange-500" />
+                <div className="flex-1 bg-white border-y border-slate-200" />
+                <div className="flex-1 bg-green-600" />
               </div>
 
-              <div className="divide-y divide-slate-100">
-                {stats.map((stat) => (
-                  <div key={stat.label} className="flex items-center gap-5 px-6 py-5">
-                    <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${stat.bg}`}>
-                      <stat.icon className={`h-6 w-6 ${stat.color}`} />
+              {/* Ministry Header */}
+              <div className="bg-[#002B7F] px-6 py-5 flex items-center gap-4">
+                <div className="shrink-0 w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-inner border-2 border-yellow-400">
+                  <span className="text-2xl select-none">🦁</span>
+                </div>
+                <div>
+                  <p className="text-[10px] font-bold tracking-[0.25em] text-blue-200 uppercase mb-0.5">Government of India</p>
+                  <p className="text-white font-extrabold text-base leading-tight">Ministry of Environment,</p>
+                  <p className="text-white font-extrabold text-base leading-tight">Forest &amp; Climate Change</p>
+                </div>
+              </div>
+
+              {/* Body */}
+              <div className="bg-white px-6 py-5 space-y-4">
+
+                {/* Official Notice Header */}
+                <div className="border-b border-dashed border-slate-300 pb-4">
+                  <p className="text-[10px] uppercase tracking-widest text-slate-400 mb-1">Official Notification No. MoEFCC/2025/ENV-AI/001</p>
+                  <h3 className="text-slate-900 font-bold text-base leading-snug">
+                    PrithviNet — Integrated Environmental Compliance Platform
+                  </h3>
+                  <p className="text-xs text-slate-500 mt-1">Issued under the Environment (Protection) Act, 1986 · EPA § 5 &amp; § 15</p>
+                </div>
+
+                {/* Authorization Items */}
+                <div className="space-y-3">
+                  {[
+                    { code: "CPCB/2025", label: "Authorized by Central Pollution Control Board" },
+                    { code: "SPCB-CG/08", label: "State PCB Chhattisgarh — Class A Operator License" },
+                    { code: "NDAP/CERT", label: "National Digital Portal Certified — ISO 27001" },
+                  ].map((item) => (
+                    <div key={item.code} className="flex items-start gap-3">
+                      <span className="mt-0.5 shrink-0 rounded bg-blue-700 px-1.5 py-0.5 text-[9px] font-bold tracking-wider text-white">{item.code}</span>
+                      <span className="text-xs text-slate-600">{item.label}</span>
                     </div>
-                    <div>
-                      <p className="text-2xl font-extrabold text-slate-900">{stat.value}</p>
-                      <p className="text-sm text-slate-500 font-medium">{stat.label}</p>
-                    </div>
-                    <div className="ml-auto flex items-center gap-1 text-xs font-semibold text-emerald-600 bg-emerald-50 rounded-full px-2.5 py-1">
-                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                      Live
-                    </div>
+                  ))}
+                </div>
+
+                {/* Platform Active Status */}
+                <div className="flex items-center justify-between rounded-lg bg-emerald-50 border border-emerald-200 px-4 py-2.5">
+                  <div className="flex items-center gap-2">
+                    <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+                    <span className="text-xs font-semibold text-emerald-700">Platform Active — Real-Time Monitoring</span>
                   </div>
-                ))}
+                  <span className="text-[10px] text-emerald-600 font-bold">ON</span>
+                </div>
               </div>
 
-              <div className="px-6 py-4 bg-slate-50 border-t border-slate-100">
-                <p className="text-xs text-slate-500 text-center">
-                  Data refreshed every 15 minutes · Last updated: Today, 22:44 IST
-                </p>
+              {/* Footer */}
+              <div className="bg-slate-50 border-t border-slate-200 px-6 py-3 flex items-center justify-between">
+                <span className="text-[10px] text-slate-400">© 2025 MoEFCC, Govt. of India. All rights reserved.</span>
+                <span className="text-[10px] font-semibold text-blue-700 uppercase tracking-wider">सत्यमेव जयते</span>
               </div>
+
             </div>
           </motion.div>
 

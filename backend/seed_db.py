@@ -105,12 +105,10 @@ def seed_database():
                 
                 print(f"Loading {len(records)} records from {file_name}...")
                 
-                # To speed up, we don't commit every record, we batch them
+                # Batch insert all records
                 count = 0
                 for item in records:
-                    if count >= 1000: # Limit per file for hackathon demo speed if needed, but lets try to load all
-                        break
-                        
+
                     station_name = item.get("station_name")
                     if not station_name: continue
                     

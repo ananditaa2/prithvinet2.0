@@ -2,11 +2,52 @@
 Alert Service — checks submitted environmental data against thresholds
 and creates Alert + Notification records automatically.
 """
+import asyncio
 from sqlalchemy.orm import Session
 from models.alert import Alert, Notification
 from models.user import User
 from core.config import AIR_THRESHOLDS, WATER_THRESHOLDS, NOISE_THRESHOLDS
 from datetime import datetime, timezone
+
+_notification_broadcaster = None
+
+
+def set_notification_broadcaster(broadcaster):
+    global _notification_broadcaster
+    _notification_broadcaster = broadcaster
+
+
+def _serialize_notification(notification: Notification) -> dict:
+    return {
+        "id": notification.id,
+        "user_id": notification.user_id,
+        "alert_id": notification.alert_id,
+        "title": notification.title,
+        "message": notification.message,
+        "notif_type": notification.notif_type,
+        "is_read": notification.is_read,
+        "created_at": notification.created_at.isoformat() if notification.created_at else None,
+    }
+
+
+def _emit_notification(notification: Notification) -> None:
+    if not _notification_broadcaster:
+        return
+
+    try:
+        loop = asyncio.get_running_loop()
+        loop.create_task(
+            _notification_broadcaster.broadcast_to_user(
+                notification.user_id,
+                {
+                    "event": "notification",
+                    "notification": _serialize_notification(notification),
+                },
+            )
+        )
+    except RuntimeError:
+        # No running loop in this context; skip live broadcast safely.
+        return
 
 
 def _severity(value: float, thresholds: dict) -> str | None:
@@ -46,14 +87,35 @@ def _create_alert(db: Session, data_id: int, location_id: int,
         User.role.in_(["admin", "regional_officer"]), User.is_active == True
     ).all()
     for user in notif_users:
-        notif = Notification(
+        alert_notif = Notification(
             user_id=user.id,
             alert_id=alert.id,
             title=f"🚨 {severity.upper()} Alert: {pollutant} exceeded",
             message=message,
             notif_type="alert",
         )
-        db.add(notif)
+        db.add(alert_notif)
+        db.flush()
+        _emit_notification(alert_notif)
+
+        meeting_message = (
+            f"Pollution limit breach detected for {pollutant} at location #{location_id}. "
+            f"Please schedule a compliance meeting with the concerned stakeholders."
+        )
+        if industry_id:
+            meeting_message += f" Industry reference: #{industry_id}."
+
+        meeting_notif = Notification(
+            user_id=user.id,
+            alert_id=alert.id,
+            title="📅 Meeting Required: Pollution limit exceeded",
+            message=meeting_message,
+            notif_type="meeting",
+        )
+        db.add(meeting_notif)
+        db.flush()
+        _emit_notification(meeting_notif)
+
     return alert
 
 

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, useSearchParams } from "react-router-dom";
 import { Landmark, Eye, EyeOff, UserPlus } from "lucide-react";
 import { api } from "@/lib/api";
 
@@ -7,7 +7,9 @@ const ROLES = ["admin", "regional_officer", "monitoring_team", "industry_user", 
 
 export default function Register() {
   const navigate = useNavigate();
-  const [form, setForm] = useState({ name: "", email: "", password: "", role: "citizen" });
+  const [searchParams] = useSearchParams();
+  const defaultRole = ROLES.includes(searchParams.get("role") || "") ? searchParams.get("role")! : "citizen";
+  const [form, setForm] = useState({ name: "", email: "", password: "", role: defaultRole });
   const [showPw, setShowPw] = useState(false);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);

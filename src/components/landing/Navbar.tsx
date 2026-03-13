@@ -1,22 +1,21 @@
 import { useState, useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Menu, X, Landmark, ChevronDown, Crown, Building2, Users, Factory, Eye } from "lucide-react";
 
 const roles = [
-  { icon: Crown, label: "Super Admin", desc: "State HQ oversight" },
-  { icon: Building2, label: "Regional Officer", desc: "District-level enforcement" },
-  { icon: Users, label: "Monitoring Team", desc: "Field data collection" },
-  { icon: Factory, label: "Industry User", desc: "Self-reporting portal" },
-  { icon: Eye, label: "Citizen Portal", desc: "Public transparency" },
+  { icon: Crown, label: "Super Admin", desc: "State HQ oversight", slug: "admin" },
+  { icon: Building2, label: "Regional Officer", desc: "District-level enforcement", slug: "regional_officer" },
+  { icon: Users, label: "Monitoring Team", desc: "Field data collection", slug: "monitoring_team" },
+  { icon: Factory, label: "Industry User", desc: "Self-reporting portal", slug: "industry_user" },
+  { icon: Eye, label: "Citizen Portal", desc: "Public transparency", slug: "citizen" },
 ];
 
 const navLinks = [
   { label: "Features", href: "#features" },
-  { label: "AI Capabilities", href: "#innovation" },
-  { label: "How It Works", href: "#how-it-works" },
 ];
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropOpen, setDropOpen] = useState(false);
   const dropRef = useRef<HTMLDivElement>(null);
@@ -84,7 +83,7 @@ const Navbar = () => {
                   {roles.map((role) => (
                     <button
                       key={role.label}
-                      onClick={() => setDropOpen(false)}
+                      onClick={() => { setDropOpen(false); navigate(`/register?role=${role.slug}`); }}
                       className="flex items-center gap-3 w-full rounded-lg px-3 py-2.5 text-left hover:bg-slate-50 transition-colors group"
                     >
                       <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-blue-50 group-hover:bg-blue-100 transition-colors">

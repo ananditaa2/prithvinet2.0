@@ -2,6 +2,7 @@ from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.orm import Session
 from typing import Optional
 from datetime import datetime
+import asyncio
 
 from core.database import get_db
 from core.security import get_current_user, require_roles
@@ -12,6 +13,18 @@ from schemas.environmental import AirDataSubmit, WaterDataSubmit, NoiseDataSubmi
 from services.alert_service import check_and_trigger_alerts
 
 router = APIRouter(prefix="/data", tags=["Environmental Data"])
+
+
+def _broadcast(event: dict):
+    """Fire-and-forget WebSocket broadcast (lazy import avoids circular dep)."""
+    try:
+        from main import manager
+        loop = asyncio.get_event_loop()
+        if loop.is_running():
+            asyncio.create_task(manager.broadcast(event))
+    except Exception:
+        pass  # Never let WS errors break data submission
+
 
 SUBMIT_ROLES = ("admin", "regional_officer", "monitoring_team", "industry_user")
 
@@ -85,18 +98,42 @@ def _validate_submission_scope(payload, current_user, db: Session):
     raise HTTPException(status_code=403, detail="Access denied.")
 
 
-def _compute_aqi(pm25: float | None, pm10: float | None) -> float | None:
-    """Simplified AQI from PM2.5 and PM10 (dominant pollutants)."""
-    if pm25 is None and pm10 is None:
-        return None
-    vals = [v for v in [pm25, pm10] if v is not None]
-    raw = max(vals)
-    if raw <= 30:   return round(raw * (50/30), 1)
-    if raw <= 60:   return round(50 + (raw - 30) * (50/30), 1)
-    if raw <= 90:   return round(100 + (raw - 60) * (50/30), 1)
-    if raw <= 120:  return round(150 + (raw - 90) * (50/30), 1)
-    if raw <= 250:  return round(200 + (raw - 120) * (100/130), 1)
-    return round(300 + (raw - 250) * (100/130), 1)
+# ── CPCB National AQI Breakpoint Tables (AQI Technical Manual 2014) ────────────
+# Each entry: (C_low, C_high, I_low, I_high)
+_CPCB_BREAKPOINTS: dict[str, list[tuple]] = {
+    "pm25": [(0,30,0,50),(30,60,51,100),(60,90,101,200),(90,120,201,300),(120,250,301,400),(250,9999,401,500)],
+    "pm10": [(0,50,0,50),(50,100,51,100),(100,250,101,200),(250,350,201,300),(350,430,301,400),(430,9999,401,500)],
+    "so2":  [(0,40,0,50),(40,80,51,100),(80,380,101,200),(380,800,201,300),(800,1600,301,400),(1600,9999,401,500)],
+    "no2":  [(0,40,0,50),(40,80,51,100),(80,180,101,200),(180,280,201,300),(280,400,301,400),(400,9999,401,500)],
+    "co":   [(0,1,0,50),(1,2,51,100),(2,10,101,200),(10,17,201,300),(17,34,301,400),(34,9999,401,500)],
+    "o3":   [(0,50,0,50),(50,100,51,100),(100,168,101,200),(168,208,201,300),(208,748,301,400),(748,9999,401,500)],
+}
+
+def _sub_index(pollutant: str, concentration: float) -> float:
+    """Calculate the CPCB sub-index for a single pollutant."""
+    for (c_lo, c_hi, i_lo, i_hi) in _CPCB_BREAKPOINTS[pollutant]:
+        if c_lo <= concentration <= c_hi:
+            return round(i_lo + (concentration - c_lo) * (i_hi - i_lo) / (c_hi - c_lo), 1)
+    return 500.0  # Beyond maximum breakpoint → hazardous
+
+def _compute_aqi(pm25: float | None, pm10: float | None,
+                 so2: float | None = None, no2: float | None = None,
+                 co: float | None = None, o3: float | None = None) -> float | None:
+    """
+    Compute AQI using the official CPCB National AQI formula.
+    AQI = max sub-index across all available pollutants.
+    """
+    readings = {
+        "pm25": pm25, "pm10": pm10,
+        "so2": so2,   "no2": no2,
+        "co": co,     "o3": o3,
+    }
+    sub_indices = [
+        _sub_index(p, v)
+        for p, v in readings.items()
+        if v is not None and p in _CPCB_BREAKPOINTS
+    ]
+    return round(max(sub_indices), 1) if sub_indices else None
 
 
 @router.post("/air", response_model=EnvironmentalDataOut, status_code=201)
@@ -106,7 +143,9 @@ def submit_air(
     current_user=Depends(require_roles(*SUBMIT_ROLES)),
 ):
     _validate_submission_scope(payload, current_user, db)
-    aqi = _compute_aqi(payload.pm25, payload.pm10)
+    aqi = _compute_aqi(payload.pm25, payload.pm10,
+                       so2=payload.so2, no2=payload.no2,
+                       co=payload.co,  o3=payload.o3)
     entry = EnvironmentalData(
         data_type="air",
         submitted_by=current_user.id,
@@ -119,6 +158,13 @@ def submit_air(
     check_and_trigger_alerts(db, entry)
     db.commit()
     db.refresh(entry)
+    _broadcast({
+        "type": "ANOMALY_ALERT" if (entry.aqi or 0) > 200 else "SYSTEM_UPDATE",
+        "message": f"New air reading at location {entry.location_id}: AQI={entry.aqi}",
+        "timestamp": entry.recorded_at.isoformat() if entry.recorded_at else "",
+        "data": {"data_type": "air", "location_id": entry.location_id,
+                 "aqi": entry.aqi, "pm25": entry.pm25, "pm10": entry.pm10},
+    })
     return entry
 
 
@@ -140,6 +186,13 @@ def submit_water(
     check_and_trigger_alerts(db, entry)
     db.commit()
     db.refresh(entry)
+    _broadcast({
+        "type": "SYSTEM_UPDATE",
+        "message": f"New water reading at location {entry.location_id}",
+        "timestamp": entry.recorded_at.isoformat() if entry.recorded_at else "",
+        "data": {"data_type": "water", "location_id": entry.location_id,
+                 "ph": entry.ph, "bod": entry.bod},
+    })
     return entry
 
 
@@ -161,6 +214,13 @@ def submit_noise(
     check_and_trigger_alerts(db, entry)
     db.commit()
     db.refresh(entry)
+    _broadcast({
+        "type": "SYSTEM_UPDATE",
+        "message": f"New noise reading at location {entry.location_id}",
+        "timestamp": entry.recorded_at.isoformat() if entry.recorded_at else "",
+        "data": {"data_type": "noise", "location_id": entry.location_id,
+                 "decibel_level": entry.decibel_level},
+    })
     return entry
 
 
