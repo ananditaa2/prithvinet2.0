@@ -150,7 +150,7 @@ export default function AITools() {
         {[
           { id: "copilot", label: "AI Copilot", icon: MessageCircle },
           { id: "simulate", label: "Risk Simulation", icon: Zap },
-          { id: "predict", label: "Pollution Prediction", icon: TrendingUp },
+          { id: "predict", label: "Forecasting", icon: TrendingUp },
         ].filter(t => allowedTabs.includes(t.id)).map(t => (
           <button key={t.id} onClick={() => { setTab(t.id); setResult(null); setError(""); }}
             className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${tab === t.id ? "bg-white shadow-sm text-gray-900" : "text-gray-500 hover:text-gray-700"}`}>

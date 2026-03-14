@@ -8,10 +8,17 @@ APP_TITLE = "PrithviNet API"
 APP_VERSION = "1.0.0"
 
 # ─── Database ──────────────────────────────────────────────────────────────────
+# Production: Use PostgreSQL or persistent storage
+# Local: SQLite is fine
 DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./prithvinet.db")
 
 # ─── JWT ───────────────────────────────────────────────────────────────────────
-SECRET_KEY = os.getenv("SECRET_KEY", "prithvinet-super-secret-key-change-in-production")
+# CRITICAL: Set SECRET_KEY in environment variables for production!
+SECRET_KEY = os.getenv("SECRET_KEY")
+if not SECRET_KEY:
+    # For hackathon/demo only - in production this should fail
+    SECRET_KEY = "demo-secret-key-change-immediately"
+    print("⚠️  WARNING: Using default SECRET_KEY. Set SECRET_KEY env var for production!")
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_HOURS = 24
 

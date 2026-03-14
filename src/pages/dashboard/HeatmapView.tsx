@@ -383,7 +383,13 @@ export default function HeatmapView() {
   // WebSocket Connection
   useEffect(() => {
     const connectWebSocket = () => {
-      const wsUrl = `ws://${window.location.hostname}:8000/ws/dashboard`;
+      // Use environment variable or fallback to localhost
+      const wsProtocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+      const wsHost = import.meta.env.VITE_API_URL 
+        ? import.meta.env.VITE_API_URL.replace('https://', '').replace('http://', '')
+        : `${window.location.hostname}:8000`;
+      const wsUrl = `${wsProtocol}//${wsHost}/ws/dashboard`;
+      
       const ws = new WebSocket(wsUrl);
 
       ws.onopen = () => {
@@ -458,6 +464,8 @@ export default function HeatmapView() {
         .noise-glow { filter: drop-shadow(0 0 8px rgba(139,92,246,0.4)); }
         .crisis-pulse { animation: crisis-pulse 2s infinite; }
         @keyframes crisis-pulse { 0%, 100% { opacity: 0.4; transform: scale(1); } 50% { opacity: 0.7; transform: scale(1.1); } }
+        .leaflet-heatmap-legend { display: none !important; }
+        .leaflet-control-attribution { display: none !important; }
       `;
       document.head.appendChild(s);
     }
@@ -665,10 +673,6 @@ export default function HeatmapView() {
               <Badge className="rounded-full border border-red-400/20 bg-red-500/10 px-3 py-1 text-[10px] font-bold tracking-[0.24em] text-red-200">
                 {crisisZones.length} CRISIS ZONES
               </Badge>
-              <div className={`flex items-center gap-1 px-2 py-0.5 rounded text-[10px] ${wsConnected ? 'bg-green-500/10 text-green-400' : 'bg-red-500/10 text-red-400'}`}>
-                {wsConnected ? <Wifi className="w-3 h-3" /> : <WifiOff className="w-3 h-3" />}
-                {wsConnected ? 'LIVE' : 'OFFLINE'}
-              </div>
             </div>
             <div className="flex items-start gap-3">
               <div className="rounded-2xl border border-slate-700/70 bg-slate-900/70 p-3 shadow-inner"><MapPinned className="h-6 w-6 text-cyan-300" /></div>

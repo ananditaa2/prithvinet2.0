@@ -1,4 +1,6 @@
-// Central API client — all calls go through here
+// Base URL for API - change this to your Render backend URL after deployment
+// Local: http://localhost:8000
+// Production: https://prithvinet-backend.onrender.com client — all calls go through here
 const BASE_URL = (import.meta.env.VITE_API_URL ?? "http://127.0.0.1:8000").replace(/\/$/, "");
 
 export interface User {

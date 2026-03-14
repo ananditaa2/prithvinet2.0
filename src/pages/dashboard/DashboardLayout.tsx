@@ -5,8 +5,10 @@ import { api } from "@/lib/api";
 import { toast } from "sonner";
 import {
   LayoutDashboard, Factory, MapPin, Wind, FileBarChart2, Cpu,
-  Globe, LogOut, Landmark, Menu, X, User, Map, SearchCheck, FileWarning
+  Globe, LogOut, Landmark, Menu, X, User, Map, SearchCheck, FileWarning, Bell
 } from "lucide-react";
+import { NotificationDrawer } from "@/components/dashboard/NotificationDrawer";
+import { FloatingAICopilot } from "@/components/dashboard/FloatingAICopilot";
 
 interface Notification {
   id: number;
@@ -101,6 +103,7 @@ export default function DashboardLayout() {
   const [notifications, setNotifications] = useState<Notification[]>([]);
   const [activeAlerts, setActiveAlerts] = useState<Alert[]>([]);
   const [demoMode, setDemoMode] = useState(false);
+  const [isNotificationDrawerOpen, setIsNotificationDrawerOpen] = useState(false);
   const socketRef = useRef<WebSocket | null>(null);
 
   const visibleNavItems = useMemo(() => {
@@ -146,8 +149,9 @@ export default function DashboardLayout() {
     if (!token) return;
 
     const wsProtocol = window.location.protocol === "https:" ? "wss" : "ws";
-    const wsHost =
-      window.location.hostname === "localhost"
+    const wsHost = import.meta.env.VITE_API_URL 
+      ? import.meta.env.VITE_API_URL.replace('https://', '').replace('http://', '')
+      : window.location.hostname === "localhost"
         ? "127.0.0.1:8000"
         : `${window.location.hostname}:8000`;
 
@@ -387,6 +391,20 @@ export default function DashboardLayout() {
           </button>
           <span className="text-xs text-gray-400">Official Environment Monitoring Portal | Government of Bharat</span>
           <div className="ml-auto flex items-center gap-3">
+            {/* Bell Icon with Badge */}
+            <button
+              onClick={() => setIsNotificationDrawerOpen(true)}
+              className="relative p-2 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
+              title="View Critical Alerts"
+            >
+              <Bell className="w-5 h-5" />
+              {totalAlertCount > 0 && (
+                <span className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-[10px] font-bold rounded-full flex items-center justify-center">
+                  {totalAlertCount > 9 ? "9+" : totalAlertCount}
+                </span>
+              )}
+            </button>
+
             {!sidebarOpen && user && (
               <span className="text-sm font-medium text-gray-700">{user.name}</span>
             )}
@@ -401,6 +419,15 @@ export default function DashboardLayout() {
         <main className="flex-1 overflow-y-auto p-6">
           <Outlet />
         </main>
+
+        {/* Notification Drawer */}
+        <NotificationDrawer
+          isOpen={isNotificationDrawerOpen}
+          onClose={() => setIsNotificationDrawerOpen(false)}
+        />
+
+        {/* Floating AI Copilot */}
+        <FloatingAICopilot />
       </div>
     </div>
   );

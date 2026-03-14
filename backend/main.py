@@ -39,11 +39,24 @@ app = FastAPI(
 )
 
 # ── CORS ────────────────────────────────────────────────────────────────────────
+# Configure allowed origins via FRONTEND_URL env var
+# Local: http://localhost:8080, http://localhost:3000
+# Production: https://your-frontend.vercel.app
+ALLOWED_ORIGINS = os.getenv("FRONTEND_URL", "http://localhost:8080").split(",")
+# For hackathon/demo: also allow common local dev ports
+if os.getenv("ENVIRONMENT") != "production":
+    ALLOWED_ORIGINS.extend([
+        "http://localhost:8080",
+        "http://localhost:3000",
+        "http://127.0.0.1:8080",
+        "http://127.0.0.1:3000",
+    ])
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=False,   # Must be False when allow_origins includes "*"
-    allow_methods=["*"],
+    allow_origins=ALLOWED_ORIGINS,
+    allow_credentials=True,
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allow_headers=["*"],
 )
 
@@ -63,7 +76,7 @@ async def global_exception_handler(request: Request, exc: Exception):
 
 
 # ── Routers ────────────────────────────────────────────────────────────────────
-from routers import auth, industries, locations, environmental, reports, alerts, ai, heatmap, sensors, citizen
+from routers import auth, industries, locations, environmental, reports, alerts, ai, heatmap, sensors, citizen, public_ai
 
 app.include_router(auth.router)
 app.include_router(industries.router)
@@ -75,6 +88,7 @@ app.include_router(ai.router)
 app.include_router(heatmap.router)
 app.include_router(sensors.router)
 app.include_router(citizen.router)
+app.include_router(public_ai.router)  # Public AI Copilot - no auth required
 
 
 # ── Root ───────────────────────────────────────────────────────────────────────
@@ -97,10 +111,18 @@ def health():
 @app.websocket("/ws/dashboard")
 async def ws_dashboard(websocket: WebSocket, token: Optional[str] = None):
     """Live dashboard push — broadcasts new readings and anomaly alerts."""
-    await manager.connect(websocket)
     try:
-        while True:
-            # Keep connection alive; clients don't need to send anything
-            await websocket.receive_text()
-    except WebSocketDisconnect:
-        manager.disconnect(websocket)
+        await manager.connect(websocket)
+        print(f"🔌 WebSocket connected. Total connections: {len(manager.active_connections)}")
+        try:
+            while True:
+                # Keep connection alive; clients don't need to send anything
+                await websocket.receive_text()
+        except WebSocketDisconnect:
+            manager.disconnect(websocket)
+            print(f"🔌 WebSocket disconnected. Total connections: {len(manager.active_connections)}")
+        except Exception as e:
+            print(f"⚠️ WebSocket error: {e}")
+            manager.disconnect(websocket)
+    except Exception as e:
+        print(f"⚠️ Failed to connect WebSocket: {e}")

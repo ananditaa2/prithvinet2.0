@@ -5,6 +5,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider } from "@/context/AuthContext";
+import { AICopilotProvider } from "@/context/AICopilotContext";
 import ProtectedRoute from "@/components/dashboard/ProtectedRoute";
 
 import Index from "./pages/Index";
@@ -31,39 +32,41 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <AuthProvider>
-          <BrowserRouter>
-            <Routes>
-              {/* Public */}
-              <Route path="/" element={<Index />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/public" element={<CitizenPortal />} />
+        <AICopilotProvider>
+          <AuthProvider>
+            <BrowserRouter>
+              <Routes>
+                {/* Public */}
+                <Route path="/" element={<Index />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/public" element={<CitizenPortal />} />
 
-              {/* Protected Dashboard */}
-              <Route
-                path="/dashboard"
-                element={
-                  <ProtectedRoute>
-                    <DashboardLayout />
-                  </ProtectedRoute>
-                }
-              >
-                <Route index element={<Overview />} />
-                <Route path="industries" element={<Industries />} />
-                <Route path="locations" element={<Locations />} />
-                <Route path="alerts" element={<Alerts />} />
-                <Route path="inspection-priority" element={<InspectionPriority />} />
-                <Route path="cases-to-act" element={<CasesToAct />} />
-                <Route path="reports" element={<Reports />} />
-                <Route path="ai" element={<AITools />} />
-                <Route path="heatmap" element={<HeatmapView />} />
-              </Route>
+                {/* Protected Dashboard */}
+                <Route
+                  path="/dashboard"
+                  element={
+                    <ProtectedRoute>
+                      <DashboardLayout />
+                    </ProtectedRoute>
+                  }
+                >
+                  <Route index element={<Overview />} />
+                  <Route path="industries" element={<Industries />} />
+                  <Route path="locations" element={<Locations />} />
+                  <Route path="alerts" element={<Alerts />} />
+                  <Route path="inspection-priority" element={<InspectionPriority />} />
+                  <Route path="cases-to-act" element={<CasesToAct />} />
+                  <Route path="reports" element={<Reports />} />
+                  <Route path="ai" element={<AITools />} />
+                  <Route path="heatmap" element={<HeatmapView />} />
+                </Route>
 
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </BrowserRouter>
-        </AuthProvider>
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </BrowserRouter>
+          </AuthProvider>
+        </AICopilotProvider>
       </TooltipProvider>
     </ThemeProvider>
   </QueryClientProvider>
