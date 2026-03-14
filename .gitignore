@@ -33,3 +33,11 @@ temp_repo/
 .env
 *.env
 backend/.env
+
+# Lint and build outputs
+eslint*.txt
+eslint*.json
+tsc_output.txt
+tsc_after_cleanup.txt
+*-start.log
+vite-dev.log

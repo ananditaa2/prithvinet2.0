@@ -457,7 +457,7 @@ export default function Overview() {
         <StatCard icon={AlertTriangle} label="Active Alerts"          value={activeAlerts}      accent="bg-red-500 text-red-600"     sub={`${criticalCount} critical`}          trend={criticalCount > 0 ? criticalCount * 10 : undefined} />
         <StatCard icon={Factory}       label="Industries"             value={industries.length} accent="bg-indigo-500 text-indigo-600" sub={`${violating} violating`} />
         <StatCard icon={MapPin}        label="Monitoring Stations"    value={locations.length}  accent="bg-teal-500 text-teal-600"   sub="Active stations" />
-        <StatCard icon={Activity}      label="Readings Today"         value={todayReadings}     accent="bg-green-500 text-green-600" sub="Air · Water · Noise" />
+        <StatCard icon={Activity}      label="Readings"         value={todayReadings}     accent="bg-green-500 text-green-600" sub="Air · Water · Noise" />
       </div>
 
       {/* Data Type Mini Pills */}
