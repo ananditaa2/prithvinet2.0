@@ -1,7 +1,7 @@
 import requests
 import json
 
-url = "http://127.0.0.1:8000/api/simulate-risk"
+url = "https://prithvinet-api-prod.onrender.com/api/simulate-risk"
 payload = {
     "region": "City A",
     "industry": "Power Plant X",

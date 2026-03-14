@@ -38,7 +38,7 @@ export default function CopilotSection({ isWidget = false }: { isWidget?: boolea
     const handleSimulate = async () => {
         setLoading(true);
         try {
-            const response = await fetch("http://127.0.0.1:8000/api/simulate-risk", {
+            const response = await fetch("https://prithvinet-api-prod.onrender.com/api/simulate-risk", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

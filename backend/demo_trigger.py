@@ -31,7 +31,7 @@ from models.environmental_data import EnvironmentalData
 from services.alert_service import check_and_trigger_alerts
 from core.websocket import manager as ws_manager
 
-API_BASE = "http://localhost:8000"
+API_BASE = "https://prithvinet-api-prod.onrender.com"
 
 # Demo stations - Korba Thermal is the "hero" station for the demo
 DEMO_STATIONS = {

@@ -1,6 +1,6 @@
 import httpx
 
-with httpx.Client(base_url='http://localhost:8000') as client:
+with httpx.Client(base_url='https://prithvinet-api-prod.onrender.com') as client:
     # 1. Login
     resp = client.post('/auth/login', data={'username': 'admin@prithvinet.gov.in', 'password': 'Demo@123'})
     resp.raise_for_status()

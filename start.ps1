@@ -14,5 +14,5 @@ Start-Process powershell -ArgumentList "-NoExit", "-Command", "cd '$root'; npm r
 Write-Host ""
 Write-Host "Both servers starting!" -ForegroundColor Yellow
 Write-Host "  Frontend: http://localhost:8080" -ForegroundColor Green
-Write-Host "  Backend:  http://127.0.0.1:8000" -ForegroundColor Cyan
-Write-Host "  API Docs: http://127.0.0.1:8000/docs" -ForegroundColor Cyan
+Write-Host "  Backend:  https://prithvinet-api-prod.onrender.com" -ForegroundColor Cyan
+Write-Host "  API Docs: https://prithvinet-api-prod.onrender.com/docs" -ForegroundColor Cyan

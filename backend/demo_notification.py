@@ -5,7 +5,7 @@ Usage:
     python demo_notification.py
 
 Optional environment variables:
-    PRITHVINET_BASE_URL=http://127.0.0.1:8000
+    PRITHVINET_BASE_URL=https://prithvinet-api-prod.onrender.com
     PRITHVINET_TOKEN=<jwt token>
 
 This script sends a demo notification event to the backend so the
@@ -20,7 +20,7 @@ import sys
 from urllib import request, error
 
 
-BASE_URL = os.getenv("PRITHVINET_BASE_URL", "http://127.0.0.1:8000").rstrip("/")
+BASE_URL = os.getenv("PRITHVINET_BASE_URL", "https://prithvinet-api-prod.onrender.com").rstrip("/")
 TOKEN = os.getenv("PRITHVINET_TOKEN", "").strip()
 
 DEMO_PAYLOAD = {

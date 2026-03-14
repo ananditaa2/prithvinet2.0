@@ -38,7 +38,7 @@ npm install
 npm run dev
 ```
 
-Frontend: http://localhost:8080 | API Docs: http://localhost:8000/docs
+Frontend: http://localhost:8080 | API Docs: https://prithvinet-api-prod.onrender.com/docs
 
 ## Demo Credentials
 

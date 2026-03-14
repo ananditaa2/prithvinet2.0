@@ -90,7 +90,7 @@ if __name__ == "__main__":
     print("1. Start your React frontend (npm run dev)")
     print("2. Make sure the dashboard shows 'System Live' in the footer")
     print("3. When ready to wow the judges, run this in another terminal:")
-    print("   curl -X POST http://localhost:8000/trigger-anomaly")
+    print("   curl -X POST https://prithvinet-api-prod.onrender.com/trigger-anomaly")
     print("========================================================\n")
     uvicorn.run(app, host="0.0.0.0", port=8000)
 
