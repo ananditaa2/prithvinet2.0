@@ -7,7 +7,9 @@ class AlertOut(BaseModel):
     id: int
     data_id: Optional[int]
     location_id: Optional[int]
+    location_name: Optional[str] = None
     industry_id: Optional[int]
+    industry_name: Optional[str] = None
     alert_type: str
     pollutant: Optional[str]
     measured_value: Optional[float]

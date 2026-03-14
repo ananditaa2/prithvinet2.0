@@ -1,6 +1,18 @@
 // Central API client — all calls go through here
 const BASE_URL = (import.meta.env.VITE_API_URL ?? "http://127.0.0.1:8000").replace(/\/$/, "");
 
+export interface User {
+  id: number;
+  email: string;
+  name: string;
+  role: string;
+}
+
+export interface AuthResponse {
+  access_token: string;
+  user: User;
+}
+
 function getToken(): string | null {
   return localStorage.getItem("prithvinet_token");
 }
@@ -19,17 +31,20 @@ async function request<T>(
   let res: Response;
   try {
     res = await fetch(`${BASE_URL}${path}`, { ...options, headers });
-  } catch (err: any) {
+  } catch (err: unknown) {
+    const message = err instanceof Error ? err.message : "Unknown error";
     // Network errors (e.g. backend not running, CORS, DNS failures) come through here.
     throw new Error(
-      `Network error connecting to API (${BASE_URL}${path}): ${err?.message || "Unknown error"}. ` +
+      `Network error connecting to API (${BASE_URL}${path}): ${message}. ` +
         "Make sure the backend is running and VITE_API_URL is set correctly."
     );
   }
 
   if (!res.ok) {
     const err = await res.json().catch(() => ({ detail: res.statusText }));
-    throw new Error(err.detail || "Request failed");
+    const msg = err.detail || err.message || "Request failed";
+    const type = err.type ? ` (${err.type})` : "";
+    throw new Error(`${msg}${type}`);
   }
   if (res.status === 204) return undefined as T;
   return res.json();
@@ -39,37 +54,37 @@ async function request<T>(
 export const api = {
   auth: {
     login: (email: string, password: string) =>
-      request<{ access_token: string; user: any }>("/auth/login", {
+      request<AuthResponse>("/auth/login", {
         method: "POST",
         body: JSON.stringify({ email, password }),
       }),
-    register: (data: any) =>
-      request<any>("/auth/register", { method: "POST", body: JSON.stringify(data) }),
-    me: () => request<any>("/auth/me"),
-    users: () => request<any[]>("/auth/users"),
+    register: (data: Record<string, unknown>) =>
+      request<AuthResponse>("/auth/register", { method: "POST", body: JSON.stringify(data) }),
+    me: () => request<User>("/auth/me"),
+    users: () => request<User[]>("/auth/users"),
   },
 
   // ── Industries ─────────────────────────────────────────────────────────────
   industries: {
     list: (params?: Record<string, string>) =>
-      request<any[]>(`/industries?${new URLSearchParams(params || {})}`),
-    get: (id: number) => request<any>(`/industries/${id}`),
-    create: (data: any) =>
-      request<any>("/industries", { method: "POST", body: JSON.stringify(data) }),
-    update: (id: number, data: any) =>
-      request<any>(`/industries/${id}`, { method: "PUT", body: JSON.stringify(data) }),
+      request<Record<string, unknown>[]>(`/industries?${new URLSearchParams(params || {})}`),
+    get: (id: number) => request<Record<string, unknown>>(`/industries/${id}`),
+    create: (data: Record<string, unknown>) =>
+      request<Record<string, unknown>>("/industries", { method: "POST", body: JSON.stringify(data) }),
+    update: (id: number, data: Record<string, unknown>) =>
+      request<Record<string, unknown>>(`/industries/${id}`, { method: "PUT", body: JSON.stringify(data) }),
     delete: (id: number) =>
       request<void>(`/industries/${id}`, { method: "DELETE" }),
   },
 
   // ── Monitoring Locations ───────────────────────────────────────────────────
   locations: {
-    list: () => request<any[]>("/locations"),
-    get: (id: number) => request<any>(`/locations/${id}`),
-    create: (data: any) =>
-      request<any>("/locations", { method: "POST", body: JSON.stringify(data) }),
-    update: (id: number, data: any) =>
-      request<any>(`/locations/${id}`, { method: "PUT", body: JSON.stringify(data) }),
+    list: () => request<Record<string, unknown>[]>("/locations"),
+    get: (id: number) => request<Record<string, unknown>>(`/locations/${id}`),
+    create: (data: Record<string, unknown>) =>
+      request<Record<string, unknown>>("/locations", { method: "POST", body: JSON.stringify(data) }),
+    update: (id: number, data: Record<string, unknown>) =>
+      request<Record<string, unknown>>(`/locations/${id}`, { method: "PUT", body: JSON.stringify(data) }),
     delete: (id: number) =>
       request<void>(`/locations/${id}`, { method: "DELETE" }),
   },
@@ -77,51 +92,55 @@ export const api = {
   // ── Environmental Data ─────────────────────────────────────────────────────
   data: {
     list: (params?: Record<string, string>) =>
-      request<any[]>(`/data?${new URLSearchParams(params || {})}`),
-    submitAir: (data: any) =>
-      request<any>("/data/air", { method: "POST", body: JSON.stringify(data) }),
-    submitWater: (data: any) =>
-      request<any>("/data/water", { method: "POST", body: JSON.stringify(data) }),
-    submitNoise: (data: any) =>
-      request<any>("/data/noise", { method: "POST", body: JSON.stringify(data) }),
-    latest: (locationId: number) => request<any[]>(`/data/latest/${locationId}`),
+      request<Record<string, unknown>[]>(`/data?${new URLSearchParams(params || {})}`),
+    submitAir: (data: Record<string, unknown>) =>
+      request<Record<string, unknown>>("/data/air", { method: "POST", body: JSON.stringify(data) }),
+    submitWater: (data: Record<string, unknown>) =>
+      request<Record<string, unknown>>("/data/water", { method: "POST", body: JSON.stringify(data) }),
+    submitNoise: (data: Record<string, unknown>) =>
+      request<Record<string, unknown>>("/data/noise", { method: "POST", body: JSON.stringify(data) }),
+    latest: (locationId: number) => request<Record<string, unknown>[]>(`/data/latest/${locationId}`),
   },
 
   // ── Alerts ─────────────────────────────────────────────────────────────────
   alerts: {
     list: (params?: Record<string, string>) =>
-      request<any[]>(`/alerts?${new URLSearchParams(params || {})}`),
+      request<Record<string, unknown>[]>(`/alerts?${new URLSearchParams(params || {})}`),
     resolve: (id: number) =>
-      request<any>(`/alerts/${id}/resolve`, { method: "PATCH" }),
+      request<Record<string, unknown>>(`/alerts/${id}/resolve`, { method: "PATCH" }),
     acknowledge: (id: number) =>
-      request<any>(`/alerts/${id}/acknowledge`, { method: "PATCH" }),
-    compliance: () => request<any>("/compliance"),
+      request<Record<string, unknown>>(`/alerts/${id}/acknowledge`, { method: "PATCH" }),
+    compliance: () => request<Record<string, unknown>>("/compliance"),
     complianceHistory: (industryId: number) =>
-      request<any>(`/compliance/${industryId}`),
-    notifications: () => request<any[]>("/notifications"),
+      request<Record<string, unknown>>(`/compliance/${industryId}`),
+    inspectionPriority: (region?: string, limit?: number) =>
+      request<Record<string, unknown>>(`/alerts/inspection-priority?${new URLSearchParams({ ...(region && { region }), ...(limit && { limit: String(limit) }) })}`),
+    casesToAct: (region?: string) =>
+      request<Record<string, unknown>>(`/alerts/cases-to-act${region ? `?region=${encodeURIComponent(region)}` : ""}`),
+    notifications: () => request<Record<string, unknown>[]>("/notifications"),
     markRead: (id: number) =>
-      request<any>(`/notifications/${id}/read`, { method: "PATCH" }),
+      request<Record<string, unknown>>(`/notifications/${id}/read`, { method: "PATCH" }),
   },
 
   // ── Reports ────────────────────────────────────────────────────────────────
   reports: {
     monthly: (year: number, month: number) =>
-      request<any>(`/reports/monthly?year=${year}&month=${month}`),
-    yearly: (year: number) => request<any>(`/reports/yearly?year=${year}`),
-    industry: (id: number) => request<any>(`/reports/industry/${id}`),
+      request<Record<string, unknown>>(`/reports/monthly?year=${year}&month=${month}`),
+    yearly: (year: number) => request<Record<string, unknown>>(`/reports/yearly?year=${year}`),
+    industry: (id: number) => request<Record<string, unknown>>(`/reports/industry/${id}`),
   },
 
   // ── AI ─────────────────────────────────────────────────────────────────────
   ai: {
-    simulateRisk: (data: any) =>
-      request<any>("/ai/simulate-risk", { method: "POST", body: JSON.stringify(data) }),
+    simulateRisk: (data: Record<string, unknown>) =>
+      request<Record<string, unknown>>("/ai/simulate-risk", { method: "POST", body: JSON.stringify(data) }),
     predict: (locationId: number, hours: number) =>
-      request<any>("/ai/predict", {
+      request<Record<string, unknown>>("/ai/predict", {
         method: "POST",
         body: JSON.stringify({ location_id: locationId, hours }),
       }),
     copilot: (question: string, context?: string) =>
-      request<any>("/ai/copilot", {
+      request<Record<string, unknown>>("/ai/copilot", {
         method: "POST",
         body: JSON.stringify({ question, context }),
       }),
@@ -130,18 +149,24 @@ export const api = {
   // ── Heatmap ────────────────────────────────────────────────────────────────
   heatmap: {
     get: (dataType = "air", pollutant?: string) =>
-      request<any>(`/heatmap?data_type=${dataType}${pollutant ? `&pollutant=${pollutant}` : ""}`),
+      request<Record<string, unknown>[]>(`/heatmap?data_type=${dataType}${pollutant ? `&pollutant=${pollutant}` : ""}`),
   },
 
   // ── Public ─────────────────────────────────────────────────────────────────
   public: {
     airQuality: (region?: string) =>
-        request<any>(`/public/air-quality${region ? `?region=${region}` : ""}`),
+        request<Record<string, unknown>>(`/public/air-quality${region ? `?region=${region}` : ""}`),
     waterQuality: (region?: string) =>
-        request<any>(`/public/water-quality${region ? `?region=${region}` : ""}`),
+        request<Record<string, unknown>>(`/public/water-quality${region ? `?region=${region}` : ""}`),
     alerts: (severity?: string) =>
-        request<any>(`/public/alerts${severity ? `?severity=${severity}` : ""}`),
+        request<Record<string, unknown>>(`/public/alerts${severity ? `?severity=${severity}` : ""}`),
     industries: (region?: string) =>
-        request<any>(`/public/industries${region ? `?region=${region}` : ""}`),
+        request<Record<string, unknown>>(`/public/industries${region ? `?region=${region}` : ""}`),
+    stories: (region?: string, days?: number) => {
+      const params = new URLSearchParams();
+      if (region) params.set("region", region);
+      if (days) params.set("days", String(days));
+      return request<Record<string, unknown>>(`/public/stories${params.toString() ? `?${params}` : ""}`);
+    },
   },
 };

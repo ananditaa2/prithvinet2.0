@@ -9,6 +9,19 @@ const severityBadge: Record<string, string> = {
   medium: "bg-yellow-100 text-yellow-700 border border-yellow-200",
   low: "bg-blue-100 text-blue-700 border border-blue-200",
 };
+
+const CPCB_REF: Record<string, string> = {
+  air: "CPCB National AQI (2014) | EPA 1986 §5 & §15",
+  water: "Water Act 1974 | CPCB Effluent Standards",
+  noise: "Noise Pollution Rules 2000",
+  pm25: "CPCB PM2.5: 60 µg/m³ (24h) industrial",
+  pm10: "CPCB PM10: 100 µg/m³ (24h) industrial",
+  bod: "CPCB BOD: 30 mg/L effluent",
+  ph: "CPCB pH: 6.5–8.5",
+};
+function cpcbRef(alertType: string, pollutant?: string): string {
+  return CPCB_REF[pollutant || ""] || CPCB_REF[alertType || ""] || "EPA 1986 §15";
+}
 const severityBorder: Record<string, string> = {
   critical: "border-l-red-500",
   high: "border-l-orange-500",
@@ -19,6 +32,33 @@ const severityBorder: Record<string, string> = {
 const RESOLVE_ROLES = ["admin", "regional_officer", "monitoring_team"];
 const ALERT_ACCESS_ROLES = ["admin", "regional_officer", "monitoring_team", "industry_user"];
 const COMPLIANCE_ACCESS_ROLES = ["admin", "regional_officer", "super_admin"];
+interface Alert {
+  id: number;
+  severity: "critical" | "high" | "medium" | "low";
+  alert_type: string;
+  status: "active" | "resolved";
+  message: string;
+  location_id: number;
+  industry_id?: number;
+  created_at: string;
+  pollutant?: string;
+  measured_value?: number;
+  threshold_value?: number;
+}
+
+interface ComplianceIndustry {
+  id: number;
+  name: string;
+  region: string;
+  type: string;
+  registration_number: string;
+  active_alerts: number;
+}
+
+interface ComplianceData {
+  count: number;
+  violating_industries: ComplianceIndustry[];
+}
 
 export default function Alerts() {
   const { user } = useAuth();
@@ -33,8 +73,8 @@ export default function Alerts() {
   );
 
   const [tab, setTab] = useState<string>(canViewAlerts ? "alerts" : canViewCompliance ? "compliance" : "");
-  const [alerts, setAlerts] = useState<any[]>([]);
-  const [compliance, setCompliance] = useState<any>(null);
+  const [alerts, setAlerts] = useState<Alert[]>([]);
+  const [compliance, setCompliance] = useState<ComplianceData | null>(null);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState("all");
 
@@ -64,10 +104,22 @@ export default function Alerts() {
   }, [tab, canViewAlerts, canViewCompliance]);
 
   const handleResolve = async (id: number) => {
-    try { await api.alerts.resolve(id); loadAlerts(); } catch (e: any) { alert(e.message); }
+    try {
+      await api.alerts.resolve(id);
+      loadAlerts();
+    } catch (e: unknown) {
+      const message = e instanceof Error ? e.message : "Unknown error";
+      alert(message);
+    }
   };
   const handleAck = async (id: number) => {
-    try { await api.alerts.acknowledge(id); loadAlerts(); } catch (e: any) { alert(e.message); }
+    try {
+      await api.alerts.acknowledge(id);
+      loadAlerts();
+    } catch (e: unknown) {
+      const message = e instanceof Error ? e.message : "Unknown error";
+      alert(message);
+    }
   };
 
   const filtered = filter === "all" ? alerts : alerts.filter(a => a.severity === filter);
@@ -126,7 +178,7 @@ export default function Alerts() {
               </div>
             ) : (
               <div className="space-y-3">
-                {filtered.map(a => (
+                {filtered.map((a: Alert) => (
                   <div key={a.id} className={`bg-white rounded-xl border border-gray-200 border-l-4 ${severityBorder[a.severity] || "border-l-gray-300"} shadow-sm p-5`}>
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex items-start gap-3 min-w-0">
@@ -138,6 +190,7 @@ export default function Alerts() {
                             {a.pollutant && <span className="text-xs text-gray-400">· {a.pollutant}</span>}
                           </div>
                           <p className="text-sm text-gray-800">{a.message}</p>
+                          <p className="text-xs text-amber-700 mt-1 font-medium">📜 {cpcbRef(a.alert_type, a.pollutant)}</p>
                           <div className="flex items-center gap-3 mt-2 text-xs text-gray-400">
                             <span>📍 Loc #{a.location_id}</span>
                             {a.industry_id && <span>🏭 Ind #{a.industry_id}</span>}
@@ -182,7 +235,7 @@ export default function Alerts() {
                   </div>
                 </div>
                 <div className="space-y-3">
-                  {compliance.violating_industries?.map((i: any) => (
+                  {compliance.violating_industries?.map((i: ComplianceIndustry) => (
                     <div key={i.id} className="bg-white rounded-xl border border-red-200 border-l-4 border-l-red-500 shadow-sm p-5">
                       <div className="flex items-start justify-between">
                         <div>

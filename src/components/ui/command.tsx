@@ -21,7 +21,9 @@ const Command = React.forwardRef<
 ));
 Command.displayName = CommandPrimitive.displayName;
 
-interface CommandDialogProps extends DialogProps {}
+interface CommandDialogProps extends DialogProps {
+  children?: React.ReactNode;
+}
 
 const CommandDialog = ({ children, ...props }: CommandDialogProps) => {
   return (
@@ -119,14 +121,12 @@ const CommandShortcut = ({ className, ...props }: React.HTMLAttributes<HTMLSpanE
 };
 CommandShortcut.displayName = "CommandShortcut";
 
-export {
-  Command,
-  CommandDialog,
-  CommandInput,
-  CommandList,
-  CommandEmpty,
-  CommandGroup,
-  CommandItem,
-  CommandShortcut,
-  CommandSeparator,
-};
+export { Command };
+export { CommandDialog };
+export { CommandInput };
+export { CommandList };
+export { CommandEmpty };
+export { CommandGroup };
+export { CommandItem };
+export { CommandShortcut };
+export { CommandSeparator };

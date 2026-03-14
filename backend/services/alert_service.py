@@ -6,7 +6,7 @@ import asyncio
 from sqlalchemy.orm import Session
 from models.alert import Alert, Notification
 from models.user import User
-from core.config import AIR_THRESHOLDS, WATER_THRESHOLDS, NOISE_THRESHOLDS
+from core.config import CPCB_LEGAL_LIMITS, AIR_SEVERITY_TIERS, WATER_THRESHOLDS, NOISE_THRESHOLDS
 from datetime import datetime, timezone
 
 _notification_broadcaster = None
@@ -56,10 +56,8 @@ def _severity(value: float, thresholds: dict) -> str | None:
         return "critical"
     if value >= thresholds["high"]:
         return "high"
-    if value >= thresholds["medium"]:
-        return "medium"
-    if value >= thresholds["low"]:
-        return "low"
+    if value >= thresholds["warning"]:
+        return "medium"  # warning maps to medium severity
     return None
 
 
@@ -125,6 +123,14 @@ def check_and_trigger_alerts(db: Session, data) -> list[Alert]:
     pollutant that exceeds its threshold. Returns list of created Alert objects.
     """
     triggered = []
+    
+    # Resolve industry_id from location if not directly set on data
+    industry_id = data.industry_id
+    if not industry_id and data.location_id:
+        from models.monitoring_location import MonitoringLocation
+        loc = db.query(MonitoringLocation).filter(MonitoringLocation.id == data.location_id).first()
+        if loc:
+            industry_id = loc.industry_id
 
     # ── Air Checks ─────────────────────────────────────────────────────────────
     if data.data_type == "air":
@@ -133,20 +139,35 @@ def check_and_trigger_alerts(db: Session, data) -> list[Alert]:
             value = getattr(data, field, None)
             if value is None:
                 continue
-            th = AIR_THRESHOLDS.get(field)
-            if not th:
+            
+            # Step 1: Check against CPCB legal limit first
+            legal_limit = CPCB_LEGAL_LIMITS.get(field)
+            if not legal_limit:
                 continue
-            sev = _severity(value, th)
-            if sev:
-                msg = (
-                    f"{field.upper()} level of {value} µg/m³ at location #{data.location_id} "
-                    f"exceeds {sev} threshold ({th[sev]})."
-                )
-                a = _create_alert(
-                    db, data.id, data.location_id, data.industry_id,
-                    "air", field, value, th[sev], sev, msg
-                )
-                triggered.append(a)
+            
+            # Only trigger alert if value exceeds CPCB legal limit
+            if value <= legal_limit:
+                continue
+            
+            # Step 2: Determine severity using severity tiers
+            sev_tiers = AIR_SEVERITY_TIERS.get(field)
+            if sev_tiers:
+                sev = _severity(value, sev_tiers)
+            else:
+                sev = "high"  # Default severity if no tiers defined
+            
+            if not sev:
+                sev = "warning"  # Above legal limit but below severity tiers
+            
+            msg = (
+                f"{field.upper()} level of {value} µg/m³ at location #{data.location_id} "
+                f"exceeds CPCB legal limit ({legal_limit}). Severity: {sev}."
+            )
+            a = _create_alert(
+                db, data.id, data.location_id, industry_id,
+                "air", field, value, legal_limit, sev, msg
+            )
+            triggered.append(a)
 
     # ── Water Checks ───────────────────────────────────────────────────────────
     elif data.data_type == "water":
@@ -165,7 +186,7 @@ def check_and_trigger_alerts(db: Session, data) -> list[Alert]:
                     f"exceeds {sev} threshold ({th[sev]})."
                 )
                 a = _create_alert(
-                    db, data.id, data.location_id, data.industry_id,
+                    db, data.id, data.location_id, industry_id,
                     "water", field, value, th[sev], sev, msg
                 )
                 triggered.append(a)
@@ -178,7 +199,7 @@ def check_and_trigger_alerts(db: Session, data) -> list[Alert]:
                     f"is outside safe range ({WATER_THRESHOLDS['ph_low']}–{WATER_THRESHOLDS['ph_high']})."
                 )
                 a = _create_alert(
-                    db, data.id, data.location_id, data.industry_id,
+                    db, data.id, data.location_id, industry_id,
                     "water", "ph", data.ph, WATER_THRESHOLDS["ph_high"], "high", msg
                 )
                 triggered.append(a)
@@ -190,7 +211,7 @@ def check_and_trigger_alerts(db: Session, data) -> list[Alert]:
                 f"is below safe minimum ({WATER_THRESHOLDS['dissolved_oxygen']} mg/L)."
             )
             a = _create_alert(
-                db, data.id, data.location_id, data.industry_id,
+                db, data.id, data.location_id, industry_id,
                 "water", "dissolved_oxygen", data.dissolved_oxygen,
                 WATER_THRESHOLDS["dissolved_oxygen"], "high", msg
             )
@@ -208,15 +229,15 @@ def check_and_trigger_alerts(db: Session, data) -> list[Alert]:
                     f"({loc_type}) exceeds {sev} threshold ({th[sev]} dB)."
                 )
                 a = _create_alert(
-                    db, data.id, data.location_id, data.industry_id,
+                    db, data.id, data.location_id, industry_id,
                     "noise", "decibel_level", data.decibel_level, th[sev], sev, msg
                 )
                 triggered.append(a)
 
     # Update industry status if critical violations found
-    if triggered and data.industry_id:
+    if triggered and industry_id:
         from models.industry import Industry
-        industry = db.query(Industry).filter(Industry.id == data.industry_id).first()
+        industry = db.query(Industry).filter(Industry.id == industry_id).first()
         if industry:
             critical_or_high = any(a.severity in ("critical", "high") for a in triggered)
             if critical_or_high:

@@ -20,6 +20,8 @@ import Alerts from "./pages/dashboard/Alerts";
 import Reports from "./pages/dashboard/Reports";
 import AITools from "./pages/dashboard/AITools";
 import HeatmapView from "./pages/dashboard/HeatmapView";
+import InspectionPriority from "./pages/dashboard/InspectionPriority";
+import CasesToAct from "./pages/dashboard/CasesToAct";
 
 const queryClient = new QueryClient();
 
@@ -51,6 +53,8 @@ const App = () => (
                 <Route path="industries" element={<Industries />} />
                 <Route path="locations" element={<Locations />} />
                 <Route path="alerts" element={<Alerts />} />
+                <Route path="inspection-priority" element={<InspectionPriority />} />
+                <Route path="cases-to-act" element={<CasesToAct />} />
                 <Route path="reports" element={<Reports />} />
                 <Route path="ai" element={<AITools />} />
                 <Route path="heatmap" element={<HeatmapView />} />

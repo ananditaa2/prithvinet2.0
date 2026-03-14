@@ -5,8 +5,11 @@ Registers all routers and initialises the database on startup.
 import os
 import asyncio
 import json
-from fastapi import FastAPI, WebSocket, WebSocketDisconnect
+import traceback
+from typing import Optional
+from fastapi import FastAPI, WebSocket, WebSocketDisconnect, Request, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
 
 from core.config import APP_TITLE, APP_VERSION
 from core.database import engine, Base
@@ -18,32 +21,7 @@ import models  # noqa: F401
 Base.metadata.create_all(bind=engine)
 
 
-# ── WebSocket Connection Manager ───────────────────────────────────────────────
-class ConnectionManager:
-    def __init__(self):
-        self.active_connections: list[WebSocket] = []
-
-    async def connect(self, websocket: WebSocket):
-        await websocket.accept()
-        self.active_connections.append(websocket)
-
-    def disconnect(self, websocket: WebSocket):
-        if websocket in self.active_connections:
-            self.active_connections.remove(websocket)
-
-    async def broadcast(self, message: dict):
-        data = json.dumps(message)
-        dead = []
-        for ws in self.active_connections:
-            try:
-                await ws.send_text(data)
-            except Exception:
-                dead.append(ws)
-        for ws in dead:
-            self.disconnect(ws)
-
-
-manager = ConnectionManager()
+from core.websocket import manager
 
 
 # ── App ────────────────────────────────────────────────────────────────────────
@@ -63,19 +41,26 @@ app = FastAPI(
 # ── CORS ────────────────────────────────────────────────────────────────────────
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:8080",
-        "http://127.0.0.1:8080",
-        "http://localhost:5173",
-        "http://127.0.0.1:5173",
-        "http://localhost:8081",
-        "http://127.0.0.1:8081",
-        "*",
-    ],
+    allow_origins=["*"],
     allow_credentials=False,   # Must be False when allow_origins includes "*"
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+# ── Global exception handler (surfaces real errors for debugging) ─────────────────
+@app.exception_handler(Exception)
+async def global_exception_handler(request: Request, exc: Exception):
+    if isinstance(exc, HTTPException):
+        return JSONResponse(status_code=exc.status_code, content={"detail": exc.detail})
+    tb = traceback.format_exc()
+    print(f"[500] {request.method} {request.url.path}\n{tb}")
+    detail = str(exc) if os.getenv("DEBUG", "").lower() in ("1", "true") else "Internal Server Error"
+    return JSONResponse(
+        status_code=500,
+        content={"detail": detail, "type": type(exc).__name__},
+    )
+
 
 # ── Routers ────────────────────────────────────────────────────────────────────
 from routers import auth, industries, locations, environmental, reports, alerts, ai, heatmap, sensors, citizen
@@ -110,7 +95,7 @@ def health():
 
 # ── WebSocket Endpoint ─────────────────────────────────────────────────────────
 @app.websocket("/ws/dashboard")
-async def ws_dashboard(websocket: WebSocket):
+async def ws_dashboard(websocket: WebSocket, token: Optional[str] = None):
     """Live dashboard push — broadcasts new readings and anomaly alerts."""
     await manager.connect(websocket)
     try:

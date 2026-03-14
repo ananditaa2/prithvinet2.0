@@ -1,4 +1,5 @@
-from sqlalchemy import Column, Integer, String, Float, DateTime, Text, Boolean
+from sqlalchemy import Column, Integer, String, Float, DateTime, Text, Boolean, ForeignKey
+from sqlalchemy.orm import relationship
 from datetime import datetime, timezone
 from core.database import Base
 
@@ -8,8 +9,8 @@ class Alert(Base):
 
     id              = Column(Integer, primary_key=True, index=True)
     data_id         = Column(Integer, nullable=True)    # which reading triggered it
-    location_id     = Column(Integer, nullable=True, index=True)
-    industry_id     = Column(Integer, nullable=True, index=True)
+    location_id     = Column(Integer, ForeignKey("monitoring_locations.id"), nullable=True, index=True)
+    industry_id     = Column(Integer, ForeignKey("industries.id"), nullable=True, index=True)
     alert_type      = Column(String, nullable=False)    # air | water | noise | compliance
     pollutant       = Column(String, nullable=True)     # pm25 | bod | decibel_level | etc.
     measured_value  = Column(Float, nullable=True)
@@ -20,6 +21,10 @@ class Alert(Base):
     resolved_by     = Column(Integer, nullable=True)
     resolved_at     = Column(DateTime, nullable=True)
     created_at      = Column(DateTime, default=lambda: datetime.now(timezone.utc), index=True)
+
+    # Relationships
+    location = relationship("MonitoringLocation", foreign_keys=[location_id], lazy="joined")
+    industry = relationship("Industry", foreign_keys=[industry_id], lazy="joined")
 
 
 class Notification(Base):

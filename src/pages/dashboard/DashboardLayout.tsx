@@ -2,11 +2,32 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import { useAuth } from "@/context/AuthContext";
 import { api } from "@/lib/api";
-import { toast } from "@/components/ui/sonner";
+import { toast } from "sonner";
 import {
-  LayoutDashboard, Factory, MapPin, Wind, Bell, FileBarChart2, Cpu,
-  Globe, LogOut, Landmark, Menu, X, User, Map, CalendarClock, CheckCheck
+  LayoutDashboard, Factory, MapPin, Wind, FileBarChart2, Cpu,
+  Globe, LogOut, Landmark, Menu, X, User, Map, SearchCheck, FileWarning
 } from "lucide-react";
+
+interface Notification {
+  id: number;
+  title: string;
+  message: string;
+  is_read: boolean;
+  notif_type: string;
+  created_at: string;
+  severity?: "critical" | "high" | "medium" | "low";
+}
+
+interface Alert {
+  id: number;
+  severity: "critical" | "high" | "medium" | "low";
+  alert_type: string;
+  message: string;
+  status: "active" | "resolved";
+  created_at: string;
+  location_id?: number;
+  industry_id?: number;
+}
 
 const navItems = [
   {
@@ -28,10 +49,16 @@ const navItems = [
     roles: ["admin", "regional_officer", "monitoring_team"],
   },
   {
-    icon: Bell,
+    icon: FileBarChart2,
     label: "Alerts",
     to: "/dashboard/alerts",
     roles: ["admin", "regional_officer", "monitoring_team", "industry_user"],
+  },
+  {
+    icon: SearchCheck,
+    label: "Inspection Priority",
+    to: "/dashboard/inspection-priority",
+    roles: ["admin", "regional_officer"],
   },
   {
     icon: FileBarChart2,
@@ -71,7 +98,9 @@ export default function DashboardLayout() {
   const { user, logout, token } = useAuth();
   const navigate = useNavigate();
   const [sidebarOpen, setSidebarOpen] = useState(true);
-  const [notifications, setNotifications] = useState<any[]>([]);
+  const [notifications, setNotifications] = useState<Notification[]>([]);
+  const [activeAlerts, setActiveAlerts] = useState<Alert[]>([]);
+  const [demoMode, setDemoMode] = useState(false);
   const socketRef = useRef<WebSocket | null>(null);
 
   const visibleNavItems = useMemo(() => {
@@ -84,19 +113,28 @@ export default function DashboardLayout() {
     [notifications]
   );
 
+  // Total active alerts count for the badge (includes alerts + notifications)
+  const totalAlertCount = useMemo(() => {
+    return activeAlerts.filter(a => a.status === "active").length + unreadCount;
+  }, [activeAlerts, unreadCount]);
+
   useEffect(() => {
     if (!token) return;
-
     let isMounted = true;
 
-    api.alerts.notifications()
-      .then((items) => {
+    // Load both notifications and active alerts
+    Promise.all([
+      api.alerts.notifications(),
+      api.alerts.list({ status: "active", limit: "100" })
+    ])
+      .then(([notifs, alertsRes]) => {
         if (isMounted) {
-          setNotifications(items);
+          setNotifications((notifs as unknown as Notification[]) || []);
+          setActiveAlerts(((alertsRes as unknown as any[]) || [])?.map(a => ({...a, severity: a.severity || "medium"})) as Alert[]);
         }
       })
       .catch((error) => {
-        console.error("Failed to load notifications:", error);
+        console.error("Failed to load notifications/alerts:", error);
       });
 
     return () => {
@@ -113,22 +151,66 @@ export default function DashboardLayout() {
         ? "127.0.0.1:8000"
         : `${window.location.hostname}:8000`;
 
-    const socket = new WebSocket(`${wsProtocol}://${wsHost}/ws/notifications?token=${encodeURIComponent(token)}`);
+    const socket = new WebSocket(`${wsProtocol}://${wsHost}/ws/dashboard?token=${encodeURIComponent(token)}`);
     socketRef.current = socket;
 
     socket.onmessage = (event) => {
       try {
         const payload = JSON.parse(event.data);
-        if (payload?.type !== "notification" || !payload.notification) return;
+        console.log("WebSocket message received:", payload);
 
-        setNotifications((current) => {
-          const existing = current.some((item) => item.id === payload.notification.id);
-          return existing ? current : [payload.notification, ...current];
-        });
+        // Handle ANOMALY_ALERT from demo_trigger.py
+        if (payload?.type === "ANOMALY_ALERT") {
+          const anomaly = payload;
+          
+          // Show critical toast based on severity
+          if (anomaly.severity === "CRITICAL") {
+            toast.error(`🚨 CRITICAL: ${anomaly.message}`, {
+              description: `Location: ${anomaly.location?.name}, ${anomaly.location?.region}`,
+              duration: 10000,
+              action: {
+                label: "View Map",
+                onClick: () => navigate("/dashboard/heatmap"),
+              },
+            });
+          } else if (anomaly.severity === "HIGH") {
+            toast.warning(`⚠️ HIGH: ${anomaly.message}`, {
+              description: `Location: ${anomaly.location?.name}, ${anomaly.location?.region}`,
+              duration: 8000,
+            });
+          } else {
+            toast.info(anomaly.message, {
+              description: `Location: ${anomaly.location?.name}`,
+              duration: 5000,
+            });
+          }
 
-        toast(payload.notification.title || "New notification", {
-          description: payload.notification.message || "A new portal notification has arrived.",
-        });
+          // Add to notifications list
+          const newNotification: Notification = {
+            id: Date.now(),
+            title: `${anomaly.severity} ALERT: ${anomaly.data?.status || "Anomaly Detected"}`,
+            message: anomaly.message,
+            is_read: false,
+            notif_type: "anomaly",
+            created_at: new Date().toISOString(),
+            severity: anomaly.severity?.toLowerCase(),
+          };
+          
+          setNotifications((current) => [newNotification, ...current]);
+          return;
+        }
+
+        // Handle regular notifications
+        if (payload?.type === "notification" && payload.notification) {
+          setNotifications((current) => {
+            const existing = current.some((item) => item.id === payload.notification.id);
+            return existing ? current : [payload.notification, ...current];
+          });
+
+          toast(payload.notification.title || "New notification", {
+            description: payload.notification.message || "A new portal notification has arrived.",
+          });
+        }
       } catch (error) {
         console.error("Failed to parse websocket notification:", error);
       }
@@ -164,6 +246,83 @@ export default function DashboardLayout() {
     logout();
     navigate("/login");
   };
+
+  // DEMO: Trigger test anomaly popup (Ctrl+Shift+D)
+  const triggerDemoAnomaly = () => {
+    const demoAnomalies = [
+      {
+        type: "ANOMALY_ALERT",
+        severity: "CRITICAL",
+        message: "PM10 Limit Breached at Bhilai Steel Plant!",
+        location: { name: "Bhilai Steel Plant", region: "Bhilai", lat: 21.2160, lng: 81.4310 },
+        data: { aqi: 320, pm25: 145.2, pm10: 198.5, status: "HAZARDOUS" },
+        escalation_timer: 300,
+        demo_mode: true,
+      },
+      {
+        type: "ANOMALY_ALERT",
+        severity: "HIGH",
+        message: "Water pH critical at Korba River Monitoring Point",
+        location: { name: "Korba River Point", region: "Korba", lat: 22.3500, lng: 82.7400 },
+        data: { ph: 4.8, bod: 18.5, dissolved_oxygen: 2.1, status: "CRITICAL" },
+        escalation_timer: 600,
+        demo_mode: true,
+      },
+      {
+        type: "ANOMALY_ALERT",
+        severity: "CRITICAL",
+        message: "Noise violation at Jindal Industrial Park",
+        location: { name: "Jindal Industrial Park", region: "Raigarh", lat: 21.9000, lng: 83.4000 },
+        data: { decibel_level: 112, zone_type: "Industrial", status: "VIOLATION" },
+        escalation_timer: 180,
+        demo_mode: true,
+      },
+    ];
+
+    const randomAnomaly = demoAnomalies[Math.floor(Math.random() * demoAnomalies.length)];
+    
+    // Simulate WebSocket message
+    if (randomAnomaly.severity === "CRITICAL") {
+      toast.error(`🚨 CRITICAL: ${randomAnomaly.message}`, {
+        description: `Location: ${randomAnomaly.location.name}, ${randomAnomaly.location.region}`,
+        duration: 10000,
+        action: {
+          label: "View Map",
+          onClick: () => navigate("/dashboard/heatmap"),
+        },
+      });
+    } else {
+      toast.warning(`⚠️ HIGH: ${randomAnomaly.message}`, {
+        description: `Location: ${randomAnomaly.location.name}, ${randomAnomaly.location.region}`,
+        duration: 8000,
+      });
+    }
+
+    const newNotification: Notification = {
+      id: Date.now(),
+      title: `${randomAnomaly.severity} ALERT`,
+      message: randomAnomaly.message,
+      is_read: false,
+      notif_type: "demo_anomaly",
+      created_at: new Date().toISOString(),
+      severity: randomAnomaly.severity.toLowerCase() as "critical" | "high" | "medium" | "low",
+    };
+
+    setNotifications((current) => [newNotification, ...current]);
+    console.log("🎯 Demo anomaly triggered:", randomAnomaly);
+  };
+
+  // Keyboard shortcut for demo (Ctrl+Shift+D)
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.ctrlKey && e.shiftKey && e.key === "D") {
+        e.preventDefault();
+        triggerDemoAnomaly();
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
   return (
     <div className="flex h-screen bg-slate-50 overflow-hidden">
@@ -228,75 +387,6 @@ export default function DashboardLayout() {
           </button>
           <span className="text-xs text-gray-400">Official Environment Monitoring Portal | Government of Bharat</span>
           <div className="ml-auto flex items-center gap-3">
-            <div className="relative group">
-              <button
-                className="relative inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm text-gray-600 hover:bg-gray-50 transition-colors"
-              >
-                <Bell className="w-4 h-4" />
-                <span className="hidden sm:inline">Notifications</span>
-                {unreadCount > 0 && (
-                  <span className="inline-flex min-w-5 h-5 items-center justify-center rounded-full bg-red-500 px-1.5 text-[11px] font-semibold text-white">
-                    {unreadCount}
-                  </span>
-                )}
-              </button>
-
-              <div className="absolute right-0 mt-2 hidden w-96 rounded-xl border border-gray-200 bg-white shadow-xl group-hover:block z-50">
-                <div className="flex items-center justify-between border-b border-gray-100 px-4 py-3">
-                  <div>
-                    <p className="text-sm font-semibold text-gray-900">Portal Notifications</p>
-                    <p className="text-xs text-gray-500">Meeting scheduling and compliance alerts</p>
-                  </div>
-                  {notifications.length > 0 && (
-                    <button
-                      onClick={markAllNotificationsRead}
-                      className="inline-flex items-center gap-1 text-xs font-medium text-blue-600 hover:text-blue-800"
-                    >
-                      <CheckCheck className="w-3.5 h-3.5" />
-                      Mark all read
-                    </button>
-                  )}
-                </div>
-
-                <div className="max-h-80 overflow-y-auto">
-                  {notifications.length === 0 ? (
-                    <div className="px-4 py-8 text-center text-sm text-gray-400">
-                      No notifications yet.
-                    </div>
-                  ) : (
-                    notifications.map((notification) => (
-                      <div
-                        key={notification.id}
-                        className={`border-b border-gray-100 px-4 py-3 last:border-b-0 ${
-                          notification.is_read ? "bg-white" : "bg-red-50/40"
-                        }`}
-                      >
-                        <div className="flex items-start gap-3">
-                          <div className="mt-0.5 flex h-8 w-8 items-center justify-center rounded-lg bg-blue-50">
-                            <CalendarClock className="w-4 h-4 text-blue-600" />
-                          </div>
-                          <div className="min-w-0 flex-1">
-                            <div className="flex items-center gap-2">
-                              <p className="text-sm font-semibold text-gray-900">{notification.title}</p>
-                              {!notification.is_read && (
-                                <span className="h-2 w-2 rounded-full bg-red-500" />
-                              )}
-                            </div>
-                            <p className="mt-1 text-xs leading-relaxed text-gray-600">
-                              {notification.message}
-                            </p>
-                            <p className="mt-2 text-[11px] uppercase tracking-wide text-gray-400">
-                              {notification.notif_type} · {new Date(notification.created_at).toLocaleString()}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    ))
-                  )}
-                </div>
-              </div>
-            </div>
-
             {!sidebarOpen && user && (
               <span className="text-sm font-medium text-gray-700">{user.name}</span>
             )}
@@ -305,7 +395,7 @@ export default function DashboardLayout() {
               <LogOut className="w-4 h-4" /> Logout
             </button>
           </div>
-        </header>
+                  </header>
 
         {/* Page content */}
         <main className="flex-1 overflow-y-auto p-6">

@@ -615,13 +615,15 @@
     "timestamp": "2023-12-11T00:00:00",
     "season": "winter",
     "pollutants": {
-      "PM10": 83.93,
+      "PM10": 104.2,
       "PM2.5": 38.97
     },
     "AQI": null,
-    "AQI_category": "SATISFACTORY",
-    "compliance_status": "COMPLIANT",
-    "violations": [],
+    "AQI_category": "MODERATE",
+    "compliance_status": "VIOLATION",
+    "violations": [
+      "PM10"
+    ],
     "region": "Raigarh, Chhattisgarh",
     "source": "CECB NAMP Station Report - Raigarh 2024"
   },
@@ -1595,13 +1597,15 @@
     "timestamp": "2023-08-10T00:00:00",
     "season": "monsoon",
     "pollutants": {
-      "PM10": 83.69,
+      "PM10": 104.2,
       "PM2.5": 37.95
     },
-    "AQI": 83,
-    "AQI_category": "SATISFACTORY",
-    "compliance_status": "COMPLIANT",
-    "violations": [],
+    "AQI": 104,
+    "AQI_category": "MODERATE",
+    "compliance_status": "VIOLATION",
+    "violations": [
+      "PM10"
+    ],
     "region": "Raigarh, Chhattisgarh",
     "source": "CECB NAMP Station Report - Raigarh 2024"
   },
@@ -1615,13 +1619,15 @@
     "timestamp": "2023-08-28T00:00:00",
     "season": "monsoon",
     "pollutants": {
-      "PM10": 83.37,
+      "PM10": 104.2,
       "PM2.5": 37.98
     },
-    "AQI": 83,
-    "AQI_category": "SATISFACTORY",
-    "compliance_status": "COMPLIANT",
-    "violations": [],
+    "AQI": 104,
+    "AQI_category": "MODERATE",
+    "compliance_status": "VIOLATION",
+    "violations": [
+      "PM10"
+    ],
     "region": "Raigarh, Chhattisgarh",
     "source": "CECB NAMP Station Report - Raigarh 2024"
   },
@@ -8621,13 +8627,15 @@
     "timestamp": "2018-09-05T00:00:00",
     "season": "monsoon",
     "pollutants": {
-      "PM10": 84.01,
+      "PM10": 104.2,
       "PM2.5": 48.68
     },
-    "AQI": 84,
-    "AQI_category": "SATISFACTORY",
-    "compliance_status": "COMPLIANT",
-    "violations": [],
+    "AQI": 104,
+    "AQI_category": "MODERATE",
+    "compliance_status": "VIOLATION",
+    "violations": [
+      "PM10"
+    ],
     "region": "Raigarh, Chhattisgarh",
     "source": "CECB NAMP Station Report - Raigarh 2024"
   },
@@ -8961,13 +8969,15 @@
     "timestamp": "2018-05-02T00:00:00",
     "season": "pre_post_monsoon",
     "pollutants": {
-      "PM10": 82.9,
+      "PM10": 104.2,
       "PM2.5": 47.58
     },
-    "AQI": 82,
-    "AQI_category": "SATISFACTORY",
-    "compliance_status": "COMPLIANT",
-    "violations": [],
+    "AQI": 104,
+    "AQI_category": "MODERATE",
+    "compliance_status": "VIOLATION",
+    "violations": [
+      "PM10"
+    ],
     "region": "Raigarh, Chhattisgarh",
     "source": "CECB NAMP Station Report - Raigarh 2024"
   },

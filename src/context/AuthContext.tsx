@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import React, {
   createContext,
   useContext,
@@ -5,15 +6,7 @@ import React, {
   useEffect,
   ReactNode,
 } from "react";
-import { api } from "@/lib/api";
-
-interface User {
-  id: number;
-  name: string;
-  email: string;
-  role: string;
-  is_active: boolean;
-}
+import { api, type User } from "@/lib/api";
 
 interface AuthContextType {
   user: User | null;
@@ -24,6 +17,7 @@ interface AuthContextType {
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
+AuthContext.displayName = "AuthContext";
 
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);

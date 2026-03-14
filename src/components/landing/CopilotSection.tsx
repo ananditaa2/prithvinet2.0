@@ -8,6 +8,20 @@ import { Slider } from "@/components/ui/slider";
 import { useToast } from "@/hooks/use-toast";
 import ReactMarkdown from 'react-markdown';
 
+interface SimulationResult {
+    scenario: {
+        region: string;
+        industry: string;
+        pollutant: string;
+        reduction_percentage: number;
+        current_risk_score: number;
+    };
+    baseline_calculation: {
+        estimated_new_score: number;
+    };
+    ai_analysis: string;
+}
+
 export default function CopilotSection({ isWidget = false }: { isWidget?: boolean }) {
     const { toast } = useToast();
     const [loading, setLoading] = useState(false);
@@ -19,7 +33,7 @@ export default function CopilotSection({ isWidget = false }: { isWidget?: boolea
         current_risk_score: 85.0
     });
 
-    const [result, setResult] = useState<any>(null);
+    const [result, setResult] = useState<SimulationResult | null>(null);
 
     const handleSimulate = async () => {
         setLoading(true);
@@ -227,7 +241,7 @@ export default function CopilotSection({ isWidget = false }: { isWidget?: boolea
 }
 
 // Simple Badge component to avoid creating a new file if not needed
-function Badge({ children, className, variant = "default" }: any) {
+function Badge({ children, className }: { children: React.ReactNode; className?: string; variant?: "default" | "outline" }) {
     return (
         <div className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 ${className}`}>
             {children}

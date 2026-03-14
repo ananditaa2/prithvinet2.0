@@ -18,7 +18,7 @@ router = APIRouter(prefix="/data", tags=["Environmental Data"])
 def _broadcast(event: dict):
     """Fire-and-forget WebSocket broadcast (lazy import avoids circular dep)."""
     try:
-        from main import manager
+        from core.websocket import manager
         loop = asyncio.get_event_loop()
         if loop.is_running():
             asyncio.create_task(manager.broadcast(event))

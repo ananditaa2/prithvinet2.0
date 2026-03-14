@@ -16,10 +16,13 @@ from models.monitoring_location import MonitoringLocation
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 def hash_password(password: str) -> str:
-    return pwd_context.hash(password)
+    # BCrypt limits passwords to 72 bytes. Encoded safely.
+    pw_bytes = password.encode('utf-8')[:72]
+    return pwd_context.hash(pw_bytes.decode('utf-8', 'ignore'))
 
 def verify_password(plain: str, hashed: str) -> bool:
-    return pwd_context.verify(plain, hashed)
+    pw_bytes = plain.encode('utf-8')[:72]
+    return pwd_context.verify(pw_bytes.decode('utf-8', 'ignore'), hashed)
 
 # ─── JWT ───────────────────────────────────────────────────────────────────────
 def create_access_token(data: dict) -> str:
@@ -49,13 +52,17 @@ def get_current_user(
     )
     try:
         payload = decode_token(token)
-        user_id: int = payload.get("sub")
-        if user_id is None:
+        user_id_str: str = payload.get("sub")
+        if user_id_str is None:
+            raise credentials_exception
+        try:
+            user_id = int(user_id_str)
+        except ValueError:
             raise credentials_exception
     except JWTError:
         raise credentials_exception
 
-    user = db.query(User).filter(User.id == int(user_id)).first()
+    user = db.query(User).filter(User.id == user_id).first()
     if not user or not user.is_active:
         raise credentials_exception
     return user

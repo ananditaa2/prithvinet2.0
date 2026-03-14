@@ -21,15 +21,30 @@ GROQ_BASE_URL = "https://api.groq.com/openai/v1"
 GROQ_MODEL = "llama-3.1-8b-instant"
 
 # ─── Pollution Thresholds ──────────────────────────────────────────────────────
-# Air (µg/m³ or ppm)
-AIR_THRESHOLDS = {
-    "pm25":  {"low": 30,  "medium": 60,  "high": 90,  "critical": 120},
-    "pm10":  {"low": 50,  "medium": 100, "high": 150, "critical": 250},
-    "so2":   {"low": 40,  "medium": 80,  "high": 120, "critical": 200},
-    "no2":   {"low": 40,  "medium": 80,  "high": 150, "critical": 200},
-    "co":    {"low": 2,   "medium": 4,   "high": 8,   "critical": 15},
-    "o3":    {"low": 50,  "medium": 100, "high": 168, "critical": 208},
+# CPCB Legal Limits (NAAQS 24-hour average standards)
+# Sources: https://cpcb.nic.in/naaqs-standards/
+CPCB_LEGAL_LIMITS = {
+    "pm25":  60,   # µg/m³ - CPCB NAAQS 24hr standard
+    "pm10":  100,  # µg/m³ - CPCB NAAQS 24hr standard
+    "so2":   80,   # µg/m³ - CPCB NAAQS 24hr standard
+    "no2":   80,   # µg/m³ - CPCB NAAQS 24hr standard
+    "co":    4,    # mg/m³ - CPCB NAAQS 8hr standard
+    "o3":    100,  # µg/m³ - CPCB NAAQS 8hr standard
 }
+
+# Air (µg/m³ or ppm) - Used for severity classification AFTER legal limit is exceeded
+# These tiers classify HOW BAD the violation is, not WHETHER there is a violation
+AIR_SEVERITY_TIERS = {
+    "pm25":  {"warning": 60,  "high": 90,  "critical": 120},
+    "pm10":  {"warning": 100, "high": 150, "critical": 250},
+    "so2":   {"warning": 80,  "high": 120, "critical": 200},
+    "no2":   {"warning": 80,  "high": 150, "critical": 200},
+    "co":    {"warning": 4,   "high": 8,   "critical": 15},
+    "o3":    {"warning": 100, "high": 168, "critical": 208},
+}
+
+# Backwards compatibility alias (will be removed after migration)
+AIR_THRESHOLDS = AIR_SEVERITY_TIERS
 # Water
 WATER_THRESHOLDS = {
     "ph_low":           6.5,

@@ -41,6 +41,8 @@ def public_air_quality(
                 "aqi": row.aqi,
                 "pm25": row.pm25,
                 "pm10": row.pm10,
+                "source": row.source,
+                "notes": row.notes,
                 "recorded_at": row.recorded_at.isoformat() if row.recorded_at else None,
             })
     return {"count": len(results), "data": results}

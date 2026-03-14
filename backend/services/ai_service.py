@@ -30,27 +30,58 @@ def _call_groq(system_prompt: str, user_prompt: str, max_tokens: int = 400) -> s
     return response.choices[0].message.content
 
 
+# Penalty bands (₹ lakhs) by risk score — indicative, EPA §15 framework
+def _estimate_penalty_range(risk_score: float) -> tuple[float, float]:
+    if risk_score >= 90:
+        return (15.0, 50.0)
+    if risk_score >= 75:
+        return (5.0, 15.0)
+    if risk_score >= 60:
+        return (1.0, 5.0)
+    if risk_score >= 40:
+        return (0.5, 1.0)
+    return (0.0, 0.5)
+
+
 async def simulate_risk(region: str, industry: str, pollutant: str,
                         reduction_pct: float, current_score: float) -> dict:
-    """Existing risk simulation logic (migrated from original main.py)."""
+    """Risk simulation with penalty estimates and CPCB law references."""
     reduction_factor = reduction_pct / 100.0
     estimated_new = round(current_score * (1 - (reduction_factor * 0.40)), 2)
+    estimated_new = max(0, min(100, estimated_new))
+
+    curr_lo, curr_hi = _estimate_penalty_range(current_score)
+    new_lo, new_hi = _estimate_penalty_range(estimated_new)
+    penalty_reduction = (curr_lo + curr_hi) / 2 - (new_lo + new_hi) / 2
+
+    # CPCB law reference for pollutant
+    cpcb_refs = {
+        "PM2.5": "CPCB National AQI (2014) — PM2.5 24h limit 60 µg/m³ (industrial)",
+        "PM10": "CPCB National AQI (2014) — PM10 24h limit 100 µg/m³ (industrial)",
+        "SO2": "CPCB Ambient Air Quality — SO2 24h limit 80 µg/m³",
+        "NO2": "CPCB Ambient Air Quality — NO2 24h limit 80 µg/m³",
+        "CO": "CPCB Ambient Air Quality — CO 8h limit 4 mg/m³",
+        "O3": "CPCB Ambient Air Quality — O3 8h limit 100 µg/m³",
+    }
+    law_ref = cpcb_refs.get(pollutant.upper().replace(" ", ""), "Environment (Protection) Act 1986 §5 & §15")
 
     system = (
-        "You are a concise expert environmental compliance analyst. "
-        "Respond in Markdown. Keep answers under 200 words."
+        "You are a concise expert environmental compliance analyst for Indian regulations. "
+        "Mention CPCB/EPA where relevant. Respond in Markdown. Keep under 200 words."
     )
     prompt = f"""Current Scenario:
 - Region: {region}
 - Industry: {industry}
 - Current Risk Score: {current_score}/100
+- Law: {law_ref}
 
 Proposed Action: Reduce {pollutant} emissions by {reduction_pct}%.
 
 Tasks:
 1. Brief environmental impact analysis.
-2. Estimated new risk score.
-3. Key secondary benefits or compliance risks.
+2. Estimated new risk score ({estimated_new}).
+3. Penalty exposure reduction (current vs post-reduction).
+4. Key compliance benefits.
 
 Be concise and use Markdown."""
 
@@ -68,6 +99,12 @@ Be concise and use Markdown."""
         "baseline_calculation": {
             "estimated_new_score": estimated_new,
             "note": "Based on a simplified regression weight model.",
+        },
+        "penalty_impact": {
+            "current_risk_band": f"{curr_lo:.1f}–{curr_hi:.1f} lakh ₹",
+            "new_risk_band": f"{new_lo:.1f}–{new_hi:.1f} lakh ₹",
+            "estimated_reduction_lakh": round(max(0, penalty_reduction), 1),
+            "cpcb_reference": law_ref,
         },
         "ai_analysis": ai_analysis,
     }

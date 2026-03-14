@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { api } from "@/lib/api";
 import { useAuth } from "@/context/AuthContext";
-import { Plus, Pencil, Trash2, X, MapPin } from "lucide-react";
+import { Plus, Pencil, Trash2, X, MapPin, Map } from "lucide-react";
 
 const emptyForm = { name: "", region: "", latitude: "", longitude: "", location_type: "general", assigned_team: "" };
 
@@ -9,12 +10,26 @@ const CREATE_ROLES = ["admin", "regional_officer", "monitoring_team"];
 const EDIT_ROLES = ["admin", "regional_officer"];
 const DELETE_ROLES = ["admin"];
 
+interface Location {
+  id: number;
+  name: string;
+  region: string;
+  latitude: number;
+  longitude: number;
+  location_type: string;
+  assigned_team: string;
+  is_active: boolean;
+  industry_id?: number;
+}
+
 export default function Locations() {
   const { user } = useAuth();
-  const [locations, setLocations] = useState<any[]>([]);
+  const [locations, setLocations] = useState<Location[]>([]);
   const [loading, setLoading] = useState(true);
   const [modal, setModal] = useState<"create" | "edit" | null>(null);
-  const [form, setForm] = useState<any>(emptyForm);
+  const [form, setForm] = useState<Partial<Location>>({ 
+    name: "", region: "", latitude: undefined, longitude: undefined, location_type: "general", assigned_team: "" 
+  });
   const [editId, setEditId] = useState<number | null>(null);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
@@ -25,14 +40,18 @@ export default function Locations() {
 
   const load = () => {
     setLoading(true);
-    api.locations.list().then(setLocations).finally(() => setLoading(false));
+    api.locations.list().then(res => setLocations(res as unknown as Location[])).finally(() => setLoading(false));
   };
   useEffect(() => { load(); }, []);
 
-  const set = (k: string, v: string) => setForm((f: any) => ({ ...f, [k]: v }));
-  const openCreate = () => { setForm(emptyForm); setModal("create"); setError(""); };
-  const openEdit = (loc: any) => {
-    setForm({ ...loc, latitude: String(loc.latitude), longitude: String(loc.longitude), assigned_team: loc.assigned_team ?? "" });
+  const set = (k: keyof Location, v: string | number | boolean) => setForm((f) => ({ ...f, [k]: v }));
+  const openCreate = () => { 
+    setForm({ name: "", region: "", latitude: undefined, longitude: undefined, location_type: "general", assigned_team: "" }); 
+    setModal("create"); 
+    setError(""); 
+  };
+  const openEdit = (loc: Location) => {
+    setForm({ ...loc });
     setEditId(loc.id); setModal("edit"); setError("");
   };
 
@@ -40,16 +59,23 @@ export default function Locations() {
     setSaving(true); setError("");
     try {
       const payload = { ...form, latitude: Number(form.latitude), longitude: Number(form.longitude) };
-      if (modal === "create") await api.locations.create(payload);
-      else if (editId) await api.locations.update(editId, payload);
+      if (modal === "create") await api.locations.create(payload as Record<string, unknown>);
+      else if (editId) await api.locations.update(editId, payload as Record<string, unknown>);
       setModal(null); load();
-    } catch (e: any) { setError(e.message); }
+    } catch (e: unknown) { 
+      setError(e instanceof Error ? e.message : "An error occurred"); 
+    }
     finally { setSaving(false); }
   };
 
   const handleDelete = async (id: number) => {
     if (!confirm("Delete location?")) return;
-    try { await api.locations.delete(id); load(); } catch (e: any) { alert(e.message); }
+    try { 
+      await api.locations.delete(id); 
+      load(); 
+    } catch (e: unknown) { 
+      alert(e instanceof Error ? e.message : "An error occurred"); 
+    }
   };
 
   return (
@@ -88,7 +114,15 @@ export default function Locations() {
                 </div>
               </div>
               <div className="space-y-1 text-xs text-gray-500">
-                <p>📍 {loc.latitude.toFixed(4)}°N, {loc.longitude.toFixed(4)}°E</p>
+                <p className="flex items-center gap-2">
+                  📍 {loc.latitude.toFixed(4)}°N, {loc.longitude.toFixed(4)}°E
+                  <Link
+                    to={`/dashboard/heatmap?lat=${loc.latitude}&lng=${loc.longitude}&zoom=14`}
+                    className="inline-flex items-center gap-1 text-blue-600 hover:text-blue-800 hover:underline ml-1"
+                  >
+                    <Map className="w-3.5 h-3.5" /> View on Map
+                  </Link>
+                </p>
                 <p>🏷 {loc.location_type}</p>
                 {loc.assigned_team && <p>👥 {loc.assigned_team}</p>}
               </div>
@@ -117,7 +151,7 @@ export default function Locations() {
               ].map(({ k, label, ph }) => (
                 <div key={k}>
                   <label className="block text-sm font-medium text-gray-700 mb-1">{label}</label>
-                  <input value={form[k]} onChange={e => set(k, e.target.value)}
+                  <input value={((form as Record<string, unknown>)[k] as string) || ""} onChange={e => set(k as keyof Location, e.target.value)}
                     className="w-full px-3 py-2 rounded-lg border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
                     placeholder={ph} />
                 </div>
@@ -126,7 +160,7 @@ export default function Locations() {
                 <label className="block text-sm font-medium text-gray-700 mb-1">Type</label>
                 <select value={form.location_type} onChange={e => set("location_type", e.target.value)}
                   className="w-full px-3 py-2 rounded-lg border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white">
-                  {["general","industrial","residential","commercial","forest","river"].map(t => <option key={t}>{t}</option>)}
+                  {["general","industrial","residential","commercial","forest","river","noise"].map(t => <option key={t}>{t}</option>)}
                 </select>
               </div>
             </div>
