@@ -41,7 +41,7 @@ app = FastAPI(
 # ── CORS ────────────────────────────────────────────────────────────────────────
 # Configure allowed origins via FRONTEND_URL env var
 # Local: http://localhost:8080, http://localhost:3000
-# Production: https://your-frontend.vercel.app
+# Production: https://your-frontend.netlify.app or https://your-frontend.vercel.app
 ALLOWED_ORIGINS = os.getenv("FRONTEND_URL", "http://localhost:8080").split(",")
 # For hackathon/demo: also allow common local dev ports
 if os.getenv("ENVIRONMENT") != "production":
@@ -51,6 +51,13 @@ if os.getenv("ENVIRONMENT") != "production":
         "http://127.0.0.1:8080",
         "http://127.0.0.1:3000",
     ])
+
+# Always allow Netlify/Vercel common patterns for deployment
+ALLOWED_ORIGINS.extend([
+    "https://prithvinet.netlify.app",
+    "https://prithvinet-cg.netlify.app",
+    "https://*.netlify.app",
+])
 
 app.add_middleware(
     CORSMiddleware,

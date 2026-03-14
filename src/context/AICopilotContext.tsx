@@ -53,6 +53,8 @@ interface AICopilotContextType {
   messages: ChatMessage[];
   addMessage: (message: Omit<ChatMessage, "id" | "timestamp">) => void;
   clearMessages: () => void;
+  triggerSimulatedConversation: (alert: AlertContext) => void;
+  isTyping: boolean;
 }
 
 const AICopilotContext = createContext<AICopilotContextType | undefined>(undefined);
@@ -60,6 +62,7 @@ const AICopilotContext = createContext<AICopilotContextType | undefined>(undefin
 export function AICopilotProvider({ children }: { children: React.ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
   const [alertContext, setAlertContext] = useState<AlertContext | null>(null);
+  const [isTyping, setIsTyping] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
       id: "welcome",
@@ -72,14 +75,6 @@ export function AICopilotProvider({ children }: { children: React.ReactNode }) {
   const openCopilot = useCallback((context?: AlertContext) => {
     if (context) {
       setAlertContext(context);
-      const greeting = generateContextualGreeting(context);
-      const greetingMessage: ChatMessage = {
-        id: `greeting-${Date.now()}`,
-        role: "assistant",
-        content: greeting,
-        timestamp: new Date(),
-      };
-      setMessages((prev) => [...prev, greetingMessage]);
     }
     setIsOpen(true);
   }, []);
@@ -113,6 +108,48 @@ export function AICopilotProvider({ children }: { children: React.ReactNode }) {
     ]);
   }, []);
 
+  // Trigger simulated conversation from notification
+  const triggerSimulatedConversation = useCallback((alert: AlertContext) => {
+    setAlertContext(alert);
+    setIsOpen(true);
+    
+    // Clear previous messages and start fresh
+    setMessages([
+      {
+        id: "welcome",
+        role: "assistant",
+        content: "Hello! I'm Prithvi Copilot, your AI assistant for environmental compliance. How can I help you today?",
+        timestamp: new Date(),
+      },
+    ]);
+
+    // Add user message after a short delay
+    setTimeout(() => {
+      const userMessage: ChatMessage = {
+        id: `user-${Date.now()}`,
+        role: "user",
+        content: `What is the SOP and penalty for the critical ${alert.pollutant} breach at ${alert.location}?`,
+        timestamp: new Date(),
+      };
+      setMessages((prev) => [...prev, userMessage]);
+      
+      // Show typing indicator
+      setIsTyping(true);
+      
+      // Add bot response after 1.5 seconds
+      setTimeout(() => {
+        setIsTyping(false);
+        const botResponse: ChatMessage = {
+          id: `bot-${Date.now()}`,
+          role: "assistant",
+          content: `🚨 ${alert.location} ${alert.pollutant} Breach SOP:\n1. Immediate Action: Dispatch Regional Officer for site inspection.\n2. Compliance Directive: Issue a Show Cause Notice under Section 21 of the Air Act.\n3. Penalty: Maximum penalty is ₹1 Lakh and/or up to 5 years imprisonment.\nWould you like me to draft the Show Cause Notice PDF?`,
+          timestamp: new Date(),
+        };
+        setMessages((prev) => [...prev, botResponse]);
+      }, 1500);
+    }, 300);
+  }, []);
+
   return (
     <AICopilotContext.Provider
       value={{
@@ -124,6 +161,8 @@ export function AICopilotProvider({ children }: { children: React.ReactNode }) {
         messages,
         addMessage,
         clearMessages,
+        triggerSimulatedConversation,
+        isTyping,
       }}
     >
       {children}

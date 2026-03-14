@@ -358,9 +358,8 @@ function TypingIndicator() {
 }
 
 export function FloatingAICopilot() {
-  const { isOpen, toggleCopilot, closeCopilot, messages, addMessage, clearMessages, alertContext } = useAICopilot();
+  const { isOpen, toggleCopilot, closeCopilot, messages, addMessage, clearMessages, alertContext, isTyping } = useAICopilot();
   const [inputValue, setInputValue] = useState("");
-  const [isTyping, setIsTyping] = useState(false);
   const [isMinimized, setIsMinimized] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -375,16 +374,30 @@ export function FloatingAICopilot() {
     const userContent = inputValue.trim();
     setInputValue("");
 
+    // Add user message immediately
     addMessage({ role: "user", content: userContent });
-    setIsTyping(true);
 
-    const processingTime = Math.min(1500 + userContent.length * 20, 3000);
-
-    setTimeout(() => {
-      setIsTyping(false);
-      const response = generateAIResponse(userContent, alertContext);
-      addMessage({ role: "assistant", content: response });
-    }, processingTime);
+    // Demo Mode response engine
+    const lowerInput = userContent.toLowerCase();
+    
+    if (lowerInput.includes('yes')) {
+      // Show typing indicator
+      setTimeout(() => {
+        // Add bot response after 1.5 seconds
+        addMessage({ 
+          role: "assistant", 
+          content: "✅ Show Cause Notice Generated. I have drafted the legal notice under Section 21 of the Air Act for the Siltara PM10 breach. [Download PDF] or type 'send' to email it directly to the Regional Officer."
+        });
+      }, 1500);
+    } else {
+      // Fallback for any other input
+      setTimeout(() => {
+        addMessage({ 
+          role: "assistant", 
+          content: "I am currently operating in Demo Mode. I am optimized to assist with the Siltara PM10 Crisis SOP right now."
+        });
+      }, 1500);
+    }
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {

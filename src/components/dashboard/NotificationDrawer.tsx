@@ -156,10 +156,10 @@ function AlertCard({ alert, onAskAI }: { alert: AlertContext; onAskAI: (alert: A
 }
 
 export function NotificationDrawer({ isOpen, onClose }: NotificationDrawerProps) {
-  const { openCopilot } = useAICopilot();
+  const { triggerSimulatedConversation } = useAICopilot();
 
   const handleAskAI = (alert: AlertContext) => {
-    openCopilot(alert);
+    triggerSimulatedConversation(alert);
     onClose();
   };
 
