@@ -16,9 +16,8 @@ from models.monitoring_location import MonitoringLocation
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 def hash_password(password: str) -> str:
-    # BCrypt limits passwords to 72 bytes. Encoded safely.
-    pw_bytes = password.encode('utf-8')[:72]
-    return pwd_context.hash(pw_bytes.decode('utf-8', 'ignore'))
+    # BCrypt limits passwords to 72 bytes. Truncate safely.
+    return pwd_context.hash(password[:72])
 
 def verify_password(plain: str, hashed: str) -> bool:
     pw_bytes = plain.encode('utf-8')[:72]
