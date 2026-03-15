@@ -118,9 +118,21 @@ async def ws_dashboard(websocket: WebSocket, token: Optional[str] = None):
 
 @app.on_event("startup")
 async def startup_seed():
-    from core.database import SessionLocal
     from seed_db import seed_database
+    from seed_priority_cases import seed_priority_cases
+    from seed_noise_stations import seed_noise_stations
     try:
         seed_database()
+        print("✅ seed_db complete")
     except Exception as e:
-        print(f"Seed skipped: {e}")
+        print(f"❌ seed_db failed: {e}")
+    try:
+        seed_priority_cases()
+        print("✅ seed_priority_cases complete")
+    except Exception as e:
+        print(f"❌ seed_priority_cases failed: {e}")
+    try:
+        seed_noise_stations()
+        print("✅ seed_noise_stations complete")
+    except Exception as e:
+        print(f"❌ seed_noise_stations failed: {e}")
