@@ -136,3 +136,9 @@ async def startup_seed():
         print("✅ seed_noise_stations complete")
     except Exception as e:
         print(f"❌ seed_noise_stations failed: {e}")
+    try:
+        from seed_real_emissions import seed_real_emissions
+        seed_real_emissions()
+        print("✅ seed_real_emissions complete")
+    except Exception as e:
+        print(f"❌ seed_real_emissions failed: {e}")
