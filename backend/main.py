@@ -114,3 +114,13 @@ async def ws_dashboard(websocket: WebSocket, token: Optional[str] = None):
             manager.disconnect(websocket)
     except Exception as e:
         print(f"⚠️ Failed to connect WebSocket: {e}")
+
+
+@app.on_event("startup")
+async def startup_seed():
+    from core.database import SessionLocal
+    from seed_db import seed_database
+    try:
+        seed_database()
+    except Exception as e:
+        print(f"Seed skipped: {e}")
