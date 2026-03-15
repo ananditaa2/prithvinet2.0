@@ -2,7 +2,19 @@
 
 > Real-time multi-parameter environmental monitoring for Chhattisgarh's industrial regions, built for CECB/CPCB compliance enforcement.
 
-## Architecture
+---
+
+## 🚀 Live Deployment
+
+| Environment | URL | Status |
+|-------------|-----|--------|
+| **Frontend** | https://prithvinet-2e98.vercel.app/ | Live |
+| **Backend API** | https://prithvinet-api-prod.onrender.com | Live |
+| **API Docs** | https://prithvinet-api-prod.onrender.com/docs | Swagger |
+
+---
+
+## 📋 Quick Start
 
 ```mermaid
 graph LR
