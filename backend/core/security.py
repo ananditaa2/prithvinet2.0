@@ -13,15 +13,17 @@ from models.industry import Industry
 from models.monitoring_location import MonitoringLocation
 
 # ─── Password Hashing ──────────────────────────────────────────────────────────
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto", bcrypt__rounds=10)
+
+def _truncate_password(password: str) -> str:
+    """Truncate password to 72 bytes (BCrypt hard limit) preserving valid UTF-8."""
+    return password.encode('utf-8')[:72].decode('utf-8', 'ignore')
 
 def hash_password(password: str) -> str:
-    # BCrypt limits passwords to 72 bytes. Truncate safely.
-    return pwd_context.hash(password[:72])
+    return pwd_context.hash(_truncate_password(password))
 
 def verify_password(plain: str, hashed: str) -> bool:
-    pw_bytes = plain.encode('utf-8')[:72]
-    return pwd_context.verify(pw_bytes.decode('utf-8', 'ignore'), hashed)
+    return pwd_context.verify(_truncate_password(plain), hashed)
 
 # ─── JWT ───────────────────────────────────────────────────────────────────────
 def create_access_token(data: dict) -> str:

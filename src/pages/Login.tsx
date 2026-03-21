@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "@/context/AuthContext";
-import { Landmark, Eye, EyeOff, LogIn } from "lucide-react";
+import { Landmark, Eye, EyeOff, LogIn, Zap } from "lucide-react";
 
 export default function Login() {
   const { login } = useAuth();
@@ -11,11 +11,18 @@ export default function Login() {
   const [showPw, setShowPw] = useState(false);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [warmingUp, setWarmingUp] = useState(false);
+  const warmupTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
     setLoading(true);
+    setWarmingUp(false);
+
+    // Show warm-up message after 3 seconds if still loading
+    warmupTimer.current = setTimeout(() => setWarmingUp(true), 3000);
+
     try {
       await login(email, password);
       navigate("/dashboard");
@@ -23,8 +30,15 @@ export default function Login() {
       setError(err instanceof Error ? err.message : "Login failed");
     } finally {
       setLoading(false);
+      setWarmingUp(false);
+      if (warmupTimer.current) clearTimeout(warmupTimer.current);
     }
   };
+
+  // Cleanup on unmount
+  useEffect(() => {
+    return () => { if (warmupTimer.current) clearTimeout(warmupTimer.current); };
+  }, []);
 
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col">
@@ -41,7 +55,7 @@ export default function Login() {
               <Landmark className="w-7 h-7 text-white" />
             </div>
             <h1 className="text-2xl font-bold text-blue-900 font-heading">PrithviNet</h1>
-            <p className="text-sm text-gray-500 mt-1">Environmental Compliance & Monitoring Platform</p>
+            <p className="text-sm text-gray-500 mt-1">Environmental Compliance &amp; Monitoring Platform</p>
           </div>
 
           {/* Card */}
@@ -51,6 +65,16 @@ export default function Login() {
             {error && (
               <div className="mb-4 p-3 rounded-lg bg-red-50 border border-red-200 text-red-700 text-sm">
                 {error}
+              </div>
+            )}
+
+            {/* Warm-up message shown after 3s of loading */}
+            {warmingUp && (
+              <div className="mb-4 p-3 rounded-lg bg-amber-50 border border-amber-200 text-amber-800 text-sm flex items-start gap-2">
+                <Zap className="w-4 h-4 mt-0.5 shrink-0 text-amber-500" />
+                <span>
+                  <strong>Server is waking up…</strong> The backend may take 20–40 seconds to start after inactivity. Please wait.
+                </span>
               </div>
             )}
 
@@ -98,7 +122,7 @@ export default function Login() {
                 ) : (
                   <LogIn className="w-4 h-4" />
                 )}
-                {loading ? "Signing in…" : "Sign In"}
+                {loading ? (warmingUp ? "Waking up server…" : "Signing in…") : "Sign In"}
               </button>
             </form>
 

@@ -5,7 +5,7 @@ import { api } from "@/lib/api";
 import { toast } from "sonner";
 import {
   LayoutDashboard, Factory, MapPin, Wind, FileBarChart2, Cpu,
-  Globe, LogOut, Landmark, Menu, X, User, Map, SearchCheck, FileWarning, Bell
+  Globe, LogOut, Landmark, Menu, X, User, Map, SearchCheck, FileWarning, Bell, Settings as SettingsIcon
 } from "lucide-react";
 import { NotificationDrawer } from "@/components/dashboard/NotificationDrawer";
 import { FloatingAICopilot } from "@/components/dashboard/FloatingAICopilot";
@@ -84,6 +84,12 @@ const navItems = [
     icon: Globe,
     label: "Citizen Portal",
     to: "/public",
+    roles: ["admin", "regional_officer", "monitoring_team", "industry_user", "citizen"],
+  },
+  {
+    icon: SettingsIcon,
+    label: "Settings",
+    to: "/dashboard/settings",
     roles: ["admin", "regional_officer", "monitoring_team", "industry_user", "citizen"],
   },
 ];

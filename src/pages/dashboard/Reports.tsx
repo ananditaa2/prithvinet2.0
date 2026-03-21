@@ -319,6 +319,62 @@ export default function Reports() {
     }, 500);
   };
 
+  const handleDownloadCSV = () => {
+    if (!reportData) return;
+    const { currentMonthName, year, totalReadings, complianceRate, activeAlerts, violations,
+      currentAQI, prevAQI, airQualityTrendData, waterComplianceData, noiseLevelData, regions } = reportData;
+
+    const rows: string[][] = [];
+    // Header
+    rows.push([`PrithviNet Environmental Compliance Report — ${currentMonthName} ${year}`]);
+    rows.push([`Generated: ${new Date().toLocaleString("en-IN")}`, "Chhattisgarh Environment Conservation Board"]);
+    rows.push([]);
+
+    // Summary stats
+    rows.push(["SUMMARY STATISTICS"]);
+    rows.push(["Metric", "Value"]);
+    rows.push(["Total Readings", String(totalReadings)]);
+    rows.push(["Compliance Rate (%)", String(complianceRate)]);
+    rows.push(["Active Alerts", String(activeAlerts)]);
+    rows.push(["Violations", String(violations)]);
+    rows.push(["Average AQI", String(currentAQI)]);
+    rows.push(["Previous Month AQI", String(prevAQI)]);
+    rows.push([]);
+
+    // Air quality trend
+    rows.push(["AIR QUALITY TREND (Weekly)"]);
+    rows.push(["Week", "Current Month AQI", "Previous Month AQI"]);
+    airQualityTrendData.forEach(r => rows.push([r.week, String(r.current), String(r.previous)]));
+    rows.push([]);
+
+    // Water compliance
+    rows.push(["WATER QUALITY PARAMETERS"]);
+    rows.push(["Parameter", "Current", "Previous", "Permissible Limit"]);
+    waterComplianceData.forEach(r => rows.push([r.parameter, String(r.current), String(r.previous), String(r.limit)]));
+    rows.push([]);
+
+    // Noise levels
+    rows.push(["NOISE LEVELS (dB)"]);
+    rows.push(["Zone", "Current", "Previous", "CPCB Limit"]);
+    noiseLevelData.forEach(r => rows.push([r.zone, String(r.current), String(r.previous), String(r.limit)]));
+    rows.push([]);
+
+    // Regional compliance
+    rows.push(["REGIONAL COMPLIANCE SCORES"]);
+    rows.push(["Region", "Score (%)", "Status"]);
+    regions.forEach(r => rows.push([r.region, String(r.score), r.status]));
+
+    // Build CSV string
+    const csv = rows.map(row => row.map(cell => `"${cell.replace(/"/g, '""')}"`).join(",")).join("\r\n");
+    const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `PrithviNet_Report_${currentMonthName}_${year}.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
   const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
   if (!canAccessReports) {
@@ -391,11 +447,19 @@ export default function Reports() {
             </div>
             <div className="flex gap-2">
               <Button 
+                onClick={handleDownloadCSV}
+                variant="outline"
+                className="bg-emerald-600 text-white hover:bg-emerald-700 border-0 gap-2"
+              >
+                <Download className="w-4 h-4" />
+                Export CSV
+              </Button>
+              <Button 
                 onClick={handleDownloadPDF}
                 className="bg-white text-slate-900 hover:bg-slate-100 gap-2"
               >
-                <Download className="w-4 h-4" />
-                Download PDF
+                <Printer className="w-4 h-4" />
+                Print / PDF
               </Button>
             </div>
           </div>

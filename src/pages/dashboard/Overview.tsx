@@ -5,7 +5,7 @@ import {
   AlertTriangle, Factory, MapPin, Wind, CheckCircle,
   TrendingUp, Droplets, Volume2, ShieldAlert, Activity,
   Sparkles, Download, PhoneCall, Check, Wand2,
-  Newspaper, Plus
+  Newspaper, Plus, BellRing
 } from "lucide-react";
 import { PublishStoryModal } from "@/components/modals/PublishStoryModal";
 import { Button } from "@/components/ui/button";
@@ -353,14 +353,14 @@ export default function Overview() {
   const [data, setData] = useState<Record<string, unknown>[]>([]);
   const [isStoryModalOpen, setIsStoryModalOpen] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [lastUpdated, setLastUpdated] = useState<Date>(new Date());
 
   const canViewViolationLogs = !!user && ["monitoring_team", "regional_officer", "admin"].includes(user.role);
   const isIndustryUser       = user?.role === "industry_user";
   const canViewRegionScoped  = user?.role === "regional_officer";
   const canManageCitizenPortal = user?.role === "admin";
 
-  useEffect(() => {
-    setLoading(true);
+  const loadData = () => {
     Promise.all([
       api.alerts.list({ status: "active", limit: "100" }),
       api.industries.list(),
@@ -388,9 +388,17 @@ export default function Overview() {
       setIndustries(si as Industry[]);
       setLocations(sl as Location[]);
       setData(sd as Record<string, unknown>[]);
+      setLastUpdated(new Date());
     })
     .catch(console.error)
     .finally(() => setLoading(false));
+  };
+
+  useEffect(() => {
+    setLoading(true);
+    loadData();
+    const interval = setInterval(loadData, 60000); // 60s auto-refresh
+    return () => clearInterval(interval);
   }, [isIndustryUser, canViewRegionScoped, user?.email, user?.name]);
 
   // Derived stats
@@ -426,7 +434,7 @@ export default function Overview() {
       <div className="flex items-start justify-between">
         <div>
           <h1 className="text-2xl font-extrabold text-gray-900">{title}</h1>
-          <p className="text-sm text-gray-400 mt-1">Real-time environmental intelligence · As of {new Date().toLocaleString("en-IN")}</p>
+          <p className="text-sm text-gray-400 mt-1">Real-time environmental intelligence · As of {lastUpdated.toLocaleString("en-IN")}</p>
         </div>
         <div className="flex items-center gap-3">
           <Button variant="outline" size="sm" className="h-8 gap-1.5 bg-white bg-opacity-80 backdrop-blur-sm border-gray-200 text-gray-600 hover:bg-gray-50" onClick={() => window.print()}>

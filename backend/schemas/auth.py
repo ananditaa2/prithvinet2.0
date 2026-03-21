@@ -10,6 +10,15 @@ class UserRegister(BaseModel):
     role: str = "citizen"  # admin | regional_officer | monitoring_team | industry_user | citizen
 
 
+class UserUpdate(BaseModel):
+    name: Optional[str] = None
+
+
+class ChangePassword(BaseModel):
+    current_password: str
+    new_password: str
+
+
 class UserLogin(BaseModel):
     email: str
     password: str

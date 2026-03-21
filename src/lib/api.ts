@@ -63,6 +63,10 @@ export const api = {
     register: (data: Record<string, unknown>) =>
       request<AuthResponse>("/auth/register", { method: "POST", body: JSON.stringify(data) }),
     me: () => request<User>("/auth/me"),
+    updateProfile: (data: { name: string }) =>
+      request<User>("/auth/me", { method: "PATCH", body: JSON.stringify(data) }),
+    changePassword: (data: Record<string, string>) =>
+      request<{ message: string }>("/auth/change-password", { method: "POST", body: JSON.stringify(data) }),
     users: () => request<User[]>("/auth/users"),
   },
 

@@ -22,6 +22,7 @@ import Reports from "./pages/dashboard/Reports";
 import AITools from "./pages/dashboard/AITools";
 import HeatmapView from "./pages/dashboard/HeatmapView";
 import InspectionPriority from "./pages/dashboard/InspectionPriority";
+import Settings from "./pages/dashboard/Settings";
 import CasesToAct from "./pages/dashboard/CasesToAct";
 
 const queryClient = new QueryClient();
@@ -60,6 +61,7 @@ const App = () => (
                   <Route path="reports" element={<Reports />} />
                   <Route path="ai" element={<AITools />} />
                   <Route path="heatmap" element={<HeatmapView />} />
+                  <Route path="settings" element={<Settings />} />
                 </Route>
 
                 <Route path="*" element={<NotFound />} />

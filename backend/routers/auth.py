@@ -4,7 +4,7 @@ from sqlalchemy.orm import Session
 from core.database import get_db
 from core.security import hash_password, verify_password, create_access_token, get_current_user
 from models.user import User
-from schemas.auth import UserRegister, UserLogin, UserOut, TokenOut
+from schemas.auth import UserRegister, UserLogin, UserOut, TokenOut, UserUpdate, ChangePassword
 
 router = APIRouter(prefix="/auth", tags=["Authentication"])
 
@@ -51,6 +51,24 @@ def login(payload: UserLogin, db: Session = Depends(get_db)):
 @router.get("/me", response_model=UserOut)
 def me(current_user=Depends(get_current_user)):
     return current_user
+
+
+@router.patch("/me", response_model=UserOut)
+def update_me(payload: UserUpdate, db: Session = Depends(get_db), current_user=Depends(get_current_user)):
+    if payload.name is not None:
+        current_user.name = payload.name
+    db.commit()
+    db.refresh(current_user)
+    return current_user
+
+
+@router.post("/change-password")
+def change_password(payload: ChangePassword, db: Session = Depends(get_db), current_user=Depends(get_current_user)):
+    if not verify_password(payload.current_password, current_user.password_hash):
+        raise HTTPException(400, "Incorrect current password.")
+    current_user.password_hash = hash_password(payload.new_password)
+    db.commit()
+    return {"message": "Password updated successfully."}
 
 
 @router.get("/users", response_model=list[UserOut])
