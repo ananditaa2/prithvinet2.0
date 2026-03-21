@@ -342,33 +342,41 @@ export default function CitizenPortal() {
     setLoading(true);
     try {
       if (t === "air") {
-        await new Promise(r => setTimeout(r, 500));
-        const filtered = regionFilter === "All Regions" 
-          ? dummyAirData 
-          : dummyAirData.filter(d => d.location.region === regionFilter);
-        setAirData({ data: filtered });
+        const result = await api.public.airQuality(regionFilter === "All Regions" ? undefined : regionFilter);
+        const data = (result as { data: AirReading[] }).data || [];
+        const fallback = regionFilter === "All Regions" ? dummyAirData : dummyAirData.filter(d => d.location.region === regionFilter);
+        setAirData({ data: data.length > 0 ? data : fallback });
       }
       else if (t === "noise") {
-        await new Promise(r => setTimeout(r, 500));
-        const filtered = regionFilter === "All Regions" 
-          ? dummyNoiseData 
-          : dummyNoiseData.filter(d => d.location.region === regionFilter);
+        // Will implement noise API if time permits, until then fallback
+        await new Promise(r => setTimeout(r, 400));
+        const filtered = regionFilter === "All Regions" ? dummyNoiseData : dummyNoiseData.filter(d => d.location.region === regionFilter);
         setNoiseData({ data: filtered });
       }
       else if (t === "alerts") {
-        await new Promise(r => setTimeout(r, 300));
-        const filtered = regionFilter === "All Regions" 
-          ? dummyAlerts 
-          : dummyAlerts.filter(a => a.affected_area.toLowerCase().includes(regionFilter.toLowerCase()));
-        setAlertsData({ alerts: filtered.length ? filtered : dummyAlerts });
+        const result = await api.public.alerts();
+        const data = (result as { alerts: any[] }).alerts || [];
+        // Map backend alerts to the Alert interface format expected by Citizen portal
+        const mapped = data.map(a => ({
+          ...a,
+          title: `Alert: ${a.alert_type}`,
+          affected_area: `Location ID ${a.location_id || 'Unknown'}`,
+          advisory: 'Please follow local authorities instructions.',
+          icon: a.pollutant === 'noise' ? 'volume' : (a.pollutant === 'water' ? 'droplets' : 'wind')
+        }));
+        const combined = mapped.length > 0 ? mapped : dummyAlerts;
+        const filtered = regionFilter === "All Regions" ? combined : combined.filter(a => a.affected_area.toLowerCase().includes(regionFilter.toLowerCase()));
+        setAlertsData({ alerts: filtered.length > 0 ? filtered : dummyAlerts });
       }
       else if (t === "industries") {
         const result = await api.public.industries(regionFilter === "All Regions" ? undefined : regionFilter);
-        setIndustryData(result as unknown as { industries: Industry[] });
+        const data = (result as { industries: Industry[] }).industries || [];
+        setIndustryData({ industries: data });
       }
       else if (t === "water") {
         const result = await api.public.waterQuality(regionFilter === "All Regions" ? undefined : regionFilter);
-        setWaterData(result as unknown as { data: WaterReading[] });
+        const data = (result as { data: WaterReading[] }).data || [];
+        setWaterData({ data: data });
       }
     } catch (e) {
       console.error("Failed to load tab data:", e);
@@ -685,7 +693,7 @@ export default function CitizenPortal() {
                   <span className={`px-2 py-0.5 text-xs font-semibold rounded-full ${indStatus[i.status] || "bg-gray-100 text-gray-600"}`}>{i.status}</span>
                 </div>
                 <p className="text-xs text-gray-500">{i.type} · {i.region}</p>
-                {i.lat && <p className="text-xs text-gray-400 mt-1">📍 {i.lat.toFixed(3)}, {i.lng.toFixed(3)}</p>}
+                {i.lat && i.lng && <p className="text-xs text-gray-400 mt-1">📍 {i.lat.toFixed(3)}, {i.lng.toFixed(3)}</p>}
               </div>
             ))}
           </div>
