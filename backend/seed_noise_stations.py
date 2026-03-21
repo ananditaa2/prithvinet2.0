@@ -80,24 +80,23 @@ def seed_noise_stations():
         
         for station_data in noise_stations:
             # Check if station already exists
-            existing = db.query(MonitoringLocation).filter_by(name=station_data["name"]).first()
-            if existing:
-                print(f"  Station '{station_data['name']}' already exists, skipping...")
-                continue
-            
-            # Create monitoring location
-            location = MonitoringLocation(
-                name=station_data["name"],
-                region=station_data["region"],
-                latitude=station_data["latitude"],
-                longitude=station_data["longitude"],
-                location_type=station_data["location_type"],
-                industry_id=station_data["industry_id"],
-                assigned_team="Noise Monitoring Team A",
-                is_active=1
-            )
-            db.add(location)
-            db.flush()  # Get the ID
+            location = db.query(MonitoringLocation).filter_by(name=station_data["name"]).first()
+            if location:
+                print(f"  Station '{station_data['name']}' found, generating new noise readings...")
+            else:
+                # Create monitoring location
+                location = MonitoringLocation(
+                    name=station_data["name"],
+                    region=station_data["region"],
+                    latitude=station_data["latitude"],
+                    longitude=station_data["longitude"],
+                    location_type=station_data["location_type"],
+                    industry_id=station_data["industry_id"],
+                    assigned_team="Noise Monitoring Team A",
+                    is_active=1
+                )
+                db.add(location)
+                db.flush()  # Get the ID
             
             # Create noise data readings (3 readings over last 6 hours to show activity)
             now = datetime.now(timezone.utc)

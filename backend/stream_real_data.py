@@ -14,7 +14,7 @@ from models.environmental_data import EnvironmentalData
 from services.alert_service import check_and_trigger_alerts
 
 # Load the real JSON files
-REPO_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "temp_repo")
+REPO_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data")
 JSON_FILES = [
     "emission_logs_AQI_bilaspur.json",
     "emission_logs_bhiali_aqi.json",
