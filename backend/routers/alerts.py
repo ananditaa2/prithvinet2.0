@@ -324,6 +324,74 @@ def cases_to_act(
     return {"cases": cases, "count": len(cases)}
 
 
+@router.get("/alerts/pollution-zones")
+def get_pollution_zones(
+    limit: int = 10,
+    db: Session = Depends(get_db),
+    _=Depends(get_current_user),
+):
+    """
+    Returns the top high-pollution zones based on real active alerts +
+    latest environmental readings. Used by the real-time crisis alert panel.
+    """
+    # Get active alerts with location data, ordered by severity
+    severity_order = {"critical": 0, "high": 1, "medium": 2, "low": 3}
+
+    from sqlalchemy.orm import joinedload
+    alerts_q = (
+        db.query(Alert)
+        .options(joinedload(Alert.location), joinedload(Alert.industry))
+        .filter(Alert.status == "active", Alert.location_id.isnot(None))
+        .order_by(Alert.created_at.desc())
+        .limit(limit * 3)
+        .all()
+    )
+
+    seen_locations = set()
+    zones = []
+    for a in alerts_q:
+        loc_id = a.location_id
+        if loc_id in seen_locations:
+            continue
+        seen_locations.add(loc_id)
+
+        # Get latest environmental reading for this location
+        latest = (
+            db.query(EnvironmentalData)
+            .filter(EnvironmentalData.location_id == loc_id)
+            .order_by(EnvironmentalData.recorded_at.desc())
+            .first()
+        )
+        aqi = latest.aqi if latest and latest.aqi else None
+
+        zones.append({
+            "alert_id": a.id,
+            "location_id": loc_id,
+            "location_name": a.location.name if a.location else f"Location #{loc_id}",
+            "region": a.location.region if a.location else "Unknown",
+            "industry_name": a.industry.name if a.industry else None,
+            "pollutant": a.pollutant,
+            "measured_value": a.measured_value,
+            "threshold_value": a.threshold_value,
+            "severity": a.severity,
+            "message": a.message,
+            "aqi": aqi,
+            "created_at": a.created_at.isoformat() if a.created_at else None,
+        })
+
+        if len(zones) >= limit:
+            break
+
+    # Sort by severity then by AQI descending
+    zones.sort(key=lambda z: (severity_order.get(z["severity"], 9), -(z["aqi"] or 0)))
+    return {
+        "zones": zones,
+        "count": len(zones),
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+    }
+
+
+
 # ─────────────────────────────────────────────────────────────────────────────
 # NOTIFICATIONS
 # ─────────────────────────────────────────────────────────────────────────────

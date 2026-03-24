@@ -171,3 +171,43 @@ async def answer_copilot(question: str, context: str = "") -> str:
         return await asyncio.to_thread(_call_groq, system, prompt, 400)
     except Exception as e:
         return f"Error: {e}"
+
+
+async def generate_aqi_suggestions(aqi: float, region: str, role: str) -> str:
+    """
+    Generate targeted, role-specific AI action suggestions based on current AQI.
+    Role can be: industry, government, citizen, environment_team
+    """
+    aqi_label = (
+        "Good" if aqi <= 50 else
+        "Satisfactory" if aqi <= 100 else
+        "Moderate" if aqi <= 150 else
+        "Poor" if aqi <= 200 else
+        "Very Poor" if aqi <= 300 else
+        "Severe"
+    )
+
+    role_descriptions = {
+        "industry": "industrial plant operators and factory compliance officers",
+        "government": "regional government officers, CECB inspectors, and pollution control board officials",
+        "citizen": "the general public, residents, and citizens",
+        "environment_team": "environmental monitoring teams and field scientists",
+    }
+    role_desc = role_descriptions.get(role, role_descriptions["government"])
+
+    system = (
+        "You are an AI environmental advisor for PrithviNet, India's environmental compliance platform. "
+        "You specialize in CPCB standards, EPA 1986, and Indian pollution law. "
+        "Give 3 specific, actionable, numbered steps for immediate action. "
+        "Be concise and direct. Use Markdown. Max 200 words."
+    )
+    prompt = (
+        f"Current AQI in {region}: **{aqi:.0f} ({aqi_label})**\n\n"
+        f"Generate 3 immediate action points specifically for {role_desc}.\n"
+        f"Reference Indian environmental law (CPCB/EPA 1986) where relevant.\n"
+        f"Focus on actions that can be taken RIGHT NOW given this AQI level."
+    )
+    try:
+        return await asyncio.to_thread(_call_groq, system, prompt, 350)
+    except Exception as e:
+        return f"AI suggestions unavailable: {e}"

@@ -126,6 +126,8 @@ export const api = {
     notifications: () => request<Record<string, unknown>[]>("/notifications"),
     markRead: (id: number) =>
       request<Record<string, unknown>>(`/notifications/${id}/read`, { method: "PATCH" }),
+    pollutionZones: (limit = 10) =>
+      request<Record<string, unknown>>(`/alerts/pollution-zones?limit=${limit}`),
   },
 
   // ── Reports ────────────────────────────────────────────────────────────────
@@ -149,6 +151,11 @@ export const api = {
       request<Record<string, unknown>>("/ai/copilot", {
         method: "POST",
         body: JSON.stringify({ question, context }),
+      }),
+    aqiSuggestions: (aqi: number, region: string, role: string) =>
+      request<Record<string, unknown>>("/ai/aqi-suggestions", {
+        method: "POST",
+        body: JSON.stringify({ aqi, region, role }),
       }),
   },
 

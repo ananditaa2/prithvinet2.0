@@ -28,6 +28,12 @@ class CopilotRequest(BaseModel):
     context: Optional[str] = ""
 
 
+class AqiSuggestionsRequest(BaseModel):
+    aqi: float
+    region: str
+    role: str = "government"  # industry | government | citizen | environment_team
+
+
 @router.post("/simulate-risk")
 async def simulate_risk(
     request: SimulationRequest,
@@ -75,3 +81,20 @@ async def copilot(
 ):
     answer = await ai_service.answer_copilot(request.question, request.context or "")
     return {"question": request.question, "answer": answer}
+
+
+@router.post("/aqi-suggestions")
+async def aqi_suggestions(
+    request: AqiSuggestionsRequest,
+    _=Depends(get_current_user),
+):
+    """Generate role-specific live AI action suggestions for the given AQI level."""
+    suggestions = await ai_service.generate_aqi_suggestions(
+        request.aqi, request.region, request.role
+    )
+    return {
+        "aqi": request.aqi,
+        "region": request.region,
+        "role": request.role,
+        "suggestions": suggestions,
+    }
