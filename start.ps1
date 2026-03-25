@@ -1,10 +1,10 @@
 # PrithviNet Startup Script
-# Starts backend (FastAPI on :8000) and frontend (Vite on :8080)
+# Starts backend (FastAPI on :8001) and frontend (Vite on :8080)
 
 $root = $PSScriptRoot
 
-Write-Host "Starting PrithviNet Backend (port 8000)..." -ForegroundColor Cyan
-Start-Process powershell -ArgumentList "-NoExit", "-Command", "cd '$root\backend'; ..\\.venv\Scripts\uvicorn.exe main:app --reload --port 8000" -WindowStyle Normal
+Write-Host "Starting PrithviNet Backend (port 8001)..." -ForegroundColor Cyan
+Start-Process powershell -ArgumentList "-NoExit", "-Command", "cd '$root\backend'; ..\\.venv\Scripts\uvicorn.exe main:app --reload --port 8001" -WindowStyle Normal
 
 Start-Sleep -Seconds 2
 
@@ -14,5 +14,5 @@ Start-Process powershell -ArgumentList "-NoExit", "-Command", "cd '$root'; npm r
 Write-Host ""
 Write-Host "Both servers starting!" -ForegroundColor Yellow
 Write-Host "  Frontend: http://localhost:8080" -ForegroundColor Green
-Write-Host "  Backend:  https://prithvinet-api-prod.onrender.com" -ForegroundColor Cyan
-Write-Host "  API Docs: https://prithvinet-api-prod.onrender.com/docs" -ForegroundColor Cyan
+Write-Host "  Backend:  http://localhost:8001" -ForegroundColor Cyan
+Write-Host "  API Docs: http://localhost:8001/docs" -ForegroundColor Cyan

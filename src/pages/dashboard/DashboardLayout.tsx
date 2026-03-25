@@ -5,7 +5,7 @@ import { api } from "@/lib/api";
 import { toast } from "sonner";
 import {
   LayoutDashboard, Factory, MapPin, Wind, FileBarChart2, Cpu,
-  Globe, LogOut, Landmark, Menu, X, User, Map, SearchCheck, FileWarning, Bell, Settings as SettingsIcon
+  Globe, LogOut, Landmark, Menu, X, User, Map, SearchCheck, FileWarning, Bell, Settings as SettingsIcon, Brain
 } from "lucide-react";
 import { NotificationDrawer } from "@/components/dashboard/NotificationDrawer";
 import { FloatingAICopilot } from "@/components/dashboard/FloatingAICopilot";
@@ -73,6 +73,12 @@ const navItems = [
     label: "AI Tools",
     to: "/dashboard/ai",
     roles: ["admin", "regional_officer"],
+  },
+  {
+    icon: Brain,
+    label: "AI Predictions",
+    to: "/dashboard/predictions",
+    roles: ["admin", "regional_officer", "monitoring_team", "citizen"],
   },
   {
     icon: Map,

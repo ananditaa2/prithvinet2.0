@@ -270,56 +270,68 @@ export default function HeatmapView() {
   const [waterStations, setWaterStations] = useState<WaterMarkerPoint[]>([]);
   const [noiseStations, setNoiseStations] = useState<NoiseMarkerPoint[]>([]);
 
-  // Data Loading
+  // Data Loading — each fetch is independent so one failure doesn't kill others
   useEffect(() => {
+    // Air quality (public - no auth needed)
+    api.public.airQuality().then((airRes: any) => {
+      const airData = airRes?.data || [];
+      const airMapped = airData
+        .filter((s: any) => s.location?.lat != null && s.location?.lng != null)
+        .map((s: any) => {
+          const aqi = s.aqi ?? null;
+          const airStatus = getAirStatus(aqi);
+          const evidence = getAirEvidence(s.pm10, aqi);
+          return {
+            id: String(s.location?.id || Math.random()),
+            name: s.location?.name || "Unknown Air Station",
+            type: "Air Monitoring",
+            region: s.location?.region || "Unknown",
+            lat: s.location.lat, lng: s.location.lng,
+            aqi,
+            category: airStatus.category,
+            compliance: evidence.status,
+            date: s.recorded_at || "Recent",
+            pollutants: { pm25: s.pm25, pm10: s.pm10 },
+            source: s.source || "",
+            note: s.notes || "",
+          };
+        });
+      setAirStations(airMapped);
+      console.log(`✅ Air: ${airMapped.length} stations loaded`);
+    }).catch((e: any) => console.error("Air load failed:", e));
+
+    // Water quality (public - no auth needed)
+    api.public.waterQuality().then((waterRes: any) => {
+      const waterData = waterRes?.data || [];
+      const waterMapped = waterData
+        .filter((s: any) => s.location?.lat != null && s.location?.lng != null)
+        .map((s: any) => ({
+          id: String(s.location?.id || Math.random()),
+          name: s.location?.name || "Unknown Water Station",
+          type: "Water Monitoring",
+          city: s.location?.region || "Unknown",
+          waterBody: "Local Water Body",
+          lat: s.location.lat,
+          lng: s.location.lng,
+          latestDO: s.dissolved_oxygen ?? null,
+          latestBOD: s.bod ?? null,
+          latestFC: null, latestTC: null,
+          latestStatus: ((s.bod ?? 0) > 5 || (s.dissolved_oxygen ?? 99) < 4) ? "VIOLATION" : "SATISFACTORY",
+          latestPeriod: s.recorded_at || "Recent",
+        }));
+      setWaterStations(waterMapped);
+      console.log(`✅ Water: ${waterMapped.length} stations loaded`);
+    }).catch((e: any) => console.error("Water load failed:", e));
+
+    // Noise (authenticated endpoint) — load locations first then join
     Promise.all([
-      api.public.airQuality(),
-      api.public.waterQuality(),
       api.data.list({ data_type: "noise", limit: "2000" }),
       api.locations.list(),
-    ]).then(([airRes, waterRes, noiseRows, locations]) => {
-      const airData = (airRes as any)?.data || [];
-      const airMapped = airData.filter((s: any) => s.location?.lat != null && s.location?.lng != null).map((s: any) => {
-        const aqi = s.aqi ?? null;
-        const airStatus = getAirStatus(aqi);
-        const evidence = getAirEvidence(s.pm10, aqi);
-        return {
-          id: String(s.location?.id || Math.random()),
-          name: s.location?.name || "Unknown Air Station",
-          type: "Air Monitoring",
-          region: s.location?.region || "Unknown",
-          lat: s.location?.lat, lng: s.location?.lng,
-          aqi,
-          category: airStatus.category,
-          compliance: evidence.status,
-          date: s.recorded_at || "Recent",
-          pollutants: { pm25: s.pm25, pm10: s.pm10 },
-          source: s.source || "",
-          note: s.notes || "",
-        };
-      });
-      setAirStations(airMapped);
-
-      const waterData = (waterRes as any)?.data || [];
-      const waterMapped = waterData.filter((s: any) => s.location?.lat != null && s.location?.lng != null).map((s: any) => ({
-        id: String(s.location?.id || Math.random()),
-        name: s.location?.name || "Unknown Water Station",
-        type: "Water Monitoring",
-        city: s.location?.region || "Unknown",
-        waterBody: "Local Water Body",
-        lat: s.location?.lat, lng: s.location?.lng,
-        latestDO: s.dissolved_oxygen ?? null,
-        latestBOD: s.bod ?? null,
-        latestFC: null, latestTC: null,
-        latestStatus: ((s.bod ?? 0) > 5 || ((s.dissolved_oxygen ?? Infinity) < 4)) ? "VIOLATION" : "SATISFACTORY",
-        latestPeriod: s.recorded_at || "Recent"
-      }));
-      setWaterStations(waterMapped);
-
-      const locationById = new Map((locations || []).map((location: any) => [location.id, location]));
+    ]).then(([noiseRows, locations]) => {
+      const locationById = new Map((locations || []).map((loc: any) => [loc.id, loc]));
       const noiseData = (noiseRows || []).filter((d: any) => {
-        const location = locationById.get(d.location_id);
-        return location?.latitude != null && location?.longitude != null;
+        const loc = locationById.get(d.location_id);
+        return loc?.latitude != null && loc?.longitude != null;
       });
       const noiseByLoc = new Map<number, any>();
       noiseData.forEach((d: any) => {
@@ -337,10 +349,11 @@ export default function HeatmapView() {
         avgDb: s.decibel_level ?? 0,
         limit: getNoiseLimit(s.noise_location_type || locationById.get(s.location_id)?.location_type),
         violations: (s.decibel_level ?? 0) > getNoiseLimit(s.noise_location_type || locationById.get(s.location_id)?.location_type) ? 1 : 0,
-        status: (((s.decibel_level ?? 0) > getNoiseLimit(s.noise_location_type || locationById.get(s.location_id)?.location_type)) ? "EXCEEDS" : "WITHIN LIMIT") as "EXCEEDS" | "WITHIN LIMIT"
+        status: ((s.decibel_level ?? 0) > getNoiseLimit(s.noise_location_type || locationById.get(s.location_id)?.location_type) ? "EXCEEDS" : "WITHIN LIMIT") as "EXCEEDS" | "WITHIN LIMIT",
       }));
       setNoiseStations(noiseMapped);
-    }).catch(console.error);
+      console.log(`✅ Noise: ${noiseMapped.length} stations loaded`);
+    }).catch((e: any) => console.error("Noise load failed:", e));
   }, []);
 
   // Crisis Zones

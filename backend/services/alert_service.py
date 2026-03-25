@@ -51,13 +51,24 @@ def _emit_notification(notification: Notification) -> None:
 
 
 def _severity(value: float, thresholds: dict) -> str | None:
-    """Return severity string or None if within safe limits."""
-    if value >= thresholds["critical"]:
+    """Return severity string or None if within safe limits.
+
+    Handles two threshold key schemas:
+    - Air tiers: {"warning": ..., "high": ..., "critical": ...}
+    - Water/Noise: {"low": ..., "medium": ..., "high": ..., "critical": ...}
+    """
+    if value >= thresholds.get("critical", float("inf")):
         return "critical"
-    if value >= thresholds["high"]:
+    if value >= thresholds.get("high", float("inf")):
         return "high"
-    if value >= thresholds["warning"]:
-        return "medium"  # warning maps to medium severity
+    # "warning" key used by air tiers; "medium" used by water/noise thresholds
+    medium_threshold = thresholds.get("warning") or thresholds.get("medium")
+    if medium_threshold is not None and value >= medium_threshold:
+        return "medium"
+    # "low" key only exists in water/noise thresholds
+    low_threshold = thresholds.get("low")
+    if low_threshold is not None and value >= low_threshold:
+        return "low"
     return None
 
 

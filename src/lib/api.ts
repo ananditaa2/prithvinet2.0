@@ -1,7 +1,7 @@
-// Base URL for API - change this to your Render backend URL after deployment
-// Local: https://prithvinet-api-prod.onrender.com
-// Production: https://prithvinet-backend.onrender.com client — all calls go through here
-const BASE_URL = (import.meta.env.VITE_API_URL ?? "https://prithvinet-api-prod.onrender.com").replace(/\/$/, "");
+// In dev, default to the local fixed backend instance on :8001.
+// Deployment can override with VITE_API_URL.
+const DEFAULT_BASE_URL = import.meta.env.DEV ? "http://127.0.0.1:8001" : "/api";
+const BASE_URL = (import.meta.env.VITE_API_URL ?? DEFAULT_BASE_URL).replace(/\/$/, "");
 
 export interface User {
   id: number;
@@ -32,9 +32,15 @@ async function request<T>(
 
   let res: Response;
   try {
+    // #region agent log
+    fetch('http://127.0.0.1:7687/ingest/48847fa3-258e-4f26-90ec-c6831f033fe2',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'a22406'},body:JSON.stringify({sessionId:'a22406',runId:'initial',hypothesisId:'H7',location:'src/lib/api.ts:request',message:'API request start',data:{baseUrl:BASE_URL,path,method:options.method ?? 'GET'},timestamp:Date.now()})}).catch(()=>{});
+    // #endregion
     res = await fetch(`${BASE_URL}${path}`, { ...options, headers });
   } catch (err: unknown) {
     const message = err instanceof Error ? err.message : "Unknown error";
+    // #region agent log
+    fetch('http://127.0.0.1:7687/ingest/48847fa3-258e-4f26-90ec-c6831f033fe2',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'a22406'},body:JSON.stringify({sessionId:'a22406',runId:'initial',hypothesisId:'H8',location:'src/lib/api.ts:request',message:'API network error',data:{baseUrl:BASE_URL,path,method:options.method ?? 'GET',error:message},timestamp:Date.now()})}).catch(()=>{});
+    // #endregion
     // Network errors (e.g. backend not running, CORS, DNS failures) come through here.
     throw new Error(
       `Network error connecting to API (${BASE_URL}${path}): ${message}. ` +
@@ -44,6 +50,9 @@ async function request<T>(
 
   if (!res.ok) {
     const err = await res.json().catch(() => ({ detail: res.statusText }));
+    // #region agent log
+    fetch('http://127.0.0.1:7687/ingest/48847fa3-258e-4f26-90ec-c6831f033fe2',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'a22406'},body:JSON.stringify({sessionId:'a22406',runId:'initial',hypothesisId:'H9',location:'src/lib/api.ts:request',message:'API non-OK response',data:{baseUrl:BASE_URL,path,status:res.status,statusText:res.statusText,detail:(err as {detail?: string}).detail,type:(err as {type?: string}).type},timestamp:Date.now()})}).catch(()=>{});
+    // #endregion
     const msg = err.detail || err.message || "Request failed";
     const type = err.type ? ` (${err.type})` : "";
     throw new Error(`${msg}${type}`);

@@ -1,0 +1,119 @@
+[
+  {
+    "location": {
+      "id": 2,
+      "name": "Shivnath River Discharge",
+      "region": "Bhilai",
+      "lat": 21.18,
+      "lng": 81.34
+    },
+    "ph": 6.948624306218772,
+    "bod": 14.061382870150453,
+    "dissolved_oxygen": 4.859763446090245,
+    "recorded_at": "2026-03-12T09:13:28.829700"
+  },
+  {
+    "location": {
+      "id": 4,
+      "name": "Korba Ash Pond",
+      "region": "Korba",
+      "lat": 22.37,
+      "lng": 82.69
+    },
+    "ph": 7.578507970347939,
+    "bod": 22.95976303818017,
+    "dissolved_oxygen": 4.688379372223366,
+    "recorded_at": "2026-03-12T09:13:28.829700"
+  },
+  {
+    "location": {
+      "id": 8,
+      "name": "Hasdeo River Upstream",
+      "region": "Korba",
+      "lat": 22.38,
+      "lng": 82.67
+    },
+    "ph": 7.470563020584121,
+    "bod": 19.03123937698313,
+    "dissolved_oxygen": 5.491414303020649,
+    "recorded_at": "2026-03-12T09:13:28.829700"
+  },
+  {
+    "location": {
+      "id": 40,
+      "name": "Kharun River Intake Well",
+      "region": "Raipur",
+      "lat": 21.196,
+      "lng": 81.583
+    },
+    "ph": 7.88,
+    "bod": 0.9,
+    "dissolved_oxygen": 6.71,
+    "recorded_at": "2026-03-21T06:44:10.044357"
+  },
+  {
+    "location": {
+      "id": 41,
+      "name": "Shivnath River Downstream",
+      "region": "Bhilai",
+      "lat": 21.215,
+      "lng": 81.32
+    },
+    "ph": 7.15,
+    "bod": 8.72,
+    "dissolved_oxygen": 4.76,
+    "recorded_at": "2026-03-21T08:44:10.044357"
+  },
+  {
+    "location": {
+      "id": 42,
+      "name": "Arpa River Basin",
+      "region": "Bilaspur",
+      "lat": 22.09,
+      "lng": 82.14
+    },
+    "ph": 6.59,
+    "bod": 4.89,
+    "dissolved_oxygen": 5.93,
+    "recorded_at": "2026-03-21T04:44:10.044357"
+  },
+  {
+    "location": {
+      "id": 43,
+      "name": "Hasdeo Barrage Discharge",
+      "region": "Korba",
+      "lat": 22.385,
+      "lng": 82.695
+    },
+    "ph": 7.31,
+    "bod": 12.61,
+    "dissolved_oxygen": 3.4,
+    "recorded_at": "2026-03-21T03:44:10.044357"
+  },
+  {
+    "location": {
+      "id": 44,
+      "name": "Kelo River Bank",
+      "region": "Raigarh",
+      "lat": 21.89,
+      "lng": 83.39
+    },
+    "ph": 6.51,
+    "bod": 2.62,
+    "dissolved_oxygen": 6.24,
+    "recorded_at": "2026-03-21T08:44:10.044357"
+  },
+  {
+    "location": {
+      "id": 45,
+      "name": "Dalpat Sagar Lake",
+      "region": "Jagdalpur",
+      "lat": 19.088,
+      "lng": 82.016
+    },
+    "ph": 7.65,
+    "bod": 2.4,
+    "dissolved_oxygen": 7.52,
+    "recorded_at": "2026-03-21T03:44:10.044357"
+  }
+]

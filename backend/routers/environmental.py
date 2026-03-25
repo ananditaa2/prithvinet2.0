@@ -3,6 +3,10 @@ from sqlalchemy.orm import Session
 from typing import Optional
 from datetime import datetime
 import asyncio
+import json
+import time
+import uuid
+from pathlib import Path
 
 from core.database import get_db
 from core.security import get_current_user, require_roles
@@ -13,6 +17,28 @@ from schemas.environmental import AirDataSubmit, WaterDataSubmit, NoiseDataSubmi
 from services.alert_service import check_and_trigger_alerts
 
 router = APIRouter(prefix="/data", tags=["Environmental Data"])
+
+# region agent log
+_DEBUG_LOG_PATH = Path(__file__).resolve().parent.parent.parent / "debug-a22406.log"
+
+
+def _debug_log(hypothesis_id: str, location: str, message: str, data: dict) -> None:
+    try:
+        payload = {
+            "sessionId": "a22406",
+            "runId": "initial",
+            "hypothesisId": hypothesis_id,
+            "location": location,
+            "message": message,
+            "data": data,
+            "timestamp": int(time.time() * 1000),
+            "id": f"log_{int(time.time() * 1000)}_{uuid.uuid4().hex[:8]}",
+        }
+        with _DEBUG_LOG_PATH.open("a", encoding="utf-8") as f:
+            f.write(json.dumps(payload, ensure_ascii=True) + "\n")
+    except Exception:
+        pass
+# endregion
 
 
 def _broadcast(event: dict):
@@ -113,6 +139,22 @@ def _sub_index(pollutant: str, concentration: float) -> float:
     """Calculate the CPCB sub-index for a single pollutant."""
     for (c_lo, c_hi, i_lo, i_hi) in _CPCB_BREAKPOINTS[pollutant]:
         if c_lo <= concentration <= c_hi:
+            # region agent log
+            _debug_log(
+                "H1",
+                "backend/routers/environmental.py:_sub_index",
+                "AQI sub-index bracket selected",
+                {
+                    "pollutant": pollutant,
+                    "concentration": concentration,
+                    "c_lo": c_lo,
+                    "c_hi": c_hi,
+                    "i_lo": i_lo,
+                    "i_hi": i_hi,
+                    "denominator": (c_hi - c_lo),
+                },
+            )
+            # endregion
             return round(i_lo + (concentration - c_lo) * (i_hi - i_lo) / (c_hi - c_lo), 1)
     return 500.0  # Beyond maximum breakpoint → hazardous
 
@@ -142,6 +184,19 @@ def submit_air(
     db: Session = Depends(get_db),
     current_user=Depends(require_roles(*SUBMIT_ROLES)),
 ):
+    # region agent log
+    _debug_log(
+        "H2",
+        "backend/routers/environmental.py:submit_air",
+        "Incoming air submission",
+        {
+            "user_id": current_user.id,
+            "location_id": payload.location_id,
+            "industry_id": payload.industry_id,
+            "recorded_at": str(payload.recorded_at),
+        },
+    )
+    # endregion
     _validate_submission_scope(payload, current_user, db)
     aqi = _compute_aqi(payload.pm25, payload.pm10,
                        so2=payload.so2, no2=payload.no2,
@@ -154,6 +209,22 @@ def submit_air(
         **payload.model_dump(),
     )
     db.add(entry)
+    # region agent log
+    _debug_log(
+        "H3",
+        "backend/routers/environmental.py:submit_air",
+        "About to flush air entry",
+        {
+            "aqi": aqi,
+            "pm25": payload.pm25,
+            "pm10": payload.pm10,
+            "so2": payload.so2,
+            "no2": payload.no2,
+            "co": payload.co,
+            "o3": payload.o3,
+        },
+    )
+    # endregion
     db.flush()
     check_and_trigger_alerts(db, entry)
     db.commit()

@@ -24,6 +24,7 @@ import HeatmapView from "./pages/dashboard/HeatmapView";
 import InspectionPriority from "./pages/dashboard/InspectionPriority";
 import Settings from "./pages/dashboard/Settings";
 import CasesToAct from "./pages/dashboard/CasesToAct";
+import Predictions from "./pages/dashboard/Predictions";
 
 const queryClient = new QueryClient();
 
@@ -62,6 +63,7 @@ const App = () => (
                   <Route path="ai" element={<AITools />} />
                   <Route path="heatmap" element={<HeatmapView />} />
                   <Route path="settings" element={<Settings />} />
+                  <Route path="predictions" element={<Predictions />} />
                 </Route>
 
                 <Route path="*" element={<NotFound />} />

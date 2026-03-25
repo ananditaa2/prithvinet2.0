@@ -24,10 +24,15 @@ def register(payload: UserRegister, db: Session = Depends(get_db)):
     if db.query(User).count() == 0:
         payload.role = "admin"
 
+    try:
+        password_hash = hash_password(payload.password)
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+
     user = User(
         name=payload.name,
         email=payload.email,
-        password_hash=hash_password(payload.password),
+        password_hash=password_hash,
         role=payload.role,
     )
     db.add(user)
@@ -39,7 +44,12 @@ def register(payload: UserRegister, db: Session = Depends(get_db)):
 @router.post("/login", response_model=TokenOut)
 def login(payload: UserLogin, db: Session = Depends(get_db)):
     user = db.query(User).filter(User.email == payload.email).first()
-    if not user or not verify_password(payload.password, user.password_hash):
+    try:
+        is_valid_password = user and verify_password(payload.password, user.password_hash)
+    except ValueError:
+        is_valid_password = False
+
+    if not user or not is_valid_password:
         raise HTTPException(status_code=401, detail="Invalid email or password.")
     if not user.is_active:
         raise HTTPException(status_code=403, detail="Account is deactivated.")
@@ -64,9 +74,17 @@ def update_me(payload: UserUpdate, db: Session = Depends(get_db), current_user=D
 
 @router.post("/change-password")
 def change_password(payload: ChangePassword, db: Session = Depends(get_db), current_user=Depends(get_current_user)):
-    if not verify_password(payload.current_password, current_user.password_hash):
+    try:
+        is_current_password_valid = verify_password(payload.current_password, current_user.password_hash)
+    except ValueError:
+        is_current_password_valid = False
+
+    if not is_current_password_valid:
         raise HTTPException(400, "Incorrect current password.")
-    current_user.password_hash = hash_password(payload.new_password)
+    try:
+        current_user.password_hash = hash_password(payload.new_password)
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
     db.commit()
     return {"message": "Password updated successfully."}
 

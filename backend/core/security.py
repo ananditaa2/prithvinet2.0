@@ -1,10 +1,14 @@
 from datetime import datetime, timedelta, timezone
 from typing import Optional, List
+import json
+import time
+import uuid
+from pathlib import Path
 
 from fastapi import Depends, HTTPException, status
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from jose import JWTError, jwt
-from passlib.context import CryptContext
+import bcrypt
 from sqlalchemy.orm import Session
 
 from core.config import SECRET_KEY, ALGORITHM, ACCESS_TOKEN_EXPIRE_HOURS
@@ -13,17 +17,22 @@ from models.industry import Industry
 from models.monitoring_location import MonitoringLocation
 
 # ─── Password Hashing ──────────────────────────────────────────────────────────
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto", bcrypt__rounds=10)
+_BCRYPT_ROUNDS = 10
 
 def _truncate_password(password: str) -> str:
     """Truncate password to 72 bytes (BCrypt hard limit) preserving valid UTF-8."""
     return password.encode('utf-8')[:72].decode('utf-8', 'ignore')
 
 def hash_password(password: str) -> str:
-    return pwd_context.hash(_truncate_password(password))
+    normalized = _truncate_password(password).encode("utf-8")
+    return bcrypt.hashpw(normalized, bcrypt.gensalt(rounds=_BCRYPT_ROUNDS)).decode("utf-8")
 
 def verify_password(plain: str, hashed: str) -> bool:
-    return pwd_context.verify(_truncate_password(plain), hashed)
+    normalized = _truncate_password(plain).encode("utf-8")
+    try:
+        return bcrypt.checkpw(normalized, hashed.encode("utf-8"))
+    except Exception:
+        return False
 
 # ─── JWT ───────────────────────────────────────────────────────────────────────
 def create_access_token(data: dict) -> str:
@@ -37,6 +46,28 @@ def decode_token(token: str) -> dict:
 
 # ─── Auth Dependencies ─────────────────────────────────────────────────────────
 bearer_scheme = HTTPBearer()
+
+# region agent log
+_DEBUG_LOG_PATH = Path(__file__).resolve().parent.parent / "debug-a22406.log"
+
+
+def _debug_log(hypothesis_id: str, location: str, message: str, data: dict) -> None:
+    try:
+        payload = {
+            "sessionId": "a22406",
+            "runId": "initial",
+            "hypothesisId": hypothesis_id,
+            "location": location,
+            "message": message,
+            "data": data,
+            "timestamp": int(time.time() * 1000),
+            "id": f"log_{int(time.time() * 1000)}_{uuid.uuid4().hex[:8]}",
+        }
+        with _DEBUG_LOG_PATH.open("a", encoding="utf-8") as f:
+            f.write(json.dumps(payload, ensure_ascii=True) + "\n")
+    except Exception:
+        pass
+# endregion
 
 def get_current_user(
     credentials: HTTPAuthorizationCredentials = Depends(bearer_scheme),
@@ -59,6 +90,14 @@ def get_current_user(
         try:
             user_id = int(user_id_str)
         except ValueError:
+            # region agent log
+            _debug_log(
+                "H4",
+                "backend/core/security.py:get_current_user",
+                "JWT sub is not an integer",
+                {"sub": str(user_id_str)},
+            )
+            # endregion
             raise credentials_exception
     except JWTError:
         raise credentials_exception

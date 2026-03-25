@@ -7,6 +7,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Slider } from "@/components/ui/slider";
 import { useToast } from "@/hooks/use-toast";
 import ReactMarkdown from 'react-markdown';
+import { api } from "@/lib/api";
 
 interface SimulationResult {
     scenario: {
@@ -38,19 +39,7 @@ export default function CopilotSection({ isWidget = false }: { isWidget?: boolea
     const handleSimulate = async () => {
         setLoading(true);
         try {
-            const response = await fetch("https://prithvinet-api-prod.onrender.com/api/simulate-risk", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(formData),
-            });
-
-            if (!response.ok) {
-                throw new Error("Failed to fetch simulation data");
-            }
-
-            const data = await response.json();
+            const data = await api.ai.simulateRisk(formData);
             setResult(data);
             toast({
                 title: "Simulation Complete",
